@@ -1,0 +1,130 @@
+"use client";
+
+import { useState } from "react";
+
+type NewsletterFormProps = {
+  className?: string;
+  stacked?: boolean;
+};
+
+type Status = "idle" | "error" | "success";
+
+export default function NewsletterForm({
+  className = "",
+  stacked = false,
+}: NewsletterFormProps) {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+
+    if (!isValid) {
+      setStatus("error");
+      return;
+    }
+
+    // TODO: Connect newsletter subscription to backend API.
+    setStatus("success");
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className={`w-full ${className}`}
+    >
+      <label
+        htmlFor="newsletter-email"
+        className="sr-only"
+      >
+        Email address
+      </label>
+
+      <div
+        className={`
+          flex w-full overflow-hidden rounded-md
+          border border-white/10
+          ${stacked ? "flex-col sm:flex-row sm:h-10" : "h-10 flex-row"}
+        `}
+      >
+        {/* Email Input */}
+        <input
+          id="newsletter-email"
+          type="email"
+          autoComplete="email"
+          value={email}
+          onChange={(event) => {
+            setEmail(event.target.value);
+
+            if (status !== "idle") {
+              setStatus("idle");
+            }
+          }}
+          placeholder="Enter your email"
+          aria-invalid={status === "error"}
+          aria-describedby={
+            status === "error"
+              ? "newsletter-error"
+              : status === "success"
+                ? "newsletter-success"
+                : undefined
+          }
+          className={`
+            min-w-0 flex-1
+            border-0 bg-white
+            px-4
+            text-sm text-navy
+            placeholder:text-slate-400
+            outline-none
+            focus:border-0
+            focus:outline-none
+            focus:ring-0
+            ${stacked ? "h-10 w-full sm:h-full sm:w-auto" : "h-full"}
+          `}
+        />
+
+        {/* Subscribe Button */}
+        <button
+          type="submit"
+          className={`
+            shrink-0
+            border-0
+            bg-brand
+            px-5
+            text-sm font-semibold
+            text-white
+            transition-colors
+            hover:bg-brand/90
+            focus:outline-none
+            focus:ring-2
+            focus:ring-brand
+            focus:ring-inset
+            ${stacked ? "h-10 w-full sm:h-full sm:w-auto" : "h-full"}
+          `}
+        >
+          Subscribe
+        </button>
+      </div>
+
+      {status === "error" && (
+        <p
+          id="newsletter-error"
+          className="mt-2 text-xs text-red-300"
+        >
+          Please enter a valid email address.
+        </p>
+      )}
+
+      {status === "success" && (
+        <p
+          id="newsletter-success"
+          className="mt-2 text-xs text-emerald-300"
+        >
+          Thanks! You are subscribed to Abe&apos;s mortgage tips.
+        </p>
+      )}
+    </form>
+  );
+}

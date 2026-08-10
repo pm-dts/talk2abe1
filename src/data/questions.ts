@@ -1,0 +1,60 @@
+import type { Question } from "@/types/question";
+
+export const questions: Question[] = [
+  {
+    id: "q-home-5-percent-down",
+    slug: "can-i-buy-a-home-with-5-percent-down",
+    title: "Can I buy a home with 5% down?",
+    category: "Purchase Loans",
+    popular: true,
+    icon: "houseplus",
+  },
+  {
+    id: "q-self-employed-mortgage",
+    slug: "can-i-get-a-mortgage-if-im-self-employed",
+    title: "Can I get a mortgage if I'm self-employed?",
+    category: "Self-Employed Loans",
+    popular: true,
+    icon: "user",
+  },
+  {
+    id: "q-dscr-loan",
+    slug: "what-is-a-dscr-loan",
+    title: "What is a DSCR loan?",
+    category: "DSCR Loans",
+    popular: true,
+    icon: "building",
+  },
+  {
+    id: "q-how-much-house-can-i-afford",
+    slug: "how-much-house-can-i-afford",
+    title: "How much house can I afford?",
+    category: "Purchase Loans",
+    popular: true,
+    icon: "houseplus",
+  },
+  {
+    id: "q-bank-statement-mortgage",
+    slug: "can-i-get-a-mortgage-with-bank-statements",
+    title: "Can I get a mortgage with bank statements?",
+    category: "Bank Statement Loans",
+    popular: true,
+    icon: "document",
+  },
+  {
+    id: "q-2-1-buydown",
+    slug: "how-does-a-2-1-buydown-work",
+    title: "How does a 2-1 buydown work?",
+    category: "Purchase Loans",
+    popular: true,
+    icon: "dollar",
+  },
+  {
+    id: "q-down-payment-options",
+    slug: "what-are-the-down-payment-options",
+    title: "What are the down payment options?",
+    category: "Purchase Loans",
+    popular: true,
+    icon: "house",
+  },
+];
