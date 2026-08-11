@@ -1,6 +1,7 @@
 import Container from "@/components/common/Container";
 import CTA from "@/components/common/CTA";
 import LoanProgramGrid from "@/components/loan-programs/LoanProgramGrid";
+import { siteConfig } from "@/data/site";
 
 export default function LoanProgramsPage() {
   return (
@@ -33,7 +34,7 @@ export default function LoanProgramsPage() {
               label: "Ask Abe a Question",
             }}
             secondaryAction={{
-              href: "/contact",
+              href: siteConfig.contact.phoneHref,
               label: "Schedule a Call",
             }}
           />

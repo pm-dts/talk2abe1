@@ -18,6 +18,9 @@ export const siteConfig: SiteConfig = {
     { label: "Facebook", href: "#" },
     { label: "Instagram", href: "#" },
     { label: "LinkedIn", href: "#" },
-    { label: "YouTube", href: "#" },
+    {
+      label: "YouTube",
+      href: "https://www.youtube.com/channel/UC4cB9D-DuLq2EU3c7nwANSw",
+    },
   ],
 };
