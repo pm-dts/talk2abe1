@@ -7,7 +7,6 @@ import Breadcrumbs from "@/components/common/Breadcrumbs";
 import Container from "@/components/common/Container";
 import CTA from "@/components/common/CTA";
 import RelatedQuestions from "@/components/questions/RelatedQuestions";
-import { siteConfig } from "@/data/site";
 import type { Question } from "@/types/question";
 
 type QuestionAnswerProps = {
@@ -191,7 +190,7 @@ export default function QuestionAnswer({
                   label: "Ask Abe a Question",
                 }}
                 secondaryAction={{
-                  href: siteConfig.contact.phoneHref,
+                  href: "/contact",
                   label: "Schedule a Call",
                 }}
               />

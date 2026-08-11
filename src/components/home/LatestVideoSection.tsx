@@ -3,7 +3,6 @@ import path from "node:path";
 import Image from "next/image";
 import Container from "@/components/common/Container";
 import Button from "@/components/common/Button";
-import { siteConfig } from "@/data/site";
 import { videos } from "@/data/videos";
 
 const featuredVideo = videos.find((v) => v.featured);
@@ -67,7 +66,7 @@ export default function LatestVideoSection() {
               Ask Abe a Question
             </Button>
             <Button
-              href={siteConfig.contact.phoneHref}
+              href="/contact"
               variant="outline"
               size="lg"
               className="!border-white/30 !text-white hover:!bg-white/10 hover:!text-white"

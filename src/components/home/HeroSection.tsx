@@ -1,122 +1,41 @@
 import Image from "next/image";
+import Link from "next/link";
+
 import Container from "@/components/common/Container";
-import Button from "@/components/common/Button";
 
 export default function HeroSection() {
   return (
-    <section className="w-full bg-surface min-w-0 overflow-x-clip">
+    <section className="w-full min-w-0 pt-8 overflow-hidden bg-surface">
       <Container
         className="
           grid
           w-full
-          max-w-full
           min-w-0
+          max-w-full
           grid-cols-1
-          items-center
-          gap-6
-          py-8
-          sm:py-10
-          lg:grid-cols-[54%_46%]
-          lg:gap-0
+          items-stretch
+          gap-0
+          lg:grid-cols-[38%_62%]
           lg:py-0
         "
       >
-        {/* Hero Content */}
-        <div className="relative z-10 min-w-0 max-w-2xl">
-          <h1 className="text-[2.75rem] font-bold leading-[1.05] tracking-[-0.03em] text-navy sm:text-5xl lg:text-[3.5rem] xl:text-[3.75rem]">
-            <span className="block">Got a mortgage</span>
-            <span className="block">question?</span>
-            <span className="block text-brand">Talk2Abe.</span>
-          </h1>
-
-          <p className="mt-4 max-w-[520px] text-base leading-7 text-navy/80 sm:text-lg">
-            Get straightforward answers from Abe,
-            <span className="block">your mortgage expert.</span>
-          </p>
-
-          {/* Question Search */}
-          <form
-            action="/ask-abe"
-            method="get"
-            role="search"
-            className="
-              mt-7
-              box-border
-              flex
-              w-full
-              max-w-full
-              min-w-0
-              flex-col
-              gap-3
-              rounded-lg
-              border
-              border-slate-300
-              bg-white
-              p-3
-              shadow-sm
-              transition-shadow
-              focus-within:border-brand
-              focus-within:ring-2
-              focus-within:ring-brand/10
-              sm:flex-row
-              sm:items-center
-            "
-          >
-            <input
-              name="q"
-              type="text"
-              placeholder="Type your mortgage question here..."
-              aria-label="Search mortgage questions"
-              className="
-                box-border
-                min-w-0
-                w-full
-                flex-1
-                border-0
-                bg-transparent
-                px-2
-                text-sm
-                shadow-none
-                outline-none
-                focus:border-0
-                focus:ring-0
-                sm:text-base
-              "
-            />
-
-            <Button
-              type="submit"
-              size="md"
-              className="
-                box-border
-                w-full
-                shrink-0
-                rounded-md
-                px-8
-                py-2.5
-                text-sm
-                sm:w-auto
-              "
-            >
-              Ask Abe
-            </Button>
-          </form>
-        </div>
-
         {/* Abe Image */}
         <div
           className="
+            order-2
             relative
             flex
             min-w-0
             w-full
-            max-w-full
-            min-h-[300px]
             items-end
             justify-center
+            self-end
             overflow-hidden
+            sm:min-h-[340px]
+            lg:order-1
+            lg:h-full
             lg:min-h-[430px]
-            lg:justify-end
+            lg:justify-start
           "
         >
           <Image
@@ -127,15 +46,141 @@ export default function HeroSection() {
             priority
             className="
               block
-              h-full
-              max-h-[430px]
+              h-auto
               w-full
-              max-w-full
+              max-w-[500px]
               object-contain
               object-bottom
-              lg:max-w-[620px]
+              sm:max-w-[540px]
+              lg:absolute
+              lg:bottom-0
+              lg:left-0
+              lg:h-full
+              lg:w-auto
+              lg:max-w-none
+              lg:object-contain
+              lg:object-bottom
             "
           />
+        </div>
+
+        {/* Hero Content */}
+        <div
+          className="
+            order-1
+            flex
+            min-w-0
+            flex-col
+            justify-center
+            py-12
+            sm:py-14
+            lg:order-2
+            lg:min-h-[430px]
+            lg:py-16
+            lg:pl-8
+            xl:pl-12
+          "
+        >
+          <div className="max-w-2xl">
+            <h1
+              className="
+                text-[2.75rem]
+                font-bold
+                leading-[1.05]
+                tracking-[-0.035em]
+                text-navy
+                sm:text-5xl
+                lg:text-[3.75rem]
+                xl:text-[4rem]
+              "
+            >
+              <span className="block">Got a</span>
+              <span className="block">mortgage question?</span>
+              <span className="block text-brand">Talk2Abe.</span>
+            </h1>
+
+            <p
+              className="
+                mt-5
+                max-w-xl
+                text-base
+                leading-7
+                text-navy/80
+                sm:text-lg
+                sm:leading-8
+              "
+            >
+              Get straightforward answers and real solutions
+              <span className="block">for your unique situation.</span>
+            </p>
+
+            {/* Hero Actions */}
+            <div
+              className="
+                mt-7
+                flex
+                flex-col
+                gap-3
+                sm:flex-row
+                sm:items-center
+              "
+            >
+              <Link
+                href="/ask-abe"
+                className="
+                  inline-flex
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-lg
+                  bg-brand
+                  px-7
+                  py-3
+                  text-sm
+                  font-semibold
+                  text-white
+                  transition-colors
+                  hover:bg-brand/90
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-brand
+                  focus:ring-offset-2
+                  sm:w-auto
+                "
+              >
+                Ask Abe a Question
+              </Link>
+
+              <Link
+                href="/contact"
+                className="
+                  inline-flex
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-lg
+                  border
+                  border-navy
+                  bg-white
+                  px-7
+                  py-3
+                  text-sm
+                  font-semibold
+                  text-navy
+                  transition-colors
+                  hover:bg-navy
+                  hover:text-white
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-brand
+                  focus:ring-offset-2
+                  sm:w-auto
+                "
+              >
+                Schedule a Call
+              </Link>
+            </div>
+          </div>
         </div>
       </Container>
     </section>

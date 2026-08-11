@@ -5,7 +5,6 @@ import HowItWorks from "@/components/about-abe/HowItWorks";
 import WhyChooseAbe from "@/components/about-abe/WhyChooseAbe";
 import Container from "@/components/common/Container";
 import CTA from "@/components/common/CTA";
-import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About Abe | Talk2Abe",
@@ -31,7 +30,7 @@ export default function AboutAbePage() {
             label: "Ask Abe a Question",
           }}
           secondaryAction={{
-            href: siteConfig.contact.phoneHref,
+            href: "/contact",
             label: "Schedule a Call",
           }}
         />
