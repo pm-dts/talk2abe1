@@ -29,7 +29,13 @@ const inputClasses =
 
 const labelClasses = "block text-sm font-semibold text-navy";
 
-function FieldError({ id, message }: { id: string; message?: string }) {
+function FieldError({
+  id,
+  message,
+}: {
+  id: string;
+  message?: string;
+}) {
   if (!message) {
     return null;
   }
@@ -41,18 +47,46 @@ function FieldError({ id, message }: { id: string; message?: string }) {
   );
 }
 
-export default function ContactForm({ className = "" }: ContactFormProps) {
-  const [values, setValues] = useState<ContactFormValues>(initialValues);
-  const [errors, setErrors] = useState<ContactFormErrors>({});
+export default function ContactForm({
+  className = "",
+}: ContactFormProps) {
+  const [values, setValues] =
+    useState<ContactFormValues>(initialValues);
+
+  const [errors, setErrors] =
+    useState<ContactFormErrors>({});
+
   const [submitted, setSubmitted] = useState(false);
+
+  const [submitting, setSubmitting] = useState(false);
+
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange =
     (field: keyof ContactFormValues) =>
-    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setValues((current) => ({ ...current, [field]: event.target.value }));
+    (
+      event: React.ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement
+      >,
+    ) => {
+      setValues((current) => ({
+        ...current,
+        [field]: event.target.value,
+      }));
 
       if (errors[field]) {
-        setErrors((current) => ({ ...current, [field]: undefined }));
+        setErrors((current) => ({
+          ...current,
+          [field]: undefined,
+        }));
+      }
+
+      if (submitError) {
+        setSubmitError("");
+      }
+
+      if (submitted) {
+        setSubmitted(false);
       }
     };
 
@@ -63,7 +97,11 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
       next.name = "Please enter your name.";
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
+    if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+        values.email.trim(),
+      )
+    ) {
       next.email = "Please enter a valid email address.";
     }
 
@@ -78,19 +116,60 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
     return next;
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ) => {
     event.preventDefault();
 
     const nextErrors = validate();
+
     setErrors(nextErrors);
+    setSubmitted(false);
+    setSubmitError("");
 
     if (Object.keys(nextErrors).length > 0) {
-      setSubmitted(false);
       return;
     }
 
-    // TODO: Connect contact form to backend API.
-    setSubmitted(true);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: values.name.trim(),
+          email: values.email.trim(),
+          phone: values.phone.trim(),
+          message: values.message.trim(),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.message || "Unable to send your message.",
+        );
+      }
+
+      setSubmitted(true);
+
+      setValues(initialValues);
+      setErrors({});
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -102,87 +181,148 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         {/* Name */}
         <div className="min-w-0">
-          <label htmlFor="contact-name" className={labelClasses}>
+          <label
+            htmlFor="contact-name"
+            className={labelClasses}
+          >
             Name
-            <span className="ml-0.5 text-brand" aria-hidden="true">
+            <span
+              className="ml-0.5 text-brand"
+              aria-hidden="true"
+            >
               *
             </span>
           </label>
+
           <input
             id="contact-name"
             type="text"
+            name="name"
             autoComplete="name"
             required
             value={values.name}
             onChange={handleChange("name")}
             placeholder="Your full name"
             aria-invalid={Boolean(errors.name)}
-            aria-describedby={errors.name ? "contact-name-error" : undefined}
+            aria-describedby={
+              errors.name
+                ? "contact-name-error"
+                : undefined
+            }
             className={`mt-1.5 ${inputClasses} ${
-              errors.name ? "border-red-400 focus:border-red-400 focus:ring-red-100" : ""
+              errors.name
+                ? "border-red-400 focus:border-red-400 focus:ring-red-100"
+                : ""
             }`}
           />
-          <FieldError id="contact-name-error" message={errors.name} />
+
+          <FieldError
+            id="contact-name-error"
+            message={errors.name}
+          />
         </div>
 
         {/* Email */}
         <div className="min-w-0">
-          <label htmlFor="contact-email" className={labelClasses}>
+          <label
+            htmlFor="contact-email"
+            className={labelClasses}
+          >
             Email
-            <span className="ml-0.5 text-brand" aria-hidden="true">
+            <span
+              className="ml-0.5 text-brand"
+              aria-hidden="true"
+            >
               *
             </span>
           </label>
+
           <input
             id="contact-email"
             type="email"
+            name="email"
             autoComplete="email"
             required
             value={values.email}
             onChange={handleChange("email")}
             placeholder="you@example.com"
             aria-invalid={Boolean(errors.email)}
-            aria-describedby={errors.email ? "contact-email-error" : undefined}
+            aria-describedby={
+              errors.email
+                ? "contact-email-error"
+                : undefined
+            }
             className={`mt-1.5 ${inputClasses} ${
-              errors.email ? "border-red-400 focus:border-red-400 focus:ring-red-100" : ""
+              errors.email
+                ? "border-red-400 focus:border-red-400 focus:ring-red-100"
+                : ""
             }`}
           />
-          <FieldError id="contact-email-error" message={errors.email} />
+
+          <FieldError
+            id="contact-email-error"
+            message={errors.email}
+          />
         </div>
 
         {/* Contact Number */}
         <div className="min-w-0 sm:col-span-2">
-          <label htmlFor="contact-phone" className={labelClasses}>
+          <label
+            htmlFor="contact-phone"
+            className={labelClasses}
+          >
             Contact Number
-            <span className="ml-0.5 text-brand" aria-hidden="true">
+            <span
+              className="ml-0.5 text-brand"
+              aria-hidden="true"
+            >
               *
             </span>
           </label>
+
           <input
             id="contact-phone"
             type="tel"
+            name="phone"
             autoComplete="tel"
             required
             value={values.phone}
             onChange={handleChange("phone")}
             placeholder="(305) 891-6500"
             aria-invalid={Boolean(errors.phone)}
-            aria-describedby={errors.phone ? "contact-phone-error" : undefined}
+            aria-describedby={
+              errors.phone
+                ? "contact-phone-error"
+                : undefined
+            }
             className={`mt-1.5 ${inputClasses} ${
-              errors.phone ? "border-red-400 focus:border-red-400 focus:ring-red-100" : ""
+              errors.phone
+                ? "border-red-400 focus:border-red-400 focus:ring-red-100"
+                : ""
             }`}
           />
-          <FieldError id="contact-phone-error" message={errors.phone} />
+
+          <FieldError
+            id="contact-phone-error"
+            message={errors.phone}
+          />
         </div>
 
         {/* Message */}
         <div className="min-w-0 sm:col-span-2">
-          <label htmlFor="contact-message" className={labelClasses}>
+          <label
+            htmlFor="contact-message"
+            className={labelClasses}
+          >
             Message
-            <span className="ml-0.5 text-brand" aria-hidden="true">
+            <span
+              className="ml-0.5 text-brand"
+              aria-hidden="true"
+            >
               *
             </span>
           </label>
+
           <textarea
             id="contact-message"
             name="message"
@@ -192,27 +332,51 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
             onChange={handleChange("message")}
             placeholder="How can Abe help you?"
             aria-invalid={Boolean(errors.message)}
-            aria-describedby={errors.message ? "contact-message-error" : undefined}
+            aria-describedby={
+              errors.message
+                ? "contact-message-error"
+                : undefined
+            }
             className={`mt-1.5 resize-y ${inputClasses} ${
-              errors.message ? "border-red-400 focus:border-red-400 focus:ring-red-100" : ""
+              errors.message
+                ? "border-red-400 focus:border-red-400 focus:ring-red-100"
+                : ""
             }`}
           />
-          <FieldError id="contact-message-error" message={errors.message} />
+
+          <FieldError
+            id="contact-message-error"
+            message={errors.message}
+          />
         </div>
       </div>
 
       <div className="mt-6">
-        <Button type="submit" size="lg">
-          Send Message
+        <Button
+          type="submit"
+          size="lg"
+          disabled={submitting}
+        >
+          {submitting ? "Sending..." : "Send Message"}
         </Button>
       </div>
+
+      {submitError && (
+        <p
+          role="alert"
+          className="mt-4 text-sm font-medium text-red-500"
+        >
+          {submitError}
+        </p>
+      )}
 
       {submitted && (
         <p
           role="status"
           className="mt-4 text-sm font-medium text-brand"
         >
-          Thanks! Your message has been sent. Abe will get back to you soon.
+          Thanks! Your message has been sent. Abe will get back
+          to you soon.
         </p>
       )}
     </form>
