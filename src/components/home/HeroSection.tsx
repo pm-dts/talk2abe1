@@ -4,7 +4,7 @@ import Button from "@/components/common/Button";
 
 export default function HeroSection() {
   return (
-    <section className="w-full py-8 bg-surface min-w-0 overflow-x-clip">
+    <section className="w-full bg-surface min-w-0 overflow-x-clip">
       <Container
         className="
           grid
@@ -120,7 +120,7 @@ export default function HeroSection() {
           "
         >
           <Image
-            src="/images/abe/abe-hero.jpg"
+            src="/images/abe/abe-hero.png"
             alt="Abe, Talk2Abe mortgage expert"
             width={800}
             height={600}
