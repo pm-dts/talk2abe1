@@ -24,7 +24,7 @@ export default function Footer() {
       <Container>
         <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.25fr_1.25fr] lg:gap-8 xl:gap-12">
           <div className="space-y-6">
-            <Logo variant="light" />
+            <Logo size="lg" variant="light" />
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
               {siteConfig.tagline.join(" ")}
             </p>

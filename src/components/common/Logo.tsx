@@ -10,10 +10,10 @@ type LogoProps = {
   className?: string;
 };
 
-const sizeStyles: Record<LogoSize, { tile: string; text: string }> = {
-  sm: { tile: "h-7 w-7 rounded-md text-xs", text: "text-base" },
-  md: { tile: "h-9 w-9 rounded-lg text-base", text: "text-xl" },
-  lg: { tile: "h-11 w-11 rounded-lg text-lg", text: "text-2xl" },
+const sizeStyles: Record<LogoSize, { text: string }> = {
+  sm: { text: "text-base" },
+  md: { text: "text-xl" },
+  lg: { text: "text-[2rem]" },
 };
 
 export default function Logo({
@@ -22,7 +22,7 @@ export default function Logo({
   className,
 }: LogoProps) {
   const isLight = variant === "light";
-  const { tile, text } = sizeStyles[size];
+  const { text } = sizeStyles[size];
 
   return (
     <Link href="/" className={cn("inline-flex items-center gap-2", className)}>

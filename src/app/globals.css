@@ -8,11 +8,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-navy: #071a35;
   --color-brand: #168a3b;
   --color-surface: #f5f7f8;
   --color-muted: #64748b;
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
+
+  --font-sans: var(--font-manrope);
   --font-mono: ui-monospace, SFMono-Regular, monospace;
 }
 

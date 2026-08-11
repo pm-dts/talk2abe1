@@ -23,7 +23,7 @@ export default function Header() {
       <Container>
         <div className="flex min-h-[88px] items-center justify-between gap-8">
           {/* Logo */}
-          <Logo />
+          <Logo size="lg" />
 
           {/* Desktop Navigation + CTA */}
           <div className="hidden items-center gap-8 lg:flex">

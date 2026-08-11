@@ -33,20 +33,23 @@ export default function NewsletterForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className={`w-full ${className}`}
+      className={`box-border w-full max-w-full ${className}`}
     >
-      <label
-        htmlFor="newsletter-email"
-        className="sr-only"
-      >
+      <label htmlFor="newsletter-email" className="sr-only">
         Email address
       </label>
 
       <div
         className={`
-          flex w-full overflow-hidden rounded-md
-          border border-white/10
-          ${stacked ? "flex-col sm:flex-row sm:h-10" : "h-10 flex-row"}
+          box-border
+          flex
+          w-full
+          max-w-full
+          overflow-hidden
+          rounded-md
+          border
+          border-white/10
+          ${stacked ? "flex-col sm:h-10 sm:flex-row" : "h-10 flex-row"}
         `}
       >
         {/* Email Input */}
@@ -72,16 +75,29 @@ export default function NewsletterForm({
                 : undefined
           }
           className={`
-            min-w-0 flex-1
-            border-0 bg-white
-            px-4
-            text-sm text-navy
+            box-border
+            min-w-0
+            max-w-full
+            flex-1
+            border-0
+            bg-white
+            px-3
+            text-sm
+            text-navy
             placeholder:text-slate-400
             outline-none
             focus:border-0
             focus:outline-none
             focus:ring-0
-            ${stacked ? "h-10 w-full sm:h-full sm:w-auto" : "h-full"}
+
+            ${
+              stacked
+                ? "h-12 min-h-12 w-full sm:h-full sm:min-h-0 sm:w-auto"
+                : "h-full"
+            }
+
+            sm:px-4
+            sm:text-sm
           `}
         />
 
@@ -93,7 +109,8 @@ export default function NewsletterForm({
             border-0
             bg-brand
             px-5
-            text-sm font-semibold
+            text-sm
+            font-semibold
             text-white
             transition-colors
             hover:bg-brand/90
@@ -101,7 +118,12 @@ export default function NewsletterForm({
             focus:ring-2
             focus:ring-brand
             focus:ring-inset
-            ${stacked ? "h-10 w-full sm:h-full sm:w-auto" : "h-full"}
+
+            ${
+              stacked
+                ? "h-12 min-h-12 w-full sm:h-full sm:min-h-0 sm:w-auto"
+                : "h-full"
+            }
           `}
         >
           Subscribe
@@ -109,19 +131,13 @@ export default function NewsletterForm({
       </div>
 
       {status === "error" && (
-        <p
-          id="newsletter-error"
-          className="mt-2 text-xs text-red-300"
-        >
+        <p id="newsletter-error" className="mt-2 text-xs text-red-300">
           Please enter a valid email address.
         </p>
       )}
 
       {status === "success" && (
-        <p
-          id="newsletter-success"
-          className="mt-2 text-xs text-emerald-300"
-        >
+        <p id="newsletter-success" className="mt-2 text-xs text-emerald-300">
           Thanks! You are subscribed to Abe&apos;s mortgage tips.
         </p>
       )}

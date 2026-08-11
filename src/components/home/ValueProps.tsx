@@ -2,8 +2,9 @@ import { Lightbulb, MessageCircle, MessageCircleCheck, UserRound } from "lucide-
 import type { LucideIcon } from "lucide-react";
 import Container from "@/components/common/Container";
 import { valueProps } from "@/data/value-props";
+import type { ValuePropIcon } from "@/types/value-prop";
 
-const iconMap: Record<string, LucideIcon> = {
+const iconMap: Record<ValuePropIcon, LucideIcon> = {
   MessageCircle,
   MessageCircleCheck,
   Lightbulb,
@@ -20,7 +21,7 @@ export default function ValueProps() {
       <Container>
         <div className="grid mx-auto max-w-7xl gap-x-16 sm:grid-cols-2 lg:grid-cols-4">
           {valueProps.map((prop) => {
-            const Icon = iconMap[prop.icon] ?? MessageCircle;
+            const Icon = iconMap[prop.icon];
             return (
               <div key={prop.id} className="flex items-start gap-4">
                 <Icon

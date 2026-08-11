@@ -1,7 +1,6 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
 import Image from "next/image";
-import { Play } from "lucide-react";
 import Container from "@/components/common/Container";
 import Button from "@/components/common/Button";
 import { videos } from "@/data/videos";

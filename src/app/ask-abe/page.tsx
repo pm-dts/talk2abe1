@@ -58,7 +58,7 @@ export default function AskAbePage() {
   }, [search, category]);
 
   return (
-    <main className="bg-white">
+    <div className="bg-white">
       <Container className="py-8 sm:py-10 lg:py-12">
         {/* Breadcrumbs */}
         <Breadcrumbs
@@ -112,6 +112,6 @@ export default function AskAbePage() {
           </div>
         </section>
       </Container>
-    </main>
+    </div>
   );
 }

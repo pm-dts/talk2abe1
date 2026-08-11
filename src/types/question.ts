@@ -7,6 +7,11 @@ export type QuestionIcon =
   | "document"
   | "dollar";
 
+export type QuestionVideo = {
+  thumbnail: string;
+  url?: string;
+};
+
 export interface Question {
   id: string;
   slug: string;
@@ -14,4 +19,11 @@ export interface Question {
   category?: string;
   popular?: boolean;
   icon: QuestionIcon;
+  author?: string;
+  publishedAt?: string;
+  video?: QuestionVideo;
+  shortAnswer?: string;
+  fullAnswer?: string[];
+  abeTip?: string;
+  relatedQuestionIds?: string[];
 }
