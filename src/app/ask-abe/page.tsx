@@ -80,8 +80,7 @@ export default function AskAbePage() {
           </h1>
 
           <p className="mt-3 max-w-xl text-base leading-7 text-muted sm:text-lg">
-            Browse answers to common mortgage questions or search for your
-            own.
+            Straight answers to real mortgage questions. Browse by topic or search for what you need.
           </p>
         </section>
 

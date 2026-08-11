@@ -77,8 +77,6 @@ export default function HeroSection() {
             lg:order-2
             lg:min-h-[430px]
             lg:py-16
-            lg:pl-8
-            xl:pl-12
           "
         >
           <div className="max-w-2xl">
@@ -110,8 +108,9 @@ export default function HeroSection() {
                 sm:leading-8
               "
             >
-              Get straightforward answers and real solutions
-              <span className="block">for your unique situation.</span>
+              Straight answers to your mortgage questions — from an experienced mortgage professional
+              {/* Get straightforward answers and real solutions
+              <span className="block">for your unique situation.</span> */}
             </p>
 
             {/* Hero Actions */}

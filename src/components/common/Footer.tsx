@@ -95,7 +95,7 @@ export default function Footer() {
               Subscribe for Tips
             </h3>
             <p className="mt-1 text-sm text-slate-400">
-              Get mortgage tips and updates directly from Abe.
+              Get mortgage answers & updates directly from Abe.
             </p>
             <NewsletterForm className="mt-5" stacked />
           </section>
