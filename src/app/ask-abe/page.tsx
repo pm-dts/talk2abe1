@@ -107,7 +107,10 @@ export default function AskAbePage() {
             />
 
             {/* Questions */}
-            <QuestionList questions={filteredQuestions} />
+            <QuestionList
+              questions={filteredQuestions}
+              initialLimit={8}
+            />
           </div>
         </section>
       </Container>

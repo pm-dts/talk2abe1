@@ -19,7 +19,7 @@ export default function ValueProps() {
   return (
     <section className="bg-white py-16">
       <Container>
-        <div className="grid mx-auto max-w-7xl gap-x-16 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid mx-auto max-w-7xl gap-x-16 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
           {valueProps.map((prop) => {
             const Icon = iconMap[prop.icon];
             return (
@@ -32,7 +32,7 @@ export default function ValueProps() {
                   <h3 className="text-base font-semibold text-navy sm:text-lg">
                     {prop.title}
                   </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-muted">
+                  <p className="text-sm leading-relaxed text-muted">
                     {prop.description}
                   </p>
                 </div>

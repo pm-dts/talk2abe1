@@ -1,7 +1,8 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
 import Image from "next/image";
-import { Lightbulb, Play } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Play, Star } from "lucide-react";
 
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import Container from "@/components/common/Container";
@@ -26,11 +27,23 @@ function formatDate(value: string): string {
   }).format(new Date(year, month - 1, day));
 }
 
+function getYouTubeEmbedUrl(url: string): string {
+  if (url.includes("youtube.com/embed/")) {
+    return url;
+  }
+  return url
+    .replace("youtu.be/", "youtube.com/embed/")
+    .replace("youtube.com/shorts/", "youtube.com/embed/")
+    .replace("youtube.com/watch?v=", "youtube.com/embed/");
+}
+
 function QuestionMeta({ question }: { question: Question }) {
   const items: string[] = [];
 
   if (question.author) {
     items.push(`By ${question.author}`);
+  } else {
+    items.push("By Abe");
   }
   if (question.publishedAt) {
     items.push(formatDate(question.publishedAt));
@@ -90,6 +103,17 @@ export default function QuestionAnswer({
           <article className="mt-7">
             {/* Question Header */}
             <header>
+              {question.popular && (
+                <span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
+                  <Star
+                    className="h-3.5 w-3.5"
+                    fill="currentColor"
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                  />
+                  Most Popular Question
+                </span>
+              )}
               <h1 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">
                 {question.title}
               </h1>
@@ -97,7 +121,17 @@ export default function QuestionAnswer({
             </header>
 
             {/* Video */}
-            {question.video?.thumbnail && (
+            {question.video?.url ? (
+              <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-slate-900">
+                <iframe
+                  src={getYouTubeEmbedUrl(question.video.url)}
+                  title={question.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="h-full w-full"
+                />
+              </div>
+            ) : question.video?.thumbnail ? (
               <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-slate-900">
                 {hasThumbnail ? (
                   <Image
@@ -121,26 +155,48 @@ export default function QuestionAnswer({
                   </span>
                 </span>
               </div>
+            ) : (
+              <div className="relative mt-8 aspect-video overflow-hidden rounded-xl border border-slate-200 bg-gradient-to-br from-slate-700 to-slate-900">
+                <span className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 ring-4 ring-white/20">
+                    <Play
+                      className="h-8 w-8 text-navy"
+                      fill="currentColor"
+                      strokeWidth={1}
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <span className="text-xs font-medium text-white/80">
+                    Video coming soon
+                  </span>
+                </span>
+              </div>
             )}
 
             {/* Short Answer */}
-            {question.shortAnswer && (
-              <section className="mt-8">
-                <h2 className="text-lg font-semibold text-navy sm:text-xl">
-                  Short Answer
-                </h2>
+            <section className="mt-8">
+              <h2 className="text-lg font-semibold text-navy sm:text-xl">
+                Short Answer
+              </h2>
+              {question.shortAnswer ? (
                 <p className="mt-3 text-base leading-relaxed text-muted">
                   {question.shortAnswer}
                 </p>
-              </section>
-            )}
+              ) : (
+                <p className="mt-3 text-base leading-relaxed text-muted">
+                  Abe is preparing the answer for this question. In the
+                  meantime, ask Abe directly below for a fast, personal
+                  response.
+                </p>
+              )}
+            </section>
 
-            {/* Full Answer */}
-            {question.fullAnswer && question.fullAnswer.length > 0 && (
-              <section className="mt-8">
-                <h2 className="text-lg font-semibold text-navy sm:text-xl">
-                  The Full Answer
-                </h2>
+            {/* Full Detailed Answer */}
+            <section className="mt-8">
+              <h2 className="text-lg font-semibold text-navy sm:text-xl">
+                Full Detailed Answer
+              </h2>
+              {question.fullAnswer && question.fullAnswer.length > 0 ? (
                 <div className="mt-3 space-y-4">
                   {question.fullAnswer.map((paragraph, index) => (
                     <p
@@ -151,26 +207,61 @@ export default function QuestionAnswer({
                     </p>
                   ))}
                 </div>
-              </section>
-            )}
-
-            {/* Abe's Tip */}
-            {question.abeTip && (
-              <aside className="mt-8 flex items-start gap-4 rounded-xl border border-brand/20 bg-brand/10 p-5 sm:p-6">
-                <Lightbulb
-                  className="mt-1 h-6 w-6 shrink-0 text-brand"
-                  strokeWidth={2}
-                  aria-hidden="true"
-                />
-                <div>
-                  <h2 className="text-base font-semibold text-navy">
-                    Abe&apos;s Tip
-                  </h2>
-                  <p className="mt-1 text-sm leading-relaxed text-muted sm:text-base">
-                    {question.abeTip}
+              ) : (
+                <div className="mt-3 space-y-4">
+                  <p className="text-base leading-relaxed text-muted">
+                    Abe is putting together the full detailed answer for this
+                    question. Check back soon — or ask Abe directly below for
+                    help with your specific situation.
                   </p>
                 </div>
-              </aside>
+              )}
+            </section>
+
+            {/* Abe's Tip — temporarily commented out while the final
+                answer content is being prepared. */}
+            {/*
+              {question.abeTip && (
+                <aside className="mt-8 flex items-start gap-4 rounded-xl border border-brand/20 bg-brand/10 p-5 sm:p-6">
+                  <Lightbulb
+                    className="mt-1 h-6 w-6 shrink-0 text-brand"
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <h2 className="text-base font-semibold text-navy">
+                      Abe&apos;s Tip
+                    </h2>
+                    <p className="mt-1 text-sm leading-relaxed text-muted sm:text-base">
+                      {question.abeTip}
+                    </p>
+                  </div>
+                </aside>
+              )}
+            */}
+
+            {/* Program Link */}
+            {question.programLink && (
+              <section className="mt-8 rounded-xl border border-slate-200 bg-white p-5 sm:p-6">
+                <h2 className="text-lg font-semibold text-navy">
+                  Explore This Loan Program
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">
+                  This question is related to one of our loan programs.
+                  Learn more about how it works and whether it fits your
+                  situation.
+                </p>
+                <Link
+                  href={question.programLink.href}
+                  className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand/80 sm:text-base"
+                >
+                  {question.programLink.label ?? "Learn more about this program"}
+                  <ArrowRight
+                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </section>
             )}
 
             {/* Related Questions */}

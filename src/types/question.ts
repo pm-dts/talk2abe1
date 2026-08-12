@@ -12,6 +12,11 @@ export type QuestionVideo = {
   url?: string;
 };
 
+export type ProgramLink = {
+  href: string;
+  label?: string;
+};
+
 export interface Question {
   id: string;
   slug: string;
@@ -26,4 +31,6 @@ export interface Question {
   fullAnswer?: string[];
   abeTip?: string;
   relatedQuestionIds?: string[];
+  programLink?: ProgramLink;
+  metaDescription?: string;
 }

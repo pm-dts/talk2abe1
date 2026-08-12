@@ -5,15 +5,19 @@ import type { Question } from "@/types/question";
 type RelatedQuestionsProps = {
   questions: Question[];
   title?: string;
+  limit?: number;
   className?: string;
 };
 
 export default function RelatedQuestions({
   questions,
   title = "Related Questions",
+  limit = 3,
   className,
 }: RelatedQuestionsProps) {
-  if (questions.length === 0) {
+  const visibleQuestions = questions.slice(0, limit);
+
+  if (visibleQuestions.length === 0) {
     return null;
   }
 
@@ -23,7 +27,7 @@ export default function RelatedQuestions({
         {title}
       </h2>
       <div className="divide-y divide-slate-200">
-        {questions.map((question) => (
+        {visibleQuestions.map((question) => (
           <QuestionListItem key={question.id} question={question} />
         ))}
       </div>

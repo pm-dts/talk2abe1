@@ -5,16 +5,16 @@ import Container from "@/components/common/Container";
 
 export default function HeroSection() {
   return (
-    <section className="w-full min-w-0 pt-8 overflow-hidden bg-surface">
+    <section className="w-full min-w-0 overflow-hidden bg-surface pt-4 sm:pt-6 lg:pt-8">
       <Container
         className="
           grid
           w-full
           min-w-0
           max-w-full
-          grid-cols-1
+          grid-cols-[55%_45%]
           items-stretch
-          gap-0
+          gap-2
           lg:grid-cols-[38%_62%]
           lg:py-0
         "
@@ -22,20 +22,17 @@ export default function HeroSection() {
         {/* Abe Image */}
         <div
           className="
-            order-2
             relative
             flex
             min-w-0
             w-full
             items-end
-            justify-center
             self-end
             overflow-hidden
-            sm:min-h-[340px]
+            sm:min-h-[300px]
             lg:order-1
             lg:h-full
             lg:min-h-[430px]
-            lg:justify-start
           "
         >
           <Image
@@ -48,13 +45,13 @@ export default function HeroSection() {
               block
               h-auto
               w-full
-              max-w-[500px]
+              max-w-[340px]
               object-contain
               object-bottom
-              sm:max-w-[540px]
+              sm:max-w-[420px]
               lg:absolute
               lg:bottom-0
-              lg:left-0
+              lg:right-0
               lg:h-full
               lg:w-auto
               lg:max-w-none
@@ -72,8 +69,7 @@ export default function HeroSection() {
             min-w-0
             flex-col
             justify-center
-            py-12
-            sm:py-14
+            py-10
             lg:order-2
             lg:min-h-[430px]
             lg:py-16
@@ -82,12 +78,12 @@ export default function HeroSection() {
           <div className="max-w-2xl">
             <h1
               className="
-                text-[2.75rem]
+                text-[2rem]
                 font-bold
-                leading-[1.05]
-                tracking-[-0.035em]
+                leading-[1.08]
+                tracking-[-0.03em]
                 text-navy
-                sm:text-5xl
+                sm:text-2xl
                 lg:text-[3.75rem]
                 xl:text-[4rem]
               "
@@ -99,29 +95,35 @@ export default function HeroSection() {
 
             <p
               className="
-                mt-5
+                mt-3
                 max-w-xl
-                text-base
-                leading-7
+                text-sm
+                leading-6
                 text-navy/80
-                sm:text-lg
-                sm:leading-8
+                sm:mt-4
+                sm:text-sm
+                sm:leading-7
+                lg:mt-5
+                lg:text-lg
+                lg:leading-8
               "
             >
-              Straight answers to your mortgage questions — from an experienced mortgage professional
-              {/* Get straightforward answers and real solutions
-              <span className="block">for your unique situation.</span> */}
+              Straight answers to your mortgage questions — from an experienced
+              mortgage professional
             </p>
 
             {/* Hero Actions */}
             <div
               className="
-                mt-7
+                mt-5
                 flex
                 flex-col
-                gap-3
+                gap-2
+                sm:mt-6
                 sm:flex-row
                 sm:items-center
+                sm:gap-3
+                lg:mt-7
               "
             >
               <Link
@@ -133,9 +135,9 @@ export default function HeroSection() {
                   justify-center
                   rounded-lg
                   bg-brand
-                  px-7
-                  py-3
-                  text-sm
+                  px-4
+                  py-2.5
+                  text-xs
                   font-semibold
                   text-white
                   transition-colors
@@ -145,6 +147,11 @@ export default function HeroSection() {
                   focus:ring-brand
                   focus:ring-offset-2
                   sm:w-auto
+                  sm:px-5
+                  sm:py-2.5
+                  sm:text-sm
+                  lg:px-7
+                  lg:py-3
                 "
               >
                 Ask Abe a Question
@@ -161,9 +168,9 @@ export default function HeroSection() {
                   border
                   border-navy
                   bg-white
-                  px-7
-                  py-3
-                  text-sm
+                  px-4
+                  py-2.5
+                  text-xs
                   font-semibold
                   text-navy
                   transition-colors
@@ -174,6 +181,11 @@ export default function HeroSection() {
                   focus:ring-brand
                   focus:ring-offset-2
                   sm:w-auto
+                  sm:px-5
+                  sm:py-2.5
+                  sm:text-sm
+                  lg:px-7
+                  lg:py-3
                 "
               >
                 Schedule a Call

@@ -26,7 +26,7 @@ export default function PopularQuestions() {
   }
 
   return (
-    <section className="bg-white py-12 sm:py-14 lg:py-16">
+    <section className="bg-white py-8 lg:py-12">
       <Container>
         {/* Section Header */}
         <div className="mb-7 flex items-center justify-between gap-4 sm:mb-8">
@@ -48,7 +48,7 @@ export default function PopularQuestions() {
         </div>
 
         {/* Questions Grid */}
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           {popularQuestions.map((question) => (
             <QuestionCard key={question.id} question={question} />
           ))}

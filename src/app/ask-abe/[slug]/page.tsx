@@ -15,14 +15,51 @@ export function generateStaticParams() {
   }));
 }
 
+function getRelatedQuestions(
+  question: Question,
+  count = 3,
+): Question[] {
+  const related: Question[] = [];
+  const seen = new Set<string>([question.id]);
+
+  const add = (candidate?: Question) => {
+    if (!candidate || seen.has(candidate.id) || related.length >= count) {
+      return;
+    }
+    seen.add(candidate.id);
+    related.push(candidate);
+  };
+
+  question.relatedQuestionIds?.forEach((id) =>
+    add(questions.find((item) => item.id === id)),
+  );
+  questions.forEach((item) =>
+    item.category === question.category ? add(item) : null,
+  );
+  questions.forEach((item) => (item.popular ? add(item) : null));
+  questions.forEach(add);
+
+  return related;
+}
+
 export async function generateMetadata({
   params,
 }: QuestionPageProps): Promise<Metadata> {
   const { slug } = await params;
   const question = questions.find((item) => item.slug === slug);
 
+  if (!question) {
+    return {
+      title: "Question not found",
+    };
+  }
+
   return {
-    title: question ? question.title : "Question not found",
+    title: `${question.title} | Talk2Abe`,
+    description:
+      question.metaDescription ??
+      question.shortAnswer ??
+      `Straight answer from Abe to "${question.title}".`,
   };
 }
 
@@ -34,16 +71,10 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
     notFound();
   }
 
-  const relatedQuestions = question.relatedQuestionIds
-    ? question.relatedQuestionIds
-        .map((id) => questions.find((item) => item.id === id))
-        .filter((item): item is Question => Boolean(item))
-    : [];
-
   return (
     <QuestionAnswer
       question={question}
-      relatedQuestions={relatedQuestions}
+      relatedQuestions={getRelatedQuestions(question)}
     />
   );
 }
