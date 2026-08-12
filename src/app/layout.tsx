@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
-import Header from "@/components/common/Header";
-import Footer from "@/components/common/Footer";
+import SiteChrome from "@/components/common/SiteChrome";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -26,9 +25,7 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} font-sans flex min-h-screen flex-col`}
       >
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

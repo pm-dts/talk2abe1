@@ -190,6 +190,40 @@ export default function HeroSection() {
               >
                 Schedule a Call
               </Link>
+
+              <Link
+                href="/get-started"
+                className="
+                  inline-flex
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-lg
+                  border
+                  border-navy
+                  bg-white
+                  px-4
+                  py-2.5
+                  text-xs
+                  font-semibold
+                  text-navy
+                  transition-colors
+                  hover:bg-navy
+                  hover:text-white
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-brand
+                  focus:ring-offset-2
+                  sm:w-auto
+                  sm:px-5
+                  sm:py-2.5
+                  sm:text-sm
+                  lg:px-7
+                  lg:py-3
+                "
+              >
+                Get Started
+              </Link>
             </div>
           </div>
         </div>
