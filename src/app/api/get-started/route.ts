@@ -5,25 +5,50 @@ import { ghlMappings, ghlWorkflowEnvKey } from "@/data/get-started/ghlMappings";
 import type { GetStartedSubmission } from "@/types/get-started";
 
 /**
- * GHL webhook URL.
+ * ----------------------------------------
+ * NEXT.JS ROUTE CONFIGURATION
+ * ----------------------------------------
  *
- * Keep this server-side.
+ * Explicitly use the Node.js runtime.
  *
- * Add the following to .env.local:
- *
- * GET_STARTED_WEBHOOK_URL=https://services.leadconnectorhq.com/hooks/Lv5oqPcJ6MZsszgssznB/webhook-trigger/3d1e82e7-ebf8-4ed0-a00c-3ce71030e237
+ * This route needs server-side environment
+ * variables and outbound fetch requests.
  */
-const GET_STARTED_WEBHOOK_URL = process.env.GET_STARTED_WEBHOOK_URL;
+
+export const runtime = "nodejs";
+
+export const dynamic = "force-dynamic";
 
 /**
- * Convert questionnaire answers into GHL tags.
+ * ----------------------------------------
+ * GHL WEBHOOK
+ * ----------------------------------------
+ *
+ * IMPORTANT:
+ * Keep this environment variable server-side.
+ *
+ * .env.local:
+ *
+ * GET_STARTED_WEBHOOK_URL=https://services.leadconnectorhq.com/hooks/...
  */
+
+function getWebhookUrl(): string | undefined {
+  return process.env.GET_STARTED_WEBHOOK_URL;
+}
+
+/**
+ * ----------------------------------------
+ * CREATE GHL TAGS
+ * ----------------------------------------
+ */
+
 function getTags(body: Partial<GetStartedSubmission>): string[] {
   const tags = new Set<string>();
 
   /**
-   * Goal tags
+   * Goal
    */
+
   const goalTag = ghlMappings.goals[body.goal ?? ""];
 
   if (goalTag) {
@@ -31,8 +56,9 @@ function getTags(body: Partial<GetStartedSubmission>): string[] {
   }
 
   /**
-   * Borrower situation tags
+   * Borrower situation
    */
+
   const situationTag =
     ghlMappings.borrowerSituation[body.borrowerSituation ?? ""];
 
@@ -41,8 +67,9 @@ function getTags(body: Partial<GetStartedSubmission>): string[] {
   }
 
   /**
-   * Credit range tags
+   * Credit range
    */
+
   const creditTag = ghlMappings.credit[body.creditRange ?? ""];
 
   if (creditTag) {
@@ -53,8 +80,11 @@ function getTags(body: Partial<GetStartedSubmission>): string[] {
 }
 
 /**
- * Find the workflow configured for the lead.
+ * ----------------------------------------
+ * FIND WORKFLOW
+ * ----------------------------------------
  */
+
 function getWorkflowId(tags: string[]): string | undefined {
   for (const tag of tags) {
     const envKey = ghlWorkflowEnvKey[tag];
@@ -73,6 +103,12 @@ function getWorkflowId(tags: string[]): string | undefined {
   return undefined;
 }
 
+/**
+ * ----------------------------------------
+ * POST
+ * ----------------------------------------
+ */
+
 export async function POST(request: Request) {
   try {
     /**
@@ -81,7 +117,9 @@ export async function POST(request: Request) {
      * ----------------------------------------
      */
 
-    if (!GET_STARTED_WEBHOOK_URL) {
+    const webhookUrl = getWebhookUrl();
+
+    if (!webhookUrl) {
       console.error("GET_STARTED_WEBHOOK_URL is not configured.");
 
       return NextResponse.json(
@@ -126,15 +164,15 @@ export async function POST(request: Request) {
      * ----------------------------------------
      */
 
-    const firstName = body.firstName?.trim();
+    const firstName = body.firstName?.trim() || "";
 
-    const lastName = body.lastName?.trim();
+    const lastName = body.lastName?.trim() || "";
 
-    const email = body.email?.trim();
+    const email = body.email?.trim() || "";
 
-    const phone = body.phone?.trim();
+    const phone = body.phone?.trim() || "";
 
-    const propertyState = body.propertyState?.trim();
+    const propertyState = body.propertyState?.trim() || "";
 
     /**
      * ----------------------------------------
@@ -142,11 +180,34 @@ export async function POST(request: Request) {
      * ----------------------------------------
      */
 
-    if (!firstName || !lastName || !email || !phone || !propertyState) {
+    const missingContactFields: string[] = [];
+
+    if (!firstName) {
+      missingContactFields.push("firstName");
+    }
+
+    if (!lastName) {
+      missingContactFields.push("lastName");
+    }
+
+    if (!email) {
+      missingContactFields.push("email");
+    }
+
+    if (!phone) {
+      missingContactFields.push("phone");
+    }
+
+    if (!propertyState) {
+      missingContactFields.push("propertyState");
+    }
+
+    if (missingContactFields.length > 0) {
       return NextResponse.json(
         {
           success: false,
           message: "Please complete all required contact fields.",
+          missingFields: missingContactFields,
         },
         {
           status: 400,
@@ -155,8 +216,11 @@ export async function POST(request: Request) {
     }
 
     /**
-     * Validate email.
+     * ----------------------------------------
+     * VALIDATE EMAIL
+     * ----------------------------------------
      */
+
     const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
     if (!emailIsValid) {
@@ -173,14 +237,35 @@ export async function POST(request: Request) {
 
     /**
      * ----------------------------------------
+     * VALIDATE PHONE
+     * ----------------------------------------
+     *
+     * Keep this aligned with ContactStep.
+     */
+
+    const phoneIsValid = /^[0-9()\-+. ]{7,20}$/.test(phone);
+
+    if (!phoneIsValid) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Please enter a valid phone number.",
+        },
+        {
+          status: 400,
+        },
+      );
+    }
+
+    /**
+     * ----------------------------------------
      * VALIDATE QUESTIONNAIRE
      * ----------------------------------------
      *
-     * Every question is required.
+     * Every questionnaire field is required.
      *
-     * For the currency questions,
-     * "I'm Not Sure" is also considered
-     * a valid answer.
+     * "I'm Not Sure" remains a valid value because
+     * it is a non-empty string.
      */
 
     const requiredAnswers = [
@@ -193,9 +278,11 @@ export async function POST(request: Request) {
       "creditRange",
     ] as const;
 
-    const missingAnswers = requiredAnswers.filter(
-      (field) => !body[field] || body[field]?.trim() === "",
-    );
+    const missingAnswers = requiredAnswers.filter((field) => {
+      const value = body[field];
+
+      return !value || typeof value !== "string" || value.trim() === "";
+    });
 
     if (missingAnswers.length > 0) {
       return NextResponse.json(
@@ -234,17 +321,23 @@ export async function POST(request: Request) {
 
     const payload = {
       /**
-       * Contact information
+       * Contact
        */
+
       firstName,
+
       lastName,
+
       email,
+
       phone,
+
       propertyState,
 
       /**
-       * Questionnaire answers
+       * Questionnaire
        */
+
       goal: body.goal ?? "",
 
       propertyUse: body.propertyUse ?? "",
@@ -262,11 +355,15 @@ export async function POST(request: Request) {
       /**
        * GHL tags
        */
+
       tags,
 
       /**
        * Workflow
+       *
+       * Only include this when one was found.
        */
+
       ...(workflowId
         ? {
             workflowId,
@@ -276,36 +373,50 @@ export async function POST(request: Request) {
       /**
        * Lead source
        */
+
       source: "Talk2Abe Get Started Survey",
     };
 
     /**
-     * Don't log PII.
+     * ----------------------------------------
+     * SERVER LOGGING
+     * ----------------------------------------
+     *
+     * Do NOT log PII such as:
+     * - name
+     * - email
+     * - phone
      */
+
     console.log("Submitting Talk2Abe Get Started lead to GHL:", {
       goal: body.goal,
       propertyUse: body.propertyUse,
       processStage: body.processStage,
+      propertyValue: body.propertyValue,
+      financingAmount: body.financingAmount,
       borrowerSituation: body.borrowerSituation,
       creditRange: body.creditRange,
+      propertyState,
       tags,
+      workflowConfigured: Boolean(workflowId),
     });
 
     /**
      * ----------------------------------------
-     * SEND DATA TO GHL
+     * SEND TO GHL
      * ----------------------------------------
      */
 
     let ghlResponse: Response;
 
     try {
-      ghlResponse = await fetch(GET_STARTED_WEBHOOK_URL, {
+      ghlResponse = await fetch(webhookUrl, {
         method: "POST",
 
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
+
+          Accept: "application/json, text/plain, */*",
         },
 
         body: JSON.stringify(payload),
@@ -313,6 +424,10 @@ export async function POST(request: Request) {
         cache: "no-store",
       });
     } catch (error) {
+      /**
+       * Network/DNS/connection error.
+       */
+
       console.error("Unable to reach GHL webhook:", error);
 
       return NextResponse.json(
@@ -332,18 +447,34 @@ export async function POST(request: Request) {
      * READ GHL RESPONSE SAFELY
      * ----------------------------------------
      *
-     * GHL may return JSON or plain text.
-     * Never assume it is JSON.
+     * NEVER assume GHL returns JSON.
+     *
+     * GHL may return:
+     *
+     * - JSON
+     * - text
+     * - empty response
+     * - HTML
      */
 
-    const ghlResponseText = await ghlResponse.text();
+    let ghlResponseText = "";
+
+    try {
+      ghlResponseText = await ghlResponse.text();
+    } catch (error) {
+      console.error("Unable to read GHL response:", error);
+    }
 
     /**
-     * GHL webhook failed.
+     * ----------------------------------------
+     * HANDLE GHL ERROR
+     * ----------------------------------------
      */
+
     if (!ghlResponse.ok) {
       console.error("GHL webhook returned an error:", {
         status: ghlResponse.status,
+        statusText: ghlResponse.statusText,
         response: ghlResponseText.slice(0, 1000),
       });
 
@@ -361,11 +492,13 @@ export async function POST(request: Request) {
 
     /**
      * ----------------------------------------
-     * SUCCESS
+     * GHL SUCCESS
      * ----------------------------------------
      */
 
-    console.log("Talk2Abe Get Started lead successfully sent to GHL.");
+    console.log("Talk2Abe Get Started lead successfully sent to GHL.", {
+      status: ghlResponse.status,
+    });
 
     return NextResponse.json(
       {
@@ -378,9 +511,14 @@ export async function POST(request: Request) {
     );
   } catch (error) {
     /**
-     * Make absolutely sure the API always
-     * returns JSON instead of an HTML error page.
+     * ----------------------------------------
+     * FINAL ERROR HANDLER
+     * ----------------------------------------
+     *
+     * This guarantees that errors thrown
+     * inside this route are returned as JSON.
      */
+
     console.error("Get Started API error:", error);
 
     return NextResponse.json(
