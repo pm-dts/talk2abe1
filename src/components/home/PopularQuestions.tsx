@@ -26,7 +26,7 @@ export default function PopularQuestions() {
   }
 
   return (
-    <section className="bg-white py-8 lg:py-12">
+    <section className="bg-white py-6 lg:py-8">
       <Container>
         {/* Section Header */}
         <div className="mb-7 flex items-center justify-between gap-4 sm:mb-8">
