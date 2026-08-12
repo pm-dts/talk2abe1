@@ -218,27 +218,40 @@ export default function QuestionAnswer({
               )}
             </section>
 
-            {/* Abe's Tip — temporarily commented out while the final
-                answer content is being prepared. */}
-            {/*
-              {question.abeTip && (
-                <aside className="mt-8 flex items-start gap-4 rounded-xl border border-brand/20 bg-brand/10 p-5 sm:p-6">
-                  <Lightbulb
-                    className="mt-1 h-6 w-6 shrink-0 text-brand"
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <h2 className="text-base font-semibold text-navy">
-                      Abe&apos;s Tip
-                    </h2>
-                    <p className="mt-1 text-sm leading-relaxed text-muted sm:text-base">
-                      {question.abeTip}
-                    </p>
-                  </div>
-                </aside>
-              )}
-            */}
+            {/* What Abe Will Review */}
+            {question.whatAbeReviews && question.whatAbeReviews.length > 0 && (
+              <section className="mt-8">
+                <h2 className="text-lg font-semibold text-navy sm:text-xl">
+                  What Abe Will Review
+                </h2>
+                <ul className="mt-3 space-y-2">
+                  {question.whatAbeReviews.map((item, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start gap-3 text-base leading-relaxed text-muted"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand"
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {/* Abe's Tip */}
+            {question.abeTip && (
+              <aside className="mt-8 flex items-start gap-4 rounded-xl border border-brand/20 bg-brand/10 p-5 sm:p-6">
+                <h2 className="text-base font-semibold text-navy">
+                  Abe&apos;s Tip
+                </h2>
+                <p className="mt-1 text-sm leading-relaxed text-muted sm:text-base">
+                  {question.abeTip}
+                </p>
+              </aside>
+            )}
 
             {/* Program Link */}
             {question.programLink && (

@@ -29,6 +29,7 @@ export interface Question {
   video?: QuestionVideo;
   shortAnswer?: string;
   fullAnswer?: string[];
+  whatAbeReviews?: string[];
   abeTip?: string;
   relatedQuestionIds?: string[];
   programLink?: ProgramLink;
