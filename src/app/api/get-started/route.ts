@@ -5,11 +5,13 @@ import { ghlMappings, ghlWorkflowEnvKey } from "@/data/get-started/ghlMappings";
 import type { GetStartedSubmission } from "@/types/get-started";
 
 /**
- * GHL webhook URL
+ * GHL webhook URL.
  *
- * IMPORTANT:
  * Keep this server-side.
- * Do not use NEXT_PUBLIC_GET_STARTED_WEBHOOK_URL.
+ *
+ * Add the following to .env.local:
+ *
+ * GET_STARTED_WEBHOOK_URL=https://services.leadconnectorhq.com/hooks/Lv5oqPcJ6MZsszgssznB/webhook-trigger/3d1e82e7-ebf8-4ed0-a00c-3ce71030e237
  */
 const GET_STARTED_WEBHOOK_URL = process.env.GET_STARTED_WEBHOOK_URL;
 
@@ -19,7 +21,7 @@ const GET_STARTED_WEBHOOK_URL = process.env.GET_STARTED_WEBHOOK_URL;
 function getTags(body: Partial<GetStartedSubmission>): string[] {
   const tags = new Set<string>();
 
-  /*
+  /**
    * Goal tags
    */
   const goalTag = ghlMappings.goals[body.goal ?? ""];
@@ -28,7 +30,7 @@ function getTags(body: Partial<GetStartedSubmission>): string[] {
     tags.add(goalTag);
   }
 
-  /*
+  /**
    * Borrower situation tags
    */
   const situationTag =
@@ -38,7 +40,7 @@ function getTags(body: Partial<GetStartedSubmission>): string[] {
     tags.add(situationTag);
   }
 
-  /*
+  /**
    * Credit range tags
    */
   const creditTag = ghlMappings.credit[body.creditRange ?? ""];
@@ -52,9 +54,6 @@ function getTags(body: Partial<GetStartedSubmission>): string[] {
 
 /**
  * Find the workflow configured for the lead.
- *
- * Workflow IDs are stored in environment variables
- * and are never exposed to the browser.
  */
 function getWorkflowId(tags: string[]): string | undefined {
   for (const tag of tags) {
@@ -76,10 +75,10 @@ function getWorkflowId(tags: string[]): string | undefined {
 
 export async function POST(request: Request) {
   try {
-    /*
-     * -----------------------------------------
-     * CHECK GHL WEBHOOK CONFIGURATION
-     * -----------------------------------------
+    /**
+     * ----------------------------------------
+     * CHECK WEBHOOK CONFIGURATION
+     * ----------------------------------------
      */
 
     if (!GET_STARTED_WEBHOOK_URL) {
@@ -97,18 +96,34 @@ export async function POST(request: Request) {
       );
     }
 
-    /*
-     * -----------------------------------------
+    /**
+     * ----------------------------------------
      * READ REQUEST BODY
-     * -----------------------------------------
+     * ----------------------------------------
      */
 
-    const body = (await request.json()) as Partial<GetStartedSubmission>;
+    let body: Partial<GetStartedSubmission>;
 
-    /*
-     * -----------------------------------------
+    try {
+      body = (await request.json()) as Partial<GetStartedSubmission>;
+    } catch (error) {
+      console.error("Invalid Get Started request body:", error);
+
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Invalid form submission.",
+        },
+        {
+          status: 400,
+        },
+      );
+    }
+
+    /**
+     * ----------------------------------------
      * CONTACT INFORMATION
-     * -----------------------------------------
+     * ----------------------------------------
      */
 
     const firstName = body.firstName?.trim();
@@ -121,17 +136,17 @@ export async function POST(request: Request) {
 
     const propertyState = body.propertyState?.trim();
 
-    /*
-     * -----------------------------------------
-     * VALIDATION
-     * -----------------------------------------
+    /**
+     * ----------------------------------------
+     * VALIDATE CONTACT INFORMATION
+     * ----------------------------------------
      */
 
     if (!firstName || !lastName || !email || !phone || !propertyState) {
       return NextResponse.json(
         {
           success: false,
-          message: "Please complete all required fields.",
+          message: "Please complete all required contact fields.",
         },
         {
           status: 400,
@@ -139,8 +154,8 @@ export async function POST(request: Request) {
       );
     }
 
-    /*
-     * Basic email validation
+    /**
+     * Validate email.
      */
     const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -156,30 +171,69 @@ export async function POST(request: Request) {
       );
     }
 
-    /*
-     * -----------------------------------------
+    /**
+     * ----------------------------------------
+     * VALIDATE QUESTIONNAIRE
+     * ----------------------------------------
+     *
+     * Every question is required.
+     *
+     * For the currency questions,
+     * "I'm Not Sure" is also considered
+     * a valid answer.
+     */
+
+    const requiredAnswers = [
+      "goal",
+      "propertyUse",
+      "processStage",
+      "propertyValue",
+      "financingAmount",
+      "borrowerSituation",
+      "creditRange",
+    ] as const;
+
+    const missingAnswers = requiredAnswers.filter(
+      (field) => !body[field] || body[field]?.trim() === "",
+    );
+
+    if (missingAnswers.length > 0) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Please complete all questionnaire steps before submitting.",
+          missingFields: missingAnswers,
+        },
+        {
+          status: 400,
+        },
+      );
+    }
+
+    /**
+     * ----------------------------------------
      * CREATE GHL TAGS
-     * -----------------------------------------
+     * ----------------------------------------
      */
 
     const tags = getTags(body);
 
-    /*
-     * -----------------------------------------
-     * GET WORKFLOW
-     * -----------------------------------------
+    /**
+     * ----------------------------------------
+     * FIND WORKFLOW
+     * ----------------------------------------
      */
 
     const workflowId = getWorkflowId(tags);
 
-    /*
-     * -----------------------------------------
+    /**
+     * ----------------------------------------
      * BUILD GHL PAYLOAD
-     * -----------------------------------------
+     * ----------------------------------------
      */
 
     const payload = {
-      /*
+      /**
        * Contact information
        */
       firstName,
@@ -188,7 +242,7 @@ export async function POST(request: Request) {
       phone,
       propertyState,
 
-      /*
+      /**
        * Questionnaire answers
        */
       goal: body.goal ?? "",
@@ -205,13 +259,13 @@ export async function POST(request: Request) {
 
       creditRange: body.creditRange ?? "",
 
-      /*
+      /**
        * GHL tags
        */
       tags,
 
-      /*
-       * Optional workflow ID
+      /**
+       * Workflow
        */
       ...(workflowId
         ? {
@@ -219,20 +273,15 @@ export async function POST(request: Request) {
           }
         : {}),
 
-      /*
+      /**
        * Lead source
        */
       source: "Talk2Abe Get Started Survey",
     };
 
-    /*
-     * -----------------------------------------
-     * SERVER LOG
-     * -----------------------------------------
-     *
-     * Do not log sensitive contact information.
+    /**
+     * Don't log PII.
      */
-
     console.log("Submitting Talk2Abe Get Started lead to GHL:", {
       goal: body.goal,
       propertyUse: body.propertyUse,
@@ -242,36 +291,60 @@ export async function POST(request: Request) {
       tags,
     });
 
-    /*
-     * -----------------------------------------
-     * SEND TO GHL WEBHOOK
-     * -----------------------------------------
+    /**
+     * ----------------------------------------
+     * SEND DATA TO GHL
+     * ----------------------------------------
      */
 
-    const webhookResponse = await fetch(GET_STARTED_WEBHOOK_URL, {
-      method: "POST",
+    let ghlResponse: Response;
 
-      headers: {
-        "Content-Type": "application/json",
-      },
+    try {
+      ghlResponse = await fetch(GET_STARTED_WEBHOOK_URL, {
+        method: "POST",
 
-      body: JSON.stringify(payload),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
 
-      cache: "no-store",
-    });
+        body: JSON.stringify(payload),
 
-    /*
-     * -----------------------------------------
-     * HANDLE GHL ERROR
-     * -----------------------------------------
+        cache: "no-store",
+      });
+    } catch (error) {
+      console.error("Unable to reach GHL webhook:", error);
+
+      return NextResponse.json(
+        {
+          success: false,
+          message:
+            "We couldn't connect to the submission service. Please try again.",
+        },
+        {
+          status: 502,
+        },
+      );
+    }
+
+    /**
+     * ----------------------------------------
+     * READ GHL RESPONSE SAFELY
+     * ----------------------------------------
+     *
+     * GHL may return JSON or plain text.
+     * Never assume it is JSON.
      */
 
-    if (!webhookResponse.ok) {
-      const errorText = await webhookResponse.text();
+    const ghlResponseText = await ghlResponse.text();
 
-      console.error("GHL Get Started webhook error:", {
-        status: webhookResponse.status,
-        response: errorText,
+    /**
+     * GHL webhook failed.
+     */
+    if (!ghlResponse.ok) {
+      console.error("GHL webhook returned an error:", {
+        status: ghlResponse.status,
+        response: ghlResponseText.slice(0, 1000),
       });
 
       return NextResponse.json(
@@ -286,11 +359,13 @@ export async function POST(request: Request) {
       );
     }
 
-    /*
-     * -----------------------------------------
+    /**
+     * ----------------------------------------
      * SUCCESS
-     * -----------------------------------------
+     * ----------------------------------------
      */
+
+    console.log("Talk2Abe Get Started lead successfully sent to GHL.");
 
     return NextResponse.json(
       {
@@ -302,12 +377,17 @@ export async function POST(request: Request) {
       },
     );
   } catch (error) {
+    /**
+     * Make absolutely sure the API always
+     * returns JSON instead of an HTML error page.
+     */
     console.error("Get Started API error:", error);
 
     return NextResponse.json(
       {
         success: false,
-        message: "Something went wrong. Please try again.",
+        message:
+          "Something went wrong while submitting your information. Please try again.",
       },
       {
         status: 500,

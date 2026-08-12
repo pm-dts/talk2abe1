@@ -3,16 +3,16 @@
 import AnswerOption from "@/components/get-started/AnswerOption";
 import CurrencyInput from "@/components/get-started/CurrencyInput";
 import { getOptionIcon } from "@/components/get-started/optionIcons";
+
 import { cn } from "@/lib/utils";
-import type {
-  GetStartedOption,
-  GetStartedStep,
-} from "@/types/get-started";
+
+import type { GetStartedOption, GetStartedStep } from "@/types/get-started";
 
 type QuestionStepProps = {
   step: GetStartedStep;
   value: string;
   onChange: (value: string) => void;
+  validationError?: string;
   className?: string;
 };
 
@@ -20,19 +20,36 @@ export default function QuestionStep({
   step,
   value,
   onChange,
+  validationError,
   className,
 }: QuestionStepProps) {
   return (
     <div className={cn("space-y-6", className)}>
+      {/* Question heading */}
       <div className="text-center">
         <h2 className="text-[22px] font-bold leading-snug tracking-tight text-navy sm:text-[26px]">
           {step.title}
+          <span className="ml-1 text-brand" aria-hidden="true">
+            *
+          </span>
         </h2>
+
         <p className="mt-2 text-sm text-muted sm:text-base">
           {step.description}
         </p>
       </div>
 
+      {/* Options */}
+      {step.type === "options" && step.options && (
+        <OptionList
+          options={step.options}
+          value={value}
+          onChange={onChange}
+          grid={step.layout === "grid"}
+        />
+      )}
+
+      {/* Currency */}
       {step.type === "currency" && (
         <CurrencyInput
           id={step.id}
@@ -42,13 +59,14 @@ export default function QuestionStep({
         />
       )}
 
-      {step.type === "options" && step.options && (
-        <OptionList
-          options={step.options}
-          value={value}
-          onChange={onChange}
-          grid={step.layout === "grid"}
-        />
+      {/* Validation */}
+      {validationError && (
+        <p
+          role="alert"
+          className="text-center text-sm font-medium text-red-500"
+        >
+          {validationError}
+        </p>
       )}
     </div>
   );
@@ -78,9 +96,7 @@ function OptionList({
   ));
 
   if (grid) {
-    return (
-      <div className="grid gap-3 sm:grid-cols-2">{buttons}</div>
-    );
+    return <div className="grid gap-3 sm:grid-cols-2">{buttons}</div>;
   }
 
   return <div className="space-y-3">{buttons}</div>;

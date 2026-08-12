@@ -46,6 +46,7 @@ export default function GetStarted() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [validationError, setValidationError] = useState("");
 
   const completedTracked = useRef(false);
 
@@ -67,6 +68,15 @@ export default function GetStarted() {
     if (stepIndex >= TOTAL_STEPS - 1) {
       return;
     }
+
+    const currentValue = answers[step.id as GetStartedQuestionId];
+
+    if (!currentValue || currentValue.trim() === "") {
+      setValidationError("Please select an answer to continue.");
+      return;
+    }
+
+    setValidationError("");
 
     const nextIndex = stepIndex + 1;
     setStepIndex(nextIndex);
@@ -166,9 +176,11 @@ export default function GetStarted() {
               <QuestionStep
                 step={step}
                 value={answers[step.id as GetStartedQuestionId]}
-                onChange={(value) =>
-                  setAnswer(step.id as GetStartedQuestionId, value)
-                }
+                onChange={(value) => {
+                  setAnswer(step.id as GetStartedQuestionId, value);
+                  setValidationError("");
+                }}
+                validationError={validationError}
               />
 
               <QuestionnaireNavigation
