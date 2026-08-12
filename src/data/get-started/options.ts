@@ -50,9 +50,9 @@ const borrowerSituationOptions: GetStartedOption[] = [
 ];
 
 const creditRangeOptions: GetStartedOption[] = [
-  { id: "excellent", label: "Excellent — 740+", icon: "badge-check" },
-  { id: "good", label: "Good — 700–739", icon: "thumbs-up" },
-  { id: "fair", label: "Fair — 660–699", icon: "circle-alert" },
+  { id: "excellent", label: "740+", icon: "badge-check" },
+  { id: "good", label: "700–739", icon: "thumbs-up" },
+  { id: "fair", label: "660–699", icon: "circle-alert" },
   { id: "below-660", label: "Below 660", icon: "trending-down" },
   { id: "not-sure", label: "I'm Not Sure", icon: "circle-help" },
 ];

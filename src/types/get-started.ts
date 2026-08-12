@@ -20,6 +20,7 @@ export type GetStartedStep = {
   type: "options" | "currency" | "contact";
   options?: GetStartedOption[];
   layout?: "list" | "grid";
+  placeholder?: string;
 };
 
 export type GetStartedAnswers = Record<GetStartedQuestionId, string>;

@@ -3,7 +3,7 @@
 import { Check } from "lucide-react";
 
 import Button from "@/components/common/Button";
-import { trackEvent } from "@/lib/analytics";
+import ScheduleCallButton from "@/components/common/ScheduleCallButton";
 
 export default function ThankYou() {
   return (
@@ -26,15 +26,12 @@ export default function ThankYou() {
       </p>
 
       <div className="mt-8 grid w-full gap-3">
-        <div onClick={() => trackEvent("schedule_call_clicked")}>
-          <Button
-            href="/contact"
-            size="lg"
-            className="w-full"
-          >
-            Schedule a Call
-          </Button>
-        </div>
+        <ScheduleCallButton
+          size="lg"
+          className="w-full"
+        >
+          Schedule a Call
+        </ScheduleCallButton>
 
         <Button
           href="/"
@@ -43,6 +40,15 @@ export default function ThankYou() {
           className="w-full"
         >
           Explore Talk2Abe
+        </Button>
+
+        <Button
+          href="/ask-abe"
+          variant="outline"
+          size="lg"
+          className="w-full"
+        >
+          Ask another question
         </Button>
       </div>
     </div>

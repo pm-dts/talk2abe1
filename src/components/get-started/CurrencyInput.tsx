@@ -11,6 +11,7 @@ type CurrencyInputProps = {
   label: string;
   value: string;
   onChange: (value: string) => void;
+  onAdvance?: () => void;
   placeholder?: string;
 };
 
@@ -28,12 +29,19 @@ export default function CurrencyInput({
   label,
   value,
   onChange,
+  onAdvance,
   placeholder = "Enter amount",
 }: CurrencyInputProps) {
   const notSure = value === NOT_SURE_VALUE;
 
   const handleNotSure = () => {
-    onChange(notSure ? "" : NOT_SURE_VALUE);
+    const next = notSure ? "" : NOT_SURE_VALUE;
+
+    onChange(next);
+
+    if (next) {
+      onAdvance?.();
+    }
   };
 
   return (

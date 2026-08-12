@@ -1,5 +1,6 @@
 import type { ComponentProps } from "react";
 import Button from "@/components/common/Button";
+import ScheduleCallButton from "@/components/common/ScheduleCallButton";
 import { cn } from "@/lib/utils";
 
 type CTAAction = {
@@ -7,6 +8,7 @@ type CTAAction = {
   label: string;
   variant?: ComponentProps<typeof Button>["variant"];
   size?: ComponentProps<typeof Button>["size"];
+  booking?: boolean;
 };
 
 type CTAProps = {
@@ -16,6 +18,28 @@ type CTAProps = {
   secondaryAction?: CTAAction;
   className?: string;
 };
+
+function renderAction(
+  action: CTAAction,
+  defaultVariant: NonNullable<ComponentProps<typeof Button>["variant"]>,
+) {
+  const variant = action.variant ?? defaultVariant;
+  const size = action.size ?? "md";
+
+  if (action.booking) {
+    return (
+      <ScheduleCallButton variant={variant} size={size}>
+        {action.label}
+      </ScheduleCallButton>
+    );
+  }
+
+  return (
+    <Button href={action.href} variant={variant} size={size}>
+      {action.label}
+    </Button>
+  );
+}
 
 export default function CTA({
   title,
@@ -42,23 +66,9 @@ export default function CTA({
       )}
 
       <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <Button
-          href={primaryAction.href}
-          variant={primaryAction.variant ?? "primary"}
-          size={primaryAction.size ?? "md"}
-        >
-          {primaryAction.label}
-        </Button>
+        {renderAction(primaryAction, "primary")}
 
-        {secondaryAction && (
-          <Button
-            href={secondaryAction.href}
-            variant={secondaryAction.variant ?? "outline"}
-            size={secondaryAction.size ?? "md"}
-          >
-            {secondaryAction.label}
-          </Button>
-        )}
+        {secondaryAction && renderAction(secondaryAction, "outline")}
       </div>
     </section>
   );

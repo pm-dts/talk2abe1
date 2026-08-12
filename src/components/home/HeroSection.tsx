@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Container from "@/components/common/Container";
+import ScheduleCallButton from "@/components/common/ScheduleCallButton";
 
 export default function HeroSection() {
   return (
@@ -157,39 +158,32 @@ export default function HeroSection() {
                 Ask Abe a Question
               </Link>
 
-              <Link
-                href="/contact"
+              <ScheduleCallButton
+                variant="outline"
                 className="
-                  inline-flex
                   w-full
-                  items-center
-                  justify-center
-                  rounded-lg
-                  border
-                  border-navy
-                  bg-white
-                  px-4
-                  py-2.5
-                  text-xs
-                  font-semibold
-                  text-navy
-                  transition-colors
-                  hover:bg-navy
-                  hover:text-white
+                  !border-navy
+                  !bg-white
+                  !px-4
+                  !py-2.5
+                  !text-xs
+                  !text-navy
+                  hover:!border-navy
+                  hover:!bg-navy
+                  hover:!text-white
                   focus:outline-none
                   focus:ring-2
                   focus:ring-brand
                   focus:ring-offset-2
                   sm:w-auto
-                  sm:px-5
-                  sm:py-2.5
-                  sm:text-sm
-                  lg:px-7
-                  lg:py-3
+                  sm:!px-5
+                  sm:!text-sm
+                  lg:!px-7
+                  lg:!py-3
                 "
               >
                 Schedule a Call
-              </Link>
+              </ScheduleCallButton>
 
               <Link
                 href="/get-started"

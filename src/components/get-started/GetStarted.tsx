@@ -87,19 +87,10 @@ export default function GetStarted() {
     }));
   };
 
-  const handleNext = () => {
+  const advance = () => {
     if (stepIndex >= TOTAL_STEPS - 1) {
       return;
     }
-
-    const currentValue = answers[step.id as GetStartedQuestionId];
-
-    if (!currentValue || currentValue.trim() === "") {
-      setValidationError("Please select an answer to continue.");
-      return;
-    }
-
-    setValidationError("");
 
     const nextIndex = stepIndex + 1;
 
@@ -113,6 +104,19 @@ export default function GetStarted() {
 
       trackEvent("questionnaire_completed");
     }
+  };
+
+  const handleNext = () => {
+    const currentValue = answers[step.id as GetStartedQuestionId];
+
+    if (!currentValue || currentValue.trim() === "") {
+      setValidationError("Please select an answer to continue.");
+      return;
+    }
+
+    setValidationError("");
+
+    advance();
   };
 
   const handleBack = () => {
@@ -244,6 +248,7 @@ export default function GetStarted() {
 
                   setValidationError("");
                 }}
+                onAdvance={advance}
                 validationError={validationError}
               />
 

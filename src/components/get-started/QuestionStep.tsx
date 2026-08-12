@@ -12,6 +12,7 @@ type QuestionStepProps = {
   step: GetStartedStep;
   value: string;
   onChange: (value: string) => void;
+  onAdvance?: () => void;
   validationError?: string;
   className?: string;
 };
@@ -20,6 +21,7 @@ export default function QuestionStep({
   step,
   value,
   onChange,
+  onAdvance,
   validationError,
   className,
 }: QuestionStepProps) {
@@ -45,6 +47,7 @@ export default function QuestionStep({
           options={step.options}
           value={value}
           onChange={onChange}
+          onAdvance={onAdvance}
           grid={step.layout === "grid"}
         />
       )}
@@ -56,6 +59,8 @@ export default function QuestionStep({
           label={step.title}
           value={value}
           onChange={onChange}
+          onAdvance={onAdvance}
+          placeholder={step.placeholder}
         />
       )}
 
@@ -76,6 +81,7 @@ type OptionListProps = {
   options: GetStartedOption[];
   value: string;
   onChange: (value: string) => void;
+  onAdvance?: () => void;
   grid?: boolean;
 };
 
@@ -83,6 +89,7 @@ function OptionList({
   options,
   value,
   onChange,
+  onAdvance,
   grid = false,
 }: OptionListProps) {
   const buttons = options.map((option) => (
@@ -91,7 +98,10 @@ function OptionList({
       icon={getOptionIcon(option.icon)}
       label={option.label}
       selected={value === option.label}
-      onSelect={() => onChange(option.label)}
+      onSelect={() => {
+        onChange(option.label);
+        onAdvance?.();
+      }}
     />
   ));
 

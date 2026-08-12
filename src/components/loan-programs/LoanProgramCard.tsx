@@ -57,7 +57,7 @@ export default function LoanProgramCard({
 
       {/* Content */}
       <div className="min-w-0 flex-1">
-        <h2 className="text-sm font-semibold leading-5 text-navy">
+        <h2 className="text-base font-semibold text-navy sm:text-lg">
           {program.title}
         </h2>
 

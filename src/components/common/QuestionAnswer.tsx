@@ -283,6 +283,7 @@ export default function QuestionAnswer({
                 secondaryAction={{
                   href: "/contact",
                   label: "Schedule a Call",
+                  booking: true,
                 }}
               />
             </div>

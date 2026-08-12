@@ -35,6 +35,7 @@ export default function LoanProgramsPage() {
             secondaryAction={{
               href: "/contact",
               label: "Schedule a Call",
+              booking: true,
             }}
           />
         </section>

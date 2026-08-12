@@ -31,8 +31,9 @@ export const getStartedSteps: GetStartedStep[] = [
   },
   {
     id: "financingAmount",
-    title: "Approximately how much financing are you looking for?",
+    title: "Approximately how much are you planning to put down?",
     description: "Enter your best estimate.",
+    placeholder: "Enter down payment",
     type: "currency",
   },
   {
