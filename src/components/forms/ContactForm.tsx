@@ -4,6 +4,9 @@ import { useState } from "react";
 
 import Button from "@/components/common/Button";
 
+const CONTACT_WEBHOOK_URL =
+  process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL as string;
+
 type ContactFormProps = {
   className?: string;
 };
@@ -134,7 +137,7 @@ export default function ContactForm({
     setSubmitting(true);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(CONTACT_WEBHOOK_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -144,15 +147,12 @@ export default function ContactForm({
           email: values.email.trim(),
           phone: values.phone.trim(),
           message: values.message.trim(),
+          source: "Talk2Abe Contact Form",
         }),
       });
 
-      const result = await response.json();
-
-      if (!response.ok || !result.success) {
-        throw new Error(
-          result.message || "Unable to send your message.",
-        );
+      if (!response.ok) {
+        throw new Error("Unable to send your message right now.");
       }
 
       setSubmitted(true);

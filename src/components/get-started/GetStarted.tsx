@@ -8,6 +8,7 @@ import ProgressBar from "@/components/get-started/ProgressBar";
 import QuestionStep from "@/components/get-started/QuestionStep";
 import QuestionnaireNavigation from "@/components/get-started/QuestionnaireNavigation";
 import ThankYou from "@/components/get-started/ThankYou";
+import { ghlMappings } from "@/data/get-started/ghlMappings";
 import { getStartedSteps } from "@/data/get-started/questions";
 import { trackEvent } from "@/lib/analytics";
 import type {
@@ -18,6 +19,9 @@ import type {
 } from "@/types/get-started";
 
 const TOTAL_STEPS = getStartedSteps.length;
+
+const GET_STARTED_WEBHOOK_URL =
+  process.env.NEXT_PUBLIC_GET_STARTED_WEBHOOK_URL as string;
 
 const initialAnswers: GetStartedAnswers = {
   goal: "",
@@ -36,6 +40,20 @@ const initialContact: GetStartedContact = {
   phone: "",
   propertyState: "",
 };
+
+function getTags(body: GetStartedSubmission): string[] {
+  const tags = new Set<string>();
+
+  const goalTag = ghlMappings.goals[body.goal ?? ""];
+  const situationTag = ghlMappings.borrowerSituation[body.borrowerSituation ?? ""];
+  const creditTag = ghlMappings.credit[body.creditRange ?? ""];
+
+  if (goalTag) tags.add(goalTag);
+  if (situationTag) tags.add(situationTag);
+  if (creditTag) tags.add(creditTag);
+
+  return Array.from(tags);
+}
 
 export default function GetStarted() {
   const [stepIndex, setStepIndex] = useState(0);
@@ -121,107 +139,33 @@ export default function GetStarted() {
     };
 
     try {
-      /**
-       * ----------------------------------------
-       * SEND FORM TO OUR SERVER
-       * ----------------------------------------
-       */
-
-      const response = await fetch("/api/get-started", {
+      const response = await fetch(GET_STARTED_WEBHOOK_URL, {
         method: "POST",
 
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
+          Accept: "application/json, text/plain, */*",
         },
 
-        body: JSON.stringify(submission),
-
-        cache: "no-store",
+        body: JSON.stringify({
+          ...submission,
+          tags: getTags(submission),
+          source: "Talk2Abe Get Started Survey",
+        }),
       });
 
       /**
        * ----------------------------------------
-       * READ RESPONSE SAFELY
+       * HANDLE SUBMISSION ERROR
        * ----------------------------------------
        *
-       * Do NOT directly call response.json().
-       *
-       * If the deployed server returns an HTML
-       * error page, response.json() throws:
-       *
-       * Unexpected token '<'
-       *
-       * We first inspect the content type.
+       * GHL webhooks do not always return JSON, so
+       * treat any non-2xx status as a failure.
        */
 
-      const contentType = response.headers.get("content-type") || "";
-
-      let result: {
-        success?: boolean;
-        message?: string;
-        missingFields?: string[];
-      } | null = null;
-
-      if (contentType.includes("application/json")) {
-        try {
-          result = await response.json();
-        } catch (error) {
-          console.error(
-            "Failed to parse JSON response from Get Started API:",
-            error,
-          );
-
-          throw new Error(
-            "The submission service returned an invalid response. Please try again.",
-          );
-        }
-      } else {
-        /**
-         * The server returned HTML/text instead of JSON.
-         *
-         * This usually means:
-         * - API route is missing
-         * - deployment has not been rebuilt
-         * - hosting is returning a 404/500 HTML page
-         * - Next.js API route is not being served
-         */
-
-        const responseText = await response.text();
-
-        console.error("Get Started API returned a non-JSON response:", {
-          status: response.status,
-          statusText: response.statusText,
-          contentType,
-          response: responseText.slice(0, 1000),
-        });
-
-        if (response.status === 404) {
-          throw new Error(
-            "The Get Started submission API could not be found. Please try again later.",
-          );
-        }
-
-        if (response.status >= 500) {
-          throw new Error(
-            "The submission service is temporarily unavailable. Please try again later.",
-          );
-        }
-
+      if (!response.ok) {
         throw new Error(
-          `The submission service returned an unexpected response (${response.status}). Please try again.`,
-        );
-      }
-
-      /**
-       * ----------------------------------------
-       * HANDLE API ERROR
-       * ----------------------------------------
-       */
-
-      if (!response.ok || !result?.success) {
-        throw new Error(
-          result?.message || "Something went wrong. Please try again.",
+          "Unable to submit your information right now. Please try again.",
         );
       }
 
