@@ -92,7 +92,7 @@ export default function QuestionAnswer({
               },
               {
                 label: "Ask Abe",
-                href: "/ask-abe",
+                href: "/questions",
               },
               {
                 label: question.title,
@@ -290,7 +290,7 @@ export default function QuestionAnswer({
                 title="Have a questions about your situation?"
                 description="Every situation is different. Let&apos;s get the right solution for you."
                 primaryAction={{
-                  href: "/ask-abe",
+                  href: "/questions",
                   label: "Ask Abe a Question",
                 }}
                 secondaryAction={{

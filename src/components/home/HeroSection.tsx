@@ -128,7 +128,7 @@ export default function HeroSection() {
               "
             >
               <Link
-                href="/ask-abe"
+                href="/questions"
                 className="
                   inline-flex
                   w-full

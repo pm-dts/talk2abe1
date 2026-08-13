@@ -26,7 +26,7 @@ export default function AboutAbePage() {
           title="Ready to find the right mortgage solution?"
           description="Ask Abe a question or schedule a call for personal guidance from application to closing."
           primaryAction={{
-            href: "/ask-abe",
+            href: "/questions",
             label: "Ask Abe a Question",
           }}
           secondaryAction={{

@@ -46,7 +46,7 @@ export default function QuestionCard({
   if (more) {
     return (
       <Link
-        href="/ask-abe"
+        href="/questions"
         className={cn(cardClasses, className)}
         aria-label="See more mortgage questions"
       >
@@ -112,7 +112,7 @@ export default function QuestionCard({
 
   return (
     <Link
-      href={`/ask-abe/${question.slug}`}
+      href={`/questions/${question.slug}`}
       className={cn(cardClasses, className)}
       aria-label={`Read answer: ${question.title}`}
     >

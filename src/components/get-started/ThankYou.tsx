@@ -43,7 +43,7 @@ export default function ThankYou() {
         </Button>
 
         <Button
-          href="/ask-abe"
+          href="/questions"
           variant="outline"
           size="lg"
           className="w-full"

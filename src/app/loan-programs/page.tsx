@@ -29,7 +29,7 @@ export default function LoanProgramsPage() {
             title="Ready to take the next step?"
             description="Let&apos;s find the right loan program for your solution."
             primaryAction={{
-              href: "/ask-abe",
+              href: "/questions",
               label: "Ask Abe a Question",
             }}
             secondaryAction={{

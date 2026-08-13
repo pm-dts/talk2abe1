@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
+import { loanProgramRoute } from "@/data/loan-programs";
 import { cn } from "@/lib/utils";
 import type {
   LoanProgram,
@@ -66,7 +67,7 @@ export default function LoanProgramCard({
         </p>
 
         <Link
-          href={`/loan-programs/${program.slug}`}
+          href={loanProgramRoute(program.slug)}
           aria-label={`Learn more about ${program.title}`}
           className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand transition-colors hover:text-brand/80 sm:text-sm"
         >

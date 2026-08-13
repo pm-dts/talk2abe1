@@ -3,12 +3,14 @@ import { cn } from "@/lib/utils";
 type ProgressBarProps = {
   currentStep: number;
   totalSteps: number;
+  label?: string;
   className?: string;
 };
 
 export default function ProgressBar({
   currentStep,
   totalSteps,
+  label = "Questionnaire progress",
   className,
 }: ProgressBarProps) {
   const percent = Math.round((currentStep / totalSteps) * 100);
@@ -24,7 +26,7 @@ export default function ProgressBar({
 
       <div
         role="progressbar"
-        aria-label="Questionnaire progress"
+        aria-label={label}
         aria-valuenow={percent}
         aria-valuemin={0}
         aria-valuemax={100}

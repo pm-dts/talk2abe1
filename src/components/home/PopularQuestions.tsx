@@ -35,7 +35,7 @@ export default function PopularQuestions() {
           </h2>
 
           <Link
-            href="/ask-abe"
+            href="/questions"
             className="group inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand transition-colors sm:text-base"
           >
             <span>View all questions</span>

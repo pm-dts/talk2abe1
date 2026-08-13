@@ -14,7 +14,7 @@ export default function QuestionListItem({
 }: QuestionListItemProps) {
   return (
     <Link
-      href={`/ask-abe/${question.slug}`}
+      href={`/questions/${question.slug}`}
       className={cn(
         "group grid grid-cols-[minmax(0,1fr)] items-center gap-4 px-5 py-4 transition-colors hover:bg-slate-50 focus-visible:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-inset",
         className,

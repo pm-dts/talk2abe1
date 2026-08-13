@@ -10,7 +10,9 @@ export type AnalyticsEventName =
   | "questionnaire_completed"
   | "lead_submitted"
   | "schedule_call_clicked"
-  | "talk_to_abe_clicked";
+  | "talk_to_abe_clicked"
+  | "loan_program_lead_started"
+  | "loan_program_lead_submitted";
 
 type AnalyticsParams = Record<
   string,

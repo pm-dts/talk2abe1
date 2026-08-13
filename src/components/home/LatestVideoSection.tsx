@@ -63,7 +63,7 @@ export default function LatestVideoSection() {
             solution.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href="/ask-abe" size="lg">
+            <Button href="/questions" size="lg">
               Ask Abe a Question
             </Button>
             <ScheduleCallButton
