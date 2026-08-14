@@ -6,16 +6,18 @@ import ScheduleCallButton from "@/components/common/ScheduleCallButton";
 
 export default function HeroSection() {
   return (
-    <section className="w-full min-w-0 overflow-hidden bg-surface pt-4 sm:pt-6 lg:pt-8">
+    <section className="w-full min-w-0 overflow-hidden bg-surface pt-4 lg:pt-0">
       <Container
         className="
           grid
           w-full
+          md:w-[95%]
           min-w-0
           max-w-full
           grid-cols-[55%_45%]
           items-stretch
           gap-2
+          md:grid-cols-[25%_75%]
           lg:grid-cols-[38%_62%]
           lg:py-0
         "
@@ -49,11 +51,10 @@ export default function HeroSection() {
               max-w-[340px]
               object-contain
               object-bottom
-              sm:max-w-[420px]
               lg:absolute
-              lg:bottom-0
+              lg:-bottom-20
               lg:right-0
-              lg:h-full
+              lg:h-[calc(100%+35px)]
               lg:w-auto
               lg:max-w-none
               lg:object-contain
@@ -70,7 +71,7 @@ export default function HeroSection() {
             min-w-0
             flex-col
             justify-center
-            py-10
+            py-4
             lg:order-2
             lg:min-h-[430px]
             lg:py-16
@@ -84,7 +85,8 @@ export default function HeroSection() {
                 leading-[1.08]
                 tracking-[-0.03em]
                 text-navy
-                sm:text-2xl
+                sm:text-lg
+                md:text-[2rem]
                 lg:text-[3.75rem]
                 xl:text-[4rem]
               "
@@ -96,14 +98,12 @@ export default function HeroSection() {
 
             <p
               className="
-                mt-3
+                mt-2
                 max-w-xl
                 text-sm
                 leading-6
                 text-navy/80
-                sm:mt-4
-                sm:text-sm
-                sm:leading-7
+                sm:leading-4
                 lg:mt-5
                 lg:text-lg
                 lg:leading-8
@@ -117,14 +117,15 @@ export default function HeroSection() {
             <div
               className="
                 mt-5
-                flex
-                flex-col
+                grid
+                grid-cols-1
                 gap-2
                 sm:mt-6
-                sm:flex-row
-                sm:items-center
+                sm:grid-cols-2
                 sm:gap-3
                 lg:mt-7
+                md:w-[75%]
+                lg:w-[80%]
               "
             >
               <Link
@@ -147,7 +148,6 @@ export default function HeroSection() {
                   focus:ring-2
                   focus:ring-brand
                   focus:ring-offset-2
-                  sm:w-auto
                   sm:px-5
                   sm:py-2.5
                   sm:text-sm
@@ -156,6 +156,39 @@ export default function HeroSection() {
                 "
               >
                 Ask Abe a Question
+              </Link>
+
+              <Link
+                href="/loan-programs"
+                className="
+                  inline-flex
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-lg
+                  border
+                  border-navy
+                  bg-white
+                  px-4
+                  py-2.5
+                  text-xs
+                  font-semibold
+                  text-navy
+                  transition-colors
+                  hover:bg-navy
+                  hover:text-white
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-brand
+                  focus:ring-offset-2
+                  sm:px-5
+                  sm:py-2.5
+                  sm:text-sm
+                  lg:px-7
+                  lg:py-3
+                "
+              >
+                Find my loan options
               </Link>
 
               <ScheduleCallButton
@@ -208,7 +241,6 @@ export default function HeroSection() {
                   focus:ring-2
                   focus:ring-brand
                   focus:ring-offset-2
-                  sm:w-auto
                   sm:px-5
                   sm:py-2.5
                   sm:text-sm

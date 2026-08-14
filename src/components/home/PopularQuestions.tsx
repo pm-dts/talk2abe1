@@ -14,6 +14,14 @@ const POPULAR_SLUGS = [
   "can-i-get-a-mortgage-with-bank-statements",
   "how-does-a-2-1-buydown-work",
   "what-are-the-down-payment-options",
+  "what-credit-score-do-i-need-to-buy-a-house",
+  "can-i-use-gift-money-for-my-down-payment",
+  "when-does-refinancing-a-mortgage-make-sense",
+  "can-i-get-a-mortgage-without-tax-returns",
+  "how-does-a-reverse-mortgage-work",
+  "can-an-itin-holder-buy-a-house-in-the-united-states",
+  "how-does-a-cash-out-refinance-work",
+  "how-do-lenders-calculate-self-employed-income",
 ] as const;
 
 const popularQuestions = POPULAR_SLUGS.map((slug) =>
@@ -48,7 +56,7 @@ export default function PopularQuestions() {
         </div>
 
         {/* Questions Grid */}
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
           {popularQuestions.map((question) => (
             <QuestionCard key={question.id} question={question} />
           ))}

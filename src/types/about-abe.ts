@@ -2,40 +2,28 @@ export type AboutBenefitIcon =
   | "BadgeCheck"
   | "Handshake"
   | "Layers"
-  | "Percent"
-  | "UserRoundCheck"
-  | "Zap";
+  | "MessageCircle"
+  | "UserRoundCheck";
 
 export interface AboutBenefit {
   id: string;
   title: string;
+  description: string;
   icon: AboutBenefitIcon;
 }
 
-export type HowItWorksIcon =
-  | "ClipboardCheck"
-  | "UserRound"
-  | "BadgeCheck"
-  | "House";
-
-export interface HowItWorksStep {
-  id: string;
-  step: number;
+export interface AboutTextSection {
   title: string;
-  description: string;
-  icon: HowItWorksIcon;
-}
-
-export interface HowItWorksSection {
-  eyebrow: string;
-  title: string;
-  steps: HowItWorksStep[];
+  paragraphs: string[];
 }
 
 export interface AboutAbe {
   eyebrow: string;
   title: string;
-  introduction: string;
+  paragraphs: string[];
+  experience: AboutTextSection;
+  benefitsTitle: string;
   benefits: AboutBenefit[];
-  howItWorks: HowItWorksSection;
+  whyCreated: AboutTextSection;
+  letsTalk: AboutTextSection;
 }
