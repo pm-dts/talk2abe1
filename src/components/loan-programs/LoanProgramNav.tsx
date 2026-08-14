@@ -44,7 +44,8 @@ export default function LoanProgramNav({ className }: LoanProgramNavProps) {
       <Container>
         <div className="-mx-4 flex flex-nowrap items-center gap-2 overflow-x-auto px-4 py-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:flex-wrap md:justify-center md:overflow-visible md:px-0">
           {items.map((item) => {
-            const active = pathname === item.href;
+            const active =
+              pathname === item.href || pathname.startsWith(`${item.href}/`);
 
             return (
               <Link
@@ -54,7 +55,7 @@ export default function LoanProgramNav({ className }: LoanProgramNavProps) {
                 className={cn(
                   "whitespace-nowrap rounded-lg border-[1.5px] px-5 py-2.5 text-sm font-bold transition-colors duration-200",
                   active
-                    ? "bg-brand text-black"
+                    ? "!border-brand !bg-brand !text-white"
                     : "border-line bg-white text-muted hover:border-navy-soft hover:text-navy",
                 )}
               >

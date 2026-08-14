@@ -47,7 +47,8 @@ export default function HeroSection() {
             className="
               block
               h-auto
-              w-full
+              w-full 
+              mt-6
               max-w-[340px]
               object-contain
               object-bottom
@@ -128,7 +129,7 @@ export default function HeroSection() {
                 lg:w-[80%]
               "
             >
-              <Link
+              {/* <Link
                 href="/questions"
                 className="
                   inline-flex
@@ -156,9 +157,9 @@ export default function HeroSection() {
                 "
               >
                 Ask Abe a Question
-              </Link>
+              </Link> */}
 
-              <Link
+              {/* <Link
                 href="/loan-programs"
                 className="
                   inline-flex
@@ -189,30 +190,34 @@ export default function HeroSection() {
                 "
               >
                 Find my loan options
-              </Link>
+              </Link> */}
 
               <ScheduleCallButton
                 variant="outline"
                 className="
+                  inline-flex
                   w-full
-                  !border-navy
-                  !bg-white
-                  !px-4
-                  !py-2.5
-                  !text-xs
-                  !text-navy
-                  hover:!border-navy
-                  hover:!bg-navy
-                  hover:!text-white
+                  items-center
+                  justify-center
+                  rounded-lg
+                  bg-brand!
+                  px-4
+                  py-2.5
+                  text-xs
+                  font-semibold
+                  text-white!
+                  transition-colors
+                  !hover:bg-brand/90
                   focus:outline-none
                   focus:ring-2
                   focus:ring-brand
                   focus:ring-offset-2
-                  sm:w-auto
-                  sm:!px-5
-                  sm:!text-sm
-                  lg:!px-7
-                  lg:!py-3
+                  sm:px-5
+                  sm:py-2.5
+                  sm:text-sm
+                  lg:px-7
+                  lg:py-3
+                  cursor-pointer
                 "
               >
                 Schedule a Call

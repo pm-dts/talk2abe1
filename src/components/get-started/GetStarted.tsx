@@ -210,7 +210,7 @@ export default function GetStarted() {
         <div className="mx-auto w-full max-w-md px-4 pb-16 pt-10 sm:pt-14 lg:max-w-lg">
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
             <ThankYou
-              senderName={`${contact.firstName.trim()} ${contact.lastName.trim()}`}
+              senderName={`${contact.firstName.trim()}`}
             />
           </div>
         </div>

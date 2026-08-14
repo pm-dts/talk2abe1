@@ -58,12 +58,12 @@ export default function Header() {
               })}
             </nav>
 
-            <Link
+            {/* <Link
               href="/questions"
               className="inline-flex items-center justify-center rounded-lg bg-brand px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
             >
               Ask Abe a Question
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -129,13 +129,13 @@ export default function Header() {
               })}
             </nav>
 
-            <Link
+            {/* <Link
               href="/questions"
               onClick={closeMenu}
               className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
             >
               Ask Abe a Question
-            </Link>
+            </Link> */}
           </div>
         </Container>
       )}
