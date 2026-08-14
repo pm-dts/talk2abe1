@@ -20,8 +20,8 @@ import type {
 
 const TOTAL_STEPS = getStartedSteps.length;
 
-const GET_STARTED_WEBHOOK_URL =
-  process.env.NEXT_PUBLIC_GET_STARTED_WEBHOOK_URL as string;
+const GET_STARTED_WEBHOOK_URL = process.env
+  .NEXT_PUBLIC_GET_STARTED_WEBHOOK_URL as string;
 
 const initialAnswers: GetStartedAnswers = {
   goal: "",
@@ -45,7 +45,8 @@ function getTags(body: GetStartedSubmission): string[] {
   const tags = new Set<string>();
 
   const goalTag = ghlMappings.goals[body.goal ?? ""];
-  const situationTag = ghlMappings.borrowerSituation[body.borrowerSituation ?? ""];
+  const situationTag =
+    ghlMappings.borrowerSituation[body.borrowerSituation ?? ""];
   const creditTag = ghlMappings.credit[body.creditRange ?? ""];
 
   if (goalTag) tags.add(goalTag);
@@ -208,7 +209,9 @@ export default function GetStarted() {
 
         <div className="mx-auto w-full max-w-md px-4 pb-16 pt-10 sm:pt-14 lg:max-w-lg">
           <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-10">
-            <ThankYou />
+            <ThankYou
+              senderName={`${contact.firstName.trim()} ${contact.lastName.trim()}`}
+            />
           </div>
         </div>
       </div>
