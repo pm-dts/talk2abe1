@@ -6,7 +6,7 @@ import ScheduleCallButton from "@/components/common/ScheduleCallButton";
 
 export default function HeroSection() {
   return (
-    <section className="w-full min-w-0 overflow-hidden bg-surface pt-4 lg:pt-0">
+    <section className="w-full min-w-0 overflow-hidden bg-surface pt-0">
       <Container
         className="
           grid
@@ -17,7 +17,7 @@ export default function HeroSection() {
           grid-cols-[55%_45%]
           items-stretch
           gap-2
-          md:grid-cols-[25%_75%]
+          md:grid-cols-[22%_78%]
           lg:grid-cols-[38%_62%]
           lg:py-0
         "
@@ -47,13 +47,13 @@ export default function HeroSection() {
             className="
               block
               h-auto
-              w-full 
-              mt-6
+              w-full
+              mt-3
               max-w-[340px]
               object-contain
               object-bottom
               lg:absolute
-              lg:-bottom-20
+              lg:-bottom-15
               lg:right-0
               lg:h-[calc(100%+35px)]
               lg:w-auto
@@ -72,7 +72,7 @@ export default function HeroSection() {
             min-w-0
             flex-col
             justify-center
-            py-4
+            py-2
             lg:order-2
             lg:min-h-[430px]
             lg:py-16
@@ -117,81 +117,18 @@ export default function HeroSection() {
             {/* Hero Actions */}
             <div
               className="
-                mt-5
+                mt-4
                 grid
                 grid-cols-1
-                gap-2
-                sm:mt-6
+                gap-1.5
+                sm:mt-5
                 sm:grid-cols-2
-                sm:gap-3
+                sm:gap-2
                 lg:mt-7
                 md:w-[75%]
                 lg:w-[80%]
               "
             >
-              {/* <Link
-                href="/questions"
-                className="
-                  inline-flex
-                  w-full
-                  items-center
-                  justify-center
-                  rounded-lg
-                  bg-brand
-                  px-4
-                  py-2.5
-                  text-xs
-                  font-semibold
-                  text-white
-                  transition-colors
-                  hover:bg-brand/90
-                  focus:outline-none
-                  focus:ring-2
-                  focus:ring-brand
-                  focus:ring-offset-2
-                  sm:px-5
-                  sm:py-2.5
-                  sm:text-sm
-                  lg:px-7
-                  lg:py-3
-                "
-              >
-                Ask Abe a Question
-              </Link> */}
-
-              {/* <Link
-                href="/loan-programs"
-                className="
-                  inline-flex
-                  w-full
-                  items-center
-                  justify-center
-                  rounded-lg
-                  border
-                  border-navy
-                  bg-white
-                  px-4
-                  py-2.5
-                  text-xs
-                  font-semibold
-                  text-navy
-                  transition-colors
-                  hover:bg-navy
-                  hover:text-white
-                  focus:outline-none
-                  focus:ring-2
-                  focus:ring-brand
-                  focus:ring-offset-2
-                  sm:px-5
-                  sm:py-2.5
-                  sm:text-sm
-                  lg:px-7
-                  lg:py-3
-                "
-              >
-                Find my loan options
-              </Link> */}
-
               <ScheduleCallButton
                 variant="outline"
                 className="
@@ -199,7 +136,6 @@ export default function HeroSection() {
                   w-full
                   items-center
                   justify-center
-                  rounded-lg
                   bg-brand!
                   px-4
                   py-2.5
