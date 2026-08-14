@@ -10,6 +10,7 @@ type ChoiceFieldProps = {
   step: Extract<LoanProgramFormStep, { type: "choice" }>;
   value: string;
   onChange: (value: string) => void;
+  onSelect?: () => void;
   error?: string;
 };
 
@@ -17,6 +18,7 @@ export default function ChoiceField({
   step,
   value,
   onChange,
+  onSelect,
   error,
 }: ChoiceFieldProps) {
   const isSelected = (choice: LoanProgramFormChoice) =>
@@ -39,7 +41,10 @@ export default function ChoiceField({
           <button
             key={choice.value}
             type="button"
-            onClick={() => onChange(choice.value)}
+            onClick={() => {
+              onChange(choice.value);
+              onSelect?.();
+            }}
             aria-pressed={isSelected(choice)}
             className={cn(
               "flex flex-col gap-0.5 rounded-xl border-[1.5px] p-4 text-left transition-colors",

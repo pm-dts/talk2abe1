@@ -1,5 +1,7 @@
 "use client";
 
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
 import { cn } from "@/lib/utils";
 
 type LoanProgramNavigationProps = {
@@ -32,9 +34,13 @@ export default function LoanProgramNavigation({
         <button
           type="button"
           onClick={onBack}
-          className="px-2 py-3 font-sans text-[14.5px] font-bold text-muted transition-colors hover:text-navy"
+          className="group rounded-[10px] border border-navy/20 bg-transparent px-4 py-3 font-sans text-[14.5px] font-bold text-muted transition-colors hover:border-brand/40 hover:bg-surface hover:text-brand"
         >
-          ← Back
+          <ArrowLeft
+            className="mr-1.5 inline-block h-4 w-4 transition-transform duration-200 ease-out group-hover:-translate-x-1"
+            aria-hidden="true"
+          />
+          Back
         </button>
       ) : (
         <span aria-hidden="true" />
@@ -44,9 +50,13 @@ export default function LoanProgramNavigation({
         type={continueType}
         onClick={onContinue}
         disabled={continueDisabled}
-        className="cursor-pointer rounded-[10px] bg-brand px-6 py-3 font-sans text-[14.5px] font-bold text-white transition-colors hover:bg-brand-dark disabled:cursor-not-allowed disabled:bg-[#b7cfc0]"
+        className="group cursor-pointer rounded-[10px] bg-brand px-6 py-3 font-sans text-[14.5px] font-bold text-white transition-colors hover:bg-brand-dark disabled:cursor-not-allowed disabled:bg-[#b7cfc0]"
       >
         {continueLabel}
+        <ArrowRight
+          className="ml-1.5 inline-block h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-x-1"
+          aria-hidden="true"
+        />
       </button>
     </div>
   );

@@ -69,11 +69,11 @@ export default function LoanProgramCard({
         <Link
           href={loanProgramRoute(program.slug)}
           aria-label={`Learn more about ${program.title}`}
-          className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand transition-colors hover:text-brand/80 sm:text-sm"
+          className="group mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand transition-colors hover:text-brand/80 sm:text-sm"
         >
           Learn more
           <ArrowRight
-            className="h-3.5 w-3.5"
+            className="h-3.5 w-3.5 transition-transform duration-200 ease-out group-hover:translate-x-1"
             strokeWidth={2}
             aria-hidden="true"
           />

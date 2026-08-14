@@ -205,6 +205,7 @@ export default function LoanProgramLeadForm({
                     setChoiceValue(value);
                     setValidationError("");
                   }}
+                  onSelect={() => goToStep(1)}
                   error={validationError}
                 />
 
