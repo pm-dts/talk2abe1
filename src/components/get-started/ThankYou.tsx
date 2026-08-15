@@ -23,7 +23,7 @@ export default function ThankYou({ senderName }: ThankYouProps) {
       <h2 className="mt-6 text-[26px] font-bold leading-snug tracking-tight text-navy">
         Thanks {senderName}
         <br />
-        - I&apos;ve Got It.
+        I&apos;ve Got It.
       </h2>
 
       <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted sm:text-base">
@@ -52,8 +52,12 @@ export default function ThankYou({ senderName }: ThankYouProps) {
         </Button>
 
         <ScheduleCallButton size="lg" className="w-full">
-          Schedule a Call
+          Schedule a call
         </ScheduleCallButton>
+
+        <Button href="/get-started" variant="outline" size="lg" className="w-full">
+          Ask another question
+        </Button>
 
         <Button href="/" variant="outline" size="lg" className="w-full">
           Explore Talk2Abe
