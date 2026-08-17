@@ -10,7 +10,7 @@ export default function LetsTalkSection() {
           title={aboutAbe.letsTalk.title}
           description={aboutAbe.letsTalk.paragraphs.join(" ")}
           primaryAction={{
-            href: "/questions",
+            href: "/contact",
             label: "Ask Abe a question",
           }}
           secondaryAction={{

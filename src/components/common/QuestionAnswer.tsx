@@ -290,7 +290,7 @@ export default function QuestionAnswer({
                 title="Have a questions about your situation?"
                 description="Every situation is different. Let&apos;s get the right solution for you."
                 primaryAction={{
-                  href: "/questions",
+                  href: "/contact",
                   label: "Ask Abe a Question",
                 }}
                 secondaryAction={{

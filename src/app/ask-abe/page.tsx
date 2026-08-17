@@ -44,7 +44,7 @@ const features = [
 
 export default function AskAbePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="bg-white">
       <LoanProgramNav className="bg-white" />
 
       <Container className="py-10 sm:py-12 lg:py-16">

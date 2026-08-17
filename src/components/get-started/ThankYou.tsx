@@ -63,14 +63,14 @@ export default function ThankYou({ senderName }: ThankYouProps) {
           Explore Talk2Abe
         </Button>
 
-        <Button
+        {/* <Button
           href="/questions"
           variant="outline"
           size="lg"
           className="w-full"
         >
           Ask another question
-        </Button>
+        </Button> */}
       </div>
     </div>
   );

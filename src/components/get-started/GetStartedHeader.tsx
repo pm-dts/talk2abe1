@@ -28,7 +28,7 @@ export default function GetStartedHeader({
 
         <a
           href="/contact"
-          aria-label="Call Abe"
+          aria-label="Ask Abe a Question"
           className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white text-brand shadow-sm transition-colors hover:border-brand/40 hover:bg-brand/5"
         >
           <Phone className="h-5 w-5" strokeWidth={2} aria-hidden="true" />

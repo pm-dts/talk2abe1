@@ -21,7 +21,7 @@ export default function SiteChrome({ children }: SiteChromeProps) {
     <>
       {!standalone && <Header />}
 
-      <main className="flex-1">{children}</main>
+      <main className="min-h-0 flex-1">{children}</main>
 
       {!standalone && <Footer />}
     </>
