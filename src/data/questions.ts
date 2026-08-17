@@ -123,6 +123,7 @@ export const questions: Question[] = [
     publishedAt: "2026-08-12",
     video: {
       thumbnail: "/images/questions/how-much-house-can-i-afford.jpg",
+      url: "https://myloandesk-assets.s3.eu-north-1.amazonaws.com/Forward+Mortgage_1080p_caption.mp4",
     },
     shortAnswer:
       "The amount you can afford depends on more than the price a lender may approve. Your income, debts, down payment, interest rate, taxes, insurance, HOA dues, and comfort level all matter.",
@@ -160,6 +161,7 @@ export const questions: Question[] = [
     publishedAt: "2026-08-12",
     video: {
       thumbnail: "/images/questions/can-i-get-a-mortgage-with-bank-statements.jpg",
+      url: "https://myloandesk-assets.s3.eu-north-1.amazonaws.com/Bank+Statment_1080p_caption.mp4",
     },
     shortAnswer:
       "Possibly. Bank statement loans may let eligible self-employed borrowers qualify using deposits shown on personal or business bank statements instead of traditional tax-return income.",
@@ -197,6 +199,7 @@ export const questions: Question[] = [
     publishedAt: "2026-08-12",
     video: {
       thumbnail: "/images/questions/how-does-a-2-1-buydown-work.jpg",
+      url: "https://myloandesk-assets.s3.eu-north-1.amazonaws.com/Lower+Your+Mortgage+Payment+During+Your+First+Two+Years+of+Homeownership_1080p_caption.mp4",
     },
     shortAnswer:
       "A 2-1 buydown temporarily reduces the borrower's effective payment for the first two years. The payment is generally calculated 2 percentage points below the note rate in year one, 1 point below in year two, and at the full note rate from year three forward.",
@@ -401,6 +404,10 @@ export const questions: Question[] = [
     icon: "house",
     author: "Abe",
     publishedAt: "2026-08-12",
+    video: {
+      thumbnail: "/images/questions/can-i-buy-a-new-home-before-selling-my-current-home.jpg",
+      url: "https://myloandesk-assets.s3.eu-north-1.amazonaws.com/Dream+Home+Builder+Earned+Equity+Program+(EEP)_1080p_caption.mp4",
+    },
     shortAnswer:
       "Possibly. Options may include qualifying with both homes, using a bridge-to-sale or home-equity solution, making a contingent offer, or selling first and arranging temporary occupancy.",
     fullAnswer: [
@@ -434,6 +441,10 @@ export const questions: Question[] = [
     icon: "dollar",
     author: "Abe",
     publishedAt: "2026-08-12",
+    video: {
+      thumbnail: "/images/questions/when-does-refinancing-a-mortgage-make-sense.jpg",
+      url: "https://myloandesk-assets.s3.eu-north-1.amazonaws.com/Introducing+Platform2_1080p_caption.mp4",
+    },
     shortAnswer:
       "Refinancing may make sense when it produces a clear financial or strategic benefit\u2014such as lowering cost, changing the loan structure, shortening the term, or accessing equity\u2014after considering closing costs.",
     fullAnswer: [
@@ -490,6 +501,43 @@ export const questions: Question[] = [
       "q-when-refinancing-makes-sense",
       "q-remove-mortgage-insurance-by-refinancing",
       "q-cost-to-refinance",
+    ],
+  },
+  {
+    id: "q-heloc-home-equity",
+    slug: "can-i-access-my-home-equity-without-refinancing",
+    title: "Can I access my home equity without refinancing?",
+    category: "Refinance Loans",
+    icon: "dollar",
+    author: "Abe",
+    publishedAt: "2026-08-12",
+    video: {
+      thumbnail: "/images/questions/can-i-access-my-home-equity-without-refinancing.jpg",
+      url: "https://myloandesk-assets.s3.eu-north-1.amazonaws.com/HELOC+%E2%80%93+Access+the+Equity+in+Your+Home+Without+Refinancing_1080p_caption.mp4",
+    },
+    shortAnswer:
+      "Yes. A home equity line of credit (HELOC) lets you tap into your home's equity as a revolving line of credit without replacing your existing mortgage.",
+    fullAnswer: [
+      "A HELOC works like a credit card secured by your home. The lender approves a credit limit based on your equity, and you can draw funds as needed during the draw period, typically 5 to 10 years. You only pay interest on the amount you use.",
+      "Unlike a cash-out refinance, a HELOC is a second lien behind your existing first mortgage. This means your current first-mortgage rate and terms remain unchanged. If you have a low rate on your first mortgage, a HELOC lets you preserve it while still accessing equity.",
+      "HELOCs typically have variable interest rates, which means your payment can change over time. Some lenders offer fixed-rate options on individual draws. Closing costs may be lower than a refinance, and some lenders waive them in exchange for a higher rate or minimum draw.",
+    ],
+    whatAbeReviews: [
+      "Available equity and combined loan-to-value",
+      "First-mortgage rate and whether preserving it matters",
+      "Variable versus fixed-rate options",
+      "Draw period, repayment terms, and total cost",
+    ],
+    abeTip:
+      "Compare a HELOC side by side with a cash-out refinance. If your first mortgage rate is low, a HELOC may preserve that advantage while still giving you access to cash.",
+    programLink: {
+      href: "https://www.myloandesk.com/loan-programs/home-equity/",
+      label: "Explore home equity options",
+    },
+    relatedQuestionIds: [
+      "q-cash-out-refinance",
+      "q-when-refinancing-makes-sense",
+      "q-how-reverse-mortgage-works",
     ],
   },
   {
@@ -731,6 +779,10 @@ export const questions: Question[] = [
     icon: "house",
     author: "Abe",
     publishedAt: "2026-08-12",
+    video: {
+      thumbnail: "/images/questions/how-does-a-reverse-mortgage-work.jpg",
+      url: "https://myloandesk-assets.s3.eu-north-1.amazonaws.com/Reverse+Mortgage+%E2%80%93+Turn+Your+Home+Equity+Into+Financial+Freedom_1080p_caption.mp4",
+    },
     shortAnswer:
       "A reverse mortgage allows an eligible older homeowner to access part of the home's equity without a required monthly principal-and-interest payment. The balance becomes due when a maturity event occurs, such as sale of the home or the last borrower permanently leaving it.",
     fullAnswer: [
@@ -1163,6 +1215,10 @@ export const questions: Question[] = [
     icon: "house",
     author: "Abe",
     publishedAt: "2026-08-12",
+    video: {
+      thumbnail: "/images/questions/can-medical-professionals-buy-a-home-with-no-down-payment.jpg",
+      url: "https://myloandesk-assets.s3.eu-north-1.amazonaws.com/Medical+Professional+Loan+Program_1080p_caption.mp4",
+    },
     shortAnswer:
       "Some medical professional mortgage programs may offer up to 100% financing to eligible borrowers, but availability and maximum loan size depend on profession, credit, income, property, occupancy, and lender guidelines.",
     fullAnswer: [

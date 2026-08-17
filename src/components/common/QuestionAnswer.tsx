@@ -37,6 +37,10 @@ function getYouTubeEmbedUrl(url: string): string {
     .replace("youtube.com/watch?v=", "youtube.com/embed/");
 }
 
+function isDirectVideoUrl(url: string): boolean {
+  return /\.(mp4|webm|ogg|mov)(\?|$)/i.test(url);
+}
+
 function QuestionMeta({ question }: { question: Question }) {
   const items: string[] = [];
 
@@ -122,15 +126,28 @@ export default function QuestionAnswer({
 
             {/* Video */}
             {question.video?.url ? (
-              <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-slate-900">
-                <iframe
-                  src={getYouTubeEmbedUrl(question.video.url)}
-                  title={question.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="h-full w-full"
-                />
-              </div>
+              isDirectVideoUrl(question.video.url) ? (
+                <div className="relative mt-8 overflow-hidden rounded-xl bg-slate-900">
+                  <video
+                    src={question.video.url}
+                    title={question.title}
+                    controls
+                    preload="metadata"
+                    playsInline
+                    className="h-auto w-full"
+                  />
+                </div>
+              ) : (
+                <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-slate-900">
+                  <iframe
+                    src={getYouTubeEmbedUrl(question.video.url)}
+                    title={question.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="h-full w-full"
+                  />
+                </div>
+              )
             ) : question.video?.thumbnail ? (
               <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-slate-900">
                 {hasThumbnail ? (
