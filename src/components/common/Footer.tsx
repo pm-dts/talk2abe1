@@ -1,10 +1,10 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import Logo from "@/components/common/Logo";
 import Container from "@/components/common/Container";
 import SocialLinks from "@/components/sections/SocialLinks";
-import { navigation } from "@/data/navigation";
 import { categories } from "@/data/categories";
 import { siteConfig } from "@/data/site";
 
@@ -31,9 +31,10 @@ export default function Footer() {
           className="
             grid
             gap-12
-            py-16
+            pt-16
+            pb-6
             sm:grid-cols-2
-            lg:grid-cols-[1.5fr_1fr_1fr_1.25fr]
+            lg:grid-cols-[1.5fr_1fr_1.25fr]
             lg:gap-8
             xl:gap-12
           "
@@ -49,20 +50,6 @@ export default function Footer() {
             <SocialLinks />
           </div>
 
-          {/* Quick Links */}
-          <FooterColumn heading="Quick Links">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-sm font-medium text-slate-300 transition-colors hover:text-brand"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </FooterColumn>
-
           {/* Popular Categories */}
           <FooterColumn heading="Popular Categories">
             {categories.map((category) => (
@@ -77,7 +64,7 @@ export default function Footer() {
             ))}
           </FooterColumn>
 
-          {/* Contact */}
+          {/* Contact + MyLoanDesk */}
           <div>
             <h3 className="text-base font-semibold text-white">Contact</h3>
 
@@ -118,6 +105,29 @@ export default function Footer() {
                 </p>
               </li>
             </ul>
+
+            {/* MyLoanDesk */}
+            <div className="mt-8 border-t border-white/10 pt-6">
+              <p className="text-base font-semibold text-white">
+                Mortgage services provided through
+              </p>
+
+              <a
+                href="https://myloandesk.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex transition-opacity hover:opacity-80"
+                aria-label="Visit MyLoanDesk"
+              >
+                <Image
+                  src="/images/logo/myloandesk.png"
+                  alt="MyLoanDesk"
+                  width={180}
+                  height={40}
+                  className="h-auto w-36 object-contain"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -126,7 +136,9 @@ export default function Footer() {
           <div className="space-y-5 text-sm leading-relaxed text-slate-400">
             {/* DBA Information */}
             <p>
-              <span className="font-medium text-slate-300">Talk2Abe.com</span>{" "}
+              <span className="font-medium text-slate-300">
+                Talk2Abe.com
+              </span>{" "}
               is a DBA of Secured Horizon Financial Group, Inc. / Secured
               Horizon Mortgage Group, Inc.
             </p>
@@ -150,7 +162,9 @@ export default function Footer() {
 
               <span className="hidden text-slate-600 sm:inline">|</span>
 
-              <span className="text-slate-300">Equal Housing Opportunity</span>
+              <span className="text-slate-300">
+                Equal Housing Opportunity
+              </span>
             </div>
 
             {/* Disclaimer */}
