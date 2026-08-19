@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import Alert from "@/components/common/Alert";
+
 type NewsletterFormProps = {
   className?: string;
   stacked?: boolean;
@@ -131,15 +133,15 @@ export default function NewsletterForm({
       </div>
 
       {status === "error" && (
-        <p id="newsletter-error" className="mt-2 text-xs text-red-300">
+        <Alert variant="error" className="mt-2" id="newsletter-error">
           Please enter a valid email address.
-        </p>
+        </Alert>
       )}
 
       {status === "success" && (
-        <p id="newsletter-success" className="mt-2 text-xs text-emerald-300">
+        <Alert variant="success" className="mt-2" id="newsletter-success">
           Thanks! You are subscribed to Abe&apos;s mortgage tips.
-        </p>
+        </Alert>
       )}
     </form>
   );

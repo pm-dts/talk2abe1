@@ -7,6 +7,7 @@ import { ArrowRight, Play, Star } from "lucide-react";
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import Container from "@/components/common/Container";
 import CTA from "@/components/common/CTA";
+import Alert from "@/components/common/Alert";
 import RelatedQuestions from "@/components/questions/RelatedQuestions";
 import type { Question } from "@/types/question";
 
@@ -200,11 +201,11 @@ export default function QuestionAnswer({
                   {question.shortAnswer}
                 </p>
               ) : (
-                <p className="mt-3 text-base leading-relaxed text-muted">
+                <Alert variant="info" className="mt-3">
                   Abe is preparing the answer for this question. In the
                   meantime, ask Abe directly below for a fast, personal
                   response.
-                </p>
+                </Alert>
               )}
             </section>
 
@@ -226,11 +227,11 @@ export default function QuestionAnswer({
                 </div>
               ) : (
                 <div className="mt-3 space-y-4">
-                  <p className="text-base leading-relaxed text-muted">
+                  <Alert variant="info">
                     Abe is putting together the full detailed answer for this
                     question. Check back soon — or ask Abe directly below for
                     help with your specific situation.
-                  </p>
+                  </Alert>
                 </div>
               )}
             </section>
@@ -281,8 +282,8 @@ export default function QuestionAnswer({
                   Learn more about how it works and whether it fits your
                   situation.
                 </p>
-                <Link
-                  href={question.programLink.href}
+                <Link 
+                  href="/#popular-questions"
                   className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand/80 sm:text-base"
                 >
                   {question.programLink.label ?? "Learn more about this program"}
@@ -307,7 +308,7 @@ export default function QuestionAnswer({
                 title="Have a questions about your situation?"
                 description="Every situation is different. Let&apos;s get the right solution for you."
                 primaryAction={{
-                  href: "/contact",
+                  href: "/ask-abe",
                   label: "Ask Abe a Question",
                 }}
                 secondaryAction={{

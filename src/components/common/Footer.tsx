@@ -40,7 +40,7 @@ export default function Footer() {
           "
         >
           {/* Brand */}
-          <div className="space-y-6">
+          <div className="space-y-3">
             <Logo size="lg" variant="light" />
 
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
@@ -48,6 +48,10 @@ export default function Footer() {
             </p>
 
             <SocialLinks />
+            
+            <p className="max-w-xs text-sm leading-relaxed text-slate-400">
+              Watch videos
+            </p>
           </div>
 
           {/* Popular Categories */}
@@ -120,7 +124,7 @@ export default function Footer() {
                 aria-label="Visit MyLoanDesk"
               >
                 <Image
-                  src="/images/logo/myloandesk.png"
+                  src="/images/footer/myloandesk.png"
                   alt="MyLoanDesk"
                   width={180}
                   height={40}

@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Alert from "@/components/common/Alert";
 import type {
   LoanProgramFormChoice,
   LoanProgramFormStep,
@@ -64,9 +65,9 @@ export default function ChoiceField({
       </div>
 
       {error && (
-        <p role="alert" className="mt-3 text-sm font-medium text-danger">
+        <Alert variant="error" className="mt-3">
           {error}
-        </p>
+        </Alert>
       )}
     </div>
   );

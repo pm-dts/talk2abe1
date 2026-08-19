@@ -7,7 +7,11 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <PopularQuestions />
+
+      <section id="popular-questions">
+        <PopularQuestions />
+      </section>
+
       <LatestVideoSection />
       <ValueProps />
     </>

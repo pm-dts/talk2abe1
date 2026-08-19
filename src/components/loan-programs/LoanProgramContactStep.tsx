@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import Disclosure from "@/components/loan-programs/Disclosure";
 import LoanProgramNavigation from "@/components/loan-programs/LoanProgramNavigation";
+import Alert from "@/components/common/Alert";
 
 import { cn } from "@/lib/utils";
 import type {
@@ -170,12 +171,9 @@ export default function LoanProgramContactStep({
       </div>
 
       {submitError && (
-        <p
-          role="alert"
-          className="mt-4 text-center text-sm font-medium text-danger"
-        >
+        <Alert variant="error" className="mt-4 text-center">
           {submitError}
-        </p>
+        </Alert>
       )}
 
       <LoanProgramNavigation

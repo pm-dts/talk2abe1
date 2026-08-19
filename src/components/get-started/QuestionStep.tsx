@@ -3,6 +3,7 @@
 import AnswerOption from "@/components/get-started/AnswerOption";
 import CurrencyInput from "@/components/get-started/CurrencyInput";
 import { getOptionIcon } from "@/components/get-started/optionIcons";
+import Alert from "@/components/common/Alert";
 
 import { cn } from "@/lib/utils";
 
@@ -66,12 +67,9 @@ export default function QuestionStep({
 
       {/* Validation */}
       {validationError && (
-        <p
-          role="alert"
-          className="text-center text-sm font-medium text-red-500"
-        >
+        <Alert variant="error" className="text-center">
           {validationError}
-        </p>
+        </Alert>
       )}
     </div>
   );

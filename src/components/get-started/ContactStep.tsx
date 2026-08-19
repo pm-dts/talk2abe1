@@ -5,6 +5,7 @@ import { Phone } from "lucide-react";
 
 import Button from "@/components/common/Button";
 import ConsentText from "@/components/get-started/ConsentText";
+import Alert from "@/components/common/Alert";
 import { usStates } from "@/data/get-started/states";
 import { cn } from "@/lib/utils";
 import type { GetStartedContact } from "@/types/get-started";
@@ -233,9 +234,9 @@ export default function ContactStep({
       </div>
 
       {submitError && (
-        <p role="alert" className="mt-4 text-center text-sm font-medium text-red-500">
+        <Alert variant="error" className="mt-4 text-center">
           {submitError}
-        </p>
+        </Alert>
       )}
 
       <div className="mt-6 grid gap-3">

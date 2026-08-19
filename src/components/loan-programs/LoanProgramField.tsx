@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Alert from "@/components/common/Alert";
 import type { LoanProgramFormField } from "@/types/loan-program";
 
 const inputClasses =
@@ -76,9 +77,9 @@ export default function LoanProgramField({
       )}
 
       {error && (
-        <p id={`${id}-error`} className="mt-1.5 text-xs font-medium text-danger">
+        <Alert variant="error" className="mt-1.5" id={`${id}-error`}>
           {error}
-        </p>
+        </Alert>
       )}
     </div>
   );
