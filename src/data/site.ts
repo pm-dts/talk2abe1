@@ -15,12 +15,9 @@ export const siteConfig: SiteConfig = {
     serviceArea: "Serving FL, TX & CA",
   },
   socialLinks: [
-    { label: "Facebook", href: "#" },
-    { label: "Instagram", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    {
-      label: "YouTube",
-      href: "https://www.youtube.com/channel/UC4cB9D-DuLq2EU3c7nwANSw",
-    },
+    // { label: "Facebook", href: "#" },
+    // { label: "Instagram", href: "#" },
+    // { label: "LinkedIn", href: "#" },
+    { label: "YouTube", href: "https://www.youtube.com/@MyLoanDeskMortgage" },
   ],
 };

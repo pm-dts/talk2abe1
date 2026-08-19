@@ -23,8 +23,9 @@ export default function LatestVideoSection() {
 
   return (
     <section className="bg-navy py-16 sm:py-20">
-      <Container className="grid items-center gap-12 lg:grid-cols-2">
-        <a
+      {/* <Container className="grid items-center gap-12 lg:grid-cols-2"> */}
+      <Container className="w-full grid text-center items-center justify-center">
+        {/* <a
           href={featuredVideo.url}
           target="_blank"
           rel="noopener noreferrer"
@@ -53,7 +54,7 @@ export default function LatestVideoSection() {
               </svg>
             </span>
           </div>
-        </a>
+        </a> */}
         <div>
           <h2 className="mt-3 max-w-md text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Have a specific question about your situation?
@@ -62,7 +63,7 @@ export default function LatestVideoSection() {
             Ask Abe directly. We&apos;ll get you the answer and the right
             solution.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row items-center justify-center">
             <Button href="/contact" size="lg">
               Ask Abe a Question
             </Button>

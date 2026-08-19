@@ -125,7 +125,7 @@ export default function QuestionAnswer({
             </header>
 
             {/* Video */}
-            {question.video?.url ? (
+            {/* {question.video?.url ? (
               isDirectVideoUrl(question.video.url) ? (
                 <div className="relative mt-8 overflow-hidden rounded-xl bg-slate-900">
                   <video
@@ -188,7 +188,7 @@ export default function QuestionAnswer({
                   </span>
                 </span>
               </div>
-            )}
+            )} */}
 
             {/* Short Answer */}
             <section className="mt-8">
