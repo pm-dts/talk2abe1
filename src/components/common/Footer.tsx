@@ -142,7 +142,7 @@ export default function Footer() {
               <span className="hidden text-slate-600 sm:inline">|</span>
 
               <Link
-                href="#"
+                href="https://www.nmlsconsumeraccess.org/"
                 className="text-brand transition-colors hover:text-brand/80"
               >
                 NMLS Consumer Access
