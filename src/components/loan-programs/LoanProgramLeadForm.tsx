@@ -9,10 +9,7 @@ import LoanProgramNavigation from "@/components/loan-programs/LoanProgramNavigat
 import LoanProgramProgress from "@/components/loan-programs/LoanProgramProgress";
 import LoanProgramSuccess from "@/components/loan-programs/LoanProgramSuccess";
 import { trackEvent } from "@/lib/analytics";
-import type {
-  LoanProgram,
-  LoanProgramContact,
-} from "@/types/loan-program";
+import type { LoanProgram, LoanProgramContact } from "@/types/loan-program";
 
 type LoanProgramSubmitResponse = {
   success: boolean;
@@ -29,6 +26,9 @@ const initialContact: LoanProgramContact = {
 type LoanProgramLeadFormProps = {
   program: LoanProgram;
 };
+
+const PURCHASE_LOAN_WEBHOOK_URL =
+  process.env.NEXT_PUBLIC_PURCHASE_LOAN_WEBHOOK_URL;
 
 export default function LoanProgramLeadForm({
   program,
@@ -133,23 +133,47 @@ export default function LoanProgramLeadForm({
     };
 
     try {
-      const response = await fetch("/api/loan-programs/submit", {
+      const isPurchaseLoan = program.slug === "purchase-loans";
+
+      if (isPurchaseLoan && !PURCHASE_LOAN_WEBHOOK_URL) {
+        throw new Error(
+          "This form is not available right now. Please try again later.",
+        );
+      }
+
+      const submitUrl: string = isPurchaseLoan
+        ? (PURCHASE_LOAN_WEBHOOK_URL ?? "")
+        : "/api/loan-programs/submit";
+
+      const response = await fetch(submitUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json, text/plain, */*",
         },
         body: JSON.stringify(payload),
       });
 
-      const data = (await response.json().catch(() => null)) as
-        | LoanProgramSubmitResponse
-        | null;
-
-      if (!response.ok || !data?.success) {
-        throw new Error(
-          data?.error ??
+      if (isPurchaseLoan) {
+        if (!response.ok) {
+          throw new Error(
             "Something went wrong while sending your information. Please try again.",
-        );
+          );
+        }
+
+        // Purchase webhook submission successful
+      } else {
+        // Keep existing /api/loan-programs/submit behavior
+        const data = (await response
+          .json()
+          .catch(() => null)) as LoanProgramSubmitResponse | null;
+
+        if (!response.ok || !data?.success) {
+          throw new Error(
+            data?.error ??
+              "Something went wrong while sending your information. Please try again.",
+          );
+        }
       }
 
       trackEvent("loan_program_lead_submitted", {
@@ -170,13 +194,15 @@ export default function LoanProgramLeadForm({
     }
   };
 
-  const pairedFields = step.type === "fields"
-    ? step.fields.filter((field) => !field.fullWidth)
-    : [];
+  const pairedFields =
+    step.type === "fields"
+      ? step.fields.filter((field) => !field.fullWidth)
+      : [];
 
-  const fullWidthFields = step.type === "fields"
-    ? step.fields.filter((field) => field.fullWidth)
-    : [];
+  const fullWidthFields =
+    step.type === "fields"
+      ? step.fields.filter((field) => field.fullWidth)
+      : [];
 
   return (
     <section>

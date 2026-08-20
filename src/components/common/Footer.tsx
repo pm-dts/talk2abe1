@@ -27,18 +27,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy text-white">
       <Container>
-        <div
-          className="
-            grid
-            gap-12
-            pt-16
-            pb-6
-            sm:grid-cols-2
-            lg:grid-cols-[1.5fr_1fr_1.25fr]
-            lg:gap-8
-            xl:gap-12
-          "
-        >
+        <div className="grid gap-12 pt-16 pb-6 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.25fr] lg:gap-8 xl:gap-12">
           {/* Brand */}
           <div className="space-y-3">
             <Logo size="lg" variant="light" />
