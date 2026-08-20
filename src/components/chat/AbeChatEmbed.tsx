@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
-import { cn } from "@/lib/utils";
+import { useEffect } from "react";
 
 const GHL_SCRIPT_URL = "https://widgets.leadconnectorhq.com/loader.js";
 
@@ -11,22 +9,13 @@ const GHL_RESOURCES_URL =
 
 const GHL_WIDGET_ID = "6a7e0e9a4da851c453c2a740";
 
-type AbeChatEmbedProps = {
-  className?: string;
-};
-
-export default function AbeChatEmbed({ className }: AbeChatEmbedProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
+export default function AbeChatEmbed() {
   useEffect(() => {
-    const container = containerRef.current;
+    const existingScript = document.querySelector(
+      `script[data-ghl-widget-id="${GHL_WIDGET_ID}"]`,
+    );
 
-    if (!container) {
-      return;
-    }
-
-    // Prevent duplicate GHL initialization.
-    if (container.querySelector("script[data-ghl-chat-widget='true']")) {
+    if (existingScript) {
       return;
     }
 
@@ -39,19 +28,10 @@ export default function AbeChatEmbed({ className }: AbeChatEmbedProps) {
 
     script.setAttribute("data-widget-id", GHL_WIDGET_ID);
 
-    script.setAttribute("data-ghl-chat-widget", "true");
+    script.setAttribute("data-ghl-widget-id", GHL_WIDGET_ID);
 
-    container.appendChild(script);
-
-    return () => {
-      container.innerHTML = "";
-    };
+    document.body.appendChild(script);
   }, []);
 
-  return (
-    <div
-      ref={containerRef}
-      className={cn("relative h-full min-h-0 w-full bg-white", className)}
-    />
-  );
+  return null;
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Clock } from "lucide-react";
 
 import Container from "@/components/common/Container";
-import AbeChatEmbed from "@/components/chat/AbeChatEmbed";
+// import AbeChatEmbed from "@/components/chat/AbeChatEmbed";
 import LoanProgramNav from "@/components/loan-programs/LoanProgramNav";
 
 export const metadata: Metadata = {
@@ -208,7 +208,7 @@ export default function AskAbePage() {
                 bg-white
               "
             >
-              <AbeChatEmbed className="h-full w-full" />
+              {/* <AbeChatEmbed className="h-full w-full" /> */}
             </div>
           </div>
         </section>

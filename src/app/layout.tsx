@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import {
-  Fraunces,
-  IBM_Plex_Mono,
-  Manrope,
-} from "next/font/google";
+import { Fraunces, IBM_Plex_Mono, Manrope } from "next/font/google";
+
 import SiteChrome from "@/components/common/SiteChrome";
+import AbeChatEmbed from "@/components/chat/AbeChatEmbed";
+
 import "./globals.css";
 
 const manrope = Manrope({
@@ -18,7 +17,7 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700"],
   style: ["normal", "italic"],
 });
 
@@ -45,6 +44,8 @@ export default function RootLayout({
         className={`${manrope.variable} ${fraunces.variable} ${ibmPlexMono.variable} font-sans flex min-h-dvh flex-col`}
       >
         <SiteChrome>{children}</SiteChrome>
+
+        <AbeChatEmbed />
       </body>
     </html>
   );
