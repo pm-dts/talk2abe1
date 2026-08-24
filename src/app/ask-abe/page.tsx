@@ -12,6 +12,7 @@ import {
 import Container from "@/components/common/Container";
 import LoanProgramNav from "@/components/loan-programs/LoanProgramNav";
 import StartAbeConversationButton from "@/components/chat/StartAbeConversationButton";
+import ValueProps from "@/components/home/ValueProps";
 
 export const metadata: Metadata = {
   title: "Ask Abe | Talk2Abe",
@@ -61,7 +62,7 @@ const helpOptions = [
 
 export default function AskAbePage() {
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen">
       <LoanProgramNav className="bg-white" />
 
       <Container className="py-6 sm:py-10 lg:py-14">
@@ -169,8 +170,11 @@ export default function AskAbePage() {
               <span>Private</span>
             </div>
           </div>
+
+          
         </section>
       </Container>
+      <ValueProps />
     </div>
   );
 }

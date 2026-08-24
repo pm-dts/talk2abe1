@@ -8,16 +8,12 @@ export default function HomePage() {
     <>
       <HeroSection />
 
-      <ValueProps />
-
-      <section
-        id="popular-questions"
-        className="border-t border-line bg-surface"
-      >
+      <section id="popular-questions">
         <PopularQuestions />
       </section>
 
       <LatestVideoSection />
+      <ValueProps />
     </>
   );
 }

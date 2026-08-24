@@ -1,257 +1,197 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import {
-  House,
-  RefreshCw,
-  BadgeDollarSign,
-  Building2,
-  UserRound,
-  Ellipsis,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import Link from "next/link";
 
 import Container from "@/components/common/Container";
-import StartAbeConversationButton from "@/components/chat/StartAbeConversationButton";
-
-type HelpOption = {
-  label: string;
-  icon: LucideIcon;
-};
-
-const helpOptions: HelpOption[] = [
-  { label: "Buy a home", icon: House },
-  { label: "Refinance", icon: RefreshCw },
-  { label: "Access home equity", icon: BadgeDollarSign },
-  { label: "Investment property", icon: Building2 },
-  { label: "I'm self-employed", icon: UserRound },
-  { label: "Something else", icon: Ellipsis },
-];
-
-const trustPoints = ["About 90 seconds", "No obligation", "Private"];
+import ScheduleCallButton from "@/components/common/ScheduleCallButton";
 
 export default function HeroSection() {
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-
   return (
-    <section className="w-full min-w-0 overflow-hidden bg-cream py-8 sm:py-12 lg:py-16">
-      <Container>
+    <section className="w-full min-w-0 overflow-hidden bg-surface pt-0">
+      <Container
+        className="
+          grid
+          w-full
+          md:w-[95%]
+          min-w-0
+          max-w-full
+          grid-cols-[55%_45%]
+          items-stretch
+          gap-2
+          md:grid-cols-[22%_78%]
+          lg:grid-cols-[38%_62%]
+          lg:py-0
+        "
+      >
+        {/* Abe Image */}
         <div
           className="
-            mx-auto
+            relative
+            flex
+            min-w-0
             w-full
-            max-w-[42rem]
-            rounded-[1.75rem]
-            border
-            border-line
-            bg-white
-            px-5
-            py-8
-            shadow-[0_24px_60px_-36px_rgba(19,34,66,0.28)]
-            sm:rounded-[2rem]
-            sm:px-9
-            sm:py-10
-            lg:px-12
-            lg:py-12
+            items-end
+            self-end
+            overflow-hidden
+            sm:min-h-[300px]
+            lg:order-1
+            lg:h-full
+            lg:min-h-[430px]
           "
         >
-          {/* Pill Label */}
-          <span
+          <Image
+            src="/images/abe/abe-hero.png"
+            alt="Abe, Talk2Abe mortgage expert"
+            width={800}
+            height={600}
+            priority
             className="
-              inline-flex
-              items-center
-              gap-2
-              rounded-full
-              bg-mint
-              px-3
-              py-1.5
-              font-mono
-              text-xs
-              font-semibold
-              uppercase
-              tracking-[0.06em]
-              text-brand-dark
+              block
+              h-auto
+              w-full
+              mt-3
+              max-w-[340px]
+              object-contain
+              object-bottom
+              lg:absolute
+              lg:-bottom-15
+              lg:right-0
+              lg:h-[calc(100%+35px)]
+              lg:w-auto
+              lg:max-w-none
+              lg:object-contain
+              lg:object-bottom
             "
-          >
-            <span
-              className="h-1.5 w-1.5 rounded-full bg-brand"
-              aria-hidden="true"
-            />
-            Ask Abe
-          </span>
+          />
+        </div>
 
-          {/* Heading */}
-          <h1
-            className="
-              mt-5
-              font-display
-              text-[30px]
-              font-semibold
-              leading-[1.1]
-              tracking-[-0.02em]
-              text-navy
-              sm:text-[38px]
-              lg:text-[42px]
-            "
-          >
-            Tell me what you&apos;re trying to accomplish.
-          </h1>
-
-          <p
-            className="
-              mt-4
-              max-w-[520px]
-              text-[15px]
-              leading-[1.6]
-              text-muted
-              sm:text-[17px]
-            "
-          >
-            Answer a few simple questions and I&apos;ll help identify loan
-            options that may fit.
-          </p>
-
-          {/* Abe Introduction */}
-          <div className="mt-8 flex items-center gap-3.5">
-            <span
+        {/* Hero Content */}
+        <div
+          className="
+            order-1
+            flex
+            min-w-0
+            flex-col
+            justify-center
+            py-2
+            lg:order-2
+            lg:min-h-[430px]
+            lg:py-16
+          "
+        >
+          <div className="max-w-2xl">
+            <h1
               className="
-                flex
-                h-14
-                w-14
-                shrink-0
-                items-center
-                justify-center
-                overflow-hidden
-                rounded-full
-                bg-slate-100
-                sm:h-16
-                sm:w-16
+                text-[2rem]
+                font-bold
+                leading-[1.08]
+                tracking-[-0.03em]
+                text-navy
+                sm:text-lg
+                md:text-[2rem]
+                lg:text-[3.75rem]
+                xl:text-[4rem]
               "
             >
-              <Image
-                src="/images/abe/abe-hakawati-new.png"
-                alt="Abe, Talk2Abe mortgage professional"
-                width={96}
-                height={96}
-                className="h-full w-full object-cover"
-              />
-            </span>
+              <span className="block">Got a</span>
+              <span className="block">mortgage question?</span>
+              <span className="block text-brand">Talk2Abe.</span>
+            </h1>
 
-            <div>
-              <p className="font-display text-lg font-semibold text-navy">
-                Hi, I&apos;m Abe.
-              </p>
-              <p className="text-[12.5px] text-muted">
-                Licensed mortgage professional &bull; NMLS #341393
-              </p>
+            <p
+              className="
+                mt-2
+                max-w-xl
+                text-sm
+                leading-6
+                text-navy/80
+                sm:leading-4
+                lg:mt-5
+                lg:text-lg
+                lg:leading-8
+              "
+            >
+              Straight answers to your mortgage questions — from an experienced
+              mortgage professional
+            </p>
+
+            {/* Hero Actions */}
+            <div
+              className="
+                mt-4
+                grid
+                grid-cols-1
+                gap-1.5
+                sm:mt-5
+                sm:grid-cols-2
+                sm:gap-2
+                lg:mt-7
+                md:w-[75%]
+                lg:w-[80%]
+              "
+            >
+              <ScheduleCallButton
+                variant="outline"
+                className="
+                  inline-flex
+                  w-full
+                  items-center
+                  justify-center
+                  bg-brand!
+                  px-4
+                  py-2.5
+                  text-xs
+                  font-semibold
+                  text-white!
+                  transition-colors
+                  !hover:bg-brand/90
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-brand
+                  focus:ring-offset-2
+                  sm:px-5
+                  sm:py-2.5
+                  sm:text-sm
+                  lg:px-7
+                  lg:py-3
+                  cursor-pointer
+                "
+              >
+                Schedule a Call
+              </ScheduleCallButton>
+
+              <Link
+                href="/get-started"
+                className="
+                  inline-flex
+                  w-full
+                  items-center
+                  justify-center
+                  rounded-lg
+                  border
+                  border-navy
+                  bg-white
+                  px-4
+                  py-2.5
+                  text-xs
+                  font-semibold
+                  text-navy
+                  transition-colors
+                  hover:bg-navy
+                  hover:text-white
+                  focus:outline-none
+                  focus:ring-2
+                  focus:ring-brand
+                  focus:ring-offset-2
+                  sm:px-5
+                  sm:py-2.5
+                  sm:text-sm
+                  lg:px-7
+                  lg:py-3
+                "
+              >
+                Get Started
+              </Link>
             </div>
-          </div>
-
-          {/* Help Options */}
-          <div className="mt-7 border-t border-line pt-7">
-            <h2 className="font-display text-[22px] font-semibold text-navy sm:text-[25px]">
-              What can I help you with?
-            </h2>
-
-            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {helpOptions.map(({ label, icon: Icon }) => {
-                const isSelected = selectedOption === label;
-
-                return (
-                  <button
-                    key={label}
-                    type="button"
-                    onClick={() =>
-                      setSelectedOption((current) =>
-                        current === label ? null : label,
-                      )
-                    }
-                    aria-pressed={isSelected}
-                    className={`
-                      flex
-                      min-h-[116px]
-                      flex-col
-                      items-start
-                      justify-between
-                      gap-3
-                      rounded-2xl
-                      border
-                      p-4
-                      text-left
-                      transition
-                      duration-150
-                      hover:border-brand/40
-                      hover:bg-mint/20
-                      active:scale-[0.98]
-                      focus-visible:outline-none
-                      focus-visible:ring-2
-                      focus-visible:ring-brand
-                      focus-visible:ring-offset-2
-                      ${
-                        isSelected
-                          ? "border-brand/60 bg-mint/50"
-                          : "border-line bg-white"
-                      }
-                    `}
-                  >
-                    <span
-                      className="
-                        flex
-                        h-10
-                        w-10
-                        shrink-0
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-mint
-                        text-brand
-                      "
-                    >
-                      <Icon className="h-5 w-5" strokeWidth={1.8} />
-                    </span>
-
-                    <span className="text-[13.5px] font-semibold leading-snug text-navy">
-                      {label}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Main CTA */}
-          <div className="mt-8">
-            <StartAbeConversationButton className="w-full!" />
-          </div>
-
-          {/* Trust Row */}
-          <div
-            className="
-              mt-5
-              flex
-              flex-wrap
-              items-center
-              justify-center
-              gap-x-2.5
-              gap-y-1
-              text-center
-              text-[12px]
-              text-muted
-              sm:text-[13px]
-            "
-          >
-            <span>{trustPoints[0]}</span>
-            <span
-              className="h-1 w-1 rounded-full bg-brand"
-              aria-hidden="true"
-            />
-            <span>{trustPoints[1]}</span>
-            <span
-              className="h-1 w-1 rounded-full bg-brand"
-              aria-hidden="true"
-            />
-            <span>{trustPoints[2]}</span>
           </div>
         </div>
       </Container>
