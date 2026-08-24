@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 function AbeAvatar() {
   return (
     <Image
-      src="/images/abe/abe-hakawati-new.webp"
+      src="/images/abe/abe-hakawati-new.png"
       alt="Abe — Talk2Abe's lending assistant"
       width={96}
       height={96}
