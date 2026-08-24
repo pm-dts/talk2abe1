@@ -37,7 +37,7 @@ export default function LoanProgramNav({ className }: LoanProgramNavProps) {
     <nav
       aria-label="Loan programs"
       className={cn(
-        "sticky top-0 z-50 border-b border-line bg-cream",
+        "sticky top-[88px] z-40 border-b border-line bg-cream",
         className,
       )}
     >

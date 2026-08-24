@@ -19,7 +19,7 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white">
+    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white">
       <Container>
         <div className="flex min-h-[88px] items-center justify-between gap-8">
           {/* Logo */}
