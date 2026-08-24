@@ -41,17 +41,32 @@ export default function StartAbeConversationButton({
     <button
       type="button"
       onClick={openChat}
-      className={cn(
-        "group inline-flex w-full items-center justify-center gap-3 rounded-xl bg-brand px-6 py-5 text-[17px] font-bold text-white shadow-[0_10px_25px_rgba(47,143,82,0.16)] transition duration-200 hover:bg-brand-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-brand/20 sm:w-auto sm:min-w-[320px]",
-        className,
-      )}
+      className="
+    inline-flex
+    w-full
+    items-center
+    justify-center
+    gap-3
+    rounded-2xl
+    bg-brand
+    px-6
+    py-4
+    text-lg
+    font-semibold
+    text-white
+    shadow-sm
+    transition-all
+    hover:bg-brand-dark
+    hover:shadow-md
+    focus:outline-none
+    focus:ring-2
+    focus:ring-brand/30
+    sm:text-xl
+  "
     >
-      Start My Conversation
-      <ArrowRight
-        className="h-6 w-6 transition-transform duration-200 group-hover:translate-x-1"
-        strokeWidth={2}
-        aria-hidden="true"
-      />
+      <span>Start My Conversation</span>
+
+      <ArrowRight className="h-6 w-6" aria-hidden="true" />
     </button>
   );
 }

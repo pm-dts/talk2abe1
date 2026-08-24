@@ -65,7 +65,7 @@ export default function AskAbePage() {
       <LoanProgramNav className="bg-white" />
 
       <Container className="py-6 sm:py-10 lg:py-14">
-        <section className="mx-auto w-full max-w-4xl">
+        <section className="mx-auto w-full max-w-3xl">
           <div className="rounded-[28px] border border-slate-200/80 bg-surface px-5 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-12">
             {/* Ask Abe Badge */}
             <span className="inline-flex items-center gap-3 rounded-full bg-mint px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-brand-dark">
@@ -74,7 +74,7 @@ export default function AskAbePage() {
             </span>
 
             {/* Heading */}
-            <h1 className="mt-6 max-w-3xl font-display text-[42px] font-semibold leading-[1.08] tracking-[-0.03em] text-navy sm:text-[56px] lg:text-[68px]">
+            <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-[-0.03em] text-navy lg:text-5xl">
               Tell me what you&apos;re trying to accomplish.
             </h1>
 
@@ -91,7 +91,7 @@ export default function AskAbePage() {
               </div>
 
               <div className="min-w-0">
-                <h2 className="font-display text-[24px] font-semibold text-navy sm:text-[30px]">
+                <h2 className="font-display text-3xl font-semibold text-navy">
                   Hi, I&apos;m Abe.
                 </h2>
 
@@ -114,7 +114,7 @@ export default function AskAbePage() {
 
               <div className="mt-6 grid grid-cols-2 gap-2 md:gap-4">
                 {helpOptions.map(({ label, icon: Icon }) => (
-                  <button key={label} type="button" className="group flex min-h-[88px] items-center gap-2 md:gap-4 rounded-2xl border border-slate-200 bg-white p-2 md:p-4 text-left transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-brand/30">
+                  <button key={label} type="button" className="group flex min-h-[76px] items-center gap-2 md:gap-4 rounded-2xl border border-slate-200 bg-white p-2 md:p-4 text-left transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-brand/30">
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mint text-brand transition-transform group-hover:scale-105">
                       <Icon
                         className="h-6 w-6"
@@ -132,7 +132,7 @@ export default function AskAbePage() {
             </div>
 
             {/* CTA */}
-            <div className="mt-7">
+            <div className="mt-7 w-full">
               <StartAbeConversationButton />
             </div>
 
