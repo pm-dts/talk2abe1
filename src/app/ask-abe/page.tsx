@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Clock } from "lucide-react";
+import {
+  Building2,
+  CircleDollarSign,
+  Ellipsis,
+  House,
+  RefreshCw,
+  UserRound,
+} from "lucide-react";
 
 import Container from "@/components/common/Container";
-// import AbeChatEmbed from "@/components/chat/AbeChatEmbed";
 import LoanProgramNav from "@/components/loan-programs/LoanProgramNav";
+import StartAbeConversationButton from "@/components/chat/StartAbeConversationButton";
 
 export const metadata: Metadata = {
   title: "Ask Abe | Talk2Abe",
@@ -17,185 +24,149 @@ function AbeAvatar() {
     <Image
       src="/images/abe/abe-hakawati-new.png"
       alt="Abe — Talk2Abe's lending assistant"
-      width={96}
-      height={96}
-      className="h-full w-full object-cover rounded-full bg-slate-100"
+      width={120}
+      height={120}
+      priority
+      className="h-full w-full rounded-full object-cover bg-slate-100"
     />
   );
 }
 
-const features = [
-  "Takes about 90 seconds",
-  "Matches you to the right loan program automatically",
-  "Hands off to a licensed loan officer, not a bot forever",
+const helpOptions = [
+  {
+    label: "Buy a home",
+    icon: House,
+  },
+  {
+    label: "Refinance",
+    icon: RefreshCw,
+  },
+  {
+    label: "Access home equity",
+    icon: CircleDollarSign,
+  },
+  {
+    label: "Investment property",
+    icon: Building2,
+  },
+  {
+    label: "I'm self-employed",
+    icon: UserRound,
+  },
+  {
+    label: "Something else",
+    icon: Ellipsis,
+  },
 ];
 
 export default function AskAbePage() {
   return (
-    <div className="bg-white">
+    <div className="min-h-screen bg-cream">
       <LoanProgramNav className="bg-white" />
 
-      <Container className="py-10 sm:py-12 lg:py-16">
-        <section
-          className="
-            grid
-            grid-cols-1
-            items-start
-            gap-12
-            lg:grid-cols-[minmax(0,1fr)_440px]
-            lg:gap-16
-            xl:grid-cols-[minmax(0,1fr)_460px]
-            xl:gap-20
-          "
-        >
-          {/* =========================================================
-              LEFT SIDE
-          ========================================================= */}
-          <div className="min-w-0 lg:pt-8">
-            {/* Badge */}
-            <span
-              className="
-                mb-5
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                bg-mint
-                px-3
-                py-1.5
-                font-mono
-                text-xs
-                font-semibold
-                uppercase
-                tracking-[0.06em]
-                text-brand-dark
-              "
-            >
-              <span
-                className="h-1.5 w-1.5 rounded-full bg-brand"
-                aria-hidden="true"
-              />
+      <Container className="py-6 sm:py-10 lg:py-14">
+        <section className="mx-auto w-full max-w-4xl">
+          <div className="rounded-[28px] border border-slate-200/80 bg-surface px-5 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+            {/* Ask Abe Badge */}
+            <span className="inline-flex items-center gap-3 rounded-full bg-mint px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-brand-dark">
+              <span className="h-2 w-2 rounded-full bg-brand" aria-hidden="true"/>
               Ask Abe
             </span>
 
             {/* Heading */}
-            <h1
-              className="
-                max-w-[720px]
-                font-display
-                text-[36px]
-                font-semibold
-                leading-[1.08]
-                tracking-[-0.02em]
-                text-navy
-                sm:text-[44px]
-                lg:text-[48px]
-                xl:text-[52px]
-              "
-            >
-              Talk it through
-              <br />
-              before you fill anything out.
+            <h1 className="mt-6 max-w-3xl font-display text-[42px] font-semibold leading-[1.08] tracking-[-0.03em] text-navy sm:text-[56px] lg:text-[68px]">
+              Tell me what you&apos;re trying to accomplish.
             </h1>
 
             {/* Description */}
-            <p
-              className="
-                mt-5
-                max-w-[600px]
-                text-[16px]
-                leading-[1.6]
-                text-muted
-                sm:text-[17px]
-              "
-            >
-              Abe asks a few quick questions conversationally, then hands you
-              straight to a loan officer — no forms, no jargon.
+            <p className="mt-5 max-w-2xl text-[17px] leading-[1.65] text-muted sm:text-[19px]">
+              Answer a few simple questions and I&apos;ll help identify loan
+              options that may fit.
             </p>
 
-            {/* Abe profile */}
-            <div className="mt-9 flex items-center gap-3">
-              <span
-                className="
-                  flex
-                  h-[88px]
-                  w-[88px]
-                  shrink-0
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-slate-100
-                "
-              >
+            {/* Abe Profile */}
+            <div className="mt-10 flex items-center gap-4 sm:gap-5">
+              <div className="h-20 w-20 shrink-0 overflow-hidden rounded-full border border-white bg-slate-100 shadow-sm sm:h-24 sm:w-24">
                 <AbeAvatar />
-              </span>
+              </div>
 
-              <div>
-                <p className="font-display text-lg font-semibold text-navy">
-                  Abe
-                </p>
+              <div className="min-w-0">
+                <h2 className="font-display text-[24px] font-semibold text-navy sm:text-[30px]">
+                  Hi, I&apos;m Abe.
+                </h2>
 
-                <p className="text-[12.5px] text-muted">
-                  Talk2Abe&apos;s lending assistant
+                <p className="mt-1 text-sm leading-6 text-muted sm:text-base">
+                  Licensed mortgage professional
+                  <span className="mx-2 text-brand">•</span>
+                  NMLS #341393
                 </p>
               </div>
             </div>
 
-            {/* Features */}
-            <ul className="mt-7 space-y-4">
-              {features.map((feature) => (
-                <li
-                  key={feature}
-                  className="
-                    flex
-                    items-center
-                    gap-3
-                    text-sm
-                    leading-6
-                    text-muted
-                    sm:text-[15px]
-                  "
-                >
-                  <Clock
-                    className="
-                      h-[17px]
-                      w-[17px]
-                      shrink-0
-                      text-brand
-                    "
-                    strokeWidth={1.8}
-                    aria-hidden="true"
-                  />
+            {/* Divider */}
+            <div className="my-9 h-px w-full bg-line" />
 
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Help Options */}
+            <div>
+              <h2 className="font-display text-[26px] font-semibold text-navy sm:text-[32px]">
+                What can I help you with?
+              </h2>
 
-          {/* =========================================================
-              RIGHT SIDE — GHL CHAT
-          ========================================================= */}
-          <div
-            className="
-              flex
-              w-full
-              justify-center
-              lg:justify-end
-            "
-          >
+              <div className="mt-6 grid grid-cols-2 gap-2 md:gap-4">
+                {helpOptions.map(({ label, icon: Icon }) => (
+                  <button key={label} type="button" className="group flex min-h-[88px] items-center gap-2 md:gap-4 rounded-2xl border border-slate-200 bg-white p-2 md:p-4 text-left transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-brand/30">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mint text-brand transition-transform group-hover:scale-105">
+                      <Icon
+                        className="h-6 w-6"
+                        strokeWidth={1.8}
+                        aria-hidden="true"
+                      />
+                    </span>
+
+                    <span className="text-[16px] font-medium text-navy sm:text-[17px]">
+                      {label}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="mt-7">
+              <StartAbeConversationButton />
+            </div>
+
+            {/* Trust Row */}
             <div
               className="
-                relative
-                h-[650px]
-                min-h-[650px]
-                w-full
-                max-w-[460px]
-                rounded-[20px]
-                bg-white
+                mt-6
+                flex
+                flex-wrap
+                items-center
+                justify-center
+                gap-x-3
+                gap-y-1
+                text-center
+                text-sm
+                text-muted
+                sm:text-base
               "
             >
-              {/* <AbeChatEmbed className="h-full w-full" /> */}
+              <span>About 90 seconds</span>
+
+              <span
+                className="h-1.5 w-1.5 rounded-full bg-brand"
+                aria-hidden="true"
+              />
+
+              <span>No obligation</span>
+
+              <span
+                className="h-1.5 w-1.5 rounded-full bg-brand"
+                aria-hidden="true"
+              />
+
+              <span>Private</span>
             </div>
           </div>
         </section>

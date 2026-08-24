@@ -19,7 +19,7 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white">
+    <header className="sticky top-0 z-50 border-b border-line bg-white">
       <Container>
         <div className="flex min-h-[88px] items-center justify-between gap-8">
           {/* Logo */}
@@ -108,7 +108,7 @@ export default function Header() {
         <Container>
           <div
             id="mobile-menu"
-            className="border-t border-slate-200/70 pb-6 pt-4 lg:hidden"
+            className="border-t border-line pb-6 pt-4 lg:hidden"
           >
             <nav
               className="flex flex-col gap-1"

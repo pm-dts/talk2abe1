@@ -2,27 +2,21 @@ import type { ValueProp } from "@/types/value-prop";
 
 export const valueProps: ValueProp[] = [
   {
-    id: "straight-answers",
-    title: "Straight Answers",
-    description: "No confusing jargon.",
-    icon: "MessageCircle",
+    id: "personalized-loan-direction",
+    title: "Personalized loan direction",
+    description: "Options shaped around your goals.",
+    icon: "Target",
   },
   {
-    id: "all-loan-types",
-    title: "All Loan Types",
-    description: "Conventional, FHA, VA, Jumbo, DSCR & more.",
-    icon: "UserRound",
+    id: "no-complicated-application",
+    title: "No complicated application",
+    description: "Start with a simple conversation.",
+    icon: "FileText",
   },
   {
-    id: "creative-solutions",
-    title: "Creative Solutions",
-    description: "When the bank says no, we look for a way.",
-    icon: "Lightbulb",
-  },
-  {
-    id: "personal-service",
-    title: "Personal Service",
-    description: "You're not a number. You're my client.",
-    icon: "MessageCircleCheck",
+    id: "connect-with-licensed-professional",
+    title: "Connect with a licensed professional",
+    description: "Straight answers from a real expert.",
+    icon: "ShieldCheck",
   },
 ];

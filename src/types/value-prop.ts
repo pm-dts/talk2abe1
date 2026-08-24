@@ -1,8 +1,4 @@
-export type ValuePropIcon =
-  | "MessageCircle"
-  | "UserRound"
-  | "Lightbulb"
-  | "MessageCircleCheck";
+export type ValuePropIcon = "Target" | "FileText" | "ShieldCheck";
 
 export interface ValueProp {
   id: string;
