@@ -169,7 +169,7 @@ export default function Footer() {
               type. Consumers are not obligated to use any party mentioned.
               Talk2Abe.com is not affiliated with FHA, VA, USDA, or the Federal
               Government. 1801 NE 123rd St, Suite 314, North Miami, FL 33181 |
-              (305) 891-6500. Regulated by the FL Division of Real Estate.
+              (305) 891-6500. Regulated by the Florida Office of Financial Regulation.
             </p>
           </div>
         </div>

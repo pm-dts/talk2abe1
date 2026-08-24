@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Clock } from "lucide-react";
 
 import Container from "@/components/common/Container";
@@ -13,26 +14,13 @@ export const metadata: Metadata = {
 
 function AbeAvatar() {
   return (
-    <svg
-      width="26"
-      height="26"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M12 2a5 5 0 015 5v2a5 5 0 01-10 0V7a5 5 0 015-5z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-      />
-
-      <path
-        d="M4 21c0-4 3.5-6.5 8-6.5S20 17 20 21"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-      />
-    </svg>
+    <Image
+      src="/images/abe/abe-hakawati-new.png"
+      alt="Abe — Talk2Abe's lending assistant"
+      width={96}
+      height={96}
+      className="h-full w-full object-cover rounded-full bg-slate-100"
+    />
   );
 }
 
@@ -130,14 +118,13 @@ export default function AskAbePage() {
               <span
                 className="
                   flex
-                  h-[56px]
-                  w-[56px]
+                  h-[88px]
+                  w-[88px]
                   shrink-0
                   items-center
                   justify-center
                   rounded-full
-                  bg-navy
-                  text-white
+                  bg-slate-100
                 "
               >
                 <AbeAvatar />

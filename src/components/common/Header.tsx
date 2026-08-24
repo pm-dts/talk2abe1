@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 import { navigation } from "@/data/navigation";
 import Logo from "@/components/common/Logo";
@@ -19,11 +19,24 @@ export default function Header() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="border-b border-slate-200/70 bg-white">
+    <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white">
       <Container>
         <div className="flex min-h-[88px] items-center justify-between gap-8">
           {/* Logo */}
           <Logo size="lg" />
+
+          {/* Phone Number */}
+          <a
+            href="tel:+13058916500"
+            className="hidden items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-brand md:inline-flex"
+          >
+            <Phone
+              className="h-4 w-4 text-brand"
+              strokeWidth={2}
+              aria-hidden="true"
+            />
+            (305) 891-6500
+          </a>
 
           {/* Desktop Navigation + CTA */}
           <div className="hidden items-center gap-8 lg:flex">
