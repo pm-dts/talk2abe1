@@ -23,7 +23,6 @@ const items: LoanProgramNavItem[] = [
     label: "Home Equity / HELOC",
     href: "/loan-programs/home-equity-heloc",
   },
-  { label: "Ask Abe", href: "/ask-abe" },
 ];
 
 type LoanProgramNavProps = {

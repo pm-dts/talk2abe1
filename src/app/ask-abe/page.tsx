@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import {
+  BadgeDollarSign,
   Building2,
   CircleDollarSign,
-  Ellipsis,
+  HandCoins,
   House,
+  Landmark,
   RefreshCw,
+  ShieldCheck,
   UserRound,
 } from "lucide-react";
 
 import Container from "@/components/common/Container";
-import LoanProgramNav from "@/components/loan-programs/LoanProgramNav";
 import StartAbeConversationButton from "@/components/chat/StartAbeConversationButton";
 import ValueProps from "@/components/home/ValueProps";
 
@@ -37,40 +40,57 @@ const helpOptions = [
   {
     label: "Buy a home",
     icon: House,
+    url: "/loan-programs/purchase-loans",
   },
   {
     label: "Refinance",
     icon: RefreshCw,
+    url: "/loan-programs/refinance-loans",
   },
   {
-    label: "Access home equity",
-    icon: CircleDollarSign,
-  },
-  {
-    label: "Investment property",
-    icon: Building2,
-  },
-  {
-    label: "I'm self-employed",
+    label: "Self-Employed",
     icon: UserRound,
+    url: "/loan-programs/self-employed-loans",
   },
   {
-    label: "Something else",
-    icon: Ellipsis,
+    label: "DSCR",
+    icon: Building2,
+    url: "/loan-programs/dscr-loans",
+  },
+  {
+    label: "FHA",
+    icon: Landmark,
+    url: "/loan-programs/fha-loans",
+  },
+  {
+    label: "VA",
+    icon: ShieldCheck,
+    url: "/loan-programs/va-loans",
+  },
+  {
+    label: "Reverse Mortgage",
+    icon: HandCoins,
+    url: "/loan-programs/reverse-mortgages",
+  },
+  {
+    label: "Home Equity",
+    icon: BadgeDollarSign,
+    url: "/loan-programs/home-equity-heloc",
   },
 ];
 
 export default function AskAbePage() {
   return (
     <div className="min-h-screen">
-      <LoanProgramNav className="bg-white" />
-
-      <Container className="py-6 sm:py-10 lg:py-14">
+      <Container className="pt-6 sm:pt-10 lg:pt-14">
         <section className="mx-auto w-full max-w-3xl">
           <div className="rounded-[28px] border border-slate-200/80 bg-surface px-5 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-12">
             {/* Ask Abe Badge */}
             <span className="inline-flex items-center gap-3 rounded-full bg-mint px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.12em] text-brand-dark">
-              <span className="h-2 w-2 rounded-full bg-brand" aria-hidden="true"/>
+              <span
+                className="h-2 w-2 rounded-full bg-brand"
+                aria-hidden="true"
+              />
               Ask Abe
             </span>
 
@@ -114,8 +134,12 @@ export default function AskAbePage() {
               </h2>
 
               <div className="mt-6 grid grid-cols-2 gap-2 md:gap-4">
-                {helpOptions.map(({ label, icon: Icon }) => (
-                  <button key={label} type="button" className="group flex min-h-[76px] items-center gap-2 md:gap-4 rounded-2xl border border-slate-200 bg-white p-2 md:p-4 text-left transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-brand/30">
+                {helpOptions.map(({ label, icon: Icon, url }) => (
+                  <Link
+                    key={label}
+                    href={url}
+                    className="group flex min-h-[76px] items-center gap-2 rounded-2xl border border-slate-200 bg-white p-2 text-left transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-brand/30 md:gap-4 md:p-4"
+                  >
                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mint text-brand transition-transform group-hover:scale-105">
                       <Icon
                         className="h-6 w-6"
@@ -127,7 +151,7 @@ export default function AskAbePage() {
                     <span className="text-[16px] font-medium text-navy sm:text-[17px]">
                       {label}
                     </span>
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -138,21 +162,7 @@ export default function AskAbePage() {
             </div>
 
             {/* Trust Row */}
-            <div
-              className="
-                mt-6
-                flex
-                flex-wrap
-                items-center
-                justify-center
-                gap-x-3
-                gap-y-1
-                text-center
-                text-sm
-                text-muted
-                sm:text-base
-              "
-            >
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-sm text-muted sm:text-base">
               <span>About 90 seconds</span>
 
               <span
@@ -170,10 +180,9 @@ export default function AskAbePage() {
               <span>Private</span>
             </div>
           </div>
-
-          
         </section>
       </Container>
+
       <ValueProps />
     </div>
   );
