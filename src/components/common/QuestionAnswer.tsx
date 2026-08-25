@@ -16,6 +16,24 @@ type QuestionAnswerProps = {
   relatedQuestions?: Question[];
 };
 
+const categoryProgramPaths: Record<string, string> = {
+  "Purchase Loans": "/loan-programs/purchase-loans",
+  "Refinance Loans": "/loan-programs/refinance-loans",
+  "Self-Employed Loans": "/loan-programs/self-employed-loans",
+  "DSCR Loans": "/loan-programs/dscr-loans",
+  "FHA Loans": "/loan-programs/fha-loans",
+  "VA Loans": "/loan-programs/va-loans",
+  "Reverse Mortgages": "/loan-programs/reverse-mortgages",
+  "Home Equity": "/loan-programs/home-equity-heloc",
+  "Bank Statement Loans": "/loan-programs/self-employed-loans",
+  "Reverse 2nd Mortgages": "/loan-programs/reverse-mortgages",
+};
+
+function getRelatedProgramPath(question: Question): string {
+  return (question.category && categoryProgramPaths[question.category]) ?? "/loan-programs";
+}
+
+
 function formatDate(value: string): string {
   const [year, month, day] = value.split("-").map(Number);
   if (!year || !month || !day) {
@@ -283,7 +301,7 @@ export default function QuestionAnswer({
                   situation.
                 </p>
                 <Link 
-                  href="/#popular-questions"
+                  href={getRelatedProgramPath(question)}
                   className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand/80 sm:text-base"
                 >
                   {question.programLink.label ?? "Learn more about this program"}

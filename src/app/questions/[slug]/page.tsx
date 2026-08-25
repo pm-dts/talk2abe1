@@ -6,8 +6,10 @@ import BreadcrumbSchema, {
   buildBreadcrumbs,
 } from "@/components/seo/BreadcrumbSchema";
 import ArticleSchema from "@/components/seo/ArticleSchema";
+import WebPageSchema from "@/components/seo/WebPageSchema";
 import { questions } from "@/data/questions";
 import { getCanonicalUrl } from "@/lib/urls";
+import { createMetaDescription } from "@/lib/metadata";
 import { seoConfig, seoImages } from "@/config/seo";
 import type { Question } from "@/types/question";
 
@@ -21,10 +23,7 @@ export function generateStaticParams() {
   }));
 }
 
-function getRelatedQuestions(
-  question: Question,
-  count = 3,
-): Question[] {
+function getRelatedQuestions(question: Question, count = 3): Question[] {
   const related: Question[] = [];
   const seen = new Set<string>([question.id]);
 
@@ -60,18 +59,17 @@ export async function generateMetadata({
     };
   }
 
+  const description = createMetaDescription(
+    question.metaDescription,
+    question.shortAnswer ?? `Straight answer from Abe to "${question.title}".`,
+  );
+
   return {
     title: question.title,
-    description:
-      question.metaDescription ??
-      question.shortAnswer ??
-      `Straight answer from Abe to "${question.title}".`,
+    description,
     openGraph: {
       title: `${question.title} | Talk2Abe`,
-      description:
-        question.metaDescription ??
-        question.shortAnswer ??
-        `Straight answer from Abe to "${question.title}".`,
+      description,
       url: getCanonicalUrl(`/questions/${slug}`),
       images: [
         {
@@ -85,6 +83,7 @@ export async function generateMetadata({
     alternates: {
       canonical: getCanonicalUrl(`/questions/${slug}`),
     },
+    robots: { index: true, follow: true },
   };
 }
 
@@ -96,6 +95,11 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
     notFound();
   }
 
+  const description = createMetaDescription(
+    question.metaDescription,
+    question.shortAnswer ?? `Straight answer from Abe to "${question.title}".`,
+  );
+
   const breadcrumbs = buildBreadcrumbs([
     { name: "Home", path: "/" },
     { name: "Ask Abe", path: "/questions" },
@@ -105,6 +109,11 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <WebPageSchema
+        name={question.title}
+        description={description}
+        url={getCanonicalUrl(`/questions/${slug}`)}
+      />
       <ArticleSchema
         data={{
           headline: question.title,
@@ -112,7 +121,7 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
           url: getCanonicalUrl(`/questions/${slug}`),
           image: question.video?.thumbnail
             ? `${seoConfig.siteUrl}${question.video.thumbnail}`
-            : undefined,
+            : seoImages.question,
           datePublished: question.publishedAt,
           dateModified: question.modifiedAt,
         }}

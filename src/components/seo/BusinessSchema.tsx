@@ -11,6 +11,7 @@ export default function BusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FinancialService",
+    additionalType: "https://schema.org/MortgageBroker",
     "@id": `${business.url}/#organization`,
     name: business.name,
     legalName: business.legalName,

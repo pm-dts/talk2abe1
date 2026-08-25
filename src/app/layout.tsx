@@ -5,6 +5,7 @@ import SiteChrome from "@/components/common/SiteChrome";
 import AbeChatEmbed from "@/components/chat/AbeChatEmbed";
 import BusinessSchema from "@/components/seo/BusinessSchema";
 import PersonSchema from "@/components/seo/PersonSchema";
+import WebSiteSchema from "@/components/seo/WebSiteSchema";
 import { seoConfig, seoImages, SITE_URL } from "@/config/seo";
 
 import "./globals.css";
@@ -38,6 +39,19 @@ export const metadata: Metadata = {
     template: "%s | Talk2Abe",
   },
   description: seoConfig.defaultDescription,
+  applicationName: seoConfig.siteName,
+  category: "Mortgage and financial services",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -54,6 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: seoConfig.defaultTitle,
+    description: seoConfig.defaultDescription,
+    images: [seoImages.default],
   },
   alternates: {
     canonical: SITE_URL,
@@ -74,6 +91,7 @@ export default function RootLayout({
 
         <AbeChatEmbed />
 
+        <WebSiteSchema />
         <BusinessSchema />
         <PersonSchema />
       </body>

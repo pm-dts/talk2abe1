@@ -24,6 +24,7 @@ export default function ArticleSchema({ data }: ArticleSchemaProps) {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${data.url}#article`,
     headline: data.headline,
     mainEntityOfPage: {
       "@type": "WebPage",

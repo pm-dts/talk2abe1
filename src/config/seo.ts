@@ -1,4 +1,4 @@
-export const SITE_URL = "https://talk2abe.com";
+export const SITE_URL = "https://talk2abe.com".replace(/\/$/, "");
 
 export const seoImages = {
   default: `${SITE_URL}/images/abe/abe-hero.png`,

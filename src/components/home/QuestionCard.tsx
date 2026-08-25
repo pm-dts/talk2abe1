@@ -62,13 +62,13 @@ export default function QuestionCard({
         <span className="flex min-w-0 flex-1 flex-col">
           <h3
             className="
-              text-sm
+              text-lg
               font-semibold
               leading-snug
               text-navy
               transition-colors
               group-hover:text-brand
-              sm:text-base
+              md:text-base
             "
           >
             See more questions
@@ -82,7 +82,7 @@ export default function QuestionCard({
               w-fit
               items-center
               gap-1.5
-              text-xs
+              text-sm
               font-semibold
               text-brand
               transition-colors
@@ -138,13 +138,13 @@ export default function QuestionCard({
         <h3
           className="
             line-clamp-2
-            text-sm
+            text-lg
             font-semibold
             leading-snug
             text-navy
             transition-colors
             group-hover:text-brand
-            sm:text-base
+            md:text-base
           "
         >
           {question.title}
@@ -158,7 +158,7 @@ export default function QuestionCard({
             w-fit
             items-center
             gap-1.5
-            text-xs
+            text-sm
             font-semibold
             text-brand
             transition-colors
