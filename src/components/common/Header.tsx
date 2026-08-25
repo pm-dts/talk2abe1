@@ -28,7 +28,7 @@ export default function Header() {
           {/* Phone Number */}
           <a
             href="tel:+13058916500"
-            className="hidden items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-brand md:inline-flex"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-brand"
           >
             <Phone
               className="h-4 w-4 text-brand"
