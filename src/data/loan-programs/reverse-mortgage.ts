@@ -10,7 +10,7 @@ export const reverseMortgageLoanProgram: LoanProgram = {
   icon: "reverse-mortgage",
   hero: {
     eyebrow: "Reverse Mortgages",
-    title: "Turn your home equity into income — *without* a monthly payment.",
+    title: "Access your home equity without a required monthly mortgage payment",
     description:
       "A reverse mortgage lets homeowners 62 and older convert home equity into cash, while continuing to live in and own their home.",
     trustPoints: ["Must be 62 or older", "Stay in your home"],
