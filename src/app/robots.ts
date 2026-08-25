@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-import { SITE_URL } from "@/config/seo";
+export const dynamic = "force-static";
+
+const SITE_URL = "https://talk2abe.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,6 +11,5 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
   };
 }
