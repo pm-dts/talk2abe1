@@ -7,9 +7,17 @@ import Container from "@/components/common/Container";
 import QuestionFilters from "@/components/questions/QuestionFilters";
 import QuestionList from "@/components/questions/QuestionList";
 import CategorySidebar from "@/components/questions/CategorySidebar";
+import BreadcrumbSchema, {
+  buildBreadcrumbs,
+} from "@/components/seo/BreadcrumbSchema";
 
 import { categories as categoryOptions } from "@/data/categories";
 import { questions } from "@/data/questions";
+
+const breadcrumbItems = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Ask Abe", path: "/questions" },
+]);
 
 export default function AskAbePage() {
   const [search, setSearch] = useState("");
@@ -59,6 +67,8 @@ export default function AskAbePage() {
 
   return (
     <div className="bg-white">
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       <Container className="py-8 sm:py-10 lg:py-12">
         {/* Breadcrumbs */}
         <Breadcrumbs

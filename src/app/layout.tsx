@@ -3,6 +3,9 @@ import { Fraunces, IBM_Plex_Mono, Manrope } from "next/font/google";
 
 import SiteChrome from "@/components/common/SiteChrome";
 import AbeChatEmbed from "@/components/chat/AbeChatEmbed";
+import BusinessSchema from "@/components/seo/BusinessSchema";
+import PersonSchema from "@/components/seo/PersonSchema";
+import { seoConfig, seoImages, SITE_URL } from "@/config/seo";
 
 import "./globals.css";
 
@@ -29,8 +32,32 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Talk2Abe",
-  description: "Straightforward mortgage answers from Abe.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: seoConfig.defaultTitle,
+    template: "%s | Talk2Abe",
+  },
+  description: seoConfig.defaultDescription,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: seoConfig.siteName,
+    url: SITE_URL,
+    images: [
+      {
+        url: seoImages.default,
+        width: 1200,
+        height: 630,
+        alt: "Talk2Abe — Straightforward Mortgage Answers from Abe Hakawati",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
 };
 
 export default function RootLayout({
@@ -46,6 +73,9 @@ export default function RootLayout({
         <SiteChrome>{children}</SiteChrome>
 
         <AbeChatEmbed />
+
+        <BusinessSchema />
+        <PersonSchema />
       </body>
     </html>
   );

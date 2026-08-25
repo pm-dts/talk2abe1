@@ -7,21 +7,22 @@ import { questions } from "@/data/questions";
 import type { Question } from "@/types/question";
 
 const POPULAR_SLUGS = [
-  "can-i-buy-a-home-with-5-percent-down",
+  "how-much-house-can-i-afford",
+  "when-does-refinancing-a-mortgage-make-sense",
   "can-i-get-a-mortgage-if-im-self-employed",
   "what-is-a-dscr-loan",
-  "how-much-house-can-i-afford",
-  "can-i-get-a-mortgage-with-bank-statements",
-  "how-does-a-2-1-buydown-work",
-  "what-are-the-down-payment-options",
-  "what-credit-score-do-i-need-to-buy-a-house",
-  "can-i-use-gift-money-for-my-down-payment",
-  "when-does-refinancing-a-mortgage-make-sense",
-  "can-i-get-a-mortgage-without-tax-returns",
+  "can-i-access-my-home-equity-without-refinancing",
   "how-does-a-reverse-mortgage-work",
-  "can-an-itin-holder-buy-a-house-in-the-united-states",
-  "how-does-a-cash-out-refinance-work",
-  "how-do-lenders-calculate-self-employed-income",
+  "can-i-get-a-mortgage-without-tax-returns",
+  // "can-i-buy-a-home-with-5-percent-down",
+  // "can-i-get-a-mortgage-with-bank-statements",
+  // "how-does-a-2-1-buydown-work",
+  // "what-are-the-down-payment-options",
+  // "what-credit-score-do-i-need-to-buy-a-house",
+  // "can-i-use-gift-money-for-my-down-payment",
+  // "can-an-itin-holder-buy-a-house-in-the-united-states",
+  // "how-does-a-cash-out-refinance-work",
+  // "how-do-lenders-calculate-self-employed-income",
 ] as const;
 
 const popularQuestions = POPULAR_SLUGS.map((slug) =>

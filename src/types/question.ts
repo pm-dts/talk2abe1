@@ -26,6 +26,7 @@ export interface Question {
   icon: QuestionIcon;
   author?: string;
   publishedAt?: string;
+  modifiedAt?: string;
   video?: QuestionVideo;
   shortAnswer?: string;
   fullAnswer?: string[];

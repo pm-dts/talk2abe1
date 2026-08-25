@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import QuestionAnswer from "@/components/common/QuestionAnswer";
+import BreadcrumbSchema, {
+  buildBreadcrumbs,
+} from "@/components/seo/BreadcrumbSchema";
+import ArticleSchema from "@/components/seo/ArticleSchema";
 import { questions } from "@/data/questions";
+import { getCanonicalUrl } from "@/lib/urls";
+import { seoConfig, seoImages } from "@/config/seo";
 import type { Question } from "@/types/question";
 
 type QuestionPageProps = {
@@ -55,11 +61,30 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${question.title} | Talk2Abe`,
+    title: question.title,
     description:
       question.metaDescription ??
       question.shortAnswer ??
       `Straight answer from Abe to "${question.title}".`,
+    openGraph: {
+      title: `${question.title} | Talk2Abe`,
+      description:
+        question.metaDescription ??
+        question.shortAnswer ??
+        `Straight answer from Abe to "${question.title}".`,
+      url: getCanonicalUrl(`/questions/${slug}`),
+      images: [
+        {
+          url: seoImages.question,
+          width: 1200,
+          height: 630,
+          alt: question.title,
+        },
+      ],
+    },
+    alternates: {
+      canonical: getCanonicalUrl(`/questions/${slug}`),
+    },
   };
 }
 
@@ -71,10 +96,31 @@ export default async function QuestionPage({ params }: QuestionPageProps) {
     notFound();
   }
 
+  const breadcrumbs = buildBreadcrumbs([
+    { name: "Home", path: "/" },
+    { name: "Ask Abe", path: "/questions" },
+    { name: question.title, path: `/questions/${slug}` },
+  ]);
+
   return (
-    <QuestionAnswer
-      question={question}
-      relatedQuestions={getRelatedQuestions(question)}
-    />
+    <>
+      <BreadcrumbSchema items={breadcrumbs} />
+      <ArticleSchema
+        data={{
+          headline: question.title,
+          description: question.shortAnswer ?? question.metaDescription,
+          url: getCanonicalUrl(`/questions/${slug}`),
+          image: question.video?.thumbnail
+            ? `${seoConfig.siteUrl}${question.video.thumbnail}`
+            : undefined,
+          datePublished: question.publishedAt,
+          dateModified: question.modifiedAt,
+        }}
+      />
+      <QuestionAnswer
+        question={question}
+        relatedQuestions={getRelatedQuestions(question)}
+      />
+    </>
   );
 }

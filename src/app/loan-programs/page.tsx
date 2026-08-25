@@ -1,10 +1,46 @@
+import type { Metadata } from "next";
+
 import Container from "@/components/common/Container";
 import CTA from "@/components/common/CTA";
 import LoanProgramGrid from "@/components/loan-programs/LoanProgramGrid";
+import BreadcrumbSchema, {
+  buildBreadcrumbs,
+} from "@/components/seo/BreadcrumbSchema";
+import { getCanonicalUrl } from "@/lib/urls";
+import { seoImages } from "@/config/seo";
+
+export const metadata: Metadata = {
+  title: "Mortgage Loan Programs",
+  description:
+    "Explore mortgage loan programs including purchase, refinance, self-employed, DSCR, FHA, VA, reverse mortgage, and home equity options.",
+  openGraph: {
+    title: "Mortgage Loan Programs | Talk2Abe",
+    description:
+      "Explore mortgage loan programs including purchase, refinance, self-employed, DSCR, FHA, VA, reverse mortgage, and home equity options.",
+    url: getCanonicalUrl("/loan-programs"),
+    images: [
+      {
+        url: seoImages.loanProgram,
+        width: 1200,
+        height: 630,
+        alt: "Mortgage Loan Programs — Talk2Abe",
+      },
+    ],
+  },
+  alternates: {
+    canonical: getCanonicalUrl("/loan-programs"),
+  },
+};
+
+const breadcrumbs = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Loan Programs", path: "/loan-programs" },
+]);
 
 export default function LoanProgramsPage() {
   return (
     <div className="bg-white">
+      <BreadcrumbSchema items={breadcrumbs} />
       <Container className="py-8 sm:py-10 lg:py-12">
         {/* Page Introduction */}
         <section className="mt-7 max-w-2xl">

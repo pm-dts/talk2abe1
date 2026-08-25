@@ -16,12 +16,39 @@ import {
 import Container from "@/components/common/Container";
 import StartAbeConversationButton from "@/components/chat/StartAbeConversationButton";
 import ValueProps from "@/components/home/ValueProps";
+import BreadcrumbSchema, {
+  buildBreadcrumbs,
+} from "@/components/seo/BreadcrumbSchema";
+import { getCanonicalUrl } from "@/lib/urls";
+import { seoImages } from "@/config/seo";
 
 export const metadata: Metadata = {
-  title: "Ask Abe | Talk2Abe",
+  title: "Ask Abe | Mortgage Questions Answered",
   description:
     "Talk it through with Abe. Get straight answers to your mortgage questions before you fill anything out.",
+  openGraph: {
+    title: "Ask Abe | Mortgage Questions Answered | Talk2Abe",
+    description:
+      "Get straight answers to your mortgage questions from Abe Hakawati. No obligation, no complicated application.",
+    url: getCanonicalUrl("/ask-abe"),
+    images: [
+      {
+        url: seoImages.askAbe,
+        width: 1200,
+        height: 630,
+        alt: "Ask Abe — Mortgage Questions Answered",
+      },
+    ],
+  },
+  alternates: {
+    canonical: getCanonicalUrl("/ask-abe"),
+  },
 };
+
+const breadcrumbs = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Ask Abe", path: "/ask-abe" },
+]);
 
 function AbeAvatar() {
   return (
@@ -82,6 +109,8 @@ const helpOptions = [
 export default function AskAbePage() {
   return (
     <div className="min-h-screen">
+      <BreadcrumbSchema items={breadcrumbs} />
+
       <Container className="pt-6 sm:pt-10 lg:pt-14">
         <section className="mx-auto w-full max-w-3xl">
           <div className="rounded-[28px] border border-slate-200/80 bg-surface px-5 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-12">
