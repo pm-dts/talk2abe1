@@ -305,7 +305,7 @@ export default function QuestionAnswer({
             {/* CTA */}
             <div className="mt-8">
               <CTA
-                title="Have a questions about your situation?"
+                title="Have a question about your situation?"
                 description="Every situation is different. Let&apos;s get the right solution for you."
                 primaryAction={{
                   href: "/ask-abe",
