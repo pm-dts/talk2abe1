@@ -68,9 +68,8 @@ export default function LatestVideoSection() {
               Ask Abe a Question
             </Button>
             <ScheduleCallButton
-              variant="outline"
               size="lg"
-              className="!border-white/30 !text-white hover:!bg-white/10 hover:!text-white"
+              className="!bg-white !text-navy hover:!bg-white hover:!text-navy"
             >
               Schedule a Call
             </ScheduleCallButton>
