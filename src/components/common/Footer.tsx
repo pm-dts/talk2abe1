@@ -1,10 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
-// import { useTranslation } from "react-i18next";
 import Logo from "@/components/common/Logo";
 import Container from "@/components/common/Container";
 import SocialLinks from "@/components/sections/SocialLinks";
@@ -27,8 +24,6 @@ function FooterColumn({
 }
 
 export default function Footer() {
-  // const { t } = useTranslation();
-
   return (
     <footer className="bg-navy text-white">
       <Container>
@@ -38,7 +33,7 @@ export default function Footer() {
             <Logo size="lg" variant="light" />
 
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
-              Your trusted mortgage advisor. Expert guidance on home loans, refinancing, and more.
+              {siteConfig.tagline.join(" ")}
             </p>
 
             <SocialLinks />
@@ -49,7 +44,7 @@ export default function Footer() {
           </div>
 
           {/* Popular Categories */}
-          <FooterColumn heading={"Resources"}>
+          <FooterColumn heading="Popular Categories">
             {categories.map((category) => (
               <li key={category.id}>
                 <Link
@@ -64,7 +59,7 @@ export default function Footer() {
 
           {/* Contact + MyLoanDesk */}
           <div>
-            <h3 className="text-base font-semibold text-white">Contact Us</h3>
+            <h3 className="text-base font-semibold text-white">Contact</h3>
 
             <ul className="mt-5 space-y-4">
               <li>
@@ -115,7 +110,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 inline-flex transition-opacity hover:opacity-80"
-                aria-label={"Visit MyLoanDesk"}
+                aria-label="Visit MyLoanDesk"
               >
                 <Image
                   src="/images/footer/myloandesk.png"
@@ -137,7 +132,8 @@ export default function Footer() {
               <span className="font-medium text-slate-300">
                 Talk2Abe.com
               </span>{" "}
-              Talk2Abe.com is a DBA of Secured Horizon Financial Group, Inc. / Secured Horizon Mortgage Group, Inc.
+              is a DBA of Secured Horizon Financial Group, Inc. / Secured
+              Horizon Mortgage Group, Inc.
             </p>
 
             {/* NMLS Information */}
@@ -166,7 +162,14 @@ export default function Footer() {
 
             {/* Disclaimer */}
             <p className="max-w-7xl">
-              This is not a commitment to lend. All information, rates, and terms are subject to change without notice. Rates are subject to market conditions and vary based on individual borrower qualifications. Contact Talk2Abe for current rates and terms.
+              Interest Rates, APRs, and loan programs are illustrations subject
+              to change at any time without notice. These do not constitute a
+              Loan Estimate or Good Faith Estimate for payments and closing
+              costs. Not all applicants will qualify. APR may vary by product
+              type. Consumers are not obligated to use any party mentioned.
+              Talk2Abe.com is not affiliated with FHA, VA, USDA, or the Federal
+              Government. 1801 NE 123rd St, Suite 314, North Miami, FL 33181 |
+              (305) 891-6500. Regulated by the Florida Office of Financial Regulation.
             </p>
           </div>
         </div>
@@ -174,7 +177,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="w-full border-t border-white/10 py-6 text-center">
           <p className="text-sm text-slate-400">
-            {`© ${2026} Talk2Abe.com. All rights reserved.`}
+            &copy; 2026 Talk2Abe.com. All rights reserved.
           </p>
         </div>
       </Container>

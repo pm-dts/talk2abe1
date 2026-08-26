@@ -46,23 +46,3 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-
-/* RTL support */
-html[dir="rtl"] {
-  text-align: right;
-}
-
-html[dir="rtl"] .rotate-flip-rtl {
-  transform: scaleX(-1);
-}
-
-/* Logical spacing utilities for RTL */
-html[dir="rtl"] [dir-placement-inline-start] {
-  margin-inline-start: auto;
-  margin-inline-end: 0;
-}
-
-html[dir="rtl"] [dir-placement-inline-end] {
-  margin-inline-start: 0;
-  margin-inline-end: auto;
-}

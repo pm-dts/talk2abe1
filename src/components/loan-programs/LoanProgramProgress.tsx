@@ -1,7 +1,3 @@
-"use client";
-
-// import { useTranslation } from "react-i18next";
-
 import { cn } from "@/lib/utils";
 
 type LoanProgramProgressProps = {
@@ -15,8 +11,6 @@ export default function LoanProgramProgress({
   totalSteps,
   className,
 }: LoanProgramProgressProps) {
-  // const { t } = useTranslation();
-
   return (
     <div
       role="group"
@@ -37,7 +31,7 @@ export default function LoanProgramProgress({
       ))}
 
       <span className="whitespace-nowrap font-mono text-xs text-muted">
-        {`Step ${currentStep} of ${totalSteps}`}
+        Step {currentStep} of {totalSteps}
       </span>
     </div>
   );

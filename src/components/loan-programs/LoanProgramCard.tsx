@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-// import { useTranslation } from "react-i18next";
 import {
   ArrowRight,
   Building2,
@@ -41,7 +38,6 @@ export default function LoanProgramCard({
   program,
   className,
 }: LoanProgramCardProps) {
-  // const { t } = useTranslation();
   const Icon = iconMap[program.icon];
 
   return (
@@ -75,7 +71,7 @@ export default function LoanProgramCard({
           aria-label={`Learn more about ${program.title}`}
           className="group mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand transition-colors hover:text-brand/80 sm:text-sm"
         >
-          {"Learn more"}
+          Learn more
           <ArrowRight
             className="h-3.5 w-3.5 transition-transform duration-200 ease-out group-hover:translate-x-1"
             strokeWidth={2}

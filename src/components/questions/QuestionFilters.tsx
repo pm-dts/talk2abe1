@@ -1,6 +1,5 @@
 "use client";
 
-// import { useTranslation } from "react-i18next";
 import QuestionSearch from "@/components/questions/QuestionSearch";
 import { categories as categoryOptions } from "@/data/categories";
 import { cn } from "@/lib/utils";
@@ -25,7 +24,6 @@ export default function QuestionFilters({
   onCategoryChange,
   className,
 }: QuestionFiltersProps) {
-  // const { t } = useTranslation();
   const options = categories ?? categoryOptions.map((c) => c.name);
 
   return (
@@ -35,12 +33,12 @@ export default function QuestionFilters({
       <QuestionSearch
         value={search}
         onChange={onSearchChange}
+        placeholder="Search questions..."
         className="flex-1"
       />
 
       <div className="sm:w-56">
         <label htmlFor="question-category" className="sr-only">
-          {/* {t("questions.filters.filterByCategory")} */}
           Filter by category
         </label>
         <select

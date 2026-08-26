@@ -1,13 +1,9 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-// import { useTranslation } from "react-i18next";
 
 import Container from "@/components/common/Container";
 import QuestionCard from "@/components/home/QuestionCard";
 import { questions } from "@/data/questions";
-// import { useLanguage } from "@/i18n/hooks";
 import type { Question } from "@/types/question";
 
 const POPULAR_SLUGS = [
@@ -18,6 +14,15 @@ const POPULAR_SLUGS = [
   "can-i-access-my-home-equity-without-refinancing",
   "how-does-a-reverse-mortgage-work",
   "are-there-really-grants-for-buying-a-home",
+  // "can-i-buy-a-home-with-5-percent-down",
+  // "can-i-get-a-mortgage-with-bank-statements",
+  // "how-does-a-2-1-buydown-work",
+  // "what-are-the-down-payment-options",
+  // "what-credit-score-do-i-need-to-buy-a-house",
+  // "can-i-use-gift-money-for-my-down-payment",
+  // "can-an-itin-holder-buy-a-house-in-the-united-states",
+  // "how-does-a-cash-out-refinance-work",
+  // "how-do-lenders-calculate-self-employed-income",
 ] as const;
 
 const popularQuestions = POPULAR_SLUGS.map((slug) =>
@@ -25,10 +30,6 @@ const popularQuestions = POPULAR_SLUGS.map((slug) =>
 ).filter((question): question is Question => Boolean(question));
 
 export default function PopularQuestions() {
-  // const { t } = useTranslation();
-  // const { locale } = useLanguage();
-  // const locale = "en";
-
   if (popularQuestions.length === 0) {
     return null;
   }
@@ -36,6 +37,7 @@ export default function PopularQuestions() {
   return (
     <section className="bg-white py-6 lg:py-8">
       <Container>
+        {/* Section Header */}
         <div className="mb-7 flex items-center justify-between gap-4 sm:mb-8">
           <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
             Popular Questions
@@ -45,7 +47,7 @@ export default function PopularQuestions() {
             href="/questions"
             className="group inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand transition-colors sm:text-base"
           >
-            <span>View All Questions</span>
+            <span>View all questions</span>
 
             <ArrowRight
               className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
@@ -54,6 +56,7 @@ export default function PopularQuestions() {
           </Link>
         </div>
 
+        {/* Questions Grid */}
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
           {popularQuestions.map((question) => (
             <QuestionCard key={question.id} question={question} />

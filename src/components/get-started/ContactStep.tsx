@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Phone } from "lucide-react";
-// import { useTranslation } from "react-i18next";
 
 import Button from "@/components/common/Button";
 import ConsentText from "@/components/get-started/ConsentText";
@@ -47,7 +46,6 @@ export default function ContactStep({
   submitting,
   submitError,
 }: ContactStepProps) {
-  // const { t } = useTranslation();
   const [errors, setErrors] = useState<ContactErrors>({});
 
   const update = (field: keyof GetStartedContact, value: string) => {
@@ -101,10 +99,11 @@ export default function ContactStep({
     <form onSubmit={handleSubmit} noValidate className="w-full">
       <div className="text-center">
         <h2 className="text-[22px] font-bold leading-snug tracking-tight text-navy sm:text-[26px]">
-          {"Let's Talk"}
+          Let&apos;s Talk
         </h2>
         <p className="mt-2 text-sm text-muted sm:text-base">
-          {"Tell me how to reach you and I'll review what you're looking for."}
+          Tell me how to reach you and I&apos;ll review what you&apos;re
+          looking for.
         </p>
       </div>
 
@@ -112,7 +111,7 @@ export default function ContactStep({
         <div className="grid grid-cols-2 gap-4">
           <div className="min-w-0">
             <label htmlFor="gs-first-name" className={labelClasses}>
-              {"First Name"}
+              First Name
               <span className="ml-0.5 text-brand" aria-hidden="true">*</span>
             </label>
             <input
@@ -121,7 +120,7 @@ export default function ContactStep({
               autoComplete="given-name"
               value={contact.firstName}
               onChange={(event) => update("firstName", event.target.value)}
-              placeholder={"First Name"}
+              placeholder="First Name"
               aria-invalid={Boolean(errors.firstName)}
               aria-describedby={errors.firstName ? "gs-first-name-error" : undefined}
               className={cn(
@@ -134,7 +133,7 @@ export default function ContactStep({
 
           <div className="min-w-0">
             <label htmlFor="gs-last-name" className={labelClasses}>
-              {"Last Name"}
+              Last Name
               <span className="ml-0.5 text-brand" aria-hidden="true">*</span>
             </label>
             <input
@@ -143,7 +142,7 @@ export default function ContactStep({
               autoComplete="family-name"
               value={contact.lastName}
               onChange={(event) => update("lastName", event.target.value)}
-              placeholder={"Last Name"}
+              placeholder="Last Name"
               aria-invalid={Boolean(errors.lastName)}
               aria-describedby={errors.lastName ? "gs-last-name-error" : undefined}
               className={cn(
@@ -157,7 +156,7 @@ export default function ContactStep({
 
         <div>
           <label htmlFor="gs-email" className={labelClasses}>
-            {"Email"}
+            Email
             <span className="ml-0.5 text-brand" aria-hidden="true">*</span>
           </label>
           <input
@@ -166,7 +165,7 @@ export default function ContactStep({
             autoComplete="email"
             value={contact.email}
             onChange={(event) => update("email", event.target.value)}
-            placeholder={"Email Address"}
+            placeholder="Email Address"
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? "gs-email-error" : undefined}
             className={cn(
@@ -179,7 +178,7 @@ export default function ContactStep({
 
         <div>
           <label htmlFor="gs-phone" className={labelClasses}>
-            {"Phone"}
+            Phone
             <span className="ml-0.5 text-brand" aria-hidden="true">*</span>
           </label>
           <input
@@ -188,7 +187,7 @@ export default function ContactStep({
             autoComplete="tel"
             value={contact.phone}
             onChange={(event) => update("phone", event.target.value)}
-            placeholder={"Phone Number"}
+            placeholder="Phone Number"
             aria-invalid={Boolean(errors.phone)}
             aria-describedby={errors.phone ? "gs-phone-error" : undefined}
             className={cn(
@@ -201,7 +200,7 @@ export default function ContactStep({
 
         <div>
           <label htmlFor="gs-state" className={labelClasses}>
-            {"Property State"}
+            Property State
             <span className="ml-0.5 text-brand" aria-hidden="true">*</span>
           </label>
           <select
@@ -218,7 +217,7 @@ export default function ContactStep({
             )}
           >
             <option value="" disabled>
-              {"Select State"}
+              Select State
             </option>
             {usStates.map((state) => (
               <option key={state.value} value={state.value}>
@@ -247,7 +246,7 @@ export default function ContactStep({
         </Button>
 
         <Button variant="outline" size="lg" onClick={onBack} disabled={submitting}>
-          {"Back"}
+          Back
         </Button>
       </div>
     </form>

@@ -1,15 +1,10 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-// import { useTranslation } from "react-i18next";
 
 import Container from "@/components/common/Container";
 import ScheduleCallButton from "@/components/common/ScheduleCallButton";
 
 export default function HeroSection() {
-  // const { t } = useTranslation();
-
   return (
     <section className="w-full min-w-0 overflow-hidden bg-surface pt-0">
       <Container
@@ -45,7 +40,7 @@ export default function HeroSection() {
         >
           <Image
             src="/images/abe/abe-hero.png"
-            alt={"Abe, Talk2Abe mortgage expert"}
+            alt="Abe, Talk2Abe mortgage expert"
             width={800}
             height={600}
             priority
@@ -86,19 +81,19 @@ export default function HeroSection() {
           <div className="max-w-2xl">
             <h1
               className="
-                text-[1.5rem]
+                text-[2rem]
                 font-bold
                 leading-[1.08]
                 tracking-[-0.03em]
                 text-navy
-                sm:text-md
-                md:text-[1.5rem]
+                sm:text-lg
+                md:text-[2rem]
                 lg:text-[3.5rem]
               "
             >
-              <span className="block">Chat with Abe,</span>
-              <span className="block">Your AI Mortgage</span>
-              <span className="block text-brand">Assistant</span>
+              <span className="block">Got a</span>
+              <span className="block">mortgage question?</span>
+              <span className="block text-brand">Talk2Abe.</span>
             </h1>
 
             <p
@@ -114,7 +109,8 @@ export default function HeroSection() {
                 lg:leading-8
               "
             >
-              Get expert answers on conventional, FHA, VA, and DSCR loans. Abe uses AI to help you find the best loan programs.
+              Straight answers to your mortgage questions — from an experienced
+              mortgage professional
             </p>
 
             {/* Hero Actions */}

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-// import { useTranslation } from "react-i18next";
 
 import CalculatorCard from "@/components/loan-programs/CalculatorCard";
 import CalculatorField from "@/components/loan-programs/CalculatorField";
@@ -10,10 +9,10 @@ import CalculatorResult from "@/components/loan-programs/CalculatorResult";
 import {
   estimateDscr,
   estimatePitiBreakdown,
+  formatCurrency,
   formatRatio,
   type Verdict,
 } from "@/lib/loan-calculators";
-import { formatLocalizedCurrency } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
 import type { LoanProgramDscrCalculatorConfig } from "@/types/loan-program";
@@ -23,7 +22,6 @@ type DscrCalculatorProps = {
 };
 
 export default function DscrCalculator({ config }: DscrCalculatorProps) {
-  // const { t } = useTranslation();
   const [mode, setMode] = useState(config.mode.options[0]);
   const [values, setValues] = useState<Record<string, string>>({});
 
@@ -103,27 +101,27 @@ export default function DscrCalculator({ config }: DscrCalculatorProps) {
               {breakdown ? (
                 <>
                   <p>
-                    {"Est. principal & interest:"}{" "}
+                    Est. principal &amp; interest:{" "}
                     <strong className="text-[15px] text-white">
-                      {formatLocalizedCurrency(breakdown.principalInterest)}
+                      {formatCurrency(breakdown.principalInterest)}
                     </strong>
-                    {"/mo"}
+                    /mo
                   </p>
                   <p>
-                    {"+ taxes/insurance/HOA:"}{" "}
+                    + taxes/insurance/HOA:{" "}
                     <strong className="text-[15px] text-white">
-                      {formatLocalizedCurrency(breakdown.taxIns)}
+                      {formatCurrency(breakdown.taxIns)}
                     </strong>
-                    {"/mo"}
+                    /mo
                   </p>
                   <p>
-                    {"Total est. payment:"}{" "}
+                    Total est. payment:{" "}
                     <strong className="text-[15px] text-white">
-                      {formatLocalizedCurrency(breakdown.total)}
+                      {formatCurrency(breakdown.total)}
                     </strong>
-                    {"/mo"}{" "}
+                    /mo{" "}
                     <span className="opacity-70">
-                      ({config.estimateTermYears}{"-yr term"})
+                      ({config.estimateTermYears}-yr term)
                     </span>
                   </p>
                 </>

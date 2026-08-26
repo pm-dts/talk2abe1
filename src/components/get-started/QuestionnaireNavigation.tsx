@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
-// import { useTranslation } from "react-i18next";
 
 import Button from "@/components/common/Button";
 import { cn } from "@/lib/utils";
@@ -18,11 +17,9 @@ export default function QuestionnaireNavigation({
   showBack,
   onBack,
   onContinue,
-  continueLabel,
+  continueLabel = "Continue",
   className,
 }: QuestionnaireNavigationProps) {
-  // const { t } = useTranslation();
-
   return (
     <div
       className={cn(
@@ -51,7 +48,7 @@ export default function QuestionnaireNavigation({
             "
           />
 
-          <span>{"Back"}</span>
+          <span>Back</span>
         </Button>
       )}
 
@@ -62,7 +59,7 @@ export default function QuestionnaireNavigation({
         onClick={onContinue}
         className={cn("group", !showBack && "col-span-full")}
       >
-        <span>{continueLabel ?? "Continue"}</span>
+        <span>{continueLabel}</span>
 
         <ArrowRight
           aria-hidden="true"

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-// import { useTranslation } from "react-i18next";
 
 import { X } from "lucide-react";
 
@@ -19,8 +18,6 @@ export default function BookingWidget({
   open,
   onClose,
 }: BookingWidgetProps) {
-  // const { t } = useTranslation();
-
   useEffect(() => {
     if (!open) {
       return;
@@ -85,7 +82,7 @@ export default function BookingWidget({
           <button
             type="button"
             onClick={onClose}
-            aria-label={"Close booking widget"}
+            aria-label="Close booking widget"
             className="rounded-md p-1.5 text-muted transition-colors hover:bg-surface hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
           >
             <X className="h-5 w-5" aria-hidden="true" />
