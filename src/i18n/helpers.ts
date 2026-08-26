@@ -1,0 +1,32 @@
+import { type Locale, DEFAULT_LOCALE } from "@/i18n/config";
+
+type Translatable = {
+  translations?: Partial<Record<Locale, Record<string, string | string[]>>>;
+};
+
+export function localize<T extends Translatable>(
+  obj: T,
+  locale: Locale,
+  field: string,
+): string {
+  if (locale === DEFAULT_LOCALE) return obj[field as keyof T] as string;
+  const t = obj.translations?.[locale];
+  const val = t?.[field];
+  if (typeof val === "string") return val;
+  return (obj[field as keyof T] as string) ?? "";
+}
+
+export function localizeObject<T extends Translatable>(
+  obj: T,
+  locale: Locale,
+): T {
+  if (locale === DEFAULT_LOCALE || !obj.translations?.[locale]) return obj;
+  const t = obj.translations[locale];
+  const result = { ...obj };
+  for (const [key, value] of Object.entries(t)) {
+    if (key in result) {
+      (result as Record<string, unknown>)[key] = value;
+    }
+  }
+  return result;
+}

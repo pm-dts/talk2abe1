@@ -1,0 +1,737 @@
+{
+  "common": {
+    "phone": "(281) 466-4985",
+    "phoneAria": "(281) 466 4985",
+    "email": "info@talk2abe.com",
+    "emailAria": "info at talk 2 abe dot com",
+    "addresses": {
+      "houston": "5599 San Felipe, Suite 500 Houston, TX 77056",
+      "galveston": "4200 San Jacinto Blvd, Suite 302 Galveston, TX 77550"
+    },
+    "addressAria": {
+      "houston": "5599 San Felipe Suite 500 Houston TX 77056",
+      "galveston": "4200 San Jacinto Blvd Suite 302 Galveston TX 77550"
+    },
+    "startAbeChat": "Gespräch mit Abe starten",
+    "startMyConversation": "Mein Gespräch starten",
+    "scheduleACall": "Gespräch vereinbaren",
+    "scheduleACallWithAbe": "Gespräch mit Abe vereinbaren",
+    "askAbeQuestion": "Abe eine Frage stellen",
+    "viewAll": "Alle anzeigen",
+    "back": "Zurück",
+    "continue": "Weiter",
+    "backToQuestions": "Zurück zu Fragen",
+    "next": "Weiter",
+    "submit": "Absenden",
+    "close": "Schließen",
+    "closeBookingWidget": "Buchungs-Widget schließen",
+    "required": "Erforderlich",
+    "optional": "Optional",
+    "learnMore": "Mehr erfahren",
+    "loading": "Wird geladen...",
+    "stepLabel": "Schritt {{current}} von {{total}}",
+    "sending": "Wird gesendet...",
+    "home": "Startseite",
+    "askAbe": "Abe fragen",
+    "loanPrograms": "Darlehensprogramme",
+    "aboutAbe": "Über Abe",
+    "contact": "Kontakt",
+    "getStarted": "Loslegen",
+    "questions": "Fragen",
+    "breadcrumb": "Brotkrumen"
+  },
+  "nav": {
+    "home": "Startseite",
+    "askAbe": "Abe fragen",
+    "loanPrograms": "Darlehensprogramme",
+    "questions": "Fragen",
+    "contact": "Kontakt",
+    "getStarted": "Loslegen",
+    "aboutAbe": "Über Abe",
+    "menu": "Menü"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Ihr persönlicher Hypothekenberater",
+      "titleLine1": "Chatten Sie mit Abe,",
+      "titleLine2": "Ihr KI-Hypotheken",
+      "titleLine3": "Assistent",
+      "description": "Erhalten Sie Expertenantworten zu konventionellen, FHA, VA und DSCR Darlehen. Abe nutzt KI, um Ihnen die besten Darlehensprogramme zu finden.",
+      "cta": "Abe fragen",
+      "scheduleCall": "Gespräch vereinbaren",
+      "getStarted": "Loslegen",
+      "imageAlt": "Abe, Hypothekenexperte von Talk2Abe"
+    },
+    "valueProps": {
+      "title": "Warum mit Abe sprechen?",
+      "items": {
+        "aiPowered": {
+          "title": "KI-gestützte Antworten",
+          "description": "Erhalten Sie sofortige, expertenhafte Antworten auf Ihre Hypothekenfragen, unterstützt durch fortschrittliche KI, die mit echten Hypothekendaten trainiert wurde."
+        },
+        "trustedData": {
+          "title": "Vertrauenswürdige Daten",
+          "description": "Greifen Sie auf verifizierte Hypothekeninformationen zu, die direkt von erfahrenen Kreditgebern und Branchenstandards stammen."
+        },
+        "fastResponses": {
+          "title": "Schnelle Antworten",
+          "description": "Keine Wartezeiten. Abe bietet sofortige, detaillierte Antworten, um Ihnen bei fundierten Entscheidungen zu helfen."
+        },
+        "alwaysAvailable": {
+          "title": "Immer verfügbar",
+          "description": "Abe ist rund um die Uhr verfügbar, um Ihre Hypothekenfragen zu beantworten, wann immer Sie Beratung benötigen."
+        }
+      }
+    },
+    "popularQuestions": {
+      "title": "Beliebte Fragen",
+      "viewAll": "Alle Fragen anzeigen",
+      "viewAllAria": "Alle beliebten Fragen anzeigen",
+      "seeMoreQuestions": "Mehr Fragen anzeigen",
+      "seeMoreAria": "Mehr Hypothekenfragen anzeigen"
+    },
+    "videoSection": {
+      "title": "Sehen Sie sich unser neuestes Video an",
+      "watchOnYouTube": "Auf YouTube ansehen"
+    },
+    "latestVideo": {
+      "title": "Haben Sie eine spezifische Frage zu Ihrer Situation?",
+      "description": "Fragen Sie Abe direkt. Wir finden die Antwort und die richtige Lösung für Sie.",
+      "askAbeCta": "Abe eine Frage stellen",
+      "scheduleCall": "Gespräch vereinbaren"
+    },
+    "cta": {
+      "title": "Bereit für den nächsten Schritt?",
+      "description": "Finden wir das richtige Darlehensprogramm für Ihre Lösung.",
+      "primary": "Abe eine Frage stellen",
+      "secondary": "Gespräch vereinbaren"
+    }
+  },
+  "about": {
+    "hero": {
+      "tagline": "Lernen Sie Ihren KI-Hypothekenassistenten kennen",
+      "titleLine1": "Lernen Sie Abe kennen, Ihren",
+      "titleLine2": "KI-Hypotheken",
+      "titleLine3": "Experten",
+      "description": "Abe ist ein erfahrener Hypothekendarlehensgeber mit jahrzehntelanger Erfahrung. Er wurde entwickelt, um Ihnen bei der Navigation durch den Hypothekenprozess mit Expertenberatung und personalisierten Empfehlungen zu helfen.",
+      "cta": "Abe eine Frage stellen"
+    },
+    "experience": {
+      "title": "Jahrzehnte Hypothekenerfahrung"
+    },
+    "whyAbe": {
+      "title": "Warum Abe wählen",
+      "items": {
+        "licensedExpert": {
+          "title": "Lizenzierter Experte",
+          "description": "Abe ist ein lizenzierter Darlehensgeber mit NMLS-Anmeldeinformationen und bringt professionelle Hypothekenkompetenz in jede Konversation ein."
+        },
+        "aiPowered": {
+          "title": "KI-gestützte Beratung",
+          "description": "Abe nutzt fortschrittliche KI-Technologie, um Ihnen rund um die Uhr sofortige, präzise Antworten auf Ihre Hypothekenfragen zu geben."
+        },
+        "trustedSource": {
+          "title": "Vertrauenswürdige Quelle",
+          "description": "Alle Informationen stammen aus verifizierten Hypothekendaten und Abes persönlicher Berufserfahrung."
+        }
+      }
+    },
+    "whyCreated": {
+      "title": "Warum Talk2Abe geschaffen wurde"
+    },
+    "cta": {
+      "title": "Bereit loszulegen?",
+      "description": "Ob Sie Ihr erstes Zuhause kaufen oder umfinanzieren – Abe ist hier, um Sie auf jedem Schritt des Weges zu begleiten.",
+      "button": "Abe eine Frage stellen"
+    }
+  },
+  "askAbe": {
+    "title": "Abe fragen",
+    "subtitle": "Erhalten Sie Expertenantworten auf Ihre Hypothekenfragen",
+    "placeholder": "Was ist Ihre Hypothekenfrage?",
+    "disclaimer": "Abe ist ein KI-Assistent. Konsultieren Sie immer einen lizenzierten Kreditgeber für finanzielle Entscheidungen.",
+    "popularQuestions": "Beliebte Fragen",
+    "relatedQuestions": "Verwandte Fragen",
+    "pageHeading": "Sagen Sie mir, was Sie erreichen möchten.",
+    "pageDescription": "Beantworten Sie ein paar einfache Fragen und ich helfe Ihnen, Darlehensoptionen zu identifizieren, die zu Ihnen passen könnten.",
+    "hiImAbe": "Hallo, ich bin Abe.",
+    "licensedMortgagePro": "Lizenzierter Hypothekenprofi",
+    "whatCanIHelp": "Wobei kann ich Ihnen helfen?",
+    "trustRow": {
+      "about90Seconds": "Etwa 90 Sekunden",
+      "noObligation": "Keine Verpflichtung",
+      "private": "Privat"
+    },
+    "helpOptions": {
+      "buyAHome": "Ein Zuhause kaufen",
+      "refinance": "Umfanzieren",
+      "selfEmployed": "Selbstständig",
+      "dscr": "DSCR",
+      "fha": "FHA",
+      "va": "VA",
+      "reverseMortgage": "Umkehrhypothek",
+      "homeEquity": "Wohneigentum"
+    }
+  },
+  "questions": {
+    "listing": {
+      "title": "Hypothekenfragen",
+      "subtitle": "Finden Sie Antworten auf Ihre Hypothekenfragen",
+      "allQuestions": "Alle Fragen",
+      "noResults": "Keine Fragen gefunden",
+      "noResultsDescription": "Versuchen Sie, Ihre Suche oder Kategoriefilter anzupassen.",
+      "tryDifferent": "Versuchen Sie andere Stichwörter oder durchsuchen Sie die Kategorien.",
+      "categories": "Kategorien",
+      "questionsCount_one": "{{count}} Frage",
+      "questionsCount_other": "{{count}} Fragen",
+      "popular": "Beliebt",
+      "showMore": "Mehr Fragen anzeigen",
+      "showMoreCount": "{{count}} weitere Fragen anzeigen"
+    },
+    "search": {
+      "placeholder": "Fragen suchen...",
+      "ariaLabel": "Fragen suchen"
+    },
+    "filters": {
+      "sortBy": "Sortieren nach",
+      "newest": "Neueste",
+      "oldest": "Älteste",
+      "category": "Kategorie",
+      "allCategories": "Alle Kategorien",
+      "filterByCategory": "Nach Kategorie filtern"
+    },
+    "detail": {
+      "readTime": "{{minutes}} Min. Lesezeit",
+      "published": "Veröffentlicht am {{date}}",
+      "writtenBy": "Geschrieben von {{author}}",
+      "relatedQuestions": "Verwandte Fragen",
+      "shareQuestion": "Diese Frage teilen",
+      "copyLink": "Link kopieren",
+      "copied": "Link kopiert!"
+    },
+    "answer": {
+      "shortAnswer": "Kurze Antwort",
+      "fullAnswer": "Vollständige ausführliche Antwort",
+      "whatAbeReviews": "Was Abe überprüfen wird",
+      "abesTip": "Abes Tipp",
+      "exploreLoanProgram": "Dieses Darlehensprogramm erkunden",
+      "exploreDescription": "Diese Frage ist mit einem unserer Darlehensprogramme verbunden. Erfahren Sie mehr darüber, wie es funktioniert und ob es zu Ihrer Situation passt.",
+      "learnMoreProgram": "Mehr über dieses Programm erfahren",
+      "preparingAnswer": "Abe bereitet die Antwort auf diese Frage vor. Fragen Sie Abe in der Zwischenzeit direkt für eine schnelle, persönliche Antwort.",
+      "preparingFullAnswer": "Abe erstellt die vollständige ausführliche Antwort auf diese Frage. Schauen Sie bald vorbei – oder fragen Sie Abe direkt unten für Hilfe bei Ihrer spezifischen Situation.",
+      "mostPopular": "Beliebteste Frage",
+      "byAuthor": "Von {{author}}",
+      "byAbe": "Von Abe",
+      "haveQuestion": "Haben Sie eine Frage zu Ihrer Situation?",
+      "differentSituations": "Jede Situation ist anders. Lassen Sie uns die richtige Lösung für Sie finden."
+    }
+  },
+  "loanPrograms": {
+    "listing": {
+      "title": "Hypothekendarlehensprogramme",
+      "subtitle": "Entdecken Sie unsere umfassenden Hypothekenlösungen",
+      "explorePrograms": "Entdecken Sie unsere Darlehensprogramme",
+      "findProgram": "Finden Sie das richtige Hypothekenprogramm für Ihre Bedürfnisse",
+      "popularPrograms": "Beliebte Programme",
+      "description": "Wir bieten eine breite Palette von Hypothekenlösungen für Hausbesitzer, Hauskäufer und Immobilieninvestoren.",
+      "readyNextStep": "Bereit für den nächsten Schritt?",
+      "findRightProgram": "Finden wir das richtige Darlehensprogramm für Ihre Lösung."
+    },
+    "nav": {
+      "purchase": "Kauf",
+      "refinance": "Umfanzierung",
+      "selfEmployed": "Selbstständig",
+      "dscr": "DSCR",
+      "fha": "FHA",
+      "va": "VA",
+      "reverseMortgage": "Umkehrhypothek",
+      "homeEquity": "Wohneigentum / HELOC",
+      "ariaLabel": "Darlehensprogramme"
+    },
+    "hero": {
+      "cta": "Jetzt bewerben"
+    },
+    "benefits": {
+      "title": "Vorteile"
+    },
+    "facts": {
+      "title": "Programmdetails"
+    },
+    "trustPoints": {
+      "title": "Warum dieses Programm wählen"
+    },
+    "card": {
+      "learnMore": "Mehr erfahren",
+      "learnMoreAbout": "Mehr über {{program}} erfahren"
+    },
+    "leadForm": {
+      "title": "Vorabgenehmigung erhalten",
+      "subtitle": "Starten Sie noch heute Ihren Antrag",
+      "contactInfo": "Kontaktinformationen",
+      "loanDetails": "Darlehensdetails",
+      "programInfo": "Programminformationen",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "loanAmount": "Darlehensbetrag",
+      "propertyType": "Immobilientyp",
+      "selectOne": "Einen auswählen",
+      "primaryResidence": "Wohnsitz",
+      "secondHome": "Zweitwohnsitz",
+      "investmentProperty": "Kapitalanlage",
+      "singleFamily": "Einfamilienhaus",
+      "condo": "Eigentumswohnung",
+      "multiFamily": "Mehrfamilienhaus",
+      "townhouse": "Reihenhaus",
+      "manufactured": "Fertighaus",
+      "validation": {
+        "selectOption": "Bitte wählen Sie eine Option aus, um fortzufahren.",
+        "fieldRequired": "Dieses Feld ist erforderlich.",
+        "firstName": "Bitte geben Sie Ihren Vornamen ein.",
+        "lastName": "Bitte geben Sie Ihren Nachnamen ein.",
+        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "phone": "Bitte geben Sie eine gültige Telefonnummer ein."
+      },
+      "errors": {
+        "formUnavailable": "Dieses Formular ist derzeit nicht verfügbar. Bitte versuchen Sie es später erneut.",
+        "submitFailed": "Beim Senden Ihrer Informationen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+        "unexpected": "Beim Senden Ihrer Informationen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+      },
+      "success": {
+        "title": "Vielen Dank!",
+        "message": "Ihr Antrag wurde erfolgreich eingereicht. Abe wird sich in Kürze bei Ihnen melden.",
+        "cta": "Zurück zu Darlehensprogrammen",
+        "contact": "Kontakt"
+      }
+    },
+    "progress": {
+      "stepOf": "Schritt {{current}} von {{total}}"
+    },
+    "navigation": {
+      "back": "Zurück",
+      "continue": "Weiter"
+    }
+  },
+  "contact": {
+    "title": "Kontaktieren Sie Talk2Abe",
+    "subtitle": "Wir sind hier, um Ihnen bei Ihren Hypothekenfragen zu helfen",
+    "heading": "Kontakt",
+    "description": "Haben Sie eine Frage zu Ihrer Situation? Senden Sie Abe eine Nachricht und er wird sich bei Ihnen melden.",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Kontaktnummer",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "namePlaceholder": "Ihr vollständiger Name",
+      "emailPlaceholder": "sie@beispiel.de",
+      "phonePlaceholder": "(305) 891-6500",
+      "subjectPlaceholder": "Wie können wir Ihnen helfen?",
+      "messagePlaceholder": "Wie kann Abe Ihnen helfen?",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": "Vielen Dank! Ihre Nachricht wurde gesendet. Abe wird sich bald bei Ihnen melden.",
+      "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an.",
+      "sendFailed": "Beim Senden Ihrer Informationen ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+      "unexpectedError": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+      "validation": {
+        "name": "Bitte geben Sie Ihren Namen ein.",
+        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "phone": "Bitte geben Sie Ihre Kontaktnummer ein.",
+        "message": "Bitte geben Sie Ihre Nachricht ein."
+      }
+    },
+    "info": {
+      "title": "Kontaktieren Sie uns",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "address": "Standort",
+      "hours": "Geschäftszeiten",
+      "hoursDetail": "Mo-Fr 8:00-18:00 CST"
+    }
+  },
+  "getStarted": {
+    "header": {
+      "title": "Ihr Hypothekenleitfaden",
+      "subtitle": "Beantworten Sie ein paar Fragen und Abe hilft Ihnen, das richtige Darlehensprogramm zu finden"
+    },
+    "progress": {
+      "stepOf": "Schritt {{current}} von {{total}}",
+      "percentComplete": "{{percent}}% abgeschlossen",
+      "ariaLabel": "Fragebogenfortschritt"
+    },
+    "navigation": {
+      "back": "Zurück",
+      "continue": "Weiter",
+      "submit": "Absenden"
+    },
+    "questions": {
+      "goal": {
+        "title": "Wobei kann ich Ihnen helfen?",
+        "description": "Wählen Sie die Option, die am besten zu Ihrem Ziel passt."
+      },
+      "propertyUse": {
+        "title": "Wie wird die Immobilie genutzt?",
+        "description": "Wählen Sie die beste Option."
+      },
+      "processStage": {
+        "title": "In welcher Phase des Prozesses befinden Sie sich?",
+        "description": "Wählen Sie die Option, die Sie am besten beschreibt."
+      },
+      "propertyValue": {
+        "title": "Was ist der ungefähre Immobilienwert oder Kaufpreis?",
+        "description": "Geben Sie Ihre beste Schätzung ein.",
+        "placeholder": "Betrag eingeben"
+      },
+      "financingAmount": {
+        "title": "Wie viel planen Sie ungefähr als Eigenkapital einzubringen?",
+        "description": "Geben Sie Ihre beste Schätzung ein.",
+        "placeholder": "Eigenkapital eingeben"
+      },
+      "borrowerSituation": {
+        "title": "Was beschreibt Ihre Situation am besten?",
+        "description": "Wählen Sie die Option, die am besten zu Ihnen passt."
+      },
+      "creditRange": {
+        "title": "Wie würden Sie Ihre Bonität beschreiben?",
+        "description": "Wählen Sie die passendste Option."
+      },
+      "contact": {
+        "title": "Lassen Sie uns sprechen",
+        "description": "Sagen Sie mir, wie ich Sie erreichen kann, und ich überprüfe, wonach Sie suchen."
+      }
+    },
+    "options": {
+      "notSure": "Nicht sicher",
+      "skip": "Überspringen",
+      "other": "Andere",
+      "imNotSure": "Ich bin nicht sicher",
+      "buyAHome": "Ein Zuhause kaufen",
+      "refinance": "Umfanzieren",
+      "accessHomeEquity": "Wohneigentum nutzbar machen",
+      "investmentProperty": "Kapitalanlage",
+      "commercialFinancing": "Gewerbefinanzierung",
+      "buildOrRenovate": "Bauen oder renovieren",
+      "reverseMortgage": "Umkehrhypothek",
+      "primaryResidence": "Wohnsitz",
+      "secondVacationHome": "Zweitwohnsitz / Ferienhaus",
+      "commercialProperty": "Gewerbeimmobilie",
+      "alreadyOwn": "Ich besitze die Immobilie bereits",
+      "justExploring": "Nur erkunden",
+      "shoppingAround": "Vergleiche einholen",
+      "foundAProperty": "Immobilie gefunden",
+      "underContract": "Im Kaufprozess",
+      "needHelpDeciding": "Brauche Hilfe bei der Entscheidung",
+      "w2Employee": "W-2 Angestellter",
+      "selfEmployed": "Selbstständig",
+      "form1099": "1099",
+      "realEstateInvestor": "Immobilieninvestor",
+      "retired": "Rentner",
+      "medicalProfessional": "Medizinischer Fachangestellter",
+      "itinBorrower": "ITIN-Kreditnehmer",
+      "foreignNational": "Ausländer"
+    },
+    "contactStep": {
+      "title": "Lassen Sie uns sprechen",
+      "description": "Sagen Sie mir, wie ich Sie erreichen kann, und ich überprüfe, wonach Sie suchen.",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "propertyState": "Bundesland der Immobilie",
+      "selectState": "Bundesland auswählen",
+      "firstNamePlaceholder": "Vorname",
+      "lastNamePlaceholder": "Nachname",
+      "emailPlaceholder": "E-Mail-Adresse",
+      "phonePlaceholder": "Telefonnummer",
+      "submit": "MIT ABE SPRECHEN",
+      "sending": "Wird gesendet..."
+    },
+    "validation": {
+      "selectAnswer": "Bitte wählen Sie eine Antwort aus, um fortzufahren.",
+      "firstName": "Bitte geben Sie Ihren Vornamen ein.",
+      "lastName": "Bitte geben Sie Ihren Nachnamen ein.",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "phone": "Bitte geben Sie eine gültige Telefonnummer ein.",
+      "state": "Bitte wählen Sie ein Bundesland aus."
+    },
+    "errors": {
+      "submitFailed": "Ihre Informationen können derzeit nicht gesendet werden. Bitte versuchen Sie es erneut.",
+      "unexpected": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+    },
+    "thankYou": {
+      "title": "Danke {{name}}",
+      "subtitle": "Ich habe es erhalten.",
+      "message": "Ihre Informationen wurden empfangen. Ich überprüfe, was Sie suchen, und melde mich so schnell wie möglich. Oder Sie können eine der folgenden Optionen wählen.",
+      "callNow": "Rufen Sie mich jetzt an oder schreiben Sie mir",
+      "scheduleCall": "Gespräch vereinbaren",
+      "askAnother": "Eine weitere Frage stellen",
+      "explore": "Talk2Abe erkunden"
+    },
+    "consent": {
+      "heading": "Einwilligung & Datenschutz",
+      "body": "Durch das Absenden stimmen Sie zu, von Talk2Abe bezüglich Ihrer Hypothekenanfrage kontaktiert zu werden. Es können Nachrichten- und Datentarifen anfallen. Es gelten Standard-Datenschutzbestimmungen – Ihre Informationen werden niemals verkauft."
+    },
+    "currency": {
+      "enterAmount": "Betrag eingeben",
+      "imNotSure": "Ich bin nicht sicher"
+    }
+  },
+  "forms": {
+    "validation": {
+      "required": "Dieses Feld ist erforderlich",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "invalidPhone": "Bitte geben Sie eine gültige Telefonnummer ein",
+      "minLength": "Muss mindestens {{min}} Zeichen haben",
+      "maxLength": "Darf höchstens {{max}} Zeichen haben"
+    },
+    "newsletter": {
+      "emailLabel": "E-Mail-Adresse",
+      "placeholder": "E-Mail-Adresse eingeben",
+      "subscribe": "Abonnieren",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "success": "Vielen Dank! Sie haben Abos Abes Hypothekentipps abonniert."
+    }
+  },
+  "footer": {
+    "tagline": "Ihr vertrauenswürdiger Hypothekenberater. Expertenberatung zu Hausdarlehen, Umfanzierung und mehr.",
+    "quickLinks": "Schnelllinks",
+    "resources": "Ressourcen",
+    "contactUs": "Kontaktieren Sie uns",
+    "locations": "Standorte",
+    "watchVideos": "Videos ansehen",
+    "mortgageServices": "Hypothekendienstleistungen über",
+    "visitMyLoanDesk": "MyLoanDesk besuchen",
+    "newsletter": {
+      "title": "Bleiben Sie auf dem Laufenden",
+      "description": "Erhalten Sie die neuesten Hypothekentipps und Marktaktualisierungen.",
+      "placeholder": "E-Mail-Adresse eingeben",
+      "subscribe": "Abonnieren",
+      "success": "Vielen Dank für Ihr Abonnement!",
+      "error": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+    },
+    "legal": "Rechtliches",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsOfUse": "Nutzungsbedingungen",
+    "disclaimers": "Haftungsausschlüsse",
+    "copyright": "© {{year}} Talk2Abe.com. Alle Rechte vorbehalten.",
+    "poweredBy": "KI-gestützte Hypothekenberatung",
+    "dba": "Talk2Abe.com ist eine DBA von Secured Horizon Financial Group, Inc. / Secured Horizon Mortgage Group, Inc.",
+    "nmlsIndividual": "NMLS #341393 (Einzelperson)",
+    "nmlsCompany": "NMLS #314226, #1444825 (Unternehmen)",
+    "nmlsConsumerAccess": "NMLS-Verbraucherzugang",
+    "equalHousing": "Gleichberechtigte Wohnungsmöglichkeit",
+    "disclaimer": "Dies ist keine Kreditzusage. Alle Informationen, Zinsen und Konditionen können ohne Vorankündigung geändert werden. Zinsen unterliegen den Marktbedingungen und variieren je nach individueller Kreditwürdigkeit. Kontaktieren Sie Talk2Abe für aktuelle Zinsen und Konditionen."
+  },
+  "disclosure": {
+    "main": "Dies ist keine Kreditzusage. Alle Informationen, Zinsen und Konditionen können ohne Vorankündigung geändert werden. Zinsen unterliegen den Marktbedingungen und variieren je nach individueller Kreditwürdigkeit. Kontaktieren Sie Talk2Abe für aktuelle Zinsen und Konditionen.",
+    "equalHousing": "Talk2Abe ist ein Gleichberechtigungskreditgeber. NMLS # {{nmls}}.",
+    "nmls": "NMLS #2118469"
+  },
+  "seo": {
+    "home": {
+      "title": "Talk2Abe | KI-Hypothekenassistent | Expertenberatung zu Hausdarlehen",
+      "description": "Erhalten Sie expertenhafte Hypothekenberatung von Abe, einem KI-gestützten Assistenten. Konventionelle, FHA, VA, DSCR Darlehen erklärt. Beratung durch lizenzierten Kreditgeber.",
+      "ogDescription": "Erhalten Sie expertenhafte Hypothekenberatung von Abe, einem KI-gestützten Assistenten. Konventionelle, FHA, VA, DSCR Darlehen erklärt."
+    },
+    "about": {
+      "title": "Über Abe | Lizenzierter Hypothekendarlehensgeber | KI-Hypothekenexperte",
+      "description": "Lernen Sie Abe kennen: Lizenzierter Kreditgeber mit jahrzehntelanger Erfahrung, jetzt KI-gestützt. Expertenhafte Hypothekenberatung rund um die Uhr verfügbar.",
+      "ogDescription": "Lernen Sie Abe kennen: Lizenzierter Kreditgeber mit jahrzehntelanger Erfahrung, jetzt KI-gestützt."
+    },
+    "askAbe": {
+      "title": "Abe fragen | Kostenloser KI-Hypothekenassistent | Expertenantworten erhalten",
+      "description": "Stellen Sie Abe Ihre Hypothekenfragen. KI-gestützter Assistent mit expertenhaften Antworten zu Hausdarlehen, Umfanzierung, FHA und VA Programmen.",
+      "ogDescription": "Stellen Sie Abe Ihre Hypothekenfragen. Expertenantworten zu Hausdarlehen, Umfanzierung, FHA und VA Programmen."
+    },
+    "questions": {
+      "title": "Hypothekenfragen & Antworten | Expertenberatung | Talk2Abe",
+      "description": "Finden Sie Antworten auf häufige Hypothekenfragen. Expertenberatung zu Hausdarlehen, Umfanzierung, Bonitätswerten, Eigenkapital und mehr.",
+      "ogDescription": "Finden Sie Antworten auf häufige Hypothekenfragen. Expertenberatung zu Hausdarlehen und Umfanzierung."
+    },
+    "questionDetail": {
+      "title": "{{question}} | Hypothekenberatung | Talk2Abe",
+      "description": "{{answer}}",
+      "ogDescription": "Expertenantwort auf: {{question}}"
+    },
+    "loanPrograms": {
+      "title": "Hypothekendarlehensprogramme | FHA, VA, Konventionell | Talk2Abe",
+      "description": "Entdecken Sie Hypothekendarlehensprogramme: Konventionell, FHA, VA, DSCR, Selbstständig, Umkehrhypothek, Wohneigentum. Finden Sie Ihre beste Option.",
+      "ogDescription": "Entdecken Sie Hypothekendarlehensprogramme: Konventionell, FHA, VA, DSCR und mehr."
+    },
+    "loanProgram": {
+      "title": "{{name}} Hypothekendarlehen | Talk2Abe",
+      "description": "{{shortDescription}}",
+      "ogDescription": "{{shortDescription}}"
+    },
+    "contact": {
+      "title": "Kontaktieren Sie Talk2Abe | Hypothekenfragen & Unterstützung",
+      "description": "Kontaktieren Sie Talk2Abe für Hypothekenfragen, Darlehensinformationen und Expertenberatung. Wir sind hier, um Ihnen zu helfen.",
+      "ogDescription": "Kontaktieren Sie Talk2Abe für Hypothekenfragen und Expertenberatung."
+    },
+    "getStarted": {
+      "title": "Loslegen | Kostenloser Hypothekenleitfaden | Talk2Abe",
+      "description": "Starten Sie Ihre Hypothekenreise. Beantworten Sie ein paar Fragen und erhalten Sie personalisierte DarlehensEmpfehlungen von Abe.",
+      "ogDescription": "Starten Sie Ihre Hypothekenreise mit personalisierten DarlehensEmpfehlungen."
+    }
+  },
+  "questionsData": {
+    "whatIsMortgage": {
+      "question": "Was ist eine Hypothek?",
+      "shortAnswer": "Eine Hypothek ist ein Darlehen zum Kauf oder zur Umfanzierung eines Zuhauses, wobei die Immobilie als Sicherheit dient.",
+      "answer": "Eine Hypothek ist ein speziell für den Immobilienkauf konzipiertes Darlehen. Wenn Sie eine Hypothek aufnehmen, stellt der Kreditgeber die Mittel zum Kauf der Immobilie bereit, und im Gegenzug stimmen Sie zu, das Darlehen über einen festgelegten Zeitraum (in der Regel 15 oder 30 Jahre) mit Zinsen zurückzuzahlen. Die Immobilie selbst dient als Sicherheit, was bedeutet, dass der Kreditgeber bei Zahlungsausfall die Immobilie durch Zwangsversteigerung erwerben kann. Hypotheken gibt es in verschiedenen Arten, darunter konventionelle, FHA, VA und ARM-Darlehen, jeweils mit unterschiedlichen Konditionen und Anforderungen.",
+      "shortDescription": "Erfahren Sie, was eine Hypothek ist und wie sie funktioniert. Expertenberatung von Abe zu Hypotheken-Grundlagen."
+    },
+    "conventionalVsFHA": {
+      "question": "Was ist der Unterschied zwischen konventionellen und FHA-Darlehen?",
+      "shortAnswer": "Konventionelle Darlehen erfordern höhere Bonitätswerte und Eigenkapital, während FHA-Darlehen flexibler mit niedrigeren Anforderungen sind.",
+      "answer": "Konventionelle Darlehen werden nicht von der Regierung unterstützt und erfordern in der Regel einen Bonitätswert von 620+ und ein Eigenkapital von 3-20%. Sie bieten wettbewerbsfähige Zinsen für qualifizierte Kreditnehmer und erfordern keine Hypothekenversicherung, sobald Sie 20% Eigenkapital erreichen. FHA-Darlehen werden von der Federal Housing Administration versichert und sind mit Bonitätswerten ab 580 (oder 500 mit 10% Eigenkapital) zugänglicher. Sie erfordern ein Mindest-Eigenkapital von 3,5%, erfordern jedoch Hypothekenversicherungsprämien (MIP) für die gesamte Darlehenslaufzeit. Die richtige Wahl hängt von Ihrer Bonität, der Größe des Eigenkapitals und der geplanten Aufenthaltsdauer ab.",
+      "shortDescription": "Vergleichen Sie konventionelle und FHA-Darlehen. Verstehen Sie die Unterschiede bei Kredit, Eigenkapital und Versicherung."
+    },
+    "downPayment": {
+      "question": "Wie viel Eigenkapital benötige ich?",
+      "shortAnswer": "Eigenkapital variiert von 0% bis 20%, abhängig vom Darlehensprogramm und Ihren Qualifikationen.",
+      "answer": "Der Eigenkapitalbetrag hängt vom Darlehenstyp ab: VA-Darlehen bieten 0% Eigenkapital für berechtigte Veteranen. USDA-Darlehen bieten ebenfalls 0% Eigenkapital für ländliche Immobilien. FHA-Darlehen erfordern 3,5% Eigenkapital mit einem Bonitätswert von 580+ (10% mit 500-579). Konventionelle Darlehen erfordern in der Regel 3-20% Eigenkapital, obwohl Programme wie HomeReady und Home Possible bereits 3% erlauben. Ein Eigenkapital von 20% eliminiert die Notwendigkeit einer Privaten Hypothekenversicherung (PMI) bei konventionellen Darlehen. Die beste Option hängt von Ihrer finanziellen Situation, dem Militärdienst und dem Standort der Immobilie ab.",
+      "shortDescription": "Erfahren Sie, wie viel Eigenkapital Sie für verschiedene Darlehensprogramme benötigen."
+    },
+    "creditScore": {
+      "question": "Welchen Bonitätswert benötige ich für eine Hypothek?",
+      "shortAnswer": "Die meisten Kreditgeber erfordern einen Mindestbonitätswert von 620 für konventionelle Darlehen, während FHA-Darlehen Werte ab 580 akzeptieren.",
+      "answer": "Die Bonitätsanforderungen variieren je nach Darlehenstyp: Konventionelle Darlehen erfordern in der Regel 620-680+ für die besten Zinsen. FHA-Darlehen können bis auf 500 (mit 10% Eigenkapital) oder 580 (mit 3,5% Eigenkapital) abgesenkt werden. VA-Darlehen haben keinen gesetzlich vorgeschriebenen Mindestwert, aber die meisten Kreditgeber erfordern 620+. USDA-Darlehen erfordern in der Regel 640+. Ihr Bonitätswert beeinflusst Ihren Zinssatz, Ihre monatliche Zahlung und Ihre Darlehensoptionen. Ein höherer Wert bedeutet bessere Konditionen. Selbst geringe Verbesserungen können über die Laufzeit Ihres Darlehens Tausende Euro sparen. Wenn Ihr Wert Verbesserungen benötigt, erwägen Sie, den Antrag zu verschieben oder Strategien zur Bonitätsverbesserung zu erkunden.",
+      "shortDescription": "Erfahren Sie die Bonitätsanforderungen für FHA, VA, konventionelle und USDA-Darlehen."
+    },
+    "preApproval": {
+      "question": "Was ist eine Hypotheken-Vorabgenehmigung und wie erhalte ich sie?",
+      "shortAnswer": "Die Vorabgenehmigung ist die bedingte Zusage eines Kreditgebers, Ihnen einen bestimmten Betrag basierend auf Ihrem finanziellen Profil zu leihen.",
+      "answer": "Eine Hypotheken-Vorabgenehmigung liegt vor, wenn ein Kreditgeber Ihre finanziellen Informationen (Einkommen, Vermögen, Kredit, Schulden) überprüft und ein Schreiben ausstellt, das angibt, wie viel er Ihnen leihen ist. Dies ist formeller als eine Vorqualifikation und umfasst eine Bonitätsprüfung. Für eine Vorabgenehmigung benötigen Sie Gehaltsabrechnungen, W-2-Formulare oder Steuererklärungen, Kontoauszüge und eine Genehmigung zur Bonitätsprüfung. Die Vorabgenehmigung gibt Ihnen ein realistisches Budget, stärkt Ihr Angebot bei der Immobiliensuche und beschleunigt den Abschlussprozess. Vorabgenehmigungen sind in der Regel 60-90 Tage gültig.",
+      "shortDescription": "Verstehen Sie die Hypotheken-Vorabgenehmigung. Erfahren Sie, welche Dokumente Sie benötigen und wie Sie sie erhalten."
+    },
+    "refinance": {
+      "question": "Wann sollte ich meine Hypothek umfanzieren?",
+      "shortAnswer": "Erwägen Sie eine Umfanzierung, wenn die Zinsen mindestens 0,75% unter Ihrem aktuellen Zinssatz sinken oder sich Ihre finanzielle Situation ändert.",
+      "answer": "Eine Umfanzierung macht in mehreren Szenarien Sinn: Wenn die Zinsen signifikant gesunken sind (in der Regel 0,75-1% unter Ihrem aktuellen Zinssatz), wenn Sie von einem ARM zu einem Festzins für Stabilität wechseln wollen, wenn Sie die PMI nach Erreichen von 20% Eigenkapital entfernen möchten, oder wenn Sie über eine Auszahlungsumfanzierung (Cash-Out) in Ihr Wohneigentum investieren möchten. Berücksichtigen Sie den Break-even-Punkt – die Zeit, die es dauert, bis die monatlichen Ersparnisse die Abschlusskosten decken (in der Regel 2-3 Jahre). Wenn Sie planten, die Immobilie über den Break-even-Zeitraum hinaus zu behalten, lohnt sich die Umfanzierung in der Regel.",
+      "shortDescription": "Erfahren Sie, wann eine Umfanzierung Ihrer Hypothek sinnvoll ist. Zinssenkungen, ARM-zu-Festzins, Auszahlungsoptionen."
+    },
+    "privateMortgageInsurance": {
+      "question": "Was ist Private Hypothekenversicherung (PMI)?",
+      "shortAnswer": "PMI schützt den Kreditgeber bei Zahlungsausfall. Es ist bei konventionellen Darlehen mit weniger als 20% Eigenkapital erforderlich.",
+      "answer": "Private Hypothekenversicherung (PMI) ist eine Versicherung, die den Kreditgeber schützt, nicht Sie, wenn Sie Zahlungen einstellen. Sie wird in der Regel bei konventionellen Darlehen benötigt, wenn Ihr Eigenkapital weniger als 20% des Immobilienwerts beträgt. PMI-Kosten liegen bei 0,5% bis 1,5% des ursprünglichen Darlehensbetrags jährlich, die zu Ihrer monatlichen Zahlung hinzugefügt werden. Sie können die Entfernung der PMI beantragen, sobald Sie 20% Eigenkapital erreichen (basierend auf dem ursprünglichen Wert), und sie endet automatisch bei 22% Eigenkapital. FHA-Darlehen haben eine andere Art namens Hypothekenversicherungsprämie (MIP), die in der Regel für die gesamte Darlehenslaufzeit gilt.",
+      "shortDescription": "Verstehen Sie PMI bei konventionellen Darlehen. Wann es erforderlich ist, Kosten und wie man es entfernt."
+    },
+    "closingCosts": {
+      "question": "Was sind Abschlusskosten und wie hoch sind sie?",
+      "shortAnswer": "Abschlusskosten sind Gebühren, die am Ende des Darlehensprozesses gezahlt werden, in der Regel 2-5% des Darlehensbetrags.",
+      "answer": "Abschlusskosten sind Gebühren von Kreditgebern, Anwälten und Dritten, um Ihre Hypothek abzuschließen. Sie betragen in der Regel 2-5% des Darlehensbetrags. Zu den häufigsten Kosten gehören: Darlehensgebühr (0,5-1%), Schätzung (300-600), Titelversicherung (0,5-1%), Anwaltsgebühren, Registrierungsgebühren und vorausgezahlte Posten wie Grundsteuern und Wohngebäudeversicherung. Bei einem Darlehen von 300.000美元 rechnen Sie mit 6.000-15.000美元 an Abschlusskosten. Einige Kosten sind verhandelbar, und Sie können den Verkäufer um Beteiligung bitten. Ihr Kreditgeber ist verpflichtet, innerhalb von 3 Tagen nach Antragstellung eine Darlehensschätzung und 3 Tage vor dem Abschluss eine Abschlusserklärung bereitzustellen.",
+      "shortDescription": "Erfahren Sie mehr über Hypotheken-Abschlusskosten. Was sie enthalten, wie hoch sie sind und wie man sie reduziert."
+    },
+    "armVsFixed": {
+      "question": "Was ist der Unterschied zwischen ARM- und Festzins-Hypotheken?",
+      "shortAnswer": "Festzins hält Ihre Zahlung während der gesamten Darlehenslaufzeit gleich, während ARM-Zinsen nach einer Anfangsphase variieren können.",
+      "answer": "Eine Festzins-Hypothek fixiert Ihren Zinssatz für die gesamte Darlehenslaufzeit (in der Regel 15 oder 30 Jahre) und gibt Ihnen vorhersehbare monatliche Zahlungen. Eine Hypothek mit veränderlichem Zinssatz (ARM) beginnt mit einem niedrigeren Festzins für eine Anfangsphase (5, 7 oder 10 Jahre) und passt sich dann periodisch den Marktbedingungen an. ARMs werden durch Zahlen wie 5/1 oder 7/6 identifiziert – was bedeutet, dass der Zins für 5 oder 7 Jahre fixiert ist und dann alle 1 oder 6 Monate angepasst wird. ARMs können vorteilhaft sein, wenn Sie vor dem Anpassungszeitraum verkaufen oder umfanzieren wollen, bergen jedoch Risiken bei signifikanten Zinserhöhungen.",
+      "shortDescription": "Vergleichen Sie Festzins- und veränderliche Hypotheken. Welche ist besser für Ihre Situation?"
+    },
+    "vaLoans": {
+      "question": "Was sind die Vorteile von VA-Darlehen?",
+      "shortAnswer": "VA-Darlehen bieten 0% Eigenkapital, keine PMI, wettbewerbsfähige Zinsen und sind für berechtigte Veteranen und Soldaten verfügbar.",
+      "answer": "VA-Darlehen, garantiert vom Department of Veterans Affairs, bieten außergewöhnliche Vorteile: Kein Eigenkapital erforderlich, keine Private Hypothekenversicherung (PMI), wettbewerbsfähige Zinssätze (oft niedriger als konventionelle), begrenzte Abschlusskosten und keine Vorfälligkeitsentschädigung. Berechtigte Kreditnehmer umfassen Veteranen, aktive Soldaten, Nationalgardisten und berechtigte hinterbliebene Ehepartner. VA-Darlehen erfordern einmalige VA-Garantiegebühren (2,15-3,3% für die erste Nutzung), die in das Darlehen einbezogen werden können. Der Vorteil von keinem Eigenkapital und keiner PMI kann über die Laufzeit des Darlehens Zehntausende Dollar sparen.",
+      "shortDescription": "Entdecken Sie die Vorteile von VA-Darlehen. Kein Eigenkapital, keine PMI, wettbewerbsfähige Zinsen für Veteranen."
+    },
+    "dscrLoans": {
+      "question": "Was ist ein DSCR-Darlehen?",
+      "shortAnswer": "DSCR-Darlehen sind für Immobilieninvestoren konzipiert und qualifizieren auf Basis des Mietpotenzials der Immobilie statt des persönlichen Einkommens.",
+      "answer": "Ein Debt Service Coverage Ratio (DSCR) Darlehen ist für Immobilieninvestoren konzipiert. Anstatt sich basierend auf persönlichem Einkommen (Steuererklärungen, W-2) zu qualifizieren, basieren DSCR-Darlehen auf dem Mietpotenzial der Immobilie. Das DSCR-Verhältnis wird berechnet, indem die monatliche Miete der Immobilie durch die monatliche Hypothekenzahlung geteilt wird. Ein Verhältnis von 1,0 bedeutet, dass die Miete genau die Hypothek deckt; höhere Verhältnisse sind günstiger. DSCR-Darlehen erfordern in der Regel 20-25% Eigenkapital, einen Mindestbonitätswert von 620 und ein DSCR von 1,0+. Zu den Vorteilen gehören einfachere Qualifikation für Selbstständige, keine persönliche Einkommensdokumentation und die Möglichkeit, mehrere Kapitalanlagen zu finanzieren.",
+      "shortDescription": "Erfahren Sie mehr über DSCR-Darlehen für Immobilieninvestoren. Qualifizieren Sie durch Mieteinkommen, nicht durch persönliches Einkommen."
+    },
+    "selfEmployed": {
+      "question": "Wie erhalten Selbstständige eine Hypothek?",
+      "shortAnswer": "Selbstständige Kreditnehmer benötigen in der Regel 2 Jahre Steuererklärungen und können Kontoauszug- oder DSCR-Darlehensprogramme nutzen.",
+      "answer": "Selbstständige Kreditnehmer stehen vor besonderen Herausforderungen, haben aber mehrere Optionen: Konventionelle und FHA-Darlehen erfordern 2 Jahre Steuererklärungen mit stabilen oder steigenden Einkommen. Kreditgeber mitteln in der Regel Ihr adjusted gross income der letzten 2 Jahre. Kontoauszug-Darlehen verwenden 12-24 Monate Bankeinzüge anstelle von Steuererklärungen – ideal für Selbstständige mit erheblichen Geschäftsausgaben. DSCR-Darlehen qualifizieren basierend auf Mieteinkommen der Immobilie, nicht auf persönlichem Einkommen. Benötigt werden: 2 Jahre Steuererklärungen (persönlich und geschäftlich), eine Gewinn-und-Verlust-Rechnung, Kontoauszüge und möglicherweise ein CPA-Schreiben. Erwägen Sie die Zusammenarbeit mit einem Kreditgeber, der auf Selbstständigen-Hypotheken spezialisiert ist.",
+      "shortDescription": "Hypothekenoptionen für Selbstständige. Steuererklärungen, Kontoauszug-Darlehen, DSCR-Programme."
+    },
+    "reverseMortgage": {
+      "question": "Was ist eine Umkehrhypothek?",
+      "shortAnswer": "Eine Umkehrhypothek ermöglicht es Hausbesitzern ab 62, ihr Wohneigentum in Bargeld umzuwandeln, ohne das Haus zu verkaufen oder monatliche Zahlungen zu leisten.",
+      "answer": "Eine Home Equity Conversion Mortgage (HECM), die häufigste Umkehrhypothek, ermöglicht es Hausbesitzern ab 62 Jahren, ihr Eigenkapital in Bargeld umzuwandeln. Sie erhalten Zahlungen (Einmalbetrag, monatlich, Kreditlinie oder Kombination) basierend auf Ihrem Alter, Immobilienwert und Zinssatz. Im Gegensatz zu einer herkömmlichen Hypothek leisten Sie keine monatlichen Zahlungen – das Darlehen wird zurückgezahlt, wenn Sie das Haus verkaufen, dauerhaft ausziehen oder versterben. Sie müssen weiterhin Grundsteuern, Versicherung und Instandhaltung bezahlen. Der Darlehenssaldo wächst im Laufe der Zeit, da Zinsen anfallen. Umkehrhypotheken können ein wertvolles Finanzinstrument für Rentner sein, aber erwägen Sie die Kosten und Auswirkungen sorgfältig.",
+      "shortDescription": "Erfahren Sie mehr über Umkehrhypotheken für Hausbesitzer ab 62. Wandeln Sie Eigenkapital in Bargeld um, ohne monatliche Zahlungen."
+    },
+    "homeEquity": {
+      "question": "Was ist ein Wohneigentumsdarlehen oder HELOC?",
+      "shortAnswer": "Ein Wohneigentumsdarlehen oder HELOC ermöglicht es Ihnen, gegen Ihr Eigenkapital aufzunehmen, entweder als Einmalbetrag oder als revolvierende Kreditlinie.",
+      "answer": "Wohneigentumsprodukte ermöglichen es Ihnen, gegen das Eigenkapital aufzunehmen, das Sie in Ihrem Zuhause aufgebaut haben. Ein Wohneigentumsdarlehen bietet einen festen Betrag mit festem Zinssatz und festen monatlichen Zahlungen (Zweithypothek). Eine Home Equity Line of Credit (HELOC) funktioniert wie eine Kreditkarte mit einer revolvierenden Kreditlinie, veränderlichem Zinssatz und nur Zinszahlungen während der Abrufphase (in der Regel 10 Jahre), gefolgt von einer Rückzahlungsphase. Beide erfordern in der Regel 15-20% verbleibendes Eigenkapital. Vorteile sind niedrigere Zinsen als bei Privatdarlehen und die mögliche Steuerabsetzbarkeit der Zinsen. Risiken umfassen den Verlust Ihres Zuhauses bei Nicht-Rückzahlung.",
+      "shortDescription": "Verstehen Sie Wohneigentumsdarlehen und HELOCs. Nehmen Sie gegen Ihr Eigenkapital auf."
+    },
+    "debtToIncome": {
+      "question": "Was ist die Verschuldungsquote (DTI)?",
+      "shortAnswer": "DTI ist der Prozentsatz Ihres monatlichen Einkommens, der für Schuldentilgung aufgewendet wird. Die meisten Kreditgeber bevorzugen einen DTI unter 43%.",
+      "answer": "Die Verschuldungsquote (DTI) ist eine Schlüsselkennzahl, die Kreditgeber verwenden, um Ihre Fähigkeit zu bewerten, monatliche Zahlungen zu leisten. Sie wird berechnet, indem Ihre gesamten monatlichen Schulden durch Ihr Bruttomonatseinkommen geteilt werden. Wenn Sie beispielsweise 6.000美元 pro Monat verdienen und 2.000美元 an Schuldentilgungen haben, beträgt Ihr DTI 33%. Die meisten konventionellen Darlehen erfordern einen DTI von 45% oder weniger, wobei 36% oder weniger ideal ist. FHA erlaubt in manchen Fällen bis zu 50%. DTI umfasst Hypothekenzahlungen, Autokredite, Studienkredite, Kreditkarten-Mindestbeträge und andere Schulden. Die Reduzierung von Schulden vor dem Antrag kann Ihre Darlehensberechtigung erheblich verbessern.",
+      "shortDescription": "Erfahren Sie mehr über das DTI-Verhältnis und warum es für die Hypothekenqualifikation wichtig ist."
+    },
+    "escrow": {
+      "question": "Was ist ein Treuhandkonto?",
+      "shortAnswer": "Ein Treuhandkonto verwaltet Mittel für Grundsteuern und Versicherungen, die in Ihrer monatlichen Hypothekenzahlung enthalten sind.",
+      "answer": "Ein Treuhandkonto ist ein spezielles Sparkonto, das von Ihrem Hypothekendarlehensgeber verwaltet wird. Jeden Monat fließt ein Teil Ihrer Hypothekenzahlung in dieses Konto, um Grundsteuern und Wohngebäudeversicherungsprämien zu decken. Wenn diese Rechnungen fällig sind, zahlt der Kreditgeber sie aus dem Treuhandkonto. Die meisten Kreditgeber erfordern eine Treuhandregelung für Darlehen mit weniger als 20% Eigenkapital. Der Vorteil besteht darin, dass Sie große jährliche/halbjährliche Zahlungen auf kleinere monatliche Beträge aufteilen und Überraschungsrechnungen vermeiden. Der Nachteil sind leicht höhere monatliche Zahlungen. Eine jährliche Treuhandanalyse stellt sicher, dass Sie den richtigen Betrag zahlen, und eventuelle Defizite oder Überschüsse werden angepasst.",
+      "shortDescription": "Verstehen Sie Treuhandkonten für Grundsteuern und Versicherungen. Wie sie funktionieren und warum sie erforderlich sind."
+    },
+    "appraisal": {
+      "question": "Was passiert bei einer Immobilienschätzung?",
+      "shortAnswer": "Ein unabhängiger Schätzer bewertet den fairen Marktwert der Immobilie, um sicherzustellen, dass der Darlehensbetrag angemessen ist.",
+      "answer": "Eine Immobilienschätzung ist eine unabhängige, professionelle Bewertung des Marktwerts einer Immobilie, die vom Kreditgeber vor Genehmigung einer Hypothek verlangt wird. Ein lizenzierter Schätzer inspiziert den Zustand, die Größe, die Merkmale und den Standort der Immobilie und vergleicht sie dann mit ähnlichen kürzlichen Verkäufen. Die Schätzung schützt Sie davor, zu viel zu zahlen, und schützt den Kreditgeber davor, mehr zu verleihen, als die Immobilie wert ist. Wenn die Schätzung niedrig ausfällt, umfassen die Optionen: Neuverhandlung des Kaufpreises, Aufstockung in bar, Anfechtung der Schätzung oder Suche nach vergleichbaren Verkäufen, die einen höheren Wert stützen. Schätzungen kosten in der Regel 300-600美元 und dauern 1-2 Wochen.",
+      "shortDescription": "Erfahren Sie, was bei einer Immobilienschätzung passiert. Prozess, Zeitrahmen und was bei niedriger Schätzung passiert."
+    },
+    "titleInsurance": {
+      "question": "Was ist Titelversicherung und brauche ich sie?",
+      "shortAnswer": "Titelversicherung schützt vor Eigentumsstreitigkeiten und rechtlichen Ansprüchen auf die Immobilie. Sie ist für die meisten Hypothekentransaktionen erforderlich.",
+      "answer": "Titelversicherung schützt vor finanziellen Verlusten durch Fehler im Immobilientitel – wie Pfandrechte, Betrug, nicht offengelegte Erben oder Registrierungsfehler. Es gibt zwei Typen: Kreditgeber-Titelversicherung (vom Kreditgeber erforderlich, schützt sein Interesse) und Eigentümer-Titelversicherung (optional, aber empfohlen, schützt Ihr Eigenkapital). Die einmalige Prämie wird beim Abschluss gezahlt und bietet Deckung solange Sie Eigentümer der Immobilie sind. Obwohl nicht gesetzlich für Käufer erforderlich (nur Kreditgeber-Deckung ist erforderlich), wird Eigentümer-Titelversicherung dringend empfohlen, um Ihre Investition zu schützen. Titelgesellschaften führen eine Titelsuche durch, bevor sie den Vertrag ausstellen.",
+      "shortDescription": "Erfahren Sie mehr über Titelversicherung. Warum sie erforderlich ist, was sie abdeckt und Kreditgeber- vs. Eigentümer-Verträge."
+    },
+    "rateLock": {
+      "question": "Was ist ein Zinsfestsetzung und wann sollte ich sie nutzen?",
+      "shortAnswer": "Eine Zinsfestsetzung garantiert Ihren Hypothekenzinssatz für einen bestimmten Zeitraum, in der Regel 30-60 Tage, als Schutz vor Zinserhöhungen.",
+      "answer": "Eine Zinsfestsetzung (oder Zinsgarantie) ist eine Garantie Ihres Kreditgebers, dass Sie einen bestimmten Zinssatz für einen festgelegten Zeitraum erhalten – in der Regel 30, 45 oder 60 Tage. Dies schützt Sie vor steigenden Zinsen, während Ihr Darlehen bearbeitet wird. Sobald festgesetzt, kann sich der Zins nicht ändern, es sei denn, Sie wählen ein anderes Darlehen oder es gibt Änderungen an Ihrem Antrag. Zinsfestsetzungen beinhalten oft eine \u201EFloat-Down\u201C-Option, die Ihnen zugutekommt, wenn die Zinsen sinken. Je länger der Festsetzungszeitraum, desto höher die Geburt. Erwägen Sie eine Festsetzung, wenn Sie eine Immobilie gefunden haben und einen klaren Abschlusszeitplan haben. Bei volatilen Zinsen bietet die frühe Festsetzung Ruhe.",
+      "shortDescription": "Verstehen Sie Zinsfestsetzungen. Wann Sie Ihren Hypothekenzinssatz festsetzen, Festsetzungszeiträume und Float-Down-Optionen."
+    }
+  },
+  "loanProgramsData": {
+    "purchase": {
+      "name": "Hypothekendarlehen für Kauf",
+      "shortDescription": "Finden Sie das richtige Darlehensprogramm für Ihren neuen Immobilienkauf. Konventionell, FHA, VA und weitere Optionen verfügbar."
+    },
+    "refinance": {
+      "name": "Hypotheken-Umfanzierung",
+      "shortDescription": "Senken Sie Ihren Zinssatz, verkürzen Sie Ihre Laufzeit oder nutzen Sie Ihr Wohneigentum mit einer Hypotheken-Umfanzierung."
+    },
+    "selfEmployed": {
+      "name": "Hypothek für Selbstständige",
+      "shortDescription": "Hypothekenlösungen für selbstständige Kreditnehmer. Kontoauszug-Darlehen und alternative Dokumentationsoptionen."
+    },
+    "dscr": {
+      "name": "DSCR-Investitionsdarlehen",
+      "shortDescription": "Debt Service Coverage Ratio Darlehen für Immobilieninvestoren. Qualifizieren Sie durch Mieteinkommen, nicht durch persönliches Einkommen."
+    },
+    "fha": {
+      "name": "FHA-Hausdarlehen",
+      "shortDescription": "Staatlich unterstützte FHA-Darlehen mit niedrigem Eigenkapital und flexiblen Bonitätsanforderungen."
+    },
+    "va": {
+      "name": "VA-Hausdarlehen",
+      "shortDescription": "VA-Darlehen mit 0% Eigenkapital für berechtigte Veteranen und Soldaten. Keine PMI erforderlich."
+    },
+    "reverse-mortgage": {
+      "name": "Umkehrhypothek",
+      "shortDescription": "Wandeln Sie Ihr Wohneigentum in Bargeld um. Keine monatlichen Zahlungen für Hausbesitzer ab 62 erforderlich."
+    },
+    "home-equity": {
+      "name": "Wohneigentumsdarlehen",
+      "shortDescription": "Nehmen Sie gegen Ihr Eigenkapital auf mit einem Wohneigentumsdarlehen oder HELOC."
+    },
+    "calculator": {
+      "estPrincipalInterest": "Geschätzter Kapital & Zinsen:",
+      "taxesInsuranceHoa": "+ Steuern/Versicherung/HOA:",
+      "totalEstPayment": "Gesamte geschätzte Zahlung:",
+      "perMonth": "/Monat",
+      "yrTerm": "-Jahre Laufzeit",
+      "yrFixed": "-Jahre Festzins"
+    }
+  }
+}

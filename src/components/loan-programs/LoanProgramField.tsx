@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
+
 import { cn } from "@/lib/utils";
 import Alert from "@/components/common/Alert";
 import type { LoanProgramFormField } from "@/types/loan-program";
@@ -24,6 +26,7 @@ export default function LoanProgramField({
   onChange,
   error,
 }: LoanProgramFieldProps) {
+  const { t } = useTranslation();
   const id = `${idPrefix}-${field.name}`;
   const describedBy = error ? `${id}-error` : undefined;
 
@@ -51,7 +54,7 @@ export default function LoanProgramField({
           )}
         >
           <option value="" disabled>
-            Select one
+            {t("loanPrograms.leadForm.selectOne")}
           </option>
           {field.options?.map((option) => (
             <option key={option} value={option}>

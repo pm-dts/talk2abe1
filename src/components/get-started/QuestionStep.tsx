@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
+
 import AnswerOption from "@/components/get-started/AnswerOption";
 import CurrencyInput from "@/components/get-started/CurrencyInput";
 import { getOptionIcon } from "@/components/get-started/optionIcons";
@@ -26,19 +28,23 @@ export default function QuestionStep({
   validationError,
   className,
 }: QuestionStepProps) {
+  const { t } = useTranslation();
+  const title = t(`getStarted.questions.${step.id}.title`, { defaultValue: step.title });
+  const description = t(`getStarted.questions.${step.id}.description`, { defaultValue: step.description });
+
   return (
     <div className={cn("space-y-6", className)}>
       {/* Question heading */}
       <div className="text-center">
         <h2 className="text-[22px] font-bold leading-snug tracking-tight text-navy sm:text-[26px]">
-          {step.title}
+          {title}
           <span className="ml-1 text-brand" aria-hidden="true">
             *
           </span>
         </h2>
 
         <p className="mt-2 text-sm text-muted sm:text-base">
-          {step.description}
+          {description}
         </p>
       </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import BookingWidget from "@/components/common/BookingWidget";
 import Button from "@/components/common/Button";
@@ -19,6 +20,7 @@ export default function ScheduleCallButton({
   onClick,
   ...props
 }: ScheduleCallButtonProps) {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -32,7 +34,7 @@ export default function ScheduleCallButton({
   return (
     <>
       <Button {...props} onClick={handleClick}>
-        {children ?? "Schedule a Call"}
+        {children ?? t("common.scheduleACall")}
       </Button>
 
       <BookingWidget open={open} onClose={() => setOpen(false)} />

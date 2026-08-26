@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import {
   ArrowRight,
   Building2,
@@ -38,6 +41,7 @@ export default function LoanProgramCard({
   program,
   className,
 }: LoanProgramCardProps) {
+  const { t } = useTranslation();
   const Icon = iconMap[program.icon];
 
   return (
@@ -68,10 +72,10 @@ export default function LoanProgramCard({
 
         <Link
           href={loanProgramRoute(program.slug)}
-          aria-label={`Learn more about ${program.title}`}
+          aria-label={t("loanPrograms.card.learnMoreAbout", { program: program.title })}
           className="group mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand transition-colors hover:text-brand/80 sm:text-sm"
         >
-          Learn more
+          {t("loanPrograms.card.learnMore")}
           <ArrowRight
             className="h-3.5 w-3.5 transition-transform duration-200 ease-out group-hover:translate-x-1"
             strokeWidth={2}

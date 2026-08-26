@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
 
 import Container from "@/components/common/Container";
 import { cn } from "@/lib/utils";
@@ -11,30 +12,31 @@ type LoanProgramNavItem = {
   href: string;
 };
 
-const items: LoanProgramNavItem[] = [
-  { label: "Purchase", href: "/loan-programs/purchase-loans" },
-  { label: "Refinance", href: "/loan-programs/refinance-loans" },
-  { label: "Self-Employed", href: "/loan-programs/self-employed-loans" },
-  { label: "DSCR", href: "/loan-programs/dscr-loans" },
-  { label: "FHA", href: "/loan-programs/fha-loans" },
-  { label: "VA", href: "/loan-programs/va-loans" },
-  { label: "Reverse Mortgage", href: "/loan-programs/reverse-mortgages" },
-  {
-    label: "Home Equity / HELOC",
-    href: "/loan-programs/home-equity-heloc",
-  },
-];
-
 type LoanProgramNavProps = {
   className?: string;
 };
 
 export default function LoanProgramNav({ className }: LoanProgramNavProps) {
   const pathname = usePathname();
+  const { t } = useTranslation();
+
+  const items: LoanProgramNavItem[] = [
+    { label: t("loanPrograms.nav.purchase"), href: "/loan-programs/purchase-loans" },
+    { label: t("loanPrograms.nav.refinance"), href: "/loan-programs/refinance-loans" },
+    { label: t("loanPrograms.nav.selfEmployed"), href: "/loan-programs/self-employed-loans" },
+    { label: t("loanPrograms.nav.dscr"), href: "/loan-programs/dscr-loans" },
+    { label: t("loanPrograms.nav.fha"), href: "/loan-programs/fha-loans" },
+    { label: t("loanPrograms.nav.va"), href: "/loan-programs/va-loans" },
+    { label: t("loanPrograms.nav.reverseMortgage"), href: "/loan-programs/reverse-mortgages" },
+    {
+      label: t("loanPrograms.nav.homeEquity"),
+      href: "/loan-programs/home-equity-heloc",
+    },
+  ];
 
   return (
     <nav
-      aria-label="Loan programs"
+      aria-label={t("loanPrograms.nav.ariaLabel")}
       className={cn(
         "sticky top-[88px] z-40 border-b border-line bg-cream",
         className,

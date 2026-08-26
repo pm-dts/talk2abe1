@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslation } from "react-i18next";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -18,11 +19,15 @@ export default function LoanProgramNavigation({
   showBack,
   onBack,
   onContinue,
-  continueLabel = "Continue",
+  continueLabel,
   continueDisabled = false,
   continueType = "button",
   className,
 }: LoanProgramNavigationProps) {
+  const { t } = useTranslation();
+
+  const resolvedContinueLabel = continueLabel ?? t("loanPrograms.navigation.continue");
+
   return (
     <div
       className={cn(
@@ -40,7 +45,7 @@ export default function LoanProgramNavigation({
             className="mr-1.5 inline-block h-4 w-4 transition-transform duration-200 ease-out group-hover:-translate-x-1"
             aria-hidden="true"
           />
-          Back
+          {t("loanPrograms.navigation.back")}
         </button>
       ) : (
         <span aria-hidden="true" />
@@ -52,7 +57,7 @@ export default function LoanProgramNavigation({
         disabled={continueDisabled}
         className="group cursor-pointer rounded-[10px] bg-brand px-6 py-3 font-sans text-[14.5px] font-bold text-white transition-colors hover:bg-brand-dark disabled:cursor-not-allowed disabled:bg-[#b7cfc0]"
       >
-        {continueLabel}
+        {resolvedContinueLabel}
         <ArrowRight
           className="ml-1.5 inline-block h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-x-1"
           aria-hidden="true"

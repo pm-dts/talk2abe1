@@ -6,6 +6,7 @@ import AbeChatEmbed from "@/components/chat/AbeChatEmbed";
 import BusinessSchema from "@/components/seo/BusinessSchema";
 import PersonSchema from "@/components/seo/PersonSchema";
 import WebSiteSchema from "@/components/seo/WebSiteSchema";
+import I18nProvider from "@/i18n/I18nProvider";
 import { seoConfig, seoImages, SITE_URL } from "@/config/seo";
 
 import "./globals.css";
@@ -83,11 +84,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${manrope.variable} ${fraunces.variable} ${ibmPlexMono.variable} font-sans flex min-h-dvh flex-col`}
       >
-        <SiteChrome>{children}</SiteChrome>
+        <I18nProvider>
+          <SiteChrome>{children}</SiteChrome>
+        </I18nProvider>
 
         <AbeChatEmbed />
 

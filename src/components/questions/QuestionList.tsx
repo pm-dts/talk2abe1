@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import EmptyState from "@/components/common/EmptyState";
 import QuestionListItem from "@/components/questions/QuestionListItem";
+import { useLanguage } from "@/i18n/hooks";
 import { cn } from "@/lib/utils";
 import type { Question } from "@/types/question";
 
@@ -18,6 +19,7 @@ export default function QuestionList({
   initialLimit = 8,
   className,
 }: QuestionListProps) {
+  const { locale } = useLanguage();
   const [prevQuestions, setPrevQuestions] = useState(questions);
   const [limit, setLimit] = useState(initialLimit);
 
@@ -55,7 +57,7 @@ export default function QuestionList({
         <>
           <div className="divide-y divide-slate-200">
             {visibleQuestions.map((question) => (
-              <QuestionListItem key={question.id} question={question} />
+              <QuestionListItem key={question.id} question={question} locale={locale} />
             ))}
           </div>
 

@@ -2,6 +2,7 @@
 
 import { LayoutGrid } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { getCategoryIcon } from "@/components/questions/categoryIcons";
 import { questions } from "@/data/questions";
@@ -20,20 +21,21 @@ export default function CategorySidebar({
   onCategoryChange,
   className,
 }: CategorySidebarProps) {
+  const { t } = useTranslation();
   const countFor = (name: string) =>
     questions.filter((question) => question.category === name).length;
 
   return (
-    <nav aria-label="Categories" className={cn("bg-white", className)}>
+    <nav aria-label={t("questions.listing.categories")} className={cn("bg-white", className)}>
       <h2 className="px-5 pb-3 pt-4 text-xs font-semibold uppercase tracking-wider text-muted">
-        Categories
+        {t("questions.listing.categories")}
       </h2>
 
       <ul>
         <li>
           <CategoryButton
             icon={LayoutGrid}
-            label="All Questions"
+            label={t("questions.listing.allQuestions")}
             count={questions.length}
             active={activeCategory === "all"}
             onClick={() => onCategoryChange("all")}

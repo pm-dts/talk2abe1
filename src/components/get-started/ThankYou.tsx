@@ -1,6 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import Button from "@/components/common/Button";
 import ScheduleCallButton from "@/components/common/ScheduleCallButton";
@@ -10,6 +11,8 @@ type ThankYouProps = {
 };
 
 export default function ThankYou({ senderName }: ThankYouProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col items-center text-center">
       <span className="flex h-20 w-20 items-center justify-center rounded-full bg-brand/10">
@@ -21,15 +24,13 @@ export default function ThankYou({ senderName }: ThankYouProps) {
       </span>
 
       <h2 className="mt-6 text-[26px] font-bold leading-snug tracking-tight text-navy">
-        Thanks {senderName}
+        {t("getStarted.thankYou.title", { name: senderName })}
         <br />
-        I&apos;ve Got It.
+        {t("getStarted.thankYou.subtitle")}
       </h2>
 
       <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted sm:text-base">
-        Your information has been received. I&apos;ll review what you&apos;re
-        looking for and reach out as soon as possible. Or you may choose from
-        the below options.
+        {t("getStarted.thankYou.message")}
       </p>
 
       <div className="mt-8 grid w-full gap-3">
@@ -48,19 +49,19 @@ export default function ThankYou({ senderName }: ThankYouProps) {
             hover:!text-white
           "
         >
-          Call me or text now
+          {t("getStarted.thankYou.callNow")}
         </Button>
 
         <ScheduleCallButton size="lg" className="w-full">
-          Schedule a call
+          {t("getStarted.thankYou.scheduleCall")}
         </ScheduleCallButton>
 
         <Button href="/get-started" variant="outline" size="lg" className="w-full">
-          Ask another question
+          {t("getStarted.thankYou.askAnother")}
         </Button>
 
         <Button href="/" variant="outline" size="lg" className="w-full">
-          Explore Talk2Abe
+          {t("getStarted.thankYou.explore")}
         </Button>
 
         {/* <Button

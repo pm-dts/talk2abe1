@@ -7,11 +7,11 @@ import CalculatorFields from "@/components/loan-programs/CalculatorFields";
 import CalculatorResult from "@/components/loan-programs/CalculatorResult";
 import {
   estimateRefinance,
-  formatCurrency,
   type RefinanceVerdictKey,
   type Verdict,
   type VerdictTone,
 } from "@/lib/loan-calculators";
+import { formatLocalizedCurrency } from "@/lib/format";
 
 import type { LoanProgramRefinanceCalculatorConfig } from "@/types/loan-program";
 
@@ -64,8 +64,8 @@ export default function RefinanceCalculator({
     result.kind === "invalid"
       ? "—"
       : isHigher
-        ? formatCurrency(result.monthlyIncrease)
-        : `${formatCurrency(result.monthlySavings)}/mo`;
+        ? formatLocalizedCurrency(result.monthlyIncrease)
+        : `${formatLocalizedCurrency(result.monthlySavings)}/mo`;
 
   const label =
     result.kind === "invalid"

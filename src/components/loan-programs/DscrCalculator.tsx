@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import CalculatorCard from "@/components/loan-programs/CalculatorCard";
 import CalculatorField from "@/components/loan-programs/CalculatorField";
@@ -9,10 +10,10 @@ import CalculatorResult from "@/components/loan-programs/CalculatorResult";
 import {
   estimateDscr,
   estimatePitiBreakdown,
-  formatCurrency,
   formatRatio,
   type Verdict,
 } from "@/lib/loan-calculators";
+import { formatLocalizedCurrency } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
 import type { LoanProgramDscrCalculatorConfig } from "@/types/loan-program";
@@ -22,6 +23,7 @@ type DscrCalculatorProps = {
 };
 
 export default function DscrCalculator({ config }: DscrCalculatorProps) {
+  const { t } = useTranslation();
   const [mode, setMode] = useState(config.mode.options[0]);
   const [values, setValues] = useState<Record<string, string>>({});
 
@@ -101,27 +103,27 @@ export default function DscrCalculator({ config }: DscrCalculatorProps) {
               {breakdown ? (
                 <>
                   <p>
-                    Est. principal &amp; interest:{" "}
+                    {t("loanProgramsData.calculator.estPrincipalInterest")}{" "}
                     <strong className="text-[15px] text-white">
-                      {formatCurrency(breakdown.principalInterest)}
+                      {formatLocalizedCurrency(breakdown.principalInterest)}
                     </strong>
-                    /mo
+                    {t("loanProgramsData.calculator.perMonth")}
                   </p>
                   <p>
-                    + taxes/insurance/HOA:{" "}
+                    {t("loanProgramsData.calculator.taxesInsuranceHoa")}{" "}
                     <strong className="text-[15px] text-white">
-                      {formatCurrency(breakdown.taxIns)}
+                      {formatLocalizedCurrency(breakdown.taxIns)}
                     </strong>
-                    /mo
+                    {t("loanProgramsData.calculator.perMonth")}
                   </p>
                   <p>
-                    Total est. payment:{" "}
+                    {t("loanProgramsData.calculator.totalEstPayment")}{" "}
                     <strong className="text-[15px] text-white">
-                      {formatCurrency(breakdown.total)}
+                      {formatLocalizedCurrency(breakdown.total)}
                     </strong>
-                    /mo{" "}
+                    {t("loanProgramsData.calculator.perMonth")}{" "}
                     <span className="opacity-70">
-                      ({config.estimateTermYears}-yr term)
+                      ({config.estimateTermYears}{t("loanProgramsData.calculator.yrTerm")})
                     </span>
                   </p>
                 </>

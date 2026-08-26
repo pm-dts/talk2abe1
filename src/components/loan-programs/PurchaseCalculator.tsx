@@ -1,15 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import CalculatorCard from "@/components/loan-programs/CalculatorCard";
 import CalculatorFields from "@/components/loan-programs/CalculatorFields";
 import CalculatorResult from "@/components/loan-programs/CalculatorResult";
 import CalculatorSelect from "@/components/loan-programs/CalculatorSelect";
-import {
-  estimatePurchasePayment,
-  formatCurrency,
-} from "@/lib/loan-calculators";
+import { estimatePurchasePayment } from "@/lib/loan-calculators";
+import { formatLocalizedCurrency } from "@/lib/format";
 
 import type { LoanProgramPurchaseCalculatorConfig } from "@/types/loan-program";
 
@@ -20,6 +19,7 @@ type PurchaseCalculatorProps = {
 export default function PurchaseCalculator({
   config,
 }: PurchaseCalculatorProps) {
+  const { t } = useTranslation();
   const [values, setValues] = useState<Record<string, string>>({});
   const [term, setTerm] = useState(config.term.defaultValue);
 
@@ -70,7 +70,7 @@ export default function PurchaseCalculator({
       </div>
 
       <CalculatorResult
-        value={result ? formatCurrency(result.totalMonthly) : "—"}
+        value={result ? formatLocalizedCurrency(result.totalMonthly) : "—"}
         label={config.result.label}
         progress={0}
         verdict={{ text: config.result.emptyMessage, tone: "neutral" }}
@@ -81,22 +81,22 @@ export default function PurchaseCalculator({
             <p>
               {config.result.breakdownLabels[0]}:{" "}
               <strong className="text-[15px] text-white">
-                {formatCurrency(result.loanAmount)}
+                {formatLocalizedCurrency(result.loanAmount)}
               </strong>
             </p>
             <p>
               {config.result.breakdownLabels[1]}:{" "}
               <strong className="text-[15px] text-white">
-                {formatCurrency(result.principalInterest)}
+                {formatLocalizedCurrency(result.principalInterest)}
               </strong>
-              /mo
+              {t("loanProgramsData.calculator.perMonth")}
             </p>
             <p>
               {config.result.breakdownLabels[2]}:{" "}
               <strong className="text-[15px] text-white">
-                {formatCurrency(result.taxIns)}
+                {formatLocalizedCurrency(result.taxIns)}
               </strong>
-              /mo <span className="opacity-70">({term}-yr fixed)</span>
+              {t("loanProgramsData.calculator.perMonth")} <span className="opacity-70">({term}{t("loanProgramsData.calculator.yrFixed")})</span>
             </p>
           </div>
         )}

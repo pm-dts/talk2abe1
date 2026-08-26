@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import Logo from "@/components/common/Logo";
 import Container from "@/components/common/Container";
 import SocialLinks from "@/components/sections/SocialLinks";
@@ -24,6 +27,8 @@ function FooterColumn({
 }
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-navy text-white">
       <Container>
@@ -33,18 +38,18 @@ export default function Footer() {
             <Logo size="lg" variant="light" />
 
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
-              {siteConfig.tagline.join(" ")}
+              {t("footer.tagline")}
             </p>
 
             <SocialLinks />
             
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
-              Watch videos
+              {t("footer.watchVideos")}
             </p>
           </div>
 
           {/* Popular Categories */}
-          <FooterColumn heading="Popular Categories">
+          <FooterColumn heading={t("footer.resources")}>
             {categories.map((category) => (
               <li key={category.id}>
                 <Link
@@ -59,7 +64,7 @@ export default function Footer() {
 
           {/* Contact + MyLoanDesk */}
           <div>
-            <h3 className="text-base font-semibold text-white">Contact</h3>
+            <h3 className="text-base font-semibold text-white">{t("footer.contactUs")}</h3>
 
             <ul className="mt-5 space-y-4">
               <li>
@@ -102,7 +107,7 @@ export default function Footer() {
             {/* MyLoanDesk */}
             <div className="mt-8 border-t border-white/10 pt-6">
               <p className="text-base font-semibold text-white">
-                Mortgage services provided through
+                {t("footer.mortgageServices")}
               </p>
 
               <a
@@ -110,7 +115,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 inline-flex transition-opacity hover:opacity-80"
-                aria-label="Visit MyLoanDesk"
+                aria-label={t("footer.visitMyLoanDesk")}
               >
                 <Image
                   src="/images/footer/myloandesk.png"
@@ -132,17 +137,16 @@ export default function Footer() {
               <span className="font-medium text-slate-300">
                 Talk2Abe.com
               </span>{" "}
-              is a DBA of Secured Horizon Financial Group, Inc. / Secured
-              Horizon Mortgage Group, Inc.
+              {t("footer.dba")}
             </p>
 
             {/* NMLS Information */}
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-              <span>NMLS #341393 (Individual)</span>
+              <span>{t("footer.nmlsIndividual")}</span>
 
               <span className="hidden text-slate-600 sm:inline">|</span>
 
-              <span>NMLS #314226, #1444825 (Company)</span>
+              <span>{t("footer.nmlsCompany")}</span>
 
               <span className="hidden text-slate-600 sm:inline">|</span>
 
@@ -150,26 +154,19 @@ export default function Footer() {
                 href="https://www.nmlsconsumeraccess.org/"
                 className="text-brand transition-colors hover:text-brand/80"
               >
-                NMLS Consumer Access
+                {t("footer.nmlsConsumerAccess")}
               </Link>
 
               <span className="hidden text-slate-600 sm:inline">|</span>
 
               <span className="text-slate-300">
-                Equal Housing Opportunity
+                {t("footer.equalHousing")}
               </span>
             </div>
 
             {/* Disclaimer */}
             <p className="max-w-7xl">
-              Interest Rates, APRs, and loan programs are illustrations subject
-              to change at any time without notice. These do not constitute a
-              Loan Estimate or Good Faith Estimate for payments and closing
-              costs. Not all applicants will qualify. APR may vary by product
-              type. Consumers are not obligated to use any party mentioned.
-              Talk2Abe.com is not affiliated with FHA, VA, USDA, or the Federal
-              Government. 1801 NE 123rd St, Suite 314, North Miami, FL 33181 |
-              (305) 891-6500. Regulated by the Florida Office of Financial Regulation.
+              {t("footer.disclaimer")}
             </p>
           </div>
         </div>
@@ -177,7 +174,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="w-full border-t border-white/10 py-6 text-center">
           <p className="text-sm text-slate-400">
-            &copy; 2026 Talk2Abe.com. All rights reserved.
+            {t("footer.copyright", { year: 2026 })}
           </p>
         </div>
       </Container>

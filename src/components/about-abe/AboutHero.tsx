@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 import Container from "@/components/common/Container";
 import { aboutAbe } from "@/data/about-abe";
 
 export default function AboutHero() {
+  const { t } = useTranslation();
+
   return (
     <section className="w-full overflow-hidden bg-surface">
       <Container className="py-10 pb-0 sm:py-14 lg:py-0">
@@ -22,22 +27,19 @@ export default function AboutHero() {
           <div className="order-1 py-2 lg:py-12">
             <div className="max-w-2xl">
               <p className="text-sm font-semibold uppercase tracking-wider text-brand">
-                {aboutAbe.eyebrow}
+                {t("about.hero.tagline")}
               </p>
 
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-navy sm:text-4xl lg:text-5xl">
-                {aboutAbe.title}
+                <span className="block">{t("about.hero.titleLine1")}</span>
+                <span className="block">{t("about.hero.titleLine2")}</span>
+                <span className="block">{t("about.hero.titleLine3")}</span>
               </h1>
 
               <div className="mt-6 space-y-5">
-                {aboutAbe.paragraphs.map((paragraph) => (
-                  <p
-                    key={paragraph}
-                    className="max-w-2xl text-base leading-7 text-muted sm:text-lg"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
+                <p className="max-w-2xl text-base leading-7 text-muted sm:text-lg">
+                  {t("about.hero.description")}
+                </p>
               </div>
             </div>
           </div>

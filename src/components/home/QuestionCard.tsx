@@ -14,6 +14,8 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { localize } from "@/i18n/helpers";
+import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
 import type { Question, QuestionIcon } from "@/types/question";
 
 const iconMap: Record<QuestionIcon, LucideIcon> = {
@@ -33,12 +35,14 @@ type QuestionCardProps = {
   question?: Question;
   more?: boolean;
   className?: string;
+  locale?: Locale;
 };
 
 export default function QuestionCard({
   question,
   more = false,
   className,
+  locale = DEFAULT_LOCALE,
 }: QuestionCardProps) {
   /*
    * "See more questions" card
@@ -50,7 +54,6 @@ export default function QuestionCard({
         className={cn(cardClasses, className)}
         aria-label="See more mortgage questions"
       >
-        {/* Icon — natural size only */}
         <span aria-hidden="true" className="shrink-0">
           <Ellipsis
             className="h-9 w-9 text-brand transition-transform duration-200 group-hover:scale-105 sm:h-10 sm:w-10"
@@ -58,7 +61,6 @@ export default function QuestionCard({
           />
         </span>
 
-        {/* Content */}
         <span className="flex min-w-0 flex-1 flex-col">
           <h3
             className="
@@ -74,7 +76,6 @@ export default function QuestionCard({
             See more questions
           </h3>
 
-          {/* CTA button */}
           <span
             className="
               mt-2
@@ -109,14 +110,14 @@ export default function QuestionCard({
   }
 
   const Icon = iconMap[question.icon];
+  const title = localize(question, locale, "title");
 
   return (
     <Link
       href={`/questions/${question.slug}`}
       className={cn(cardClasses, className)}
-      aria-label={`Read answer: ${question.title}`}
+      aria-label={`Read answer: ${title}`}
     >
-      {/* Question Icon — natural size only */}
       <span aria-hidden="true" className="shrink-0">
         <Icon
           className="
@@ -133,7 +134,6 @@ export default function QuestionCard({
         />
       </span>
 
-      {/* Content */}
       <span className="flex min-w-0 flex-1 flex-col">
         <h3
           className="
@@ -147,10 +147,9 @@ export default function QuestionCard({
             md:text-base
           "
         >
-          {question.title}
+          {title}
         </h3>
 
-        {/* Learn more button */}
         <span
           className="
             mt-2

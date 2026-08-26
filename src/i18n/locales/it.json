@@ -1,0 +1,737 @@
+{
+  "common": {
+    "phone": "(281) 466-4985",
+    "phoneAria": "(281) 466 4985",
+    "email": "info@talk2abe.com",
+    "emailAria": "info at talk 2 abe dot com",
+    "addresses": {
+      "houston": "5599 San Felipe, Suite 500 Houston, TX 77056",
+      "galveston": "4200 San Jacinto Blvd, Suite 302 Galveston, TX 77550"
+    },
+    "addressAria": {
+      "houston": "5599 San Felipe Suite 500 Houston TX 77056",
+      "galveston": "4200 San Jacinto Blvd Suite 302 Galveston TX 77550"
+    },
+    "startAbeChat": "Avvia la mia conversazione con Abe",
+    "startMyConversation": "Avvia la mia conversazione",
+    "scheduleACall": "Programma una chiamata",
+    "scheduleACallWithAbe": "Programma una chiamata con Abe",
+    "askAbeQuestion": "Fai una domanda a Abe",
+    "viewAll": "Vedi tutto",
+    "back": "Indietro",
+    "continue": "Continua",
+    "backToQuestions": "Torna alle domande",
+    "next": "Avanti",
+    "submit": "Invia",
+    "close": "Chiudi",
+    "closeBookingWidget": "Chiudi widget di prenotazione",
+    "required": "Obbligatorio",
+    "optional": "Opzionale",
+    "learnMore": "Scopri di più",
+    "loading": "Caricamento...",
+    "stepLabel": "Passo {{current}} di {{total}}",
+    "sending": "Invio in corso...",
+    "home": "Home",
+    "askAbe": "Chiedi a Abe",
+    "loanPrograms": "Programmi di prestiti",
+    "aboutAbe": "Su Abe",
+    "contact": "Contatti",
+    "getStarted": "Inizia",
+    "questions": "Domande",
+    "breadcrumb": "Navigazione"
+  },
+  "nav": {
+    "home": "Home",
+    "askAbe": "Chiedi a Abe",
+    "loanPrograms": "Programmi di prestiti",
+    "questions": "Domande",
+    "contact": "Contatti",
+    "getStarted": "Inizia",
+    "aboutAbe": "Su Abe",
+    "menu": "Menu"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Il tuo consulente personale di mutui",
+      "titleLine1": "Chatta con Abe,",
+      "titleLine2": "Il tuo assistente ipotecario",
+      "titleLine3": "AI",
+      "description": "Ottieni risposte esperte su mutui convenzionali, FHA, VA e DSCR. Abe usa l'AI per aiutarti a trovare i migliori programmi di prestito.",
+      "cta": "Chiedi a Abe",
+      "scheduleCall": "Programma una chiamata",
+      "getStarted": "Inizia",
+      "imageAlt": "Abe, esperto ipotecario di Talk2Abe"
+    },
+    "valueProps": {
+      "title": "Perché parlare con Abe?",
+      "items": {
+        "aiPowered": {
+          "title": "Risposte basate sull'AI",
+          "description": "Ottieni risposte istantanee ed esperte alle tue domande ipotecarie grazie a un'AI avanzata addestrata su dati ipotecari reali."
+        },
+        "trustedData": {
+          "title": "Dati affidabili",
+          "description": "Accedi a informazioni ipotecarie verificate, direttamente da prestatori esperti e standard del settore."
+        },
+        "fastResponses": {
+          "title": "Risposte rapide",
+          "description": "Nessuna attesa. Abe fornisce risposte immediate e dettagliate per aiutarti a prendere decisioni informate."
+        },
+        "alwaysAvailable": {
+          "title": "Sempre disponibile",
+          "description": "Abe è disponibile 24/7 per rispondere alle tue domande ipotecarie quando hai bisogno di orientamento."
+        }
+      }
+    },
+    "popularQuestions": {
+      "title": "Domande popolari",
+      "viewAll": "Vedi tutte le domande",
+      "viewAllAria": "Vedi tutte le domande popolari",
+      "seeMoreQuestions": "Vedi altre domande",
+      "seeMoreAria": "Vedi altre domande ipotecarie"
+    },
+    "videoSection": {
+      "title": "Guarda i nostri ultimi video",
+      "watchOnYouTube": "Guarda su YouTube"
+    },
+    "latestVideo": {
+      "title": "Hai una domanda specifica sulla tua situazione?",
+      "description": "Chiedi direttamente a Abe. Otterrai la risposta e la soluzione giusta per te.",
+      "askAbeCta": "Fai una domanda a Abe",
+      "scheduleCall": "Programma una chiamata"
+    },
+    "cta": {
+      "title": "Pronto per il prossimo passo?",
+      "description": "Troviamo il programma di prestito giusto per la tua soluzione.",
+      "primary": "Fai una domanda a Abe",
+      "secondary": "Programma una chiamata"
+    }
+  },
+  "about": {
+    "hero": {
+      "tagline": "Conosci il tuo assistente ipotecario AI",
+      "titleLine1": "Conosci Abe, il tuo",
+      "titleLine2": "esperto ipotecario",
+      "titleLine3": "AI",
+      "description": "Abe è un esperto mutuatario con decenni di esperienza. È progettato per aiutarti a navigare nel processo ipotecario con orientamento esperto e raccomandazioni personalizzate.",
+      "cta": "Fai una domanda a Abe"
+    },
+    "experience": {
+      "title": "Decenni di esperienza ipotecaria"
+    },
+    "whyAbe": {
+      "title": "Perché scegliere Abe",
+      "items": {
+        "licensedExpert": {
+          "title": "Esperto con licenza",
+          "description": "Abe è un mutuatario con licenza e credenziali NMLS, che porta competenze ipotecarie professionali in ogni conversazione."
+        },
+        "aiPowered": {
+          "title": "Orientamento AI",
+          "description": "Sfruttando tecnologia AI avanzata, Abe fornisce risposte immediate e precise alle tue domande ipotecarie 24/7."
+        },
+        "trustedSource": {
+          "title": "Fonte affidabile",
+          "description": "Tutte le informazioni provengono da dati ipotecari verificati e dall'esperienza professionale personale di Abe."
+        }
+      }
+    },
+    "whyCreated": {
+      "title": "Perché è stato creato Talk2Abe"
+    },
+    "cta": {
+      "title": "Pronto per iniziare?",
+      "description": "Che tu stia acquistando la tua prima casa o ristrutturando, Abe è qui per guidarti in ogni passo del percorso.",
+      "button": "Fai una domanda a Abe"
+    }
+  },
+  "askAbe": {
+    "title": "Chiedi a Abe",
+    "subtitle": "Ottieni risposte esperte alle tue domande ipotecarie",
+    "placeholder": "Qual è la tua domanda ipotecaria?",
+    "disclaimer": "Abe è un assistente AI. Consulta sempre un professionista con licenza per decisioni finanziarie.",
+    "popularQuestions": "Domande popolari",
+    "relatedQuestions": "Domande correlate",
+    "pageHeading": "Dimmi cosa stai cercando di realizzare.",
+    "pageDescription": "Rispondi a qualche domanda semplice e ti aiuterò a identificare opzioni di prestito che potrebbero adattarsi.",
+    "hiImAbe": "Ciao, sono Abe.",
+    "licensedMortgagePro": "Professionista ipotecario con licenza",
+    "whatCanIHelp": "Come posso aiutarti?",
+    "trustRow": {
+      "about90Seconds": "Circa 90 secondi",
+      "noObligation": "Nessun obbligo",
+      "private": "Privato"
+    },
+    "helpOptions": {
+      "buyAHome": "Acquistare una casa",
+      "refinance": "Ristrutturare",
+      "selfEmployed": "Autonomo",
+      "dscr": "DSCR",
+      "fha": "FHA",
+      "va": "VA",
+      "reverseMortgage": "Mutuo inverso",
+      "homeEquity": "Capitale immobiliare"
+    }
+  },
+  "questions": {
+    "listing": {
+      "title": "Domande ipotecarie",
+      "subtitle": "Trova risposte alle tue domande ipotecarie",
+      "allQuestions": "Tutte le domande",
+      "noResults": "Nessuna domanda trovata",
+      "noResultsDescription": "Prova ad adattare la tua ricerca o il filtro per categoria.",
+      "tryDifferent": "Prova parole chiave diverse o sfoglia per categoria.",
+      "categories": "Categorie",
+      "questionsCount_one": "{{count}} domanda",
+      "questionsCount_other": "{{count}} domande",
+      "popular": "Popolare",
+      "showMore": "Mostra altre domande",
+      "showMoreCount": "Mostra {{count}} altre domande"
+    },
+    "search": {
+      "placeholder": "Cerca domande...",
+      "ariaLabel": "Cerca domande"
+    },
+    "filters": {
+      "sortBy": "Ordina per",
+      "newest": "Più recenti",
+      "oldest": "Più vecchie",
+      "category": "Categoria",
+      "allCategories": "Tutte le categorie",
+      "filterByCategory": "Filtra per categoria"
+    },
+    "detail": {
+      "readTime": "{{minutes}} min di lettura",
+      "published": "Pubblicato il {{date}}",
+      "writtenBy": "Scritto da {{author}}",
+      "relatedQuestions": "Domande correlate",
+      "shareQuestion": "Condividi questa domanda",
+      "copyLink": "Copia link",
+      "copied": "Link copiato!"
+    },
+    "answer": {
+      "shortAnswer": "Risposta breve",
+      "fullAnswer": "Risposta completa e dettagliata",
+      "whatAbeReviews": "Cosa esaminerà Abe",
+      "abesTip": "Consiglio di Abe",
+      "exploreLoanProgram": "Esplora questo programma di prestito",
+      "exploreDescription": "Questa domanda è correlata a uno dei nostri programmi di prestito. Scopri di più su come funziona e se si adatta alla tua situazione.",
+      "learnMoreProgram": "Scopri di più su questo programma",
+      "preparingAnswer": "Abe sta preparando la risposta per questa domanda. Nel frattempo, chiedi direttamente a Abe per una risposta rapida e personale.",
+      "preparingFullAnswer": "Abe sta preparando la risposta completa per questa domanda. Torna presto — o chiedi direttamente a Abe per aiuto con la tua situazione specifica.",
+      "mostPopular": "Domanda più popolare",
+      "byAuthor": "Di {{author}}",
+      "byAbe": "Di Abe",
+      "haveQuestion": "Hai una domanda sulla tua situazione?",
+      "differentSituations": "Ogni situazione è diversa. Troviamo la soluzione giusta per te."
+    }
+  },
+  "loanPrograms": {
+    "listing": {
+      "title": "Programmi di mutui",
+      "subtitle": "Esplora le nostre soluzioni ipotecarie complete",
+      "explorePrograms": "Esplora i nostri programmi di prestito",
+      "findProgram": "Trova il programma ipotecario giusto per le tue esigenze",
+      "popularPrograms": "Programmi popolari",
+      "description": "Offriamo un'ampia gamma di soluzioni ipotecarie per proprietari di case, acquirenti e investitori immobiliari.",
+      "readyNextStep": "Pronto per il prossimo passo?",
+      "findRightProgram": "Troviamo il programma di prestito giusto per la tua soluzione."
+    },
+    "nav": {
+      "purchase": "Acquisto",
+      "refinance": "Ristrutturazione",
+      "selfEmployed": "Autonomo",
+      "dscr": "DSCR",
+      "fha": "FHA",
+      "va": "VA",
+      "reverseMortgage": "Mutuo inverso",
+      "homeEquity": "Capitale immobiliare / HELOC",
+      "ariaLabel": "Programmi di prestito"
+    },
+    "hero": {
+      "cta": "Applica ora"
+    },
+    "benefits": {
+      "title": "Vantaggi"
+    },
+    "facts": {
+      "title": "Dettagli del programma"
+    },
+    "trustPoints": {
+      "title": "Perché scegliere questo programma"
+    },
+    "card": {
+      "learnMore": "Scopri di più",
+      "learnMoreAbout": "Scopri di più su {{program}}"
+    },
+    "leadForm": {
+      "title": "Ottieni preapprovazione",
+      "subtitle": "Inizia la tua domanda oggi",
+      "contactInfo": "Informazioni di contatto",
+      "loanDetails": "Dettagli del prestito",
+      "programInfo": "Informazioni sul programma",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "email": "Email",
+      "phone": "Telefono",
+      "loanAmount": "Importo del prestito",
+      "propertyType": "Tipo di proprietà",
+      "selectOne": "Seleziona uno",
+      "primaryResidence": "Residenza principale",
+      "secondHome": "Seconda casa",
+      "investmentProperty": "Proprietà di investimento",
+      "singleFamily": "Unifamiliare",
+      "condo": "Condominio",
+      "multiFamily": "Multifamiliare",
+      "townhouse": "Townhouse",
+      "manufactured": "Prefabbricato",
+      "validation": {
+        "selectOption": "Seleziona un'opzione per continuare.",
+        "fieldRequired": "Questo campo è obbligatorio.",
+        "firstName": "Inserisci il tuo nome.",
+        "lastName": "Inserisci il tuo cognome.",
+        "email": "Inserisci un indirizzo email valido.",
+        "phone": "Inserisci un numero di telefono valido."
+      },
+      "errors": {
+        "formUnavailable": "Questo modulo non è disponibile al momento. Riprova più tardi.",
+        "submitFailed": "Si è verificato un errore durante l'invio delle informazioni. Riprova.",
+        "unexpected": "Si è verificato un errore durante l'invio delle informazioni. Riprova."
+      },
+      "success": {
+        "title": "Grazie!",
+        "message": "La tua domanda è stata inviata con successo. Abe ti contatterà a breve.",
+        "cta": "Torna ai programmi di prestito",
+        "contact": "Contatti"
+      }
+    },
+    "progress": {
+      "stepOf": "Passo {{current}} di {{total}}"
+    },
+    "navigation": {
+      "back": "Indietro",
+      "continue": "Continua"
+    }
+  },
+  "contact": {
+    "title": "Contatta Talk2Abe",
+    "subtitle": "Siamo qui per aiutarti con le tue domande ipotecarie",
+    "heading": "Contatti",
+    "description": "Hai una domanda sulla tua situazione? Invia un messaggio a Abe e ti risponderà.",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "phone": "Numero di contatto",
+      "subject": "Oggetto",
+      "message": "Messaggio",
+      "namePlaceholder": "Il tuo nome completo",
+      "emailPlaceholder": "tu@esempio.com",
+      "phonePlaceholder": "(305) 891-6500",
+      "subjectPlaceholder": "Come possiamo aiutarti?",
+      "messagePlaceholder": "Come può aiutarti Abe?",
+      "submit": "Invia messaggio",
+      "sending": "Invio in corso...",
+      "success": "Grazie! Il tuo messaggio è stato inviato. Abe ti risponderà presto.",
+      "error": "Si è verificato un errore. Riprova o chiamaci direttamente.",
+      "sendFailed": "Si è verificato un errore durante l'invio. Riprova.",
+      "unexpectedError": "Si è verificato un errore. Riprova.",
+      "validation": {
+        "name": "Inserisci il tuo nome.",
+        "email": "Inserisci un indirizzo email valido.",
+        "phone": "Inserisci il tuo numero di contatto.",
+        "message": "Inserisci il tuo messaggio."
+      }
+    },
+    "info": {
+      "title": "Contattaci",
+      "phone": "Telefono",
+      "email": "Email",
+      "address": "Sede ufficio",
+      "hours": "Orari di apertura",
+      "hoursDetail": "Lun-Ven 8:00-18:00 CST"
+    }
+  },
+  "getStarted": {
+    "header": {
+      "title": "La tua guida ai mutui",
+      "subtitle": "Rispondi a qualche domanda e Abe ti aiuterà a trovare il programma di prestito giusto"
+    },
+    "progress": {
+      "stepOf": "Passo {{current}} di {{total}}",
+      "percentComplete": "{{percent}}% completato",
+      "ariaLabel": "Progresso del questionario"
+    },
+    "navigation": {
+      "back": "Indietro",
+      "continue": "Continua",
+      "submit": "Invia"
+    },
+    "questions": {
+      "goal": {
+        "title": "Come posso aiutarti?",
+        "description": "Scegli l'opzione che meglio si adatta al tuo obiettivo."
+      },
+      "propertyUse": {
+        "title": "Come verrà utilizzata la proprietà?",
+        "description": "Seleziona l'opzione migliore."
+      },
+      "processStage": {
+        "title": "A che punto sei nel processo?",
+        "description": "Scegli l'opzione che ti descrive meglio."
+      },
+      "propertyValue": {
+        "title": "Qual è il valore approssimativo della proprietà o il prezzo di acquisto?",
+        "description": "Inserisci la tua stima migliore.",
+        "placeholder": "Inserisci importo"
+      },
+      "financingAmount": {
+        "title": "Approximativamente quanto prevedi di dare come acconto?",
+        "description": "Inserisci la tua stima migliore.",
+        "placeholder": "Inserisci acconto"
+      },
+      "borrowerSituation": {
+        "title": "Quale opzione descrive meglio la tua situazione?",
+        "description": "Seleziona l'opzione più adatta a te."
+      },
+      "creditRange": {
+        "title": "Come descriveresti il tuo credito?",
+        "description": "Seleziona l'opzione più adatta."
+      },
+      "contact": {
+        "title": "Parliamo",
+        "description": "Dimmi come contattarti e esaminerò quello che stai cercando."
+      }
+    },
+    "options": {
+      "notSure": "Non sicuro",
+      "skip": "Salta",
+      "other": "Altro",
+      "imNotSure": "Non sono sicuro",
+      "buyAHome": "Acquistare una casa",
+      "refinance": "Ristrutturare",
+      "accessHomeEquity": "Accedere al capitale immobiliare",
+      "investmentProperty": "Proprietà di investimento",
+      "commercialFinancing": "Finanziamento commerciale",
+      "buildOrRenovate": "Costruire o ristrutturare",
+      "reverseMortgage": "Mutuo inverso",
+      "primaryResidence": "Residenza principale",
+      "secondVacationHome": "Seconda casa / casa vacanza",
+      "commercialProperty": "Proprietà commerciale",
+      "alreadyOwn": "Possiedo già la proprietà",
+      "justExploring": "Solo esplorando",
+      "shoppingAround": "Confrontando opzioni",
+      "foundAProperty": "Ho trovato una proprietà",
+      "underContract": "Sotto contratto",
+      "needHelpDeciding": "Ho bisogno di aiuto per decidere",
+      "w2Employee": "Dipendente W-2",
+      "selfEmployed": "Autonomo",
+      "form1099": "1099",
+      "realEstateInvestor": "Investitore immobiliare",
+      "retired": "Pensionato",
+      "medicalProfessional": "Professionista sanitario",
+      "itinBorrower": "Mutuatario con ITIN",
+      "foreignNational": "Straniero"
+    },
+    "contactStep": {
+      "title": "Parliamo",
+      "description": "Dimmi come contattarti e esaminerò quello che stai cercando.",
+      "firstName": "Nome",
+      "lastName": "Cognome",
+      "email": "Email",
+      "phone": "Telefono",
+      "propertyState": "Stato della proprietà",
+      "selectState": "Seleziona stato",
+      "firstNamePlaceholder": "Nome",
+      "lastNamePlaceholder": "Cognome",
+      "emailPlaceholder": "Indirizzo email",
+      "phonePlaceholder": "Numero di telefono",
+      "submit": "PARLA CON ABE",
+      "sending": "Invio in corso..."
+    },
+    "validation": {
+      "selectAnswer": "Seleziona una risposta per continuare.",
+      "firstName": "Inserisci il tuo nome.",
+      "lastName": "Inserisci il tuo cognome.",
+      "email": "Inserisci un indirizzo email valido.",
+      "phone": "Inserisci un numero di telefono valido.",
+      "state": "Seleziona uno stato."
+    },
+    "errors": {
+      "submitFailed": "Impossibile inviare le informazioni. Riprova.",
+      "unexpected": "Si è verificato un errore. Riprova."
+    },
+    "thankYou": {
+      "title": "Grazie {{name}}",
+      "subtitle": "Ho ricevuto.",
+      "message": "Le tue informazioni sono state ricevute. Esaminerò quello che cercherà e ti contatterò il prima possibile. Oppure puoi scegliere tra le opzioni qui sotto.",
+      "callNow": "Chiamami o scrivimi ora",
+      "scheduleCall": "Programma una chiamata",
+      "askAnother": "Fai un'altra domanda",
+      "explore": "Esplora Talk2Abe"
+    },
+    "consent": {
+      "heading": "Consenso e privacy",
+      "body": "Inviando, acconsenti a essere contattato da Talk2Abe per la tua richiesta ipotecaria. Potrebbero applicarsi tariffe per messaggi e dati. Si applicano le protezioni standard della privacy — le tue informazioni non vengono mai vendute."
+    },
+    "currency": {
+      "enterAmount": "Inserisci importo",
+      "imNotSure": "Non sono sicuro"
+    }
+  },
+  "forms": {
+    "validation": {
+      "required": "Questo campo è obbligatorio",
+      "invalidEmail": "Inserisci un indirizzo email valido",
+      "invalidPhone": "Inserisci un numero di telefono valido",
+      "minLength": "Deve avere almeno {{min}} caratteri",
+      "maxLength": "Non deve avere più di {{max}} caratteri"
+    },
+    "newsletter": {
+      "emailLabel": "Indirizzo email",
+      "placeholder": "Inserisci la tua email",
+      "subscribe": "Iscriviti",
+      "invalidEmail": "Inserisci un indirizzo email valido.",
+      "success": "Grazie! Sei iscritto ai consigli ipotecari di Abe."
+    }
+  },
+  "footer": {
+    "tagline": "Il tuo consulente ipotecario affidabile. Orientamento esperto su mutui, ristrutturazione e molto altro.",
+    "quickLinks": "Link rapidi",
+    "resources": "Risorse",
+    "contactUs": "Contattaci",
+    "locations": "Sedi",
+    "watchVideos": "Guarda video",
+    "mortgageServices": "Servizi ipotecari forniti attraverso",
+    "visitMyLoanDesk": "Visita MyLoanDesk",
+    "newsletter": {
+      "title": "Resta aggiornato",
+      "description": "Ricevi gli ultimi consigli ipotecari e aggiornamenti di mercato.",
+      "placeholder": "Inserisci la tua email",
+      "subscribe": "Iscriviti",
+      "success": "Grazie per l'iscrizione!",
+      "error": "Inserisci un indirizzo email valido."
+    },
+    "legal": "Legale",
+    "privacyPolicy": "Informativa sulla privacy",
+    "termsOfUse": "Termini di utilizzo",
+    "disclaimers": "Note legali",
+    "copyright": "© {{year}} Talk2Abe.com. Tutti i diritti riservati.",
+    "poweredBy": "Orientamento ipotecario basato su AI",
+    "dba": "Talk2Abe.com è una DBA di Secured Horizon Financial Group, Inc. / Secured Horizon Mortgage Group, Inc.",
+    "nmlsIndividual": "NMLS #341393 (Individuale)",
+    "nmlsCompany": "NMLS #314226, #1444825 (Azienda)",
+    "nmlsConsumerAccess": "Accesso consumatori NMLS",
+    "equalHousing": "Opportunità abitativa equa",
+    "disclaimer": "Questo non è un impegno a prestare. Tutte le informazioni, tassi e termini sono soggetti a modifiche senza preavviso. I tassi dipendono dalle condizioni di mercato e variano in base alle qualifiche individuali del mutuatario. Contatta Talk2Abe per tassi e termini attuali."
+  },
+  "disclosure": {
+    "main": "Questo non è un impegno a prestare. Tutte le informazioni, tassi e termini sono soggetti a modifiche senza preavviso. I tassi dipendono dalle condizioni di mercato e variano in base alle qualifiche individuali del mutuatario. Contatta Talk2Abe per tassi e termini attuali.",
+    "equalHousing": "Talk2Abe è un mutuatore di pari opportunità abitative. NMLS # {{nmls}}.",
+    "nmls": "NMLS #2118469"
+  },
+  "seo": {
+    "home": {
+      "title": "Talk2Abe | Assistente ipotecario AI | Orientamento esperto su mutui",
+      "description": "Ottieni consigli ipotecari esperti da Abe, un assistente AI. Mutui convenzionali, FHA, VA, DSCR spiegati. Orientamento di professionista con licenza.",
+      "ogDescription": "Ottieni consigli ipotecari esperti da Abe, un assistente AI. Mutui convenzionali, FHA, VA, DSCR spiegati."
+    },
+    "about": {
+      "title": "Su Abe | Mutuatario con licenza | Esperto ipotecario AI",
+      "description": "Conosci Abe: professionista con licenza con decenni di esperienza, ora con AI. Orientamento ipotecario esperto disponibile 24/7.",
+      "ogDescription": "Conosci Abe: professionista con licenza con decenni di esperienza, ora con AI."
+    },
+    "askAbe": {
+      "title": "Chiedi a Abe | Assistente ipotecario AI gratuito | Ottieni risposte esperte",
+      "description": "Fai le tue domande ipotecarie a Abe. Assistente AI con risposte esperte su mutui, ristrutturazione, programmi FHA e VA.",
+      "ogDescription": "Fai le tue domande ipotecarie a Abe. Risposte esperte su mutui, ristrutturazione, programmi FHA e VA."
+    },
+    "questions": {
+      "title": "Domande e risposte ipotecarie | Consigli esperti | Talk2Abe",
+      "description": "Trova risposte alle domande ipotecarie comuni. Consigli esperti su mutui, ristrutturazione, punteggi di credito, acconti e altro.",
+      "ogDescription": "Trova risposte alle domande ipotecarie comuni. Consigli esperti su mutui e ristrutturazione."
+    },
+    "questionDetail": {
+      "title": "{{question}} | Consigli ipotecari | Talk2Abe",
+      "description": "{{answer}}",
+      "ogDescription": "Risposta esperta a: {{question}}"
+    },
+    "loanPrograms": {
+      "title": "Programmi di mutui | FHA, VA, Convenzionale | Talk2Abe",
+      "description": "Esplora programmi di mutui: Convenzionale, FHA, VA, DSCR, Autonomo, Mutuo inverso, Capitale immobiliare. Trova la tua opzione migliore.",
+      "ogDescription": "Esplora programmi di mutui: Convenzionale, FHA, VA, DSCR e altro."
+    },
+    "loanProgram": {
+      "title": "Mutuo {{name}} | Talk2Abe",
+      "description": "{{shortDescription}}",
+      "ogDescription": "{{shortDescription}}"
+    },
+    "contact": {
+      "title": "Contatta Talk2Abe | Domande ipotecarie e supporto",
+      "description": "Contatta Talk2Abe per domande ipotecarie, informazioni sui prestiti e orientamento esperto. Siamo qui per aiutarti.",
+      "ogDescription": "Contatta Talk2Abe per domande ipotecarie e orientamento esperto."
+    },
+    "getStarted": {
+      "title": "Inizia | Guida ipotecaria gratuita | Talk2Abe",
+      "description": "Inizia il tuo percorso ipotecario. Rispondi a qualche domanda e ricevi raccomandazioni personalizzate da Abe.",
+      "ogDescription": "Inizia il tuo percorso ipotecario con raccomandazioni personalizzate."
+    }
+  },
+  "questionsData": {
+    "whatIsMortgage": {
+      "question": "Cos'è un mutuo?",
+      "shortAnswer": "Un mutuo è un prestito utilizzato per acquistare o ristrutturare una casa, dove la proprietà serve da garanzia.",
+      "answer": "Un mutuo è un prestito specificamente progettato per l'acquisto di immobili. Quando si contrae un mutuo, il mutuante fornisce i fondi per l'acquisto e in cambio si impegna a rimborsare il prestito in un periodo stabilito (tipicamente 15 o 30 anni) con interessi. L'immobile stesso serve da garanzia, il che significa che in caso di mancato pagamento, il mutuante può prendere possesso dell'immobile tramite esecuzione forzata. I mutui hanno vari tipi inclusi convenzionali, FHA, VA e ARM, ciascuno con termini e requisiti diversi.",
+      "shortDescription": "Scopri cos'è un mutuo e come funziona. Orientamento esperto di Abe sulle basi dei prestiti ipotecari."
+    },
+    "conventionalVsFHA": {
+      "question": "Qual è la differenza tra mutui convenzionali e FHA?",
+      "shortAnswer": "I mutui convenzionali richiedono punteggi di credito e acconti più alti, mentre FHA è più flessibile con requisiti inferiori.",
+      "answer": "I mutui convenzionali non sono garantiti dal governo e richiedono generalmente un punteggio di credito di 620+ e un acconto del 3-20%. Offrono tassi competitivi per mutuatari qualificati e non richiedono assicurazione ipotecaria una volta raggiunto il 20% di capitale. I mutui FHA sono assicurati dall'Federal Housing Administration e sono più accessibili con punteggi di 580 (o 500 con 10% di acconto). Richiedono un acconto minimo del 3,5% ma richiedono premi assicurativi ipotecari (MIP) per tutta la durata del mutuo. La scelta giusta dipende dalla tua situazione creditizia, dimensione dell'acconto e durata prevista nella casa.",
+      "shortDescription": "Confronta mutui convenzionali e FHA. Comprendi le differenze in credito, acconto e assicurazione."
+    },
+    "downPayment": {
+      "question": "Quanto acconto devo dare?",
+      "shortAnswer": "Gli acconti variano dal 0% al 20% a seconda del programma di prestito e delle tue qualifiche.",
+      "answer": "L'importo dell'acconto dipende dal tipo di mutuo: i mutui VA offrono 0% per i veterani idonei. I mutui USDA offrono anche 0% per proprietà rurali. I mutui FHA richiedono 3,5% con punteggio di 580+ (10% con 500-579). I convenzionali richiedono tipicamente 3-20%, sebbene programmi come HomeReady e Home Possible permettano solo il 3%. Un acconto del 20% elimina la necessità di assicurazione ipotecaria privata (PMI) sui mutui convenzionali. La opzione migliore dipende dalla tua situazione finanziaria, servizio militare e posizione dell'immobile.",
+      "shortDescription": "Scopri quanto acconto è necessario per diversi programmi di prestito."
+    },
+    "creditScore": {
+      "question": "Che punteggio di credito mi serve per un mutuo?",
+      "shortAnswer": "La maggior parte dei mutuanti richiede un punteggio minimo di 620 per i convenzionali, mentre FHA accetta punteggi fino a 580.",
+      "answer": "I requisiti variano per tipo: i convenzionali richiedono tipicamente 620-680+ per i migliori tassi. I FHA possono scendere fino a 500 (con 10% di acconto) o 580 (con 3,5%). I VA non hanno un minimo governativo ma la maggior parte dei mutuanti richiede 620+. USDA richiede tipicamente 640+. Il punteggio di credito influenza il tasso d'interesse, il pagamento mensile e le opzioni di prestito. Un punteggio più alto significa condizioni migliori. Anche piccoli miglioramenti possono risparmiare migliaia nel corso del mutuo. Se il tuo punteggio necessita di miglioramenti, considera di attendere o esplorare strategie di miglioramento.",
+      "shortDescription": "Scopri i requisiti di punteggio di credito per FHA, VA, convenzionali e USDA."
+    },
+    "preApproval": {
+      "question": "Cos'è la preapprovazione ipotecaria e come ottenerla?",
+      "shortAnswer": "La preapprovazione è l'impegno condizionale del mutuante di prestarti un importo specifico in base al tuo profilo finanziario.",
+      "answer": "La preapprovazione è quando il mutuante esamina le tue informazioni finanziarie (reddito, beni, credito, debiti) e rilascia una lettera indicando quanto è disposto a prestarti. È più formale della pre-qualificazione e include un controllo del credito. Per ottenere la preapprovazione avrai bisogno di buste paga, W-2 o dichiarazioni dei redditi, estratti conto e autorizzazione per il controllo del credito. La preapprovazione ti dà un budget realistico, rafforza la tua offerta e velocizza la chiusura. Le lettere di preapprovazione sono valide per 60-90 giorni.",
+      "shortDescription": "Comprendi la preapprovazione ipotecaria. Quali documenti servono e come ottenerla."
+    },
+    "refinance": {
+      "question": "Quando dovrei ristrutturare il mio mutuo?",
+      "shortAnswer": "Considera la ristrutturazione quando i tassi scendono di almeno 0,75% rispetto al tasso attuale, o quando la tua situazione finanziaria cambia.",
+      "answer": "La ristrutturazione ha senso in diversi scenari: quando i tassi d'interesse sono scesi significativamente (tipicamente 0,75-1% sotto il tasso attuale), quando vuoi passare da un ARM a un tasso fisso per stabilità, quando devi rimuovere PMI dopo aver raggiunto il 20% di capitale, o quando vuoi accedere al capitale tramite cash-out. Considera il break-even point — il tempo necessario per recuperare i costi di chiusura (tipicamente 2-3 anni). Se prevedi di restare nella casa oltre quel periodo, la ristrutturazione di solito ne vale la pena.",
+      "shortDescription": "Scopri quando la ristrutturazione ha senso. Calo dei tassi, ARM a fisso, opzioni cash-out."
+    },
+    "privateMortgageInsurance": {
+      "question": "Cos'è l'assicurazione ipotecaria privata (PMI)?",
+      "shortAnswer": "PMI protegge il mutuante in caso di mancato pagamento. È richiesta sui mutui convenzionali con meno del 20% di acconto.",
+      "answer": "PMI è un'assicurazione che protegge il mutuante — non te — se smetti di effettuare i pagamenti. È tipicamente richiesta sui mutui convenzionali quando l'acconto è inferiore al 20% del valore della casa. I costi di PMI variano dallo 0,5% all'1,5% dell'importo originale del mutuo annualmente, aggiunti al pagamento mensile. Puoi richiedere la rimozione una volta raggiunto il 20% di capitale, e si termina automaticamente al 22%. I mutui FHA hanno un tipo diverso chiamato MIP che dura tipicamente per tutta la durata del mutuo.",
+      "shortDescription": "Comprendi PMI sui mutui convenzionali. Quando è richiesto, costi e come rimuoverlo."
+    },
+    "closingCosts": {
+      "question": "Cosa sono i costi di chiusura e quanto costano?",
+      "shortAnswer": "I costi di chiusura sono le tasse pagate alla fine del processo, tipicamente 2-5% dell'importo del mutuo.",
+      "answer": "I costi di chiusura sono tasse addebitate da mutuanti, avvocati e terze parti per finalizzare il mutuo. Ammontano tipicamente al 2-5% dell'importo del prestito. Costi comuni includono: tassa di erogazione (0,5-1%), valutazione ($300-600), assicurazione del titolo (0,5-1%), onorari degli avvocati, tasse di registrazione e articoli prepagati come imposte e assicurazione. Su un mutuo di $300,000, aspettati $6,000-15,000 in costi di chiusura. Alcuni costi sono negoziabili. Il mutuante deve fornire un Loan Estimate entro 3 giorni e un Closing Disclosure 3 giorni prima della chiusura.",
+      "shortDescription": "Scopri i costi di chiusura ipotecari. Cosa includono, quanto costano e come ridurli."
+    },
+    "armVsFixed": {
+      "question": "Qual è la differenza tra mutui ARM e a tasso fisso?",
+      "shortAnswer": "Il tasso fisso mantiene il pagamento uguale per tutta la durata, mentre i tassi ARM possono cambiare dopo il periodo iniziale.",
+      "answer": "Un mutuo a tasso fisso blocca il tasso d'interesse per l'intera durata (tipicamente 15 o 30 anni), garantendo pagamenti mensili prevedibili. Un mutuo a tasso variabile (ARM) inizia con un tasso fisso più basso per un periodo iniziale (5, 7 o 10 anni), poi si adatta periodicamente. Gli ARM sono identificati da numeri come 5/1 o 7/6 — il tasso è fisso per 5 o 7 anni, poi si adatta ogni 1 o 6 mesi. Gli ARM possono essere vantaggiosi se prevedi di vendere o ristrutturare prima del periodo di adattamento, ma comportano rischi se i tassi aumentano significativamente.",
+      "shortDescription": "Confronta mutui a tasso fisso e variabile. Qual è meglio per la tua situazione?"
+    },
+    "vaLoans": {
+      "question": "Quali sono i vantaggi dei mutui VA?",
+      "shortAnswer": "VA offre 0% di acconto, nessuna PMI, tassi competitivi per veterani e militari idonei.",
+      "answer": "VA, garantiti dal Dipartimento per i Veterani: senza acconto, senza PMI, tassi spesso inferiori ai convenzionali, costi di chiusura limitati, nessuna penale per estinzione anticipata. Idonei: veterani, militari in servizio, Guardia Nazionale, coniugi superstiti. Richiede un VA Funding Fee una tantum (2,15-3,3% primo uso), che può essere finanziato nel mutuo. L'assenza di acconto e PMI può risparmiare decine di migliaia di dollari nel corso del mutuo.",
+      "shortDescription": "Vantaggi dei mutui VA. Zero acconto, nessuna PMI, tassi competitivi."
+    },
+    "dscrLoans": {
+      "question": "Cos'è un mutuo DSCR?",
+      "shortAnswer": "I mutui DSCR sono per investitori immobiliari — qualificazione basata sul potenziale di reddito da affitto, non sul reddito personale.",
+      "answer": "Un Debt Service Coverage Ratio è progettato per investitori immobiliari. La qualificazione si basa sul reddito da affitto dell'immobile, non sul reddito personale. Il rapporto DSCR = affitto mensile / pagamento ipotecario. Un rapporto di 1,0 significa che l'affitto copre esattamente il mutuo; rapporti più alti sono più favorevoli. Requisiti: 20-25% di acconto, punteggio di credito 620+, DSCR 1.0+. Vantaggi: qualificazione più facile per autonomi, nessuna documentazione del reddito personale, possibilità di finanziare più immobili.",
+      "shortDescription": "Mutui DSCR per investitori. Qualificazione per reddito da affitto."
+    },
+    "selfEmployed": {
+      "question": "Come ottengono un mutuo i lavoratori autonomi?",
+      "shortAnswer": "Gli autonomi hanno generalmente bisogno di 2 anni di dichiarazioni dei redditi e possono usare prestiti basati su estratti conto o programmi DSCR.",
+      "answer": "Gli autonomi hanno diverse opzioni: convenzionali e FHA richiedono 2 anni di dichiarazioni con reddito stabile o in crescita. I prestiti basati su estratti conto utilizzano 12-24 mesi di depositi bancari — ideale per autonomi con grandi deduzioni. I DSCR si qualificano per reddito da affitto dell'immobile. Servono: 2 anni di dichiarazioni, conto economico, estratti conto e possibilmente lettera del CPA. Considera di lavorare con un mutuante specializzato in mutui per autonomi.",
+      "shortDescription": "Opzioni ipotecarie per autonomi. Dichiarazioni, estratti conto, programmi DSCR."
+    },
+    "reverseMortgage": {
+      "question": "Cos'è un mutuo inverso?",
+      "shortAnswer": "Un mutuo inverso permette ai proprietari over 62 di convertire il capitale in contanti senza vendere la casa o effettuare pagamenti mensili.",
+      "answer": "Un HECM (Home Equity Conversion Mortgage) permette ai proprietari over 62 di convertire il capitale in contanti. Ricevi pagamenti (in unica soluzione, mensili, linea di credito o combinazione) in base all'età, al valore della casa e al tasso. A differenza di un mutuo tradizionale, non effettui pagamenti mensili — il mutuo viene rimborsato quando vendi, ti trasferisci definitivamente o muori. Devi continuare a pagare imposte, assicurazione e manutenzione. Il saldo del mutuo cresce nel tempo con gli interessi. I mutui inversi possono essere uno strumento finanziario prezioso per i pensionati, ma valuta attentamente costi e implicazioni.",
+      "shortDescription": "Scopri i mutui inversi per proprietari over 62. Converti il capitale senza pagamenti mensili."
+    },
+    "homeEquity": {
+      "question": "Cos'è un prestito Home Equity o HELOC?",
+      "shortAnswer": "Un prestito Home Equity o HELOC permette di prendere in prestito contro il capitale della casa, come importo unico o linea di credito rotativa.",
+      "answer": "I prodotti Home Equity permettono di prendere in prestito contro il capitale accumulato. Un prestito Home Equity fornisce un importo fisso con tasso e pagamenti fissi (secondo mutuo). Un HELOC funziona come una carta di credito con linea rotativa, tasso variabile e pagamenti solo di interessi durante il periodo di prelievo (tipicamente 10 anni), seguito da un periodo di rimborso. Entrambi richiedono tipicamente il 15-20% di capitale residuo. Vantaggi: tassi inferiori ai prestiti personali e possibile deducibilità fiscale degli interessi. Rischi: perdita della casa se non riesci a rimborsare.",
+      "shortDescription": "Comprendi prestiti Home Equity e HELOC. Prendere in prestito contro il capitale della casa."
+    },
+    "debtToIncome": {
+      "question": "Cos'è il rapporto debito/reddito (DTI)?",
+      "shortAnswer": "DTI è la percentuale del reddito mensile destinata ai pagamenti dei debiti. La maggior parte preferisce DTI inferiore al 43%.",
+      "answer": "Il DTI è una metrica chiave per valutare la capacità di gestire i pagamenti. Si calcola dividendo i pagamenti mensili totali per il reddito lordo mensile. Esempio: reddito $6,000, debiti $2,000 = DTI 33%. I convenzionali richiedono DTI 45% o meno, 36% è ideale. FHA permette fino al 50% in alcuni casi. Il DTI include mutuo, prestiti auto, prestiti studenteschi, pagamenti minimi di carte di credito e altri debiti. Ridurre i debiti prima della domanda migliora significativamente l'idoneità.",
+      "shortDescription": "Scopri il DTI e perché è importante per l'idoneità ipotecaria."
+    },
+    "escrow": {
+      "question": "Cos'è un conto escrow?",
+      "shortAnswer": "Un conto escrow trattiene fondi per imposte e assicurazione, inclusi nel pagamento mensile del mutuo.",
+      "answer": "Un conto escrow è un conto di risparmio speciale gestito dal mutuante. Ogni mese, una parte del pagamento va in questo conto per coprire imposte e premi assicurativi. Quando le bollette vengono pagate, il mutuante le paga dall'escrow. La maggior parte dei mutuanti richiede l'escrow per mutui con meno del 20% di acconto. Il vantaggio è distribuire grandi pagamenti annuali in importi mensili più piccoli. Lo svantaggio è pagamenti mensili leggermente più alti. Un'analisi escrow viene effettuata annualmente.",
+      "shortDescription": "Comprendi i conti escrow per imposte e assicurazione. Come funzionano e perché sono richiesti."
+    },
+    "appraisal": {
+      "question": "Cosa succede durante una valutazione immobiliare?",
+      "shortAnswer": "Un valutatore indipendente determina il valore di mercato equo per garantire che l'importo del mutuo sia appropriato.",
+      "answer": "Una valutazione immobiliare è una valutazione professionale indipendente del valore di mercato, richiesta dal mutuante prima di approvare il mutuo. Un valutatore con licenza ispeziona condizioni, dimensioni, caratteristiche e posizione, poi confronta con vendite simili recenti. La valutazione protegge dal pagare troppo e il mutuante dal prestare troppo. Se la valutazione è bassa: rinegoziazione del prezzo, copertura della differenza in contanti, contestazione o ricerca di comparabili. Costo: $300-600, durata: 1-2 settimane.",
+      "shortDescription": "Cosa succede durante una valutazione immobiliare. Processo, tempistiche e cosa fare se è bassa."
+    },
+    "titleInsurance": {
+      "question": "Cos'è l'assicurazione del titolo e ne ho bisogno?",
+      "shortAnswer": "Protegge da dispute sulla proprietà e rivendicazioni legali. È richiesta per la maggior parte delle transazioni immobiliari.",
+      "answer": "Protegge da perdite finanziarie per difetti nel titolo — come pegni, frodi, eredi non dichiarati o errori di registrazione. Due tipi: del mutuante (obbligatoria, protegge i suoi interessi) e del proprietario (opzionale, consigliata, protegge il tuo capitale). Premio una tantum alla chiusura, copertura per tutta la durata della proprietà. Consigliata per proteggere l'investimento. Le compagnie effettuano una ricerca del titolo prima di emettere la polizza.",
+      "shortDescription": "Assicurazione del titolo. Perché è richiesta, cosa copre, mutuante vs proprietario."
+    },
+    "rateLock": {
+      "question": "Cos'è il blocco del tasso e quando usarlo?",
+      "shortAnswer": "Il blocco garantisce il tuo tasso ipotecario per un periodo fissato, tipicamente 30-60 giorni, proteggendo dall'aumento dei tassi.",
+      "answer": "Un blocco è la garanzia del mutuante di un tasso specifico per un periodo fissato — tipicamente 30, 45 o 60 giorni. Protegge dall'aumento dei tassi durante l'elaborazione. Dopo il blocco, il tasso non cambia (a meno che non cambi programma). Spesso include un'opzione float-down per beneficiare di eventuali cali. Più lungo il periodo, più alta la commissione. Blocca quando hai trovato una casa e hai una tempistica chiara di chiusura. In mercati volatili, bloccare presto dà tranquillità.",
+      "shortDescription": "Blocchi del tasso. Quando bloccare, periodi e opzioni float-down."
+    }
+  },
+  "loanProgramsData": {
+    "purchase": {
+      "name": "Prestito per acquisto immobiliare",
+      "shortDescription": "Trova il programma giusto per il tuo nuovo acquisto. Convenzionale, FHA, VA e altre opzioni."
+    },
+    "refinance": {
+      "name": "Ristrutturazione ipotecaria",
+      "shortDescription": "Riduci il tuo tasso, accorcia il termine o accedi al capitale con la ristrutturazione."
+    },
+    "selfEmployed": {
+      "name": "Mutuo per autonomi",
+      "shortDescription": "Soluzioni per mutuatari autonomi. Prestiti basati su estratti conto e documentazione alternativa."
+    },
+    "dscr": {
+      "name": "Prestito di investimento DSCR",
+      "shortDescription": "DSCR per investitori immobiliari. Qualificazione per reddito da affitto."
+    },
+    "fha": {
+      "name": "Mutuo FHA",
+      "shortDescription": "Mutui FHA con basso acconto e requisiti flessibili."
+    },
+    "va": {
+      "name": "Mutuo VA",
+      "shortDescription": "Mutui VA con acconto zero per veterani idonei. Nessuna PMI."
+    },
+    "reverse-mortgage": {
+      "name": "Mutuo inverso",
+      "shortDescription": "Converti il capitale della casa in contanti. Nessun pagamento mensile per over 62."
+    },
+    "home-equity": {
+      "name": "Prestito Home Equity",
+      "shortDescription": "Prendi in prestito contro il capitale della casa con un prestito Home Equity o HELOC."
+    },
+    "calculator": {
+      "estPrincipalInterest": "Stima capitale e interessi:",
+      "taxesInsuranceHoa": "+ imposte/assicurazione/HOA:",
+      "totalEstPayment": "Pagamento totale stimato:",
+      "perMonth": "/mese",
+      "yrTerm": "-anni durata",
+      "yrFixed": "-anni fisso"
+    }
+  }
+}

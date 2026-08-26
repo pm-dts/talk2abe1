@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 import Container from "@/components/common/Container";
 import ScheduleCallButton from "@/components/common/ScheduleCallButton";
 
 export default function HeroSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="w-full min-w-0 overflow-hidden bg-surface pt-0">
       <Container
@@ -40,7 +45,7 @@ export default function HeroSection() {
         >
           <Image
             src="/images/abe/abe-hero.png"
-            alt="Abe, Talk2Abe mortgage expert"
+            alt={t("home.hero.imageAlt")}
             width={800}
             height={600}
             priority
@@ -81,20 +86,19 @@ export default function HeroSection() {
           <div className="max-w-2xl">
             <h1
               className="
-                text-[2rem]
+                text-[1.5rem]
                 font-bold
                 leading-[1.08]
                 tracking-[-0.03em]
                 text-navy
-                sm:text-lg
-                md:text-[2rem]
-                lg:text-[3.75rem]
-                xl:text-[4rem]
+                sm:text-md
+                md:text-[1.5rem]
+                lg:text-[3.5rem]
               "
             >
-              <span className="block">Got a</span>
-              <span className="block">mortgage question?</span>
-              <span className="block text-brand">Talk2Abe.</span>
+              <span className="block">{t("home.hero.titleLine1")}</span>
+              <span className="block">{t("home.hero.titleLine2")}</span>
+              <span className="block text-brand">{t("home.hero.titleLine3")}</span>
             </h1>
 
             <p
@@ -110,8 +114,7 @@ export default function HeroSection() {
                 lg:leading-8
               "
             >
-              Straight answers to your mortgage questions — from an experienced
-              mortgage professional
+              {t("home.hero.description")}
             </p>
 
             {/* Hero Actions */}
@@ -156,7 +159,7 @@ export default function HeroSection() {
                   cursor-pointer
                 "
               >
-                Schedule a Call
+                {t("home.hero.scheduleCall")}
               </ScheduleCallButton>
 
               <Link
@@ -189,7 +192,7 @@ export default function HeroSection() {
                   lg:py-3
                 "
               >
-                Get Started
+                {t("home.hero.getStarted")}
               </Link>
             </div>
           </div>

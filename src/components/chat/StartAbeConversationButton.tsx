@@ -1,16 +1,11 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-import { cn } from "@/lib/utils";
+export default function StartAbeConversationButton() {
+  const { t } = useTranslation();
 
-type StartAbeConversationButtonProps = {
-  className?: string;
-};
-
-export default function StartAbeConversationButton({
-  className,
-}: StartAbeConversationButtonProps) {
   const openChat = () => {
     const selectors = [
       "#chat-widget-container button",
@@ -64,7 +59,7 @@ export default function StartAbeConversationButton({
     sm:text-xl
   "
     >
-      <span>Start My Conversation</span>
+      <span>{t("common.startMyConversation")}</span>
 
       <ArrowRight className="h-6 w-6" aria-hidden="true" />
     </button>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import Alert from "@/components/common/Alert";
 import Button from "@/components/common/Button";
@@ -46,6 +47,7 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 }
 
 export default function ContactForm({ className = "" }: ContactFormProps) {
+  const { t } = useTranslation();
   const [values, setValues] = useState<ContactFormValues>(initialValues);
 
   const [errors, setErrors] = useState<ContactFormErrors>({});
@@ -84,19 +86,19 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
     const next: ContactFormErrors = {};
 
     if (!values.name.trim()) {
-      next.name = "Please enter your name.";
+      next.name = t("contact.form.validation.name");
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email.trim())) {
-      next.email = "Please enter a valid email address.";
+      next.email = t("contact.form.validation.email");
     }
 
     if (!values.phone.trim()) {
-      next.phone = "Please enter your contact number.";
+      next.phone = t("contact.form.validation.phone");
     }
 
     if (!values.message.trim()) {
-      next.message = "Please enter your message.";
+      next.message = t("contact.form.validation.message");
     }
 
     return next;
@@ -133,7 +135,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
       });
 
       if (!response.ok) {
-        throw new Error("Unable to send your message right now.");
+        throw new Error(t("contact.form.sendFailed"));
       }
 
       setSubmitted(true);
@@ -146,7 +148,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
       setSubmitError(
         error instanceof Error
           ? error.message
-          : "Something went wrong. Please try again.",
+          : t("contact.form.unexpectedError"),
       );
     } finally {
       setSubmitting(false);
@@ -163,7 +165,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
         {/* Name */}
         <div className="min-w-0">
           <label htmlFor="contact-name" className={labelClasses}>
-            Name
+            {t("contact.form.name")}
             <span className="ml-0.5 text-brand" aria-hidden="true">
               *
             </span>
@@ -177,7 +179,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
             required
             value={values.name}
             onChange={handleChange("name")}
-            placeholder="Your full name"
+            placeholder={t("contact.form.namePlaceholder")}
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? "contact-name-error" : undefined}
             className={`mt-1.5 ${inputClasses} ${
@@ -193,7 +195,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
         {/* Email */}
         <div className="min-w-0">
           <label htmlFor="contact-email" className={labelClasses}>
-            Email
+            {t("contact.form.email")}
             <span className="ml-0.5 text-brand" aria-hidden="true">
               *
             </span>
@@ -207,7 +209,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
             required
             value={values.email}
             onChange={handleChange("email")}
-            placeholder="you@example.com"
+            placeholder={t("contact.form.emailPlaceholder")}
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? "contact-email-error" : undefined}
             className={`mt-1.5 ${inputClasses} ${
@@ -223,7 +225,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
         {/* Contact Number */}
         <div className="min-w-0 sm:col-span-2">
           <label htmlFor="contact-phone" className={labelClasses}>
-            Contact Number
+            {t("contact.form.phone")}
             <span className="ml-0.5 text-brand" aria-hidden="true">
               *
             </span>
@@ -237,7 +239,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
             required
             value={values.phone}
             onChange={handleChange("phone")}
-            placeholder="(305) 891-6500"
+            placeholder={t("contact.form.phonePlaceholder")}
             aria-invalid={Boolean(errors.phone)}
             aria-describedby={errors.phone ? "contact-phone-error" : undefined}
             className={`mt-1.5 ${inputClasses} ${
@@ -253,7 +255,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
         {/* Message */}
         <div className="min-w-0 sm:col-span-2">
           <label htmlFor="contact-message" className={labelClasses}>
-            Message
+            {t("contact.form.message")}
             <span className="ml-0.5 text-brand" aria-hidden="true">
               *
             </span>
@@ -266,7 +268,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
             rows={5}
             value={values.message}
             onChange={handleChange("message")}
-            placeholder="How can Abe help you?"
+            placeholder={t("contact.form.messagePlaceholder")}
             aria-invalid={Boolean(errors.message)}
             aria-describedby={
               errors.message ? "contact-message-error" : undefined
@@ -284,20 +286,19 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 
       <div className="mt-6">
         <Button type="submit" size="lg" disabled={submitting}>
-          {submitting ? "Sending..." : "Send Message"}
+          {submitting ? t("contact.form.sending") : t("contact.form.submit")}
         </Button>
       </div>
 
       {submitError && (
         <Alert variant="error" className="mt-4">
-          Something went wrong while sending your information. Please try
-          again.
+          {t("contact.form.sendFailed")}
         </Alert>
       )}
 
       {submitted && (
         <Alert variant="success" className="mt-4">
-          Thanks! Your message has been sent. Abe will get back to you soon.
+          {t("contact.form.success")}
         </Alert>
       )}
     </form>

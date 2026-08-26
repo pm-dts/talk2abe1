@@ -11,8 +11,8 @@ export type Verdict = {
   tone: VerdictTone;
 };
 
-export function formatCurrency(value: number, digits = 0): string {
-  return value.toLocaleString("en-US", {
+export function formatCurrency(value: number, digits = 0, locale?: string): string {
+  return value.toLocaleString(locale || "en-US", {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: digits,

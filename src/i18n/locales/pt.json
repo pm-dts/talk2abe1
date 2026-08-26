@@ -1,0 +1,737 @@
+{
+  "common": {
+    "phone": "(281) 466-4985",
+    "phoneAria": "(281) 466 4985",
+    "email": "info@talk2abe.com",
+    "emailAria": "info at talk 2 abe dot com",
+    "addresses": {
+      "houston": "5599 San Felipe, Suite 500 Houston, TX 77056",
+      "galveston": "4200 San Jacinto Blvd, Suite 302 Galveston, TX 77550"
+    },
+    "addressAria": {
+      "houston": "5599 San Felipe Suite 500 Houston TX 77056",
+      "galveston": "4200 San Jacinto Blvd Suite 302 Galveston TX 77550"
+    },
+    "startAbeChat": "Iniciar minha conversa com Abe",
+    "startMyConversation": "Iniciar minha conversa",
+    "scheduleACall": "Agendar uma ligação",
+    "scheduleACallWithAbe": "Agendar uma ligação com Abe",
+    "askAbeQuestion": "Fazer uma pergunta a Abe",
+    "viewAll": "Ver tudo",
+    "back": "Voltar",
+    "continue": "Continuar",
+    "backToQuestions": "Voltar às perguntas",
+    "next": "Próximo",
+    "submit": "Enviar",
+    "close": "Fechar",
+    "closeBookingWidget": "Fechar widget de agendamento",
+    "required": "Obrigatório",
+    "optional": "Opcional",
+    "learnMore": "Saiba mais",
+    "loading": "Carregando...",
+    "stepLabel": "Etapa {{current}} de {{total}}",
+    "sending": "Enviando...",
+    "home": "Início",
+    "askAbe": "Perguntar a Abe",
+    "loanPrograms": "Programas de empréstimos",
+    "aboutAbe": "Sobre Abe",
+    "contact": "Contato",
+    "getStarted": "Começar",
+    "questions": "Perguntas",
+    "breadcrumb": "Navegação"
+  },
+  "nav": {
+    "home": "Início",
+    "askAbe": "Perguntar a Abe",
+    "loanPrograms": "Programas de empréstimos",
+    "questions": "Perguntas",
+    "contact": "Contato",
+    "getStarted": "Começar",
+    "aboutAbe": "Sobre Abe",
+    "menu": "Menu"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Seu consultor pessoal de empréstimos hipotecários",
+      "titleLine1": "Converse com Abe,",
+      "titleLine2": "Seu assistente de hipotecas",
+      "titleLine3": "por IA",
+      "description": "Obtenha respostas especializadas sobre empréstimos convencionais, FHA, VA e DSCR. Abe usa IA para ajudá-lo a encontrar os melhores programas de empréstimos.",
+      "cta": "Perguntar a Abe",
+      "scheduleCall": "Agendar uma ligação",
+      "getStarted": "Começar",
+      "imageAlt": "Abe, especialista em hipotecas do Talk2Abe"
+    },
+    "valueProps": {
+      "title": "Por que conversar com Abe?",
+      "items": {
+        "aiPowered": {
+          "title": "Respostas por IA",
+          "description": "Obtenha respostas instantâneas e especializadas para suas dúvidas hipotecárias, com IA avançada treinada com dados reais de hipotecas."
+        },
+        "trustedData": {
+          "title": "Dados confiáveis",
+          "description": "Acesse informações hipotecárias verificadas, diretamente de profissionais experientes e padrões do setor."
+        },
+        "fastResponses": {
+          "title": "Respostas rápidas",
+          "description": "Sem esperas. Abe fornece respostas imediatas e detalhadas para ajudá-lo a tomar decisões informadas."
+        },
+        "alwaysAvailable": {
+          "title": "Sempre disponível",
+          "description": "Abe está disponível 24/7 para responder suas dúvidas hipotecárias quando precisar de orientação."
+        }
+      }
+    },
+    "popularQuestions": {
+      "title": "Perguntas populares",
+      "viewAll": "Ver todas as perguntas",
+      "viewAllAria": "Ver todas as perguntas populares",
+      "seeMoreQuestions": "Ver mais perguntas",
+      "seeMoreAria": "Ver mais perguntas hipotecárias"
+    },
+    "videoSection": {
+      "title": "Assista ao nosso último vídeo",
+      "watchOnYouTube": "Assistir no YouTube"
+    },
+    "latestVideo": {
+      "title": "Tem uma pergunta específica sobre sua situação?",
+      "description": "Pergunte diretamente a Abe. Vamos obter a resposta e a solução certa para você.",
+      "askAbeCta": "Fazer uma pergunta a Abe",
+      "scheduleCall": "Agendar uma ligação"
+    },
+    "cta": {
+      "title": "Pronto para dar o próximo passo?",
+      "description": "Vamos encontrar o programa de empréstimo certo para sua solução.",
+      "primary": "Fazer uma pergunta a Abe",
+      "secondary": "Agendar uma ligação"
+    }
+  },
+  "about": {
+    "hero": {
+      "tagline": "Conheça seu assistente de hipotecas por IA",
+      "titleLine1": "Conheça Abe, seu",
+      "titleLine2": "especialista em hipotecas",
+      "titleLine3": "por IA",
+      "description": "Abe é um profissional de empréstimos hipotecários experiente com décadas de experiência. Ele foi projetado para ajudá-lo a navegar pelo processo hipotecário com orientação especializada e recomendações personalizadas.",
+      "cta": "Fazer uma pergunta a Abe"
+    },
+    "experience": {
+      "title": "Décadas de experiência hipotecária"
+    },
+    "whyAbe": {
+      "title": "Por que escolher Abe",
+      "items": {
+        "licensedExpert": {
+          "title": "Especialista licenciado",
+          "description": "Abe é um profissional licenciado com credenciais NMLS, trazendo expertise hipotecária profissional para cada conversa."
+        },
+        "aiPowered": {
+          "title": "Orientação por IA",
+          "description": "Utilizando tecnologia de IA avançada, Abe fornece respostas instantâneas e precisas às suas dúvidas hipotecárias 24/7."
+        },
+        "trustedSource": {
+          "title": "Fonte confiável",
+          "description": "Todas as informações vêm de dados verificados do setor hipotecário e da experiência profissional pessoal de Abe."
+        }
+      }
+    },
+    "whyCreated": {
+      "title": "Por que o Talk2Abe foi criado"
+    },
+    "cta": {
+      "title": "Pronto para começar?",
+      "description": "Seja para comprar sua primeira casa ou refinanciar, Abe está aqui para orientá-lo em cada etapa do caminho.",
+      "button": "Fazer uma pergunta a Abe"
+    }
+  },
+  "askAbe": {
+    "title": "Perguntar a Abe",
+    "subtitle": "Obtenha respostas especializadas para suas dúvidas hipotecárias",
+    "placeholder": "Qual é sua pergunta hipotecária?",
+    "disclaimer": "Abe é um assistente de IA. Sempre consulte um profissional licenciado para decisões financeiras.",
+    "popularQuestions": "Perguntas populares",
+    "relatedQuestions": "Perguntas relacionadas",
+    "pageHeading": "Diga o que você está tentando realizar.",
+    "pageDescription": "Responda algumas perguntas simples e ajudarei a identificar opções de empréstimo que podem se encaixar.",
+    "hiImAbe": "Olá, eu sou Abe.",
+    "licensedMortgagePro": "Profissional hipotecário licenciado",
+    "whatCanIHelp": "Em que posso ajudá-lo?",
+    "trustRow": {
+      "about90Seconds": "Aproximadamente 90 segundos",
+      "noObligation": "Sem compromisso",
+      "private": "Privado"
+    },
+    "helpOptions": {
+      "buyAHome": "Comprar uma casa",
+      "refinance": "Refinanciar",
+      "selfEmployed": "Autônomo",
+      "dscr": "DSCR",
+      "fha": "FHA",
+      "va": "VA",
+      "reverseMortgage": "Hipoteca reversa",
+      "homeEquity": "Capital imobiliário"
+    }
+  },
+  "questions": {
+    "listing": {
+      "title": "Dúvidas hipotecárias",
+      "subtitle": "Encontre respostas para suas dúvidas hipotecárias",
+      "allQuestions": "Todas as perguntas",
+      "noResults": "Nenhuma pergunta encontrada",
+      "noResultsDescription": "Tente ajustar sua busca ou filtro de categoria.",
+      "tryDifferent": "Tente outras palavras-chave ou navegue por categoria.",
+      "categories": "Categorias",
+      "questionsCount_one": "{{count}} pergunta",
+      "questionsCount_other": "{{count}} perguntas",
+      "popular": "Popular",
+      "showMore": "Mostrar mais perguntas",
+      "showMoreCount": "Mostrar {{count}} perguntas mais"
+    },
+    "search": {
+      "placeholder": "Buscar perguntas...",
+      "ariaLabel": "Buscar perguntas"
+    },
+    "filters": {
+      "sortBy": "Ordenar por",
+      "newest": "Mais recentes",
+      "oldest": "Mais antigas",
+      "category": "Categoria",
+      "allCategories": "Todas as categorias",
+      "filterByCategory": "Filtrar por categoria"
+    },
+    "detail": {
+      "readTime": "{{minutes}} min de leitura",
+      "published": "Publicado em {{date}}",
+      "writtenBy": "Escrito por {{author}}",
+      "relatedQuestions": "Perguntas relacionadas",
+      "shareQuestion": "Compartilhar esta pergunta",
+      "copyLink": "Copiar link",
+      "copied": "Link copiado!"
+    },
+    "answer": {
+      "shortAnswer": "Resposta curta",
+      "fullAnswer": "Resposta completa e detalhada",
+      "whatAbeReviews": "O que Abe vai revisar",
+      "abesTip": "Dica do Abe",
+      "exploreLoanProgram": "Explore este programa de empréstimo",
+      "exploreDescription": "Esta pergunta está relacionada a um dos nossos programas de empréstimos. Saiba mais sobre como funciona e se se encaixa na sua situação.",
+      "learnMoreProgram": "Saiba mais sobre este programa",
+      "preparingAnswer": "Abe está preparando a resposta para esta pergunta. Enquanto isso, pergunte diretamente a Abe para uma resposta rápida e pessoal.",
+      "preparingFullAnswer": "Abe está preparando a resposta completa e detalhada para esta pergunta. Volte em breve — ou pergunte diretamente a Abe para ajuda com sua situação específica.",
+      "mostPopular": "Pergunta mais popular",
+      "byAuthor": "Por {{author}}",
+      "byAbe": "Por Abe",
+      "haveQuestion": "Tem uma pergunta sobre sua situação?",
+      "differentSituations": "Cada situação é diferente. Vamos encontrar a solução certa para você."
+    }
+  },
+  "loanPrograms": {
+    "listing": {
+      "title": "Programas de empréstimos hipotecários",
+      "subtitle": "Explore nossas soluções hipotecárias completas",
+      "explorePrograms": "Explore nossos programas de empréstimos",
+      "findProgram": "Encontre o programa hipotecário certo para suas necessidades",
+      "popularPrograms": "Programas populares",
+      "description": "Oferecemos uma ampla gama de soluções hipotecárias para proprietários, compradores e investidores imobiliários.",
+      "readyNextStep": "Pronto para dar o próximo passo?",
+      "findRightProgram": "Vamos encontrar o programa de empréstimo certo para sua solução."
+    },
+    "nav": {
+      "purchase": "Compra",
+      "refinance": "Refinanciamento",
+      "selfEmployed": "Autônomo",
+      "dscr": "DSCR",
+      "fha": "FHA",
+      "va": "VA",
+      "reverseMortgage": "Hipoteca reversa",
+      "homeEquity": "Capital imobiliário / HELOC",
+      "ariaLabel": "Programas de empréstimos"
+    },
+    "hero": {
+      "cta": "Aplicar agora"
+    },
+    "benefits": {
+      "title": "Benefícios"
+    },
+    "facts": {
+      "title": "Detalhes do programa"
+    },
+    "trustPoints": {
+      "title": "Por que escolher este programa"
+    },
+    "card": {
+      "learnMore": "Saiba mais",
+      "learnMoreAbout": "Saiba mais sobre {{program}}"
+    },
+    "leadForm": {
+      "title": "Obtenha pré-aprovação",
+      "subtitle": "Comece sua aplicação hoje",
+      "contactInfo": "Informações de contato",
+      "loanDetails": "Detalhes do empréstimo",
+      "programInfo": "Informações do programa",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "loanAmount": "Valor do empréstimo",
+      "propertyType": "Tipo de imóvel",
+      "selectOne": "Selecione um",
+      "primaryResidence": "Residência principal",
+      "secondHome": "Segunda residência",
+      "investmentProperty": "Propriedade de investimento",
+      "singleFamily": "Unifamiliar",
+      "condo": "Condomínio",
+      "multiFamily": "Multifamiliar",
+      "townhouse": "Sobrado",
+      "manufactured": "Fabricado",
+      "validation": {
+        "selectOption": "Por favor, selecione uma opção para continuar.",
+        "fieldRequired": "Este campo é obrigatório.",
+        "firstName": "Por favor, insira seu nome.",
+        "lastName": "Por favor, insira seu sobrenome.",
+        "email": "Por favor, insira um endereço de e-mail válido.",
+        "phone": "Por favor, insira um número de telefone válido."
+      },
+      "errors": {
+        "formUnavailable": "Este formulário não está disponível no momento. Por favor, tente novamente mais tarde.",
+        "submitFailed": "Algo deu errado ao enviar suas informações. Por favor, tente novamente.",
+        "unexpected": "Algo deu errado ao enviar suas informações. Por favor, tente novamente."
+      },
+      "success": {
+        "title": "Obrigado!",
+        "message": "Sua inscrição foi enviada com sucesso. Abe entrará em contato em breve.",
+        "cta": "Voltar aos programas de empréstimos",
+        "contact": "Contato"
+      }
+    },
+    "progress": {
+      "stepOf": "Etapa {{current}} de {{total}}"
+    },
+    "navigation": {
+      "back": "Voltar",
+      "continue": "Continuar"
+    }
+  },
+  "contact": {
+    "title": "Entre em contato com o Talk2Abe",
+    "subtitle": "Estamos aqui para ajudá-lo com suas dúvidas hipotecárias",
+    "heading": "Contato",
+    "description": "Tem uma pergunta sobre sua situação? Envie uma mensagem a Abe e ele responderá.",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "Número de contato",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "namePlaceholder": "Seu nome completo",
+      "emailPlaceholder": "voce@exemplo.com",
+      "phonePlaceholder": "(305) 891-6500",
+      "subjectPlaceholder": "Como podemos ajudar?",
+      "messagePlaceholder": "Como Abe pode ajudá-lo?",
+      "submit": "Enviar mensagem",
+      "sending": "Enviando...",
+      "success": "Obrigado! Sua mensagem foi enviada. Abe responderá em breve.",
+      "error": "Algo deu errado. Por favor, tente novamente ou ligue diretamente.",
+      "sendFailed": "Algo deu errado ao enviar suas informações. Por favor, tente novamente.",
+      "unexpectedError": "Algo deu errado. Por favor, tente novamente.",
+      "validation": {
+        "name": "Por favor, insira seu nome.",
+        "email": "Por favor, insira um endereço de e-mail válido.",
+        "phone": "Por favor, insira seu número de contato.",
+        "message": "Por favor, insira sua mensagem."
+      }
+    },
+    "info": {
+      "title": "Entre em contato",
+      "phone": "Telefone",
+      "email": "E-mail",
+      "address": "Localização do escritório",
+      "hours": "Horário comercial",
+      "hoursDetail": "Seg-Sex 8h-18h CST"
+    }
+  },
+  "getStarted": {
+    "header": {
+      "title": "Seu guia hipotecário",
+      "subtitle": "Responda algumas perguntas e Abe ajudará a encontrar o programa de empréstimo certo"
+    },
+    "progress": {
+      "stepOf": "Etapa {{current}} de {{total}}",
+      "percentComplete": "{{percent}}% concluído",
+      "ariaLabel": "Progresso do questionário"
+    },
+    "navigation": {
+      "back": "Voltar",
+      "continue": "Continuar",
+      "submit": "Enviar"
+    },
+    "questions": {
+      "goal": {
+        "title": "Em que posso ajudá-lo?",
+        "description": "Escolha a opção que melhor se encaixa no seu objetivo."
+      },
+      "propertyUse": {
+        "title": "Como o imóvel será utilizado?",
+        "description": "Selecione a melhor opção."
+      },
+      "processStage": {
+        "title": "Em qual etapa do processo você está?",
+        "description": "Escolha a opção que melhor descreve você."
+      },
+      "propertyValue": {
+        "title": "Qual é o valor aproximado do imóvel ou preço de compra?",
+        "description": "Insira sua melhor estimativa.",
+        "placeholder": "Inserir valor"
+      },
+      "financingAmount": {
+        "title": "Aproximadamente quanto você planeja dar de entrada?",
+        "description": "Insira sua melhor estimativa.",
+        "placeholder": "Inserir entrada"
+      },
+      "borrowerSituation": {
+        "title": "Qual opção melhor descreve sua situação?",
+        "description": "Selecione a opção que melhor se encaixa em você."
+      },
+      "creditRange": {
+        "title": "Como você descreveria seu crédito?",
+        "description": "Selecione a opção mais adequada."
+      },
+      "contact": {
+        "title": "Vamos conversar",
+        "description": "Diga como entrar em contato e revisarei o que você procura."
+      }
+    },
+    "options": {
+      "notSure": "Não tenho certeza",
+      "skip": "Pular",
+      "other": "Outro",
+      "imNotSure": "Não tenho certeza",
+      "buyAHome": "Comprar uma casa",
+      "refinance": "Refinanciar",
+      "accessHomeEquity": "Acessar capital imobiliário",
+      "investmentProperty": "Propriedade de investimento",
+      "commercialFinancing": "Financiamento comercial",
+      "buildOrRenovate": "Construir ou reformar",
+      "reverseMortgage": "Hipoteca reversa",
+      "primaryResidence": "Residência principal",
+      "secondVacationHome": "Segunda residência / casa de férias",
+      "commercialProperty": "Propriedade comercial",
+      "alreadyOwn": "Já possuo o imóvel",
+      "justExploring": "Só explorando",
+      "shoppingAround": "Comparando opções",
+      "foundAProperty": "Encontrei um imóvel",
+      "underContract": "Em contrato",
+      "needHelpDeciding": "Preciso de ajuda para decidir",
+      "w2Employee": "Funcionário W-2",
+      "selfEmployed": "Autônomo",
+      "form1099": "1099",
+      "realEstateInvestor": "Investidor imobiliário",
+      "retired": "Aposentado",
+      "medicalProfessional": "Profissional da saúde",
+      "itinBorrower": "Mutuário com ITIN",
+      "foreignNational": "Estrangeiro"
+    },
+    "contactStep": {
+      "title": "Vamos conversar",
+      "description": "Diga como entrar em contato e revisarei o que você procura.",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "propertyState": "Estado do imóvel",
+      "selectState": "Selecionar estado",
+      "firstNamePlaceholder": "Nome",
+      "lastNamePlaceholder": "Sobrenome",
+      "emailPlaceholder": "Endereço de e-mail",
+      "phonePlaceholder": "Número de telefone",
+      "submit": "FALAR COM ABE",
+      "sending": "Enviando..."
+    },
+    "validation": {
+      "selectAnswer": "Por favor, selecione uma resposta para continuar.",
+      "firstName": "Por favor, insira seu nome.",
+      "lastName": "Por favor, insira seu sobrenome.",
+      "email": "Por favor, insira um endereço de e-mail válido.",
+      "phone": "Por favor, insira um número de telefone válido.",
+      "state": "Por favor, selecione um estado."
+    },
+    "errors": {
+      "submitFailed": "Não foi possível enviar suas informações. Por favor, tente novamente.",
+      "unexpected": "Algo deu errado. Por favor, tente novamente."
+    },
+    "thankYou": {
+      "title": "Obrigado, {{name}}",
+      "subtitle": "Recebi.",
+      "message": "Suas informações foram recebidas. Revisarei o que você procura e entrarei em contato o mais rápido possível. Ou você pode escolher uma das opções abaixo.",
+      "callNow": "Ligue ou mande mensagem agora",
+      "scheduleCall": "Agendar uma ligação",
+      "askAnother": "Fazer outra pergunta",
+      "explore": "Explorar o Talk2Abe"
+    },
+    "consent": {
+      "heading": "Consentimento e Privacidade",
+      "body": "Ao enviar, você concorda em ser contatado pelo Talk2Abe sobre sua consulta hipotecária. Taxas de mensagens e dados podem se aplicar. Proteções padrão de privacidade se aplicam — suas informações nunca são vendidas."
+    },
+    "currency": {
+      "enterAmount": "Inserir valor",
+      "imNotSure": "Não tenho certeza"
+    }
+  },
+  "forms": {
+    "validation": {
+      "required": "Este campo é obrigatório",
+      "invalidEmail": "Por favor, insira um endereço de e-mail válido",
+      "invalidPhone": "Por favor, insira um número de telefone válido",
+      "minLength": "Deve ter pelo menos {{min}} caracteres",
+      "maxLength": "Deve ter no máximo {{max}} caracteres"
+    },
+    "newsletter": {
+      "emailLabel": "Endereço de e-mail",
+      "placeholder": "Insira seu e-mail",
+      "subscribe": "Inscrever-se",
+      "invalidEmail": "Por favor, insira um endereço de e-mail válido.",
+      "success": "Obrigado! Você está inscrito nas dicas hipotecárias do Abe."
+    }
+  },
+  "footer": {
+    "tagline": "Seu consultor hipotecário confiável. Orientação especializada em empréstimos para moradia, refinanciamento e mais.",
+    "quickLinks": "Links rápidos",
+    "resources": "Recursos",
+    "contactUs": "Fale conosco",
+    "locations": "Localizações",
+    "watchVideos": "Assistir vídeos",
+    "mortgageServices": "Serviços hipotecários fornecidos através de",
+    "visitMyLoanDesk": "Visitar MyLoanDesk",
+    "newsletter": {
+      "title": "Mantenha-se atualizado",
+      "description": "Receba as últimas dicas hipotecárias e atualizações de mercado.",
+      "placeholder": "Insira seu e-mail",
+      "subscribe": "Inscrever-se",
+      "success": "Obrigado por se inscrever!",
+      "error": "Por favor, insira um endereço de e-mail válido."
+    },
+    "legal": "Jurídico",
+    "privacyPolicy": "Política de Privacidade",
+    "termsOfUse": "Termos de Uso",
+    "disclaimers": "Avisos legais",
+    "copyright": "© {{year}} Talk2Abe.com. Todos os direitos reservados.",
+    "poweredBy": "Orientação hipotecária por IA",
+    "dba": "Talk2Abe.com é uma DBA da Secured Horizon Financial Group, Inc. / Secured Horizon Mortgage Group, Inc.",
+    "nmlsIndividual": "NMLS #341393 (Individual)",
+    "nmlsCompany": "NMLS #314226, #1444825 (Empresa)",
+    "nmlsConsumerAccess": "Acesso ao consumidor NMLS",
+    "equalHousing": "Oportunidade de habitação igualitária",
+    "disclaimer": "Este não é um compromisso de empréstimo. Todas as informações, taxas e termos estão sujeitos a alterações sem aviso prévio. As taxas estão sujeitas a condições de mercado e variam com base nas qualificações individuais do mutuário. Entre em contato com o Talk2Abe para taxas e termos atuais."
+  },
+  "disclosure": {
+    "main": "Este não é um compromisso de empréstimo. Todas as informações, taxas e termos estão sujeitos a alterações sem aviso prévio. As taxas estão sujeitas a condições de mercado e variam com base nas qualificações individuais do mutuário. Entre em contato com o Talk2Abe para taxas e termos atuais.",
+    "equalHousing": "Talk2Abe é um credor de habitação igualitária. NMLS # {{nmls}}.",
+    "nmls": "NMLS #2118469"
+  },
+  "seo": {
+    "home": {
+      "title": "Talk2Abe | Assistente de hipotecas por IA | Orientação especializada em empréstimos",
+      "description": "Obtenha orientação hipotecária especializada de Abe, um assistente por IA. Empréstimos convencionais, FHA, VA, DSCR explicados. Orientação de profissional licenciado.",
+      "ogDescription": "Obtenha orientação hipotecária especializada de Abe, um assistente por IA. Empréstimos convencionais, FHA, VA, DSCR explicados."
+    },
+    "about": {
+      "title": "Sobre Abe | Profissional hipotecário licenciado | Especialista em hipotecas por IA",
+      "description": "Conheça Abe: profissional licenciado com décadas de experiência, agora com IA. Orientação hipotecária especializada disponível 24/7.",
+      "ogDescription": "Conheça Abe: profissional licenciado com décadas de experiência, agora com IA."
+    },
+    "askAbe": {
+      "title": "Perguntar a Abe | Assistente de hipotecas gratuito por IA | Obtenha respostas especializadas",
+      "description": "Faça suas perguntas hipotecárias a Abe. Assistente por IA com respostas especializadas sobre empréstimos, refinanciamento, programas FHA e VA.",
+      "ogDescription": "Faça suas perguntas hipotecárias a Abe. Respostas especializadas sobre empréstimos, refinanciamento, programas FHA e VA."
+    },
+    "questions": {
+      "title": "Dúvidas hipotecárias e respostas | Orientação especializada | Talk2Abe",
+      "description": "Encontre respostas para dúvidas hipotecárias comuns. Orientação especializada sobre empréstimos, refinanciamento, pontuação de crédito, entradas e mais.",
+      "ogDescription": "Encontre respostas para dúvidas hipotecárias comuns. Orientação especializada sobre empréstimos e refinanciamento."
+    },
+    "questionDetail": {
+      "title": "{{question}} | Orientação hipotecária | Talk2Abe",
+      "description": "{{answer}}",
+      "ogDescription": "Resposta especializada para: {{question}}"
+    },
+    "loanPrograms": {
+      "title": "Programas de empréstimos hipotecários | FHA, VA, Convencional | Talk2Abe",
+      "description": "Explore programas de empréstimos hipotecários: Convencional, FHA, VA, DSCR, Autônomo, Hipoteca reversa, Capital imobiliário. Encontre sua melhor opção.",
+      "ogDescription": "Explore programas de empréstimos hipotecários: Convencional, FHA, VA, DSCR e mais."
+    },
+    "loanProgram": {
+      "title": "Empréstimo hipotecário {{name}} | Talk2Abe",
+      "description": "{{shortDescription}}",
+      "ogDescription": "{{shortDescription}}"
+    },
+    "contact": {
+      "title": "Entre em contato com o Talk2Abe | Dúvidas hipotecárias e suporte",
+      "description": "Entre em contato com o Talk2Abe para dúvidas hipotecárias, informações sobre empréstimos e orientação especializada. Estamos aqui para ajudá-lo.",
+      "ogDescription": "Entre em contato com o Talk2Abe para dúvidas hipotecárias e orientação especializada."
+    },
+    "getStarted": {
+      "title": "Começar | Guia hipotecário gratuito | Talk2Abe",
+      "description": "Comece sua jornada hipotecária. Responda algumas perguntas e obtenha recomendações personalizadas de Abe.",
+      "ogDescription": "Comece sua jornada hipotecária com recomendações personalizadas."
+    }
+  },
+  "questionsData": {
+    "whatIsMortgage": {
+      "question": "O que é uma hipoteca?",
+      "shortAnswer": "Uma hipoteca é um empréstimo usado para comprar ou financiar uma casa, onde o imóvel serve como garantia.",
+      "answer": "Uma hipoteca é um empréstimo projetado especificamente para compra de imóveis. Ao contrair uma hipoteca, o credor fornece os fundos para a compra e você concorda em reembolsar ao longo de um período (geralmente 15 ou 30 anos) com juros. O imóvel serve como garantia — se houver inadimplência, o credor pode tomar posse através de execução hipotecária. Existem vários tipos: convencional, FHA, VA e ARM, cada um com termos e requisitos diferentes.",
+      "shortDescription": "Saiba o que é uma hipoteca e como funciona. Orientação especializada de Abe sobre o básico de empréstimos hipotecários."
+    },
+    "conventionalVsFHA": {
+      "question": "Qual é a diferença entre empréstimos convencionais e FHA?",
+      "shortAnswer": "Empréstimos convencionais exigem pontuação de crédito e entrada maiores, enquanto FHA são mais flexíveis com requisitos menores.",
+      "answer": "Empréstimos convencionais não são garantidos pelo governo e geralmente exigem pontuação de crédito de 620+ e entrada de 3-20%. Oferecem taxas competitivas para mutuários qualificados e não exigem seguro após 20% de capital. Empréstimos FHA são garantidos pela Administração Federal de Habitação e são mais acessíveis com pontuação de 580 (ou 500 com 10% de entrada). Exigem 3,5% mínimo, mas exigem MIP durante toda a vida do empréstimo. A escolha depende da situação de crédito, tamanho da entrada e tempo planejado na residência.",
+      "shortDescription": "Compare empréstimos convencionais e FHA. Entenda as diferenças em crédito, entrada e seguro."
+    },
+    "downPayment": {
+      "question": "Quanto de entrada preciso?",
+      "shortAnswer": "Entradas variam de 0% a 20% dependendo do programa e suas qualificações.",
+      "answer": "O valor da entrada depende do tipo de empréstimo: empréstimos VA oferecem 0% para veteranos elegíveis. USDA também oferece 0% para imóveis rurais. FHA exige 3,5% com pontuação 580+ (10% com 500-579). Convencionais exigem 3-20%, embora HomeReady e Home Possible permitam apenas 3%. 20% elimina a necessidade de PMI em empréstimos convencionais. A melhor opção depende da situação financeira, serviço militar e localização do imóvel.",
+      "shortDescription": "Saiba quanto de entrada é necessário para diferentes programas de empréstimos."
+    },
+    "creditScore": {
+      "question": "Qual pontuação de crédito preciso para uma hipoteca?",
+      "shortAnswer": "A maioria dos credores exige pontuação mínima de 620 para convencionais, enquanto FHA aceita a partir de 580.",
+      "answer": "Os requisitos variam por tipo: convencionais geralmente exigem 620-680+ para melhores taxas. FHA podem ir até 500 (com 10% de entrada) ou 580 (com 3,5%). VA não tem mínimo governamental, mas credores exigem 620+. USDA geralmente exige 640+. A pontuação afeta taxa, pagamento mensal e opções. Maior pontuação = melhores termos. Até pequenas melhorias economizam milhares. Se sua pontuação precisa de melhoria, considere adiar a aplicação ou buscar estratégias de melhoria.",
+      "shortDescription": "Saiba os requisitos de pontuação para FHA, VA, convencionais e USDA."
+    },
+    "preApproval": {
+      "question": "O que é pré-aprovação hipotecária e como obtê-la?",
+      "shortAnswer": "Pré-aprovação é o compromisso condicional do credor de emprestar um valor específico com base em seu perfil financeiro.",
+      "answer": "Pré-aprovação é quando o credor revisa suas informações financeiras (renda, ativos, crédito, dívidas) e emite uma carta indicando quanto está disposto a emprestar. É mais formal que pré-qualificação e envolve verificação de crédito. Você precisará de holerites, W-2 ou declarações, extratos bancários e autorização para verificação. A pré-aprovação dá orçamento realista, fortalece sua oferta e acelera o fechamento. Cartas de pré-aprovação são válidas por 60-90 dias.",
+      "shortDescription": "Entenda a pré-aprovação hipotecária. Quais documentos são necessários e como obtê-la."
+    },
+    "refinance": {
+      "question": "Quando devo refinanciar minha hipoteca?",
+      "shortAnswer": "Considere refinanciar quando as taxas caírem pelo menos 0,75% abaixo da sua taxa atual, ou quando sua situação financeira mudar.",
+      "answer": "Refinanciamento faz sentido quando: taxas caíram significativamente (0,75-1% abaixo da atual), quer trocar de ARM para fixa para estabilidade, precisa remover PMI após 20% de capital, ou quer acessar capital via cash-out. Considere o ponto de equilíbrio — tempo para que economias mensais cubram custos de fechamento (geralmente 2-3 anos). Se planeja ficar além desse período, refinanciamento geralmente vale a pena.",
+      "shortDescription": "Saiba quando refinanciar faz sentido. Quedas de taxa, ARM para fixa, opções cash-out."
+    },
+    "privateMortgageInsurance": {
+      "question": "O que é seguro hipotecário privado (PMI)?",
+      "shortAnswer": "PMI protege o credor em caso de inadimplência. É exigido em empréstimos convencionais com menos de 20% de entrada.",
+      "answer": "PMI protege o credor, não você, se você parar de fazer pagamentos. Geralmente exigido em convencionais quando entrada é menos de 20%. Custos de 0,5-1,5% do valor original do empréstimo por ano, adicionados ao pagamento mensal. Pode solicitar remoção ao atingir 20% de capital (sobre valor original), e termina automaticamente aos 22%. FHA tem um tipo diferente chamado MIP que geralmente dura toda a vida do empréstimo.",
+      "shortDescription": "Entenda PMI em empréstimos convencionais. Quando é exigido, custos e como removê-lo."
+    },
+    "closingCosts": {
+      "question": "O que são custos de fechamento e quanto custam?",
+      "shortAnswer": "Custos de fechamento são taxas pagas no final do processo, geralmente 2-5% do valor do empréstimo.",
+      "answer": "Custos de fechamento são taxas cobradas por credores, advogados e terceiros. Totalizam 2-5% do empréstimo. Incluem: taxa de originação (0,5-1%), avaliação ($300-600), seguro de título (0,5-1%), honorários de advogado, taxas de registro e itens pré-pagos como impostos e seguro. Em empréstimo de $300,000, espere $6,000-15,000. Alguns custos são negociáveis. O credor deve fornecer Loan Estimate em 3 dias e Closing Disclosure 3 dias antes do fechamento.",
+      "shortDescription": "Saiba sobre custos de fechamento hipotecário. O que incluem, quanto custam e como reduzir."
+    },
+    "armVsFixed": {
+      "question": "Qual a diferença entre hipotecas ARM e taxa fixa?",
+      "shortAnswer": "Taxa fixa mantém seu pagamento igual durante todo o empréstimo, enquanto ARM pode mudar após período inicial.",
+      "answer": "Hipoteca de taxa fixa bloqueia sua taxa por todo o prazo (15 ou 30 anos), dando pagamentos previsíveis. ARM começa com taxa fixa mais baixa no período inicial (5, 7 ou 10 anos), depois se ajusta periodicamente. ARM são identificadas por números como 5/1 ou 7/6 — taxa fixa por 5-7 anos, ajusta a cada 1-6 meses. ARM podem ser benéficos se planeja vender ou refinanciar antes do ajuste, mas trazem risco se taxas subirem significativamente.",
+      "shortDescription": "Compare hipotecas de taxa fixa e variável. Qual é melhor para sua situação?"
+    },
+    "vaLoans": {
+      "question": "Quais são os benefícios dos empréstimos VA?",
+      "shortAnswer": "VA oferece 0% de entrada, sem PMI, taxas competitivas para veteranos e militares elegíveis.",
+      "answer": "VA, garantidos pelo Departamento de Assuntos de Veteranos: sem entrada, sem PMI, taxas frequentemente abaixo de convencionais, custos de fechamento limitados, sem penalidade por pagamento antecipado. Elegíveis: veteranos, militares ativos, Guarda Nacional, cônjuges sobreviventes. Exige VA Funding Fee único (2,15-3.3% primeiro uso), que pode ser financiado. A ausência de entrada e PMI pode economizar dezenas de milhares ao longo do empréstimo.",
+      "shortDescription": "Benefícios de empréstimos VA. Zero entrada, sem PMI, taxas competitivas."
+    },
+    "dscrLoans": {
+      "question": "O que é empréstimo DSCR?",
+      "shortAnswer": "DSCR é para investidores imobiliários — qualificação pelo potencial de renda aluguel, não renda pessoal.",
+      "answer": "Debt Service Coverage Ratio é para investidores. Qualificação por renda de aluguel do imóvel, não renda pessoal. DSCR = aluguel mensal / pagamento hipotecário. Razão 1.0 = aluguel cobre exatamente a hipoteca; maior é mais favorável. Requisitos: 20-25% entrada, pontuação 620+, DSCR 1.0+. Vantagens: qualificação mais fácil para autônomos, sem documentação pessoal, capacidade de financiar múltiplos imóveis.",
+      "shortDescription": "Empréstimos DSCR para investidores. Qualificação por renda aluguel."
+    },
+    "selfEmployed": {
+      "question": "Como autônomos obtêm uma hipoteca?",
+      "shortAnswer": "Autônomos geralmente precisam de 2 anos de declarações e podem usar empréstimos de extrato bancário ou DSCR.",
+      "answer": "Autônomos têm opções: convencionais e FHA exigem 2 anos de declarações com renda estável ou crescente. Empréstimos por extrato bancário usam 12-24 meses de depósitos — ideal para autônomos com muitas deduções. DSCR qualifica por renda aluguel. Necessário: 2 anos de declarações, demonstração de resultados, extratos bancários, possivelmente carta de CPA. Considere trabalhar com credor especializado em hipotecas para autônomos.",
+      "shortDescription": "Opções hipotecárias para autônomos. Declarações, extratos bancários, DSCR."
+    },
+    "reverseMortgage": {
+      "question": "O que é uma hipoteca reversa?",
+      "shortAnswer": "Permite que proprietários de 62+ convertam capital em dinheiro sem vender a casa ou fazer pagamentos mensais.",
+      "answer": "HECM permite que proprietários de 62+ convertam capital em dinheiro. Você recebe pagamentos (à vista, mensal, linha de crédito ou combinação) baseados em idade, valor do imóvel e taxa. Ao contrário de hipoteca tradicional, não faz pagamentos mensais — o empréstimo é quitado quando você vende, muda permanentemente ou falece. Deve continuar pagando impostos, seguro e manutenção. O saldo cresce com juros. Pode ser ferramenta valiosa para aposentados, mas considere custos e implicações cuidadosamente.",
+      "shortDescription": "Hipotecas reversas para proprietários de 62+. Converta capital em dinheiro sem pagamentos mensais."
+    },
+    "homeEquity": {
+      "question": "O que é empréstimo de capital imobiliário ou HELOC?",
+      "shortAnswer": "Empréstimo de capital imobiliário ou HELOC permite contrair empréstimo com base no capital da casa, como valor único ou linha de crédito rotativa.",
+      "answer": "Produtos de capital permitem contrair empréstimo com o capital acumulado. Empréstimo de capital oferece valor fixo com taxa e pagamentos fixos (segunda hipoteca). HELOC funciona como cartão de crédito com linha rotativa, taxa variável e pagamentos apenas de juros no período de utilização (geralmente 10 anos), depois reembolso. Ambos geralmente exigem 15-20% de capital restante. Vantagens: taxas menores que empréstimos pessoais e possível dedução fiscal. Riscos: perda da casa se não conseguir pagar.",
+      "shortDescription": "Entenda empréstimos de capital imobiliário e HELOC. Contrair empréstimo com o capital da casa."
+    },
+    "debtToIncome": {
+      "question": "O que é relação dívida-renda (DTI)?",
+      "shortAnswer": "DTI é a porcentagem da renda mensal destinada a pagamentos de dívida. A maioria prefere DTI abaixo de 43%.",
+      "answer": "DTI é métrica-chave para avaliar capacidade de pagamento. Calculada: pagamentos mensais de dívida / renda bruta mensal. Exemplo: renda $6,000, dívidas $2,000 = DTI 33%. Convencionais exigem 45% ou menos, 36% é ideal. FHA permite até 50%. DTI inclui hipoteca, empréstimos estudantis, cartões de crédito e outras dívidas. Reduzir dívidas antes de aplicar melhora significativamente a elegibilidade.",
+      "shortDescription": "Saiba sobre DTI e por que importa para qualificação hipotecária."
+    },
+    "escrow": {
+      "question": "O que é conta de custódia?",
+      "shortAnswer": "Conta de custódia guarda fundos para impostos e seguro, incluídos no pagamento mensal da hipoteca.",
+      "answer": "Conta de custódia é conta especial gerenciada pelo credor. Mensalmente, parte do pagamento vai para cobrir impostos e seguro. Quando as faturas vencem, o credor paga da conta. A maioria dos credores exige para empréstimos com menos de 20% de entrada. Vantagem: distribui grandes pagamentos anuais em valores mensais menores. Desvantagem: pagamentos mensais levemente maiores. Análise anual garante valor correto, déficits/superávits são ajustados.",
+      "shortDescription": "Entenda contas de custódia para impostos e seguro. Como funcionam e por que são exigidas."
+    },
+    "appraisal": {
+      "question": "O que acontece durante uma avaliação imobiliária?",
+      "shortAnswer": "Avaliador independente determina o valor justo de mercado para garantir que o empréstimo seja adequado.",
+      "answer": "Avaliação imobiliária é avaliação profissional independente do valor de mercado, exigida pelo credor. Avaliador licenciado inspeciona condição, tamanho, características e localização, compara com vendas similares recentes. Protege de pagar a mais e credor de emprestar demais. Se avaliação for baixa: renegociar preço, cobrir diferença em dinheiro, contestar ou buscar comparativos. Custo: $300-600, prazo: 1-2 semanas.",
+      "shortDescription": "O que acontece na avaliação imobiliária. Processo, prazo e quando é baixa."
+    },
+    "titleInsurance": {
+      "question": "O que é seguro de título e preciso dele?",
+      "shortAnswer": "Seguro de título protege contra disputas de propriedade e reclamações legais. É exigido para a maioria das transações.",
+      "answer": "Seguro de título protege contra perdas financeiras por defeitos no título — como penhoras, fraudes, herdeiros não declarados ou erros de registro. Dois tipos: do credor (exigido, protege seus interesses) e do proprietário (opcional, recomendado, protege seu capital). Prêmio único pago no fechamento, cobre enquanto for proprietário. Altamente recomendado para proteger investimento. Empresas fazem busca de título antes de emitir apólice.",
+      "shortDescription": "Seguro de título. Por que é exigido, o que cobre, credor vs proprietário."
+    },
+    "rateLock": {
+      "question": "O que é bloqueio de taxa e quando usar?",
+      "shortAnswer": "Bloqueio garante sua taxa hipotecária por período fixo, geralmente 30-60 dias, protegendo contra aumentos.",
+      "answer": "Bloqueio é garantia do credor de taxa específica por 30, 45 ou 60 dias. Protege contra alta durante processamento. Após bloqueio, taxa não muda (a menos que mude programa). Pode incluir float-down para benefício se taxas caírem. Quanto maior o período, maior a taxa. Considere bloquear quando encontrar imóvel e tiver cronograma claro. Em mercados voláteis, bloqueio precoce traz tranquilidade.",
+      "shortDescription": "Bloqueios de taxa. Quando bloquear, períodos e opções float-down."
+    }
+  },
+  "loanProgramsData": {
+    "purchase": {
+      "name": "Empréstimo para compra de imóvel",
+      "shortDescription": "Encontre o programa certo para sua nova compra. Convencional, FHA, VA e mais opções."
+    },
+    "refinance": {
+      "name": "Refinanciamento hipotecário",
+      "shortDescription": "Reduza sua taxa, diminua o prazo ou acesse capital com refinanciamento."
+    },
+    "selfEmployed": {
+      "name": "Hipoteca para autônomos",
+      "shortDescription": "Soluções para mutuários autônomos. Empréstimos por extrato bancário e documentação alternativa."
+    },
+    "dscr": {
+      "name": "Empréstimo de investimento DSCR",
+      "shortDescription": "DSCR para investidores imobiliários. Qualificação por renda aluguel."
+    },
+    "fha": {
+      "name": "Empréstimo FHA",
+      "shortDescription": "Empréstimos FHA com entrada baixa e requisitos flexíveis."
+    },
+    "va": {
+      "name": "Empréstimo VA",
+      "shortDescription": "Empréstimos VA com entrada zero para veteranos elegíveis. Sem PMI."
+    },
+    "reverse-mortgage": {
+      "name": "Hipoteca reversa",
+      "shortDescription": "Converta o capital do imóvel em dinheiro. Sem pagamentos mensais para 62+."
+    },
+    "home-equity": {
+      "name": "Empréstimo de capital imobiliário",
+      "shortDescription": "Contrair empréstimo com o capital da casa via empréstimo de capital ou HELOC."
+    },
+    "calculator": {
+      "estPrincipalInterest": "Est. principal e juros:",
+      "taxesInsuranceHoa": "+ impostos/seguro/HOA:",
+      "totalEstPayment": "Pagamento total estimado:",
+      "perMonth": "/mês",
+      "yrTerm": "-ano prazo",
+      "yrFixed": "-ano fixo"
+    }
+  }
+}

@@ -1,41 +1,43 @@
+"use client";
+
 import {
   BadgeCheck,
-  Handshake,
-  Layers,
   MessageCircle,
-  UserRoundCheck,
+  ShieldCheck,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import Container from "@/components/common/Container";
-import { aboutAbe } from "@/data/about-abe";
-import type { AboutBenefitIcon } from "@/types/about-abe";
 
-const iconMap: Record<AboutBenefitIcon, LucideIcon> = {
+const iconMap: Record<string, LucideIcon> = {
   BadgeCheck,
-  Handshake,
-  Layers,
   MessageCircle,
-  UserRoundCheck,
+  ShieldCheck,
 };
 
+const benefitKeys = ["licensedExpert", "aiPowered", "trustedSource"];
+const benefitIcons = ["BadgeCheck", "MessageCircle", "ShieldCheck"];
+
 export default function WhyChooseAbe() {
+  const { t } = useTranslation();
+
   return (
     <section className="bg-surface py-14 sm:py-16 lg:py-20">
       <Container>
         <div className="text-center">
           <h2 className="mx-auto max-w-xl text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-            {aboutAbe.benefitsTitle}
+            {t("about.whyAbe.title")}
           </h2>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-          {aboutAbe.benefits.map((benefit) => {
-            const Icon = iconMap[benefit.icon];
+          {benefitKeys.map((key, index) => {
+            const Icon = iconMap[benefitIcons[index]];
 
             return (
               <article
-                key={benefit.id}
+                key={key}
                 className="flex flex-col items-start gap-4 rounded-lg border border-slate-200 bg-white p-6 transition-colors hover:border-brand/30 sm:p-8"
               >
                 <div className="flex shrink-0">
@@ -48,11 +50,11 @@ export default function WhyChooseAbe() {
 
                 <div>
                   <h3 className="text-base font-semibold leading-6 text-navy sm:text-lg">
-                    {benefit.title}
+                    {t(`about.whyAbe.items.${key}.title`)}
                   </h3>
 
                   <p className="mt-2 text-sm leading-6 text-muted sm:text-[15px]">
-                    {benefit.description}
+                    {t(`about.whyAbe.items.${key}.description`)}
                   </p>
                 </div>
               </article>
