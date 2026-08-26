@@ -1,18 +1,25 @@
-"use client";
-
-// import { useTranslation } from "react-i18next";
 import Container from "@/components/common/Container";
+import { aboutAbe } from "@/data/about-abe";
 
 export default function WhyCreatedSection() {
-  // const { t } = useTranslation();
-
   return (
     <section className="bg-white py-14 sm:py-16 lg:py-20">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-            Why Talk2Abe Was Created
+            {aboutAbe.whyCreated.title}
           </h2>
+
+          <div className="mt-6 space-y-5">
+            {aboutAbe.whyCreated.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="text-base leading-7 text-muted sm:text-lg"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

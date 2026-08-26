@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-// import { useTranslation } from "react-i18next";
 
 import Alert from "@/components/common/Alert";
 import Button from "@/components/common/Button";
@@ -47,7 +46,6 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 }
 
 export default function ContactForm({ className = "" }: ContactFormProps) {
-  // const { t } = useTranslation();
   const [values, setValues] = useState<ContactFormValues>(initialValues);
 
   const [errors, setErrors] = useState<ContactFormErrors>({});
@@ -135,7 +133,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
       });
 
       if (!response.ok) {
-        throw new Error("Something went wrong while sending your information. Please try again.");
+        throw new Error("Unable to send your message right now.");
       }
 
       setSubmitted(true);
@@ -179,7 +177,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
             required
             value={values.name}
             onChange={handleChange("name")}
-            placeholder={"Your full name"}
+            placeholder="Your full name"
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? "contact-name-error" : undefined}
             className={`mt-1.5 ${inputClasses} ${
@@ -209,7 +207,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
             required
             value={values.email}
             onChange={handleChange("email")}
-            placeholder={"you@example.com"}
+            placeholder="you@example.com"
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? "contact-email-error" : undefined}
             className={`mt-1.5 ${inputClasses} ${
@@ -239,7 +237,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
             required
             value={values.phone}
             onChange={handleChange("phone")}
-            placeholder={"(305) 891-6500"}
+            placeholder="(305) 891-6500"
             aria-invalid={Boolean(errors.phone)}
             aria-describedby={errors.phone ? "contact-phone-error" : undefined}
             className={`mt-1.5 ${inputClasses} ${
@@ -268,7 +266,7 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
             rows={5}
             value={values.message}
             onChange={handleChange("message")}
-            placeholder={"How can Abe help you?"}
+            placeholder="How can Abe help you?"
             aria-invalid={Boolean(errors.message)}
             aria-describedby={
               errors.message ? "contact-message-error" : undefined
@@ -292,7 +290,8 @@ export default function ContactForm({ className = "" }: ContactFormProps) {
 
       {submitError && (
         <Alert variant="error" className="mt-4">
-          Something went wrong while sending your information. Please try again.
+          Something went wrong while sending your information. Please try
+          again.
         </Alert>
       )}
 

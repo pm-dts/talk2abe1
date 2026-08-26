@@ -6,7 +6,6 @@ import AbeChatEmbed from "@/components/chat/AbeChatEmbed";
 import BusinessSchema from "@/components/seo/BusinessSchema";
 import PersonSchema from "@/components/seo/PersonSchema";
 import WebSiteSchema from "@/components/seo/WebSiteSchema";
-// import I18nProvider from "@/i18n/I18nProvider"; // Commented out: multi-language disabled
 import { seoConfig, seoImages, SITE_URL } from "@/config/seo";
 
 import "./globals.css";
@@ -84,11 +83,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={`${manrope.variable} ${fraunces.variable} ${ibmPlexMono.variable} font-sans flex min-h-dvh flex-col`}
       >
-        {/* Commented out: multi-language disabled — re-enable by wrapping in <I18nProvider> */}
         <SiteChrome>{children}</SiteChrome>
 
         <AbeChatEmbed />

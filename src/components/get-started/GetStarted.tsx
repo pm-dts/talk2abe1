@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-// import { useTranslation } from "react-i18next";
 
 import ContactStep from "@/components/get-started/ContactStep";
 import GetStartedHeader from "@/components/get-started/GetStartedHeader";
@@ -58,7 +57,6 @@ function getTags(body: GetStartedSubmission): string[] {
 }
 
 export default function GetStarted() {
-  // const { t } = useTranslation();
   const [stepIndex, setStepIndex] = useState(0);
 
   const [answers, setAnswers] = useState<GetStartedAnswers>(initialAnswers);

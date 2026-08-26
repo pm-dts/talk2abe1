@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-// import { useTranslation } from "react-i18next";
 
 import Alert from "@/components/common/Alert";
 
@@ -16,7 +15,6 @@ export default function NewsletterForm({
   className = "",
   stacked = false,
 }: NewsletterFormProps) {
-  // const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
@@ -69,7 +67,7 @@ export default function NewsletterForm({
               setStatus("idle");
             }
           }}
-          placeholder={"Enter your email"}
+          placeholder="Enter your email"
           aria-invalid={status === "error"}
           aria-describedby={
             status === "error"
@@ -142,7 +140,7 @@ export default function NewsletterForm({
 
       {status === "success" && (
         <Alert variant="success" className="mt-2" id="newsletter-success">
-          Thanks! You are subscribed to Abe's mortgage tips.
+          Thanks! You are subscribed to Abe&apos;s mortgage tips.
         </Alert>
       )}
     </form>

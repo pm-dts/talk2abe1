@@ -1,5 +1,5 @@
-"use client";
-
+import { existsSync } from "node:fs";
+import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Play, Star } from "lucide-react";
@@ -9,8 +9,6 @@ import Container from "@/components/common/Container";
 import CTA from "@/components/common/CTA";
 import Alert from "@/components/common/Alert";
 import RelatedQuestions from "@/components/questions/RelatedQuestions";
-// import { localize } from "@/i18n/helpers";
-// import { useLanguage } from "@/i18n/hooks";
 import type { Question } from "@/types/question";
 
 type QuestionAnswerProps = {
@@ -46,6 +44,20 @@ function formatDate(value: string): string {
     day: "numeric",
     year: "numeric",
   }).format(new Date(year, month - 1, day));
+}
+
+function getYouTubeEmbedUrl(url: string): string {
+  if (url.includes("youtube.com/embed/")) {
+    return url;
+  }
+  return url
+    .replace("youtu.be/", "youtube.com/embed/")
+    .replace("youtube.com/shorts/", "youtube.com/embed/")
+    .replace("youtube.com/watch?v=", "youtube.com/embed/");
+}
+
+function isDirectVideoUrl(url: string): boolean {
+  return /\.(mp4|webm|ogg|mov)(\?|$)/i.test(url);
 }
 
 function QuestionMeta({ question }: { question: Question }) {
@@ -85,28 +97,11 @@ export default function QuestionAnswer({
   question,
   relatedQuestions = [],
 }: QuestionAnswerProps) {
-  // const { locale } = useLanguage();
-  const locale = "en";
-
-  // const title = localize(question, locale, "title");
-  const title = question.title;
-  // const shortAnswer = localize(question, locale, "shortAnswer");
-  const shortAnswer = question.shortAnswer;
-  const fullAnswer = question.fullAnswer
-    // ? question.translations?.[locale]?.fullAnswer
-    //   ? (question.translations[locale].fullAnswer as unknown as string[])
-    //   : question.fullAnswer
-    ? question.fullAnswer
-    : undefined;
-  const whatAbeReviews = question.whatAbeReviews
-    // ? question.translations?.[locale]?.whatAbeReviews
-    //   ? (question.translations[locale].whatAbeReviews as unknown as string[])
-    //   : question.whatAbeReviews
-    ? question.whatAbeReviews
-    : undefined;
-  // const abeTip = localize(question, locale, "abeTip");
-  const abeTip = question.abeTip;
-  const programLabel = question.programLink?.label;
+  const hasThumbnail =
+    question.video?.thumbnail &&
+    existsSync(
+      path.join(process.cwd(), "public", question.video.thumbnail),
+    );
 
   return (
     <div className="bg-white">
@@ -123,7 +118,7 @@ export default function QuestionAnswer({
                 href: "/questions",
               },
               {
-                label: title,
+                label: question.title,
               },
             ]}
           />
@@ -143,21 +138,48 @@ export default function QuestionAnswer({
                 </span>
               )}
               <h1 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">
-                {title}
+                {question.title}
               </h1>
               <QuestionMeta question={question} />
             </header>
 
-            {/* Video thumbnail */}
-            {question.video?.thumbnail && (
+            {/* Video */}
+            {/* {question.video?.url ? (
+              isDirectVideoUrl(question.video.url) ? (
+                <div className="relative mt-8 overflow-hidden rounded-xl bg-slate-900">
+                  <video
+                    src={question.video.url}
+                    title={question.title}
+                    controls
+                    preload="metadata"
+                    playsInline
+                    className="h-auto w-full"
+                  />
+                </div>
+              ) : (
+                <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-slate-900">
+                  <iframe
+                    src={getYouTubeEmbedUrl(question.video.url)}
+                    title={question.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="h-full w-full"
+                  />
+                </div>
+              )
+            ) : question.video?.thumbnail ? (
               <div className="relative mt-8 aspect-video overflow-hidden rounded-xl bg-slate-900">
-                <Image
-                  src={question.video.thumbnail}
-                  alt={title}
-                  fill
-                  priority
-                  className="object-cover"
-                />
+                {hasThumbnail ? (
+                  <Image
+                    src={question.video.thumbnail}
+                    alt={question.title}
+                    fill
+                    priority
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="h-full w-full bg-gradient-to-br from-slate-700 to-slate-900" />
+                )}
                 <span className="absolute inset-0 flex items-center justify-center">
                   <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 ring-4 ring-white/20">
                     <Play
@@ -169,16 +191,32 @@ export default function QuestionAnswer({
                   </span>
                 </span>
               </div>
-            )}
+            ) : (
+              <div className="relative mt-8 aspect-video overflow-hidden rounded-xl border border-slate-200 bg-gradient-to-br from-slate-700 to-slate-900">
+                <span className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 ring-4 ring-white/20">
+                    <Play
+                      className="h-8 w-8 text-navy"
+                      fill="currentColor"
+                      strokeWidth={1}
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <span className="text-xs font-medium text-white/80">
+                    Video coming soon
+                  </span>
+                </span>
+              </div>
+            )} */}
 
             {/* Short Answer */}
             <section className="mt-8">
               <h2 className="text-lg font-semibold text-navy sm:text-xl">
                 Short Answer
               </h2>
-              {shortAnswer ? (
+              {question.shortAnswer ? (
                 <p className="mt-3 text-base leading-relaxed text-muted">
-                  {shortAnswer}
+                  {question.shortAnswer}
                 </p>
               ) : (
                 <Alert variant="info" className="mt-3">
@@ -194,9 +232,9 @@ export default function QuestionAnswer({
               <h2 className="text-lg font-semibold text-navy sm:text-xl">
                 Full Detailed Answer
               </h2>
-              {fullAnswer && fullAnswer.length > 0 ? (
+              {question.fullAnswer && question.fullAnswer.length > 0 ? (
                 <div className="mt-3 space-y-4">
-                  {fullAnswer.map((paragraph, index) => (
+                  {question.fullAnswer.map((paragraph, index) => (
                     <p
                       key={index}
                       className="text-base leading-relaxed text-muted"
@@ -217,13 +255,13 @@ export default function QuestionAnswer({
             </section>
 
             {/* What Abe Will Review */}
-            {whatAbeReviews && whatAbeReviews.length > 0 && (
+            {question.whatAbeReviews && question.whatAbeReviews.length > 0 && (
               <section className="mt-8">
                 <h2 className="text-lg font-semibold text-navy sm:text-xl">
                   What Abe Will Review
                 </h2>
                 <ul className="mt-3 space-y-2">
-                  {whatAbeReviews.map((item, index) => (
+                  {question.whatAbeReviews.map((item, index) => (
                     <li
                       key={index}
                       className="flex items-start gap-3 text-base leading-relaxed text-muted"
@@ -240,13 +278,13 @@ export default function QuestionAnswer({
             )}
 
             {/* Abe's Tip */}
-            {abeTip && (
+            {question.abeTip && (
               <aside className="mt-8 flex items-start gap-4 rounded-xl border border-brand/20 bg-brand/10 p-5 sm:p-6">
                 <h2 className="text-base font-semibold text-navy">
                   Abe&apos;s Tip
                 </h2>
                 <p className="mt-1 text-sm leading-relaxed text-muted sm:text-base">
-                  {abeTip}
+                  {question.abeTip}
                 </p>
               </aside>
             )}
@@ -266,7 +304,7 @@ export default function QuestionAnswer({
                   href={getRelatedProgramPath(question)}
                   className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand/80 sm:text-base"
                 >
-                  {programLabel ?? "Learn more about this program"}
+                  {question.programLink.label ?? "Learn more about this program"}
                   <ArrowRight
                     className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
                     aria-hidden="true"

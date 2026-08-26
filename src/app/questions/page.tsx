@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-// import { useTranslation } from "react-i18next";
 
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import Container from "@/components/common/Container";
@@ -15,17 +14,14 @@ import BreadcrumbSchema, {
 import { categories as categoryOptions } from "@/data/categories";
 import { questions } from "@/data/questions";
 
+const breadcrumbItems = buildBreadcrumbs([
+  { name: "Home", path: "/" },
+  { name: "Ask Abe", path: "/questions" },
+]);
+
 export default function AskAbePage() {
-  // const { t } = useTranslation();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
-
-  const breadcrumbItems = buildBreadcrumbs([
-    // { name: t("common.home"), path: "/" },
-    { name: "Home", path: "/" },
-    // { name: t("common.askAbe"), path: "/questions" },
-    { name: "Ask Abe", path: "/questions" },
-  ]);
 
   /**
    * Build the category list from the category data source
@@ -78,12 +74,10 @@ export default function AskAbePage() {
         <Breadcrumbs
           items={[
             {
-              // label: t("common.home"),
               label: "Home",
               href: "/",
             },
             {
-              // label: t("common.askAbe"),
               label: "Ask Abe",
             },
           ]}
@@ -96,7 +90,7 @@ export default function AskAbePage() {
           </h1>
 
           <p className="mt-3 max-w-xl text-base leading-7 text-muted sm:text-lg">
-            Get expert answers to your mortgage questions
+            Straight answers to real mortgage questions. Browse by topic or search for what you need.
           </p>
         </section>
 

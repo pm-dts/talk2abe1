@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-// import { useTranslation } from "react-i18next";
 
 import ChoiceField from "@/components/loan-programs/ChoiceField";
 import LoanProgramContactStep from "@/components/loan-programs/LoanProgramContactStep";
@@ -52,7 +51,6 @@ const LOAN_PROGRAM_WEBHOOKS: Record<string, string | undefined> = {
 export default function LoanProgramLeadForm({
   program,
 }: LoanProgramLeadFormProps) {
-  // const { t } = useTranslation();
   const [stepIndex, setStepIndex] = useState(0);
 
   const [choiceValue, setChoiceValue] = useState("");

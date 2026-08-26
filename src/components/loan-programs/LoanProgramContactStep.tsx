@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-// import { useTranslation } from "react-i18next";
 
 import Disclosure from "@/components/loan-programs/Disclosure";
 import LoanProgramNavigation from "@/components/loan-programs/LoanProgramNavigation";
@@ -65,7 +64,6 @@ export default function LoanProgramContactStep({
   submitting,
   submitError,
 }: LoanProgramContactStepProps) {
-  // const { t } = useTranslation();
   const [errors, setErrors] = useState<ContactErrors>({});
 
   const update = (field: keyof LoanProgramContact, value: string) => {

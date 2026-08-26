@@ -1,24 +1,17 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-// import { localize } from "@/i18n/helpers";
-// import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
 import type { Question } from "@/types/question";
 
 type QuestionListItemProps = {
   question: Question;
   className?: string;
-  // locale?: Locale;
 };
 
 export default function QuestionListItem({
   question,
   className,
-  // locale = DEFAULT_LOCALE,
 }: QuestionListItemProps) {
-  // const title = localize(question, locale, "title");
-  const title = question.title;
-
   return (
     <Link
       href={`/questions/${question.slug}`}
@@ -30,7 +23,7 @@ export default function QuestionListItem({
       <div className="flex min-w-0 items-center justify-between gap-4">
         <div className="min-w-0">
           <h3 className="min-w-0 text-sm font-semibold leading-snug text-navy transition-colors group-hover:text-brand sm:text-base">
-            {title}
+            {question.title}
           </h3>
 
           {question.category && (

@@ -1,5 +1,3 @@
-import type { Locale } from "@/i18n/config";
-
 export type QuestionIcon =
   | "house"
   | "user"
@@ -19,10 +17,6 @@ export type ProgramLink = {
   label?: string;
 };
 
-export type QuestionTranslations = Partial<
-  Record<Locale, Record<string, string | string[]>>
->;
-
 export interface Question {
   id: string;
   slug: string;
@@ -41,5 +35,4 @@ export interface Question {
   relatedQuestionIds?: string[];
   programLink?: ProgramLink;
   metaDescription?: string;
-  translations?: QuestionTranslations;
 }

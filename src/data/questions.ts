@@ -434,6 +434,42 @@ export const questions: Question[] = [
     ],
   },
   {
+    id: "q-grants-for-buying-a-home",
+    slug: "are-there-really-grants-for-buying-a-home",
+    title: "Are there really grants for buying a home?",
+    category: "Purchase Loans",
+    popular: true,
+    icon: "dollar",
+    author: "Abe",
+    publishedAt: "2026-08-12",
+    shortAnswer:
+      "Yes. Homebuyer grants and down-payment assistance programs do exist, but eligibility, availability, requirements, and benefits vary depending on factors such as your location, income, and the specific program.",
+    fullAnswer: [
+      "Grants and down-payment assistance programs are offered by state and local housing agencies, nonprofits, employers, and some lenders. These programs can help qualified buyers cover part or all of a down payment, and in some cases certain closing costs. Not every program is a true grant\u2014some assistance is structured as a forgivable loan, a second lien, or a deferred-payment obligation that must be repaid under specific conditions.",
+      "Eligibility commonly depends on factors such as first-time buyer status, income limits, purchase-price caps, property location, owner-occupancy requirements, and completion of a homebuyer education course. Availability also varies significantly by state, county, and city. A program that exists in one market may not be offered in another, and funding can be limited or seasonal.",
+      "Because terms and strings can differ widely, it is important to review whether the assistance is a grant, a forgivable lien, a deferred second, or a repayable loan. Understand any recapture rules, occupancy requirements, resale restrictions, and how the program may interact with your mortgage, taxes, and closing timeline.",
+    ],
+    whatAbeReviews: [
+      "Program type: grant, forgivable lien, deferred assistance, or repayable loan",
+      "Income, purchase-price, and first-time-buyer eligibility rules",
+      "Property location and participating lenders or agencies",
+      "Recapture provisions, occupancy requirements, and closing coordination",
+    ],
+    abeTip:
+      "Ask early whether any grant or assistance program fits your file. The best time to find out is before you start shopping\u2014not after you are under contract.",
+    programLink: {
+      href: "https://www.myloandesk.com/loan-programs/",
+      label: "Explore our loan programs",
+    },
+    relatedQuestionIds: [
+      "q-down-payment-options",
+      "q-gift-money-down-payment",
+      "q-how-much-house-can-i-afford",
+    ],
+    metaDescription:
+      "Homebuyer grants and down-payment assistance programs exist, but eligibility and availability vary by location, income, and program type. Learn what to review before relying on grant funds.",
+  },
+  {
     id: "q-when-refinancing-makes-sense",
     slug: "when-does-refinancing-a-mortgage-make-sense",
     title: "When does refinancing a mortgage make sense?",
@@ -1410,170 +1446,5 @@ export const questions: Question[] = [
       "q-construction-loans",
       "q-construction-to-permanent-loan",
     ],
-  },
-  {
-    id: "q-grants-for-buying-home",
-    slug: "are-there-really-grants-for-buying-a-home",
-    title: "Are there really grants for buying a home?",
-    category: "Purchase Loans",
-    popular: true,
-    icon: "dollar",
-    author: "Abe",
-    publishedAt: "2026-08-26",
-    shortAnswer:
-      "Yes. Homebuyer grants and down-payment assistance programs do exist, but eligibility, availability, requirements, and benefits vary depending on factors such as location and the specific program.",
-    fullAnswer: [
-      "Grants and down-payment assistance programs are offered by federal, state, and local government agencies, as well as some nonprofit organizations and employers. They can help cover part or all of a buyer's down payment or closing costs, reducing the amount of personal savings needed to purchase a home.",
-      "These programs are not one-size-fits-all. Eligibility typically depends on factors such as the property location, the buyer's income relative to area median income, first-time homebuyer status, credit profile, the loan program being used, and sometimes the borrower's profession or military service history. Some programs are widely available while others are limited to specific cities, counties, or housing markets.",
-      "A grant is generally money that does not need to be repaid, while other forms of assistance may be forgivable over time or may require repayment upon sale, refinancing, or payoff of the mortgage. Understanding whether the assistance is a true grant, a deferred second lien, or a repayable loan is critical before accepting any offer.",
-      "Because programs change frequently and funding can be limited, the best approach is to review currently available options with a knowledgeable loan officer who works with multiple assistance programs in your area. Combining the right assistance with the right loan program can make a meaningful difference in the total cash needed to close.",
-    ],
-    whatAbeReviews: [
-      "Program availability in your specific area",
-      "Income limits and eligibility requirements",
-      "Property type, loan program, and occupancy",
-      "Whether the assistance is a grant, forgivable loan, or repayable lien",
-    ],
-    abeTip:
-      "Ask about currently funded assistance programs early in the process. Many have income caps, purchase-price limits, and first-come funding that can run out.",
-    programLink: {
-      href: "https://www.myloandesk.com/loan-programs/",
-      label: "Explore our loan programs",
-    },
-    relatedQuestionIds: [
-      "q-down-payment-options",
-      "q-gift-money-down-payment",
-      "q-home-5-percent-down",
-    ],
-    metaDescription:
-      "Learn whether homebuyer grants and down-payment assistance programs really exist, how they work, who qualifies, and how to find programs available in your area.",
-    translations: {
-      es: {
-        title: "¿Realmente existen subvenciones para comprar una casa?",
-        shortAnswer:
-          "Sí. Las subvenciones para compradores de vivienda y los programas de asistencia para el pago inicial existen, pero la elegibilidad, disponibilidad, requisitos y beneficios varían según factores como la ubicación y el programa específico.",
-        fullAnswer: [
-          "Las subvenciones y los programas de asistencia para el pago inicial son ofrecidos por agencias federales, estatales y locales del gobierno, así como por algunas organizaciones sin fines de lucro y empleadores. Pueden ayudar a cubrir parte o la totalidad del pago inicial o los costos de cierre del comprador, reduciendo el monto de ahorros personales necesarios para comprar una vivienda.",
-          "Estos programas no son universales. La elegibilidad generalmente depende de factores como la ubicación de la propiedad, los ingresos del comprador en relación con el ingreso medio del área, el estado de comprador de vivienda por primera vez, el perfil crediticio, el programa de préstamo que se utiliza y, a veces, la profesión del prestatario o su historial de servicio militar. Algunos programas están ampliamente disponibles mientras que otros están limitados a ciudades, condados o mercados inmobiliarios específicos.",
-          "Una subvención es generalmente dinero que no necesita ser reembolsado, mientras que otras formas de asistencia pueden ser condonables con el tiempo o pueden requerir reembolso upon venta, refinanciamiento o pago de la hipoteca. Entender si la asistencia es una subvención real, un segundo gravamen diferido o un préstamo reembolsable es fundamental antes de aceptar cualquier ofrecimiento.",
-          "Debido a que los programas cambian con frecuencia y la financiación puede ser limitada, el mejor enfoque es revisar las opciones disponibles actualmente con un oficial de préstamos conocedor que trabaje con múltiples programas de asistencia en su área. Combinar la asistencia correcta con el programa de préstamo adecuado puede hacer una diferencia significativa en el efectivo total necesario para el cierre.",
-        ],
-        whatAbeReviews: [
-          "Disponibilidad del programa en su área específica",
-          "Límites de ingresos y requisitos de elegibilidad",
-          "Tipo de propiedad, programa de préstamo y ocupación",
-          "Si la asistencia es una subvención, préstamo condonable o gravamen reembolsable",
-        ],
-        abeTip:
-          "Pregunte sobre los programas de asistencia financiados actualmente al inicio del proceso. Muchos tienen límites de ingresos, límites de precio de compra y financiación que se agota por orden de llegada.",
-        metaDescription:
-          "Infórmese si las subvenciones para compradores de vivienda y los programas de asistencia para el pago inicial realmente existen, cómo funcionan, quién califica y cómo encontrar programas disponibles en su área.",
-      },
-      de: {
-        title: "Gibt es wirklich Zuschüsse für den Hauskauf?",
-        shortAnswer:
-          "Ja. Hauskaufzuschüsse und Programme zur Anzahlungshilfe existieren, aber Berechtigung, Verfügbarkeit, Anforderungen und Vorteile variieren je nach Standort und dem spezifischen Programm.",
-        fullAnswer: [
-          "Zuschüsse und Programme zur Anzahlungshilfe werden von Bundes-, Landes- und Kommunalbehörden sowie von einigen gemeinnützigen Organisationen und Arbeitgebern angeboten. Sie können einen Teil oder die gesamte Anzahlung oder die Abschlusskosten des Käufers decken und so den persönlichen Sparbedarf für den Hauskauf reduzieren.",
-          "Diese Programme sind nicht universell. Die Berechtigung hängt typischerweise von Faktoren wie dem Standort der Immobilie, dem Einkommen des Käufers im Verhältnis zum regionalen Medianseinkommen, dem Status als Erstkäufer, dem Kreditprofil, dem verwendeten Kreditprogramm und manchmal dem Beruf oder der Militärdienstgeschichte des Kreditnehmers ab. Einige Programme sind weit verbreitet verfügbar, während andere auf bestimmte Städte, Landkreise oder Immobilienmärkte beschränkt sind.",
-          "Ein Zuschuss ist im Allgemeinen Geld, das nicht zurückgezahlt werden muss, während andere Formen der Hilfe im Zeitverlauf erlassen werden können oder bei Verkauf, Umschuldung oder Tilgung der Hypothek zurückgezahlt werden müssen. Zu verstehen, ob es sich bei der Hilfe um einen echten Zuschuss, ein aufgeschobenes zweites Pfandrecht oder ein rückzahlbares Darlehen handelt, ist vor der Annahme jedes Angebots von entscheidender Bedeutung.",
-          "Da Programme sich häufig ändern und die Mittel begrenzt sein können, ist der beste Ansatz, aktuelle Optionen mit einem erfahrenen Kreditberater zu prüfen, der mit mehreren Hilfsprogrammen in Ihrem Bereich zusammenarbeitet. Die Kombination der richtigen Hilfe mit dem richtigen Kreditprogramm kann einen deutlichen Unterschied im benötigten Bargeld zum Abschluss machen.",
-        ],
-        whatAbeReviews: [
-          "Programmverfügbarkeit in Ihrem spezifischen Bereich",
-          "Einkommensgrenzen und Berechtigungsanforderungen",
-          "Immobilientyp, Kreditprogramm und Nutzung",
-          "Ob die Hilfe ein Zuschuss, erlassbares Darlehen oder rückzahlbares Pfandrecht ist",
-        ],
-        abeTip:
-          "Erkundigen Sie sich frühzeitig nach aktuell finanzierten Hilfsprogrammen. Viele haben Einkommensgrenzen, Kaufpreisgrenzen und Mittel, die nach dem Prinzip Zuerst-kommt-zuerst vergeben werden.",
-        metaDescription:
-          "Erfahren Sie, ob Hauskaufzuschüsse und Anzahlungshilfeprogramme wirklich existieren, wie sie funktionieren, wer berechtigt ist und wie Sie verfügbare Programme in Ihrer Region finden.",
-      },
-      ru: {
-        title: "Правда ли, что существуют гранты на покупку дома?",
-        shortAnswer:
-          "Да. Гранты для покупателей жилья и программы помощи с первоначальным взносом действительно существуют, но право на участие, доступность, требования и преимущества варьируются в зависимости от местоположения и конкретной программы.",
-        fullAnswer: [
-          "Гранты и программы помощи с первоначальным взносом предлагаются федеральными, государственными и местными органами власти, а также некоторыми некоммерческими организациями и работодателями. Они могут помочь покрыть часть или всю сумму первоначального взноса или закрывающих расходов покупателя, сокращая необходимые личные сбережения для приобретения жилья.",
-          "Эти программы не являются универсальными. Право на участие обычно зависит от таких факторов, как местоположение недвижимости, доход покупателя по отношению к среднему доходу района, статус покупателя впервые, кредитная история, используемая ипотечная программа, а иногда и профессия или служебная история заёмщика. Некоторые программы широко доступны, в то время как другие ограничены определёнными городами, округами или рынками недвижимости.",
-          "Грант — это, как правило, деньги, которые не нужно возвращать, в то время как другие формы помощи могут быть списаны со временем или потребовать возврата при продаже, рефинансировании или погашении ипотеки. Понимание того, является ли помощь настоящим грантом, отложенным вторым залогом или возвратным кредитом, имеет решающее значение до принятия любого предложения.",
-          "Поскольку программы часто меняются, а финансирование может быть ограничено, лучший подход — изучить доступные варианты с опытным кредитным специалистом, работающим с различными программами помощи в вашем регионе. Правильное сочетание помощи с подходящей ипотечной программой может существенно повлиять на сумму наличных, необходимых для закрытия сделки.",
-        ],
-        whatAbeReviews: [
-          "Доступность программы в вашем конкретном регионе",
-          "Ограничения по доходу и требования к праву на участие",
-          "Тип недвижимости, ипотечная программа и проживание",
-          "Является ли помощь грантом, списываемым кредитом или возвратным залогом",
-        ],
-        abeTip:
-          "Узнайте о текущих финансированных программах помощи на ранних этапах процесса. У многих есть ограничения по доходу, предельные цены покупки и средства, распределяемые в порядке очереди.",
-        metaDescription:
-          "Узнайте, существуют ли гранты на покупку жилья и программы помощи с первоначальным взносом, как они работают, кто имеет право на участие и как найти доступные программы в вашем регионе.",
-      },
-      pt: {
-        title: "Existem realmente subsídios para comprar uma casa?",
-        shortAnswer:
-          "Sim. Subsídios para compradores de imóveis e programas de assistência ao pagamento inicial existem, mas a elegibilidade, disponibilidade, requisitos e benefícios variam dependendo de fatores como a localização e o programa específico.",
-        fullAnswer: [
-          "Subsídios e programas de assistência ao pagamento inicial são oferecidos por agências federais, estaduais e locais do governo, bem como por algumas organizações sem fins lucrativos e empregadores. Eles podem ajudar a cobrir parte ou a totalidade do pagamento inicial ou dos custos de fechamento do comprador, reduzindo a quantia de economias pessoais necessárias para comprar um imóvel.",
-          "Esses programas não são universais. A elegibilidade geralmente depende de fatores como a localização do imóvel, a renda do comprador em relação à renda mediana da área, o status de comprador de primeira vez, o perfil de crédito, o programa de empréstimo utilizado e, às vezes, a profissão ou histórico de serviço militar do mutuário. Alguns programas estão amplamente disponíveis, enquanto outros são limitados a cidades, condados ou mercados imobiliários específicos.",
-          "Um subsídio é geralmente dinheiro que não precisa ser devolvido, enquanto outras formas de assistência podem ser perdoadas ao longo do tempo ou podem exigir reembolso na venda, refinanciamento ou quitação da hipoteca. Entender se a assistência é um subsídio genuíno, um penhor diferido ou um empréstimo reembolsável é fundamental antes de aceitar qualquer oferta.",
-          "Como os programas mudam frequentemente e o financiamento pode ser limitado, a melhor abordagem é revisar as opções atualmente disponíveis com um oficial de empréstimos experiente que trabalhe com múltiplos programas de assistência na sua área. Combinar a assistência certa com o programa de empréstimo certo pode fazer uma diferença significativa no total de dinheiro necessário para o fechamento.",
-        ],
-        whatAbeReviews: [
-          "Disponibilidade do programa na sua área específica",
-          "Limites de renda e requisitos de elegibilidade",
-          "Tipo de imóvel, programa de empréstimo e ocupação",
-          "Se a assistência é um subsídio, empréstimo perdoável ou penhor reembolsável",
-        ],
-        abeTip:
-          "Pergunte sobre os programas de assistência financiados atualmente no início do processo. Muitos têm limites de renda, limites de preço de compra e recursos que se esgotam por ordem de chegada.",
-        metaDescription:
-          "Saiba se subsídios para compradores de imóveis e programas de assistência ao pagamento inicial realmente existem, como funcionam, quem é elegível e como encontrar programas disponíveis na sua região.",
-      },
-      it: {
-        title: "Esistono davvero contributi per acquistare una casa?",
-        shortAnswer:
-          "Sì. Contributi per l'acquisto della prima casa e programmi di assistenza per il pagamento iniziale esistono, ma l'idoneità, la disponibilità, i requisiti e i vantaggi variano in base a fattori come la posizione e il programma specifico.",
-        fullAnswer: [
-          "I contributi e i programmi di assistenza per il pagamento iniziale sono offerti da agenzie federali, statali e locali del governo, oltre che da alcune organizzazioni non profit e datori di lavoro. Possono aiutare a coprire parte o la totalità del pagamento iniziale o dei costi di chiusura dell'acquirente, riducendo l'importo del risparmio personale necessario per acquistare un immobile.",
-          "Questi programmi non sono universali. L'idoneità dipende tipicamente da fattori come la posizione dell'immobile, il reddito dell'acquirente rispetto al reddito mediano dell'area, lo stato di acquirente alla prima casa, il profilo di credito, il programma di mutuo utilizzato e, a volte, la professione o lo storico di servizio militare del mutuatario. Alcuni programmi sono ampiamente disponibili, mentre altri sono limitati a specifiche città, contee o mercati immobiliari.",
-          "Un contributo è generalmente denaro che non deve essere restituito, mentre altre forme di assistenza possono essere condonate nel tempo o possono richiedere il rimborso in caso di vendita, rifinanziamento o estinzione del mutuo. Capire se l'assistenza è un vero contributo, un secondo pegno differito o un prestito rimborsabile è fondamentale prima di accettare qualsiasi offerta.",
-          "Poiché i programmi cambiano frequentemente e i fondi possono essere limitati, il miglior approccio è esaminare le opzioni attualmente disponibili con un esperto di mutui che lavora con molteplici programmi di assistenza nella tua area. Combinare l'assistenza giusta con il programma di mutuo giusto può fare una differenza significativa nel totale di denaro necessario per la chiusura.",
-        ],
-        whatAbeReviews: [
-          "Disponibilità del programma nella tua specifica area",
-          "Limiti di reddito e requisiti di idoneità",
-          "Tipo di immobile, programma di mutuo e occupazione",
-          "Se l'assistenza è un contributo, prestito condonabile o pegno rimborsabile",
-        ],
-        abeTip:
-          "Chiedi dei programmi di assistenza attualmente finanziati all'inizio del processo. Molti hanno limiti di reddito, limiti di prezzo di acquisto e fondi che si esauriscono in ordine di arrivo.",
-        metaDescription:
-          "Scopri se i contributi per l'acquisto della prima casa e i programmi di assistenza per il pagamento iniziale esistono davvero, come funzionano, chi è idoneo e come trovare programmi disponibili nella tua zona.",
-      },
-      ar: {
-        title: "هل توجد حقاً منح لشراء منزل؟",
-        shortAnswer:
-          "نعم. منح مشتريي المنازل وبرامج المساعدة على الدفعة الأولى موجودة، لكن الأهلية والتوفر والمتطلبات والمزايا تختلف بناءً على عوامل مثل الموقع والبرنامج المحدد.",
-        fullAnswer: [
-          "تُقدَّم المنح وبرامج المساعدة على الدفعة الأولى من قبل الوكالات الفيدرالية والمحلية للحكومة، بالإضافة إلى بعض المنظمات غير الربحية وأصحاب العمل. يمكنها تغطية جزء أو كل من الدفعة الأولى أو تكاليف الإغلاق للمشتري، مما يقلل من المبلغ المطلوب من المدخرات الشخصية لشراء منزل.",
-          "هذه البرامج ليست موحدة للجميع. تعتمد الأهلية عادةً على عوامل مثل موقع العقار ودخل المشتري مقارنةً بالدخل الإقليمي المتوسط، وحالة كونيّه أوّل شراء منزل، والملف الائتماني، وبرنامج القرض المستخدم، وأحياناً مهنة المقترض أو سجل الخدمة العسكرية. بعض البرامج متاحة على نطاق واسع، بينما الأخرى محدودة بمدن أو مناطق عقارية محددة.",
-          "المنحة هي بشكل عام أموال لا حاجة لإعادتها، بينما أشكال أخرى من المساعدة قد يتم التخلي عنها بمرور الوقت أو قد تتطلب السداد عند البيع أو إعادة التمويل أو سداد الرهن العقاري. فهم ما إذا كانت المساعدة منحة حقيقية أم رهن ثانوي مؤجل أم قرضاً قابلاً للسداد أمر بالغ الأهمية قبل قبول أي عرض.",
-          "نظرًا لأن البرامج تتغير باستمرار وقد يكون التمويل محدوداً، فإن أفضل نهج هو مراجعة الخيارات المتاحة حالياً مع مستشار قروض على دراية يعملون مع برامج مساعدة متعددة في منطقتك. الجمع بين المساعدة الصحيحة والبرنامج القرض الصحيح يمكن أن يُحدث فرقاً كبيراً في إجمالي المبلغ النقدي المطلوب للإغلاق.",
-        ],
-        whatAbeReviews: [
-          "توفر البرنامج في منطقتك المحددة",
-          "حدود الدخل ومتطلبات الأهلية",
-          "نوع العقار وبرنامج القرض والاستخدام",
-          "هل المساعدة عبارة عن منحة أو قرض قابل للشطط أو رهن قابل للسداد",
-        ],
-        abeTip:
-          "اسأل عن برامج المساعدة الممولة حاليًا في بداية العملية. العديد منها لها حدود دخل وحدود أسعار شراء وأموال تُوزع حسب ترتيب الوصول.",
-        metaDescription:
-          "تعرف ما إذا كانت منح مشتريي المنازل وبرامج المساعدة على الدفعة الأولى موجودة حقاً، وكيف تعمل، ومن đủ الأهلية، وكيف تجد البرامج المتاحة في منطقتك.",
-      },
-    },
   },
 ];
