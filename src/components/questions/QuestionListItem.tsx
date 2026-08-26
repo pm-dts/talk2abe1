@@ -1,22 +1,23 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { localize } from "@/i18n/helpers";
-import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
+// import { localize } from "@/i18n/helpers";
+// import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
 import type { Question } from "@/types/question";
 
 type QuestionListItemProps = {
   question: Question;
   className?: string;
-  locale?: Locale;
+  // locale?: Locale;
 };
 
 export default function QuestionListItem({
   question,
   className,
-  locale = DEFAULT_LOCALE,
+  // locale = DEFAULT_LOCALE,
 }: QuestionListItemProps) {
-  const title = localize(question, locale, "title");
+  // const title = localize(question, locale, "title");
+  const title = question.title;
 
   return (
     <Link

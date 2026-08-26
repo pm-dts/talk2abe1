@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import Container from "@/components/common/Container";
 import ScheduleCallButton from "@/components/common/ScheduleCallButton";
 
 export default function HeroSection() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <section className="w-full min-w-0 overflow-hidden bg-surface pt-0">
@@ -45,7 +45,7 @@ export default function HeroSection() {
         >
           <Image
             src="/images/abe/abe-hero.png"
-            alt={t("home.hero.imageAlt")}
+            alt={"Abe, Talk2Abe mortgage expert"}
             width={800}
             height={600}
             priority
@@ -96,9 +96,9 @@ export default function HeroSection() {
                 lg:text-[3.5rem]
               "
             >
-              <span className="block">{t("home.hero.titleLine1")}</span>
-              <span className="block">{t("home.hero.titleLine2")}</span>
-              <span className="block text-brand">{t("home.hero.titleLine3")}</span>
+              <span className="block">Chat with Abe,</span>
+              <span className="block">Your AI Mortgage</span>
+              <span className="block text-brand">Assistant</span>
             </h1>
 
             <p
@@ -114,7 +114,7 @@ export default function HeroSection() {
                 lg:leading-8
               "
             >
-              {t("home.hero.description")}
+              Get expert answers on conventional, FHA, VA, and DSCR loans. Abe uses AI to help you find the best loan programs.
             </p>
 
             {/* Hero Actions */}
@@ -159,7 +159,7 @@ export default function HeroSection() {
                   cursor-pointer
                 "
               >
-                {t("home.hero.scheduleCall")}
+                Schedule a Call
               </ScheduleCallButton>
 
               <Link
@@ -192,7 +192,7 @@ export default function HeroSection() {
                   lg:py-3
                 "
               >
-                {t("home.hero.getStarted")}
+                Get Started
               </Link>
             </div>
           </div>

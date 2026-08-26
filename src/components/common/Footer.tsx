@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import Logo from "@/components/common/Logo";
 import Container from "@/components/common/Container";
 import SocialLinks from "@/components/sections/SocialLinks";
@@ -27,7 +27,7 @@ function FooterColumn({
 }
 
 export default function Footer() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <footer className="bg-navy text-white">
@@ -38,18 +38,18 @@ export default function Footer() {
             <Logo size="lg" variant="light" />
 
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
-              {t("footer.tagline")}
+              Your trusted mortgage advisor. Expert guidance on home loans, refinancing, and more.
             </p>
 
             <SocialLinks />
             
             <p className="max-w-xs text-sm leading-relaxed text-slate-400">
-              {t("footer.watchVideos")}
+              Watch videos
             </p>
           </div>
 
           {/* Popular Categories */}
-          <FooterColumn heading={t("footer.resources")}>
+          <FooterColumn heading={"Resources"}>
             {categories.map((category) => (
               <li key={category.id}>
                 <Link
@@ -64,7 +64,7 @@ export default function Footer() {
 
           {/* Contact + MyLoanDesk */}
           <div>
-            <h3 className="text-base font-semibold text-white">{t("footer.contactUs")}</h3>
+            <h3 className="text-base font-semibold text-white">Contact Us</h3>
 
             <ul className="mt-5 space-y-4">
               <li>
@@ -93,7 +93,7 @@ export default function Footer() {
                 </a>
               </li>
 
-              <li>
+              {/* <li>
                 <p className="flex items-center gap-3 text-sm font-medium text-slate-300">
                   <MapPin
                     className="h-4 w-4 shrink-0 text-brand"
@@ -101,13 +101,13 @@ export default function Footer() {
                   />
                   {siteConfig.contact.serviceArea}
                 </p>
-              </li>
+              </li> */}
             </ul>
 
             {/* MyLoanDesk */}
             <div className="mt-8 border-t border-white/10 pt-6">
               <p className="text-base font-semibold text-white">
-                {t("footer.mortgageServices")}
+                Mortgage services provided through
               </p>
 
               <a
@@ -115,7 +115,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-3 inline-flex transition-opacity hover:opacity-80"
-                aria-label={t("footer.visitMyLoanDesk")}
+                aria-label={"Visit MyLoanDesk"}
               >
                 <Image
                   src="/images/footer/myloandesk.png"
@@ -137,16 +137,16 @@ export default function Footer() {
               <span className="font-medium text-slate-300">
                 Talk2Abe.com
               </span>{" "}
-              {t("footer.dba")}
+              Talk2Abe.com is a DBA of Secured Horizon Financial Group, Inc. / Secured Horizon Mortgage Group, Inc.
             </p>
 
             {/* NMLS Information */}
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-              <span>{t("footer.nmlsIndividual")}</span>
+              <span>NMLS #341393 (Individual)</span>
 
               <span className="hidden text-slate-600 sm:inline">|</span>
 
-              <span>{t("footer.nmlsCompany")}</span>
+              <span>NMLS #314226, #1444825 (Company)</span>
 
               <span className="hidden text-slate-600 sm:inline">|</span>
 
@@ -154,19 +154,19 @@ export default function Footer() {
                 href="https://www.nmlsconsumeraccess.org/"
                 className="text-brand transition-colors hover:text-brand/80"
               >
-                {t("footer.nmlsConsumerAccess")}
+                NMLS Consumer Access
               </Link>
 
               <span className="hidden text-slate-600 sm:inline">|</span>
 
               <span className="text-slate-300">
-                {t("footer.equalHousing")}
+                Equal Housing Opportunity
               </span>
             </div>
 
             {/* Disclaimer */}
             <p className="max-w-7xl">
-              {t("footer.disclaimer")}
+              This is not a commitment to lend. All information, rates, and terms are subject to change without notice. Rates are subject to market conditions and vary based on individual borrower qualifications. Contact Talk2Abe for current rates and terms.
             </p>
           </div>
         </div>
@@ -174,7 +174,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="w-full border-t border-white/10 py-6 text-center">
           <p className="text-sm text-slate-400">
-            {t("footer.copyright", { year: 2026 })}
+            {`© ${2026} Talk2Abe.com. All rights reserved.`}
           </p>
         </div>
       </Container>

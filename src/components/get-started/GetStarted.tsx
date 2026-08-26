@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import ContactStep from "@/components/get-started/ContactStep";
 import GetStartedHeader from "@/components/get-started/GetStartedHeader";
@@ -58,7 +58,7 @@ function getTags(body: GetStartedSubmission): string[] {
 }
 
 export default function GetStarted() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [stepIndex, setStepIndex] = useState(0);
 
   const [answers, setAnswers] = useState<GetStartedAnswers>(initialAnswers);
@@ -113,7 +113,7 @@ export default function GetStarted() {
     const currentValue = answers[step.id as GetStartedQuestionId];
 
     if (!currentValue || currentValue.trim() === "") {
-      setValidationError(t("getStarted.validation.selectAnswer"));
+      setValidationError("Please select an answer to continue.");
       return;
     }
 
@@ -172,7 +172,7 @@ export default function GetStarted() {
 
       if (!response.ok) {
         throw new Error(
-          t("getStarted.errors.submitFailed"),
+          "Unable to submit your information right now. Please try again.",
         );
       }
 
@@ -191,7 +191,7 @@ export default function GetStarted() {
       setSubmitError(
         error instanceof Error
           ? error.message
-          : t("getStarted.errors.unexpected"),
+          : "Something went wrong. Please try again.",
       );
     } finally {
       setSubmitting(false);

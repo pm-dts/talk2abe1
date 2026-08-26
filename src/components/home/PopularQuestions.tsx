@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import Container from "@/components/common/Container";
 import QuestionCard from "@/components/home/QuestionCard";
 import { questions } from "@/data/questions";
-import { useLanguage } from "@/i18n/hooks";
+// import { useLanguage } from "@/i18n/hooks";
 import type { Question } from "@/types/question";
 
 const POPULAR_SLUGS = [
@@ -25,8 +25,9 @@ const popularQuestions = POPULAR_SLUGS.map((slug) =>
 ).filter((question): question is Question => Boolean(question));
 
 export default function PopularQuestions() {
-  const { t } = useTranslation();
-  const { locale } = useLanguage();
+  // const { t } = useTranslation();
+  // const { locale } = useLanguage();
+  // const locale = "en";
 
   if (popularQuestions.length === 0) {
     return null;
@@ -37,14 +38,14 @@ export default function PopularQuestions() {
       <Container>
         <div className="mb-7 flex items-center justify-between gap-4 sm:mb-8">
           <h2 className="text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-            {t("home.popularQuestions.title")}
+            Popular Questions
           </h2>
 
           <Link
             href="/questions"
             className="group inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand transition-colors sm:text-base"
           >
-            <span>{t("home.popularQuestions.viewAll")}</span>
+            <span>View All Questions</span>
 
             <ArrowRight
               className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
@@ -55,7 +56,7 @@ export default function PopularQuestions() {
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
           {popularQuestions.map((question) => (
-            <QuestionCard key={question.id} question={question} locale={locale} />
+            <QuestionCard key={question.id} question={question} />
           ))}
           <QuestionCard more />
         </div>

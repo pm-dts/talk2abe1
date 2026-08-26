@@ -14,8 +14,8 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { localize } from "@/i18n/helpers";
-import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
+// import { localize } from "@/i18n/helpers";
+// import { DEFAULT_LOCALE, type Locale } from "@/i18n/config";
 import type { Question, QuestionIcon } from "@/types/question";
 
 const iconMap: Record<QuestionIcon, LucideIcon> = {
@@ -35,14 +35,14 @@ type QuestionCardProps = {
   question?: Question;
   more?: boolean;
   className?: string;
-  locale?: Locale;
+  // locale?: Locale;
 };
 
 export default function QuestionCard({
   question,
   more = false,
   className,
-  locale = DEFAULT_LOCALE,
+  // locale = DEFAULT_LOCALE,
 }: QuestionCardProps) {
   /*
    * "See more questions" card
@@ -110,7 +110,8 @@ export default function QuestionCard({
   }
 
   const Icon = iconMap[question.icon];
-  const title = localize(question, locale, "title");
+  // const title = localize(question, locale, "title");
+  const title = question.title;
 
   return (
     <Link

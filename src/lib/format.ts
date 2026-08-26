@@ -1,4 +1,9 @@
-import i18n from "@/i18n/config";
+// ─── MULTI-LANGUAGE (i18n) FUNCTIONALITY ────────────────────────────────────
+// Locale-aware formatting. Commented out for now.
+// To re-enable, uncomment the i18n import and getLocaleString() logic below.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// import i18n from "@/i18n/config";
 
 const LOCALE_MAP: Record<string, string> = {
   en: "en-US",
@@ -11,8 +16,11 @@ const LOCALE_MAP: Record<string, string> = {
 };
 
 function getLocaleString(): string {
-  const lang = i18n.language || "en";
-  return LOCALE_MAP[lang] || "en-US";
+  // ─── COMMENTED OUT: i18n-aware locale detection ──────────────────────────
+  // const lang = i18n.language || "en";
+  // return LOCALE_MAP[lang] || "en-US";
+  // ─────────────────────────────────────────────────────────────────────────
+  return "en-US"; // Hardcoded to English
 }
 
 export function formatLocalizedCurrency(value: number, digits = 0): string {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import ChoiceField from "@/components/loan-programs/ChoiceField";
 import LoanProgramContactStep from "@/components/loan-programs/LoanProgramContactStep";
@@ -52,7 +52,7 @@ const LOAN_PROGRAM_WEBHOOKS: Record<string, string | undefined> = {
 export default function LoanProgramLeadForm({
   program,
 }: LoanProgramLeadFormProps) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [stepIndex, setStepIndex] = useState(0);
 
   const [choiceValue, setChoiceValue] = useState("");
@@ -91,7 +91,7 @@ export default function LoanProgramLeadForm({
   const handleNext = () => {
     if (step.type === "choice") {
       if (!choiceValue) {
-        setValidationError(t("loanPrograms.leadForm.validation.selectOption"));
+        setValidationError("Please select an option to continue.");
         return;
       }
 
@@ -105,7 +105,7 @@ export default function LoanProgramLeadForm({
 
       for (const field of step.fields) {
         if (!(fieldValues[field.name] ?? "").trim()) {
-          nextErrors[field.name] = t("loanPrograms.leadForm.validation.fieldRequired");
+          nextErrors[field.name] = "This field is required.";
         }
       }
 
@@ -157,7 +157,7 @@ export default function LoanProgramLeadForm({
 
       if (!webhookUrl) {
         throw new Error(
-          t("loanPrograms.leadForm.errors.formUnavailable"),
+          "This form is not available right now. Please try again later.",
         );
       }
 
@@ -172,7 +172,7 @@ export default function LoanProgramLeadForm({
 
       if (!response.ok) {
         throw new Error(
-          t("loanPrograms.leadForm.errors.submitFailed"),
+          "Something went wrong while sending your information. Please try again.",
         );
       }
 
@@ -187,7 +187,7 @@ export default function LoanProgramLeadForm({
       setSubmitError(
         error instanceof Error
           ? error.message
-          : t("loanPrograms.leadForm.errors.unexpected"),
+          : "Something went wrong while sending your information. Please try again.",
       );
     } finally {
       setSubmitting(false);

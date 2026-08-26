@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 
@@ -15,12 +15,12 @@ export default function LoanProgramProgress({
   totalSteps,
   className,
 }: LoanProgramProgressProps) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <div
       role="group"
-      aria-label={t("loanPrograms.progress.stepOf", { current: currentStep, total: totalSteps })}
+      aria-label={`Step ${currentStep} of ${totalSteps}`}
       className={cn("flex items-center gap-2", className)}
     >
       {Array.from({ length: totalSteps }, (_, index) => (
@@ -37,7 +37,7 @@ export default function LoanProgramProgress({
       ))}
 
       <span className="whitespace-nowrap font-mono text-xs text-muted">
-        {t("loanPrograms.progress.stepOf", { current: currentStep, total: totalSteps })}
+        {`Step ${currentStep} of ${totalSteps}`}
       </span>
     </div>
   );

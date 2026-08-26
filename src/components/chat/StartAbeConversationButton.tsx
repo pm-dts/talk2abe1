@@ -1,10 +1,10 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 export default function StartAbeConversationButton() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   const openChat = () => {
     const selectors = [
@@ -59,7 +59,8 @@ export default function StartAbeConversationButton() {
     sm:text-xl
   "
     >
-      <span>{t("common.startMyConversation")}</span>
+      {/* <span>{t("common.startMyConversation")}</span> */}
+      <span>Start My Conversation</span>
 
       <ArrowRight className="h-6 w-6" aria-hidden="true" />
     </button>

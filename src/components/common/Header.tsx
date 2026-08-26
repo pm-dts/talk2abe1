@@ -3,46 +3,50 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, Globe } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { Menu, X, Phone } from "lucide-react";
+// import { Globe } from "lucide-react"; // Commented out: multi-language disabled
+
+// import { useTranslation } from "react-i18next"; // Commented out: multi-language disabled
 
 import { navigation } from "@/data/navigation";
 import Logo from "@/components/common/Logo";
 import Container from "@/components/common/Container";
-import { useLanguage } from "@/i18n/hooks";
-import { ACTIVE_LANGUAGES, type ActiveLocale } from "@/i18n/config";
+// import { useLanguage } from "@/i18n/hooks"; // Commented out: multi-language disabled
+// import { ACTIVE_LANGUAGES, type ActiveLocale } from "@/i18n/config"; // Commented out: multi-language disabled
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLangOpen, setIsLangOpen] = useState(false);
-  const langRef = useRef<HTMLDivElement>(null);
+  // const [isLangOpen, setIsLangOpen] = useState(false); // Commented out: multi-language disabled
+  // const langRef = useRef<HTMLDivElement>(null); // Commented out: multi-language disabled
   const pathname = usePathname();
-  const { t } = useTranslation();
-  const { locale, setLanguage } = useLanguage();
+  // const { t } = useTranslation(); // Commented out: multi-language disabled
+  // const { locale, setLanguage } = useLanguage(); // Commented out: multi-language disabled
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   const closeMenu = () => setIsMenuOpen(false);
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
-        setIsLangOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  // ─── COMMENTED OUT: language dropdown click-outside handler ───────────────
+  // useEffect(() => {
+  //   const handleClickOutside = (e: MouseEvent) => {
+  //     if (langRef.current && !langRef.current.contains(e.target as Node)) {
+  //       setIsLangOpen(false);
+  //     }
+  //   };
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, []);
+  // ─────────────────────────────────────────────────────────────────────────
 
   const navLabels: Record<string, string> = {
-    "/": t("nav.home"),
-    "/ask-abe": t("nav.askAbe"),
-    "/loan-programs": t("nav.loanPrograms"),
-    "/questions": t("nav.questions"),
-    "/contact": t("nav.contact"),
-    "/get-started": t("nav.getStarted"),
-    "/about-abe": t("nav.aboutAbe"),
+    "/": "Home",
+    "/ask-abe": "Ask Abe",
+    "/loan-programs": "Loan Programs",
+    "/questions": "Questions",
+    "/contact": "Contact",
+    "/get-started": "Get Started",
+    "/about-abe": "About Abe",
   };
 
   return (
@@ -65,7 +69,7 @@ export default function Header() {
             (305) 891-6500
           </a>
 
-          {/* Desktop Navigation + Language + CTA */}
+          {/* Desktop Navigation + CTA */}
           <div className="hidden items-center gap-6 lg:flex">
             <nav
               className="flex items-center gap-7"
@@ -99,7 +103,10 @@ export default function Header() {
               })}
             </nav>
 
-            {/* Language Selector */}
+            {/* ─── COMMENTED OUT: Language Selector ─────────────────────── */}
+            {/* To re-enable, uncomment the Globe import, useLanguage, */}
+            {/* isLangOpen state, langRef, and the language selector JSX below. */}
+            {/*
             <div ref={langRef} className="relative">
               <button
                 type="button"
@@ -107,7 +114,7 @@ export default function Header() {
                 className="inline-flex items-center gap-1.5 rounded-lg border border-line px-3 py-2 text-sm font-medium text-navy transition-colors hover:border-navy-soft hover:bg-gray-50"
                 aria-expanded={isLangOpen}
                 aria-haspopup="listbox"
-                aria-label={t("nav.home") + " - Language selector"}
+                aria-label="Language selector"
               >
                 <Globe className="h-4 w-4" aria-hidden="true" />
                 <span className="hidden xl:inline">
@@ -144,12 +151,13 @@ export default function Header() {
                 </ul>
               )}
             </div>
+            */}
 
             <Link
               href="/ask-abe"
               className="inline-flex items-center justify-center rounded-lg bg-brand px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
             >
-              {t("nav.askAbe")}
+              Ask Abe
             </Link>
           </div>
 
@@ -160,7 +168,7 @@ export default function Header() {
             className="inline-flex items-center justify-center rounded-md p-2 text-navy lg:hidden"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu"
-            aria-label={isMenuOpen ? t("common.close") : t("nav.menu")}
+            aria-label={isMenuOpen ? "Close" : "Menu"}
           >
             {isMenuOpen ? (
               <X
@@ -217,7 +225,9 @@ export default function Header() {
               })}
             </nav>
 
-            {/* Mobile Language Selector */}
+            {/* ─── COMMENTED OUT: Mobile Language Selector ─────────────── */}
+            {/* To re-enable, uncomment the mobile language buttons below. */}
+            {/*
             <div className="mt-4 flex flex-wrap gap-2">
               {ACTIVE_LANGUAGES.map((lang) => (
                 <button
@@ -237,13 +247,14 @@ export default function Header() {
                 </button>
               ))}
             </div>
+            */}
 
             <Link
               href="/ask-abe"
               onClick={closeMenu}
               className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand/90"
             >
-              {t("nav.askAbe")}
+              Ask Abe
             </Link>
           </div>
         </Container>

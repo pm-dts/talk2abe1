@@ -9,8 +9,8 @@ import Container from "@/components/common/Container";
 import CTA from "@/components/common/CTA";
 import Alert from "@/components/common/Alert";
 import RelatedQuestions from "@/components/questions/RelatedQuestions";
-import { localize } from "@/i18n/helpers";
-import { useLanguage } from "@/i18n/hooks";
+// import { localize } from "@/i18n/helpers";
+// import { useLanguage } from "@/i18n/hooks";
 import type { Question } from "@/types/question";
 
 type QuestionAnswerProps = {
@@ -85,21 +85,27 @@ export default function QuestionAnswer({
   question,
   relatedQuestions = [],
 }: QuestionAnswerProps) {
-  const { locale } = useLanguage();
+  // const { locale } = useLanguage();
+  const locale = "en";
 
-  const title = localize(question, locale, "title");
-  const shortAnswer = localize(question, locale, "shortAnswer");
+  // const title = localize(question, locale, "title");
+  const title = question.title;
+  // const shortAnswer = localize(question, locale, "shortAnswer");
+  const shortAnswer = question.shortAnswer;
   const fullAnswer = question.fullAnswer
-    ? question.translations?.[locale]?.fullAnswer
-      ? (question.translations[locale].fullAnswer as unknown as string[])
-      : question.fullAnswer
+    // ? question.translations?.[locale]?.fullAnswer
+    //   ? (question.translations[locale].fullAnswer as unknown as string[])
+    //   : question.fullAnswer
+    ? question.fullAnswer
     : undefined;
   const whatAbeReviews = question.whatAbeReviews
-    ? question.translations?.[locale]?.whatAbeReviews
-      ? (question.translations[locale].whatAbeReviews as unknown as string[])
-      : question.whatAbeReviews
+    // ? question.translations?.[locale]?.whatAbeReviews
+    //   ? (question.translations[locale].whatAbeReviews as unknown as string[])
+    //   : question.whatAbeReviews
+    ? question.whatAbeReviews
     : undefined;
-  const abeTip = localize(question, locale, "abeTip");
+  // const abeTip = localize(question, locale, "abeTip");
+  const abeTip = question.abeTip;
   const programLabel = question.programLink?.label;
 
   return (

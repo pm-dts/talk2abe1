@@ -1,7 +1,7 @@
 "use client";
 
 import { CircleHelp } from "lucide-react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import AnswerOption from "@/components/get-started/AnswerOption";
 
@@ -33,7 +33,7 @@ export default function CurrencyInput({
   onAdvance,
   placeholder,
 }: CurrencyInputProps) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const notSure = value === NOT_SURE_VALUE;
 
   const handleNotSure = () => {
@@ -60,7 +60,7 @@ export default function CurrencyInput({
           type="text"
           inputMode="decimal"
           autoComplete="off"
-          placeholder={placeholder ?? t("getStarted.currency.enterAmount")}
+          placeholder={placeholder ?? "Enter amount"}
           value={notSure ? "" : value}
           onChange={(event) => onChange(formatCurrencyInput(event.target.value))}
           disabled={notSure}
@@ -71,7 +71,7 @@ export default function CurrencyInput({
 
       <AnswerOption
         icon={CircleHelp}
-        label={t("getStarted.currency.imNotSure")}
+        label={"I'm Not Sure"}
         selected={notSure}
         onSelect={handleNotSure}
       />

@@ -1,7 +1,7 @@
 "use client";
 
 import { Search } from "lucide-react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { cn } from "@/lib/utils";
 
 type QuestionSearchProps = {
@@ -19,12 +19,13 @@ export default function QuestionSearch({
   placeholder,
   className,
 }: QuestionSearchProps) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <div className={cn("w-full", className)}>
       <label htmlFor={id} className="sr-only">
-        {t("questions.search.ariaLabel")}
+        {/* {t("questions.search.ariaLabel")} */}
+        Search questions
       </label>
       <div className="relative">
         <Search
@@ -37,7 +38,7 @@ export default function QuestionSearch({
           autoComplete="off"
           value={value}
           onChange={(event) => onChange(event.target.value)}
-          placeholder={placeholder ?? t("questions.search.placeholder")}
+          placeholder={placeholder ?? "Search questions..."}
           className="h-11 w-full rounded-lg border border-slate-200 bg-white pl-11 pr-4 text-sm text-navy placeholder:text-muted/70 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/20"
         />
       </div>

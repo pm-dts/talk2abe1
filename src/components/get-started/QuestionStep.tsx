@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import AnswerOption from "@/components/get-started/AnswerOption";
 import CurrencyInput from "@/components/get-started/CurrencyInput";
@@ -28,9 +28,9 @@ export default function QuestionStep({
   validationError,
   className,
 }: QuestionStepProps) {
-  const { t } = useTranslation();
-  const title = t(`getStarted.questions.${step.id}.title`, { defaultValue: step.title });
-  const description = t(`getStarted.questions.${step.id}.description`, { defaultValue: step.description });
+  // const { t } = useTranslation();
+  const title = step.title;
+  const description = step.description;
 
   return (
     <div className={cn("space-y-6", className)}>

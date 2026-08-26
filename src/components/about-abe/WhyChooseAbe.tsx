@@ -6,7 +6,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import Container from "@/components/common/Container";
 
@@ -18,16 +18,21 @@ const iconMap: Record<string, LucideIcon> = {
 
 const benefitKeys = ["licensedExpert", "aiPowered", "trustedSource"];
 const benefitIcons = ["BadgeCheck", "MessageCircle", "ShieldCheck"];
+const benefitTexts: Record<string, { title: string; description: string }> = {
+  licensedExpert: { title: "Licensed Expert", description: "Abe is a licensed loan officer with NMLS credentials, bringing professional mortgage expertise to every conversation." },
+  aiPowered: { title: "AI-Powered Guidance", description: "Leveraging advanced AI technology, Abe provides instant, accurate responses to your mortgage questions 24/7." },
+  trustedSource: { title: "Trusted Source", description: "All information is sourced from verified mortgage industry data and Abe's personal professional experience." },
+};
 
 export default function WhyChooseAbe() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <section className="bg-surface py-14 sm:py-16 lg:py-20">
       <Container>
         <div className="text-center">
           <h2 className="mx-auto max-w-xl text-2xl font-bold tracking-tight text-navy sm:text-3xl">
-            {t("about.whyAbe.title")}
+            Why Choose Abe
           </h2>
         </div>
 
@@ -50,11 +55,11 @@ export default function WhyChooseAbe() {
 
                 <div>
                   <h3 className="text-base font-semibold leading-6 text-navy sm:text-lg">
-                    {t(`about.whyAbe.items.${key}.title`)}
+                    {benefitTexts[key].title}
                   </h3>
 
                   <p className="mt-2 text-sm leading-6 text-muted sm:text-[15px]">
-                    {t(`about.whyAbe.items.${key}.description`)}
+                    {benefitTexts[key].description}
                   </p>
                 </div>
               </article>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import {
   BadgeDollarSign,
   Building2,
@@ -40,8 +40,19 @@ const helpOptionKeys = [
   { key: "homeEquity", icon: BadgeDollarSign, url: "/loan-programs/home-equity-heloc" },
 ] as const;
 
+const helpOptionLabels: Record<string, string> = {
+  buyAHome: "Buy a home",
+  refinance: "Refinance",
+  selfEmployed: "Self-Employed",
+  dscr: "DSCR",
+  fha: "FHA",
+  va: "VA",
+  reverseMortgage: "Reverse Mortgage",
+  homeEquity: "Home Equity",
+};
+
 export default function AskAbeContent() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <section className="mx-auto w-full max-w-3xl">
@@ -52,17 +63,17 @@ export default function AskAbeContent() {
             className="h-2 w-2 rounded-full bg-brand"
             aria-hidden="true"
           />
-          {t("common.askAbe")}
+          Ask Abe
         </span>
 
         {/* Heading */}
         <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-[-0.03em] text-navy lg:text-5xl">
-          {t("askAbe.pageHeading")}
+          Tell me what you're trying to accomplish.
         </h1>
 
         {/* Description */}
         <p className="mt-5 max-w-2xl text-[17px] leading-[1.65] text-muted sm:text-[19px]">
-          {t("askAbe.pageDescription")}
+          Answer a few simple questions and I'll help identify loan options that may fit.
         </p>
 
         {/* Abe Profile */}
@@ -73,11 +84,11 @@ export default function AskAbeContent() {
 
           <div className="min-w-0">
             <h2 className="font-display text-3xl font-semibold text-navy">
-              {t("askAbe.hiImAbe")}
+              Hi, I'm Abe.
             </h2>
 
             <p className="mt-1 text-sm leading-6 text-muted sm:text-base">
-              {t("askAbe.licensedMortgagePro")}
+              Licensed mortgage professional
               <span className="mx-2 text-brand">•</span>
               NMLS #341393
             </p>
@@ -90,7 +101,7 @@ export default function AskAbeContent() {
         {/* Help Options */}
         <div>
           <h2 className="font-display text-[26px] font-semibold text-navy sm:text-[32px]">
-            {t("askAbe.whatCanIHelp")}
+            What can I help you with?
           </h2>
 
           <div className="mt-6 grid grid-cols-2 gap-2 md:gap-4">
@@ -109,7 +120,7 @@ export default function AskAbeContent() {
                 </span>
 
                 <span className="text-[16px] font-medium text-navy sm:text-[17px]">
-                  {t(`askAbe.helpOptions.${key}`)}
+                  {helpOptionLabels[key as keyof typeof helpOptionLabels]}
                 </span>
               </Link>
             ))}
@@ -123,21 +134,21 @@ export default function AskAbeContent() {
 
         {/* Trust Row */}
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-sm text-muted sm:text-base">
-          <span>{t("askAbe.trustRow.about90Seconds")}</span>
+          <span>About 90 seconds</span>
 
           <span
             className="h-1.5 w-1.5 rounded-full bg-brand"
             aria-hidden="true"
           />
 
-          <span>{t("askAbe.trustRow.noObligation")}</span>
+          <span>No obligation</span>
 
           <span
             className="h-1.5 w-1.5 rounded-full bg-brand"
             aria-hidden="true"
           />
 
-          <span>{t("askAbe.trustRow.private")}</span>
+          <span>Private</span>
         </div>
       </div>
     </section>

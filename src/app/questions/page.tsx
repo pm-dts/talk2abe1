@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import Container from "@/components/common/Container";
@@ -16,13 +16,15 @@ import { categories as categoryOptions } from "@/data/categories";
 import { questions } from "@/data/questions";
 
 export default function AskAbePage() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
 
   const breadcrumbItems = buildBreadcrumbs([
-    { name: t("common.home"), path: "/" },
-    { name: t("common.askAbe"), path: "/questions" },
+    // { name: t("common.home"), path: "/" },
+    { name: "Home", path: "/" },
+    // { name: t("common.askAbe"), path: "/questions" },
+    { name: "Ask Abe", path: "/questions" },
   ]);
 
   /**
@@ -76,11 +78,13 @@ export default function AskAbePage() {
         <Breadcrumbs
           items={[
             {
-              label: t("common.home"),
+              // label: t("common.home"),
+              label: "Home",
               href: "/",
             },
             {
-              label: t("common.askAbe"),
+              // label: t("common.askAbe"),
+              label: "Ask Abe",
             },
           ]}
         />
@@ -88,11 +92,11 @@ export default function AskAbePage() {
         {/* Page Introduction */}
         <section className="mt-7 max-w-2xl">
           <h1 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl">
-            {t("askAbe.title")}
+            Ask Abe
           </h1>
 
           <p className="mt-3 max-w-xl text-base leading-7 text-muted sm:text-lg">
-            {t("askAbe.subtitle")}
+            Get expert answers to your mortgage questions
           </p>
         </section>
 

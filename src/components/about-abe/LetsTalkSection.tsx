@@ -1,25 +1,25 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import Container from "@/components/common/Container";
 import CTA from "@/components/common/CTA";
 
 export default function LetsTalkSection() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <section className="bg-white pb-14 sm:pb-16 lg:pb-20">
       <Container>
         <CTA
-          title={t("about.cta.title")}
-          description={t("about.cta.description")}
+          title={"Ready to Get Started?"}
+          description={"Whether you're buying your first home or refinancing, Abe is here to guide you every step of the way."}
           primaryAction={{
             href: "/ask-abe",
-            label: t("about.cta.button"),
+            label: "Ask Abe a Question",
           }}
           secondaryAction={{
             href: "/loan-programs",
-            label: t("loanPrograms.listing.explorePrograms"),
+            label: "Loan Programs",
           }}
         />
       </Container>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import Disclosure from "@/components/loan-programs/Disclosure";
 import LoanProgramNavigation from "@/components/loan-programs/LoanProgramNavigation";
@@ -65,7 +65,7 @@ export default function LoanProgramContactStep({
   submitting,
   submitError,
 }: LoanProgramContactStepProps) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [errors, setErrors] = useState<ContactErrors>({});
 
   const update = (field: keyof LoanProgramContact, value: string) => {
@@ -80,19 +80,19 @@ export default function LoanProgramContactStep({
     const next: ContactErrors = {};
 
     if (!contact.firstName.trim()) {
-      next.firstName = t("loanPrograms.leadForm.validation.firstName");
+      next.firstName = "Please enter your first name.";
     }
 
     if (!contact.lastName.trim()) {
-      next.lastName = t("loanPrograms.leadForm.validation.lastName");
+      next.lastName = "Please enter your last name.";
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.email.trim())) {
-      next.email = t("loanPrograms.leadForm.validation.email");
+      next.email = "Please enter a valid email address.";
     }
 
     if (!/^[0-9()\-+. ]{7,20}$/.test(contact.phone.trim())) {
-      next.phone = t("loanPrograms.leadForm.validation.phone");
+      next.phone = "Please enter a valid phone number.";
     }
 
     return next;
@@ -183,7 +183,7 @@ export default function LoanProgramContactStep({
         onBack={onBack}
         onContinue={() => undefined}
         continueType="submit"
-        continueLabel={submitting ? t("common.sending") : submitLabel}
+        continueLabel={submitting ? "Sending..." : submitLabel}
         continueDisabled={submitting}
         className="mt-7"
       />

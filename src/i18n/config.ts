@@ -1,14 +1,18 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
+// ─── MULTI-LANGUAGE (i18n) FUNCTIONALITY ────────────────────────────────────
+// Commented out for now. To re-enable, uncomment the imports and i18n.init() below.
+// ─────────────────────────────────────────────────────────────────────────────
 
-import en from "@/i18n/locales/en.json";
-import es from "@/i18n/locales/es.json";
-import de from "@/i18n/locales/de.json";
-import ru from "@/i18n/locales/ru.json";
-import pt from "@/i18n/locales/pt.json";
-import it from "@/i18n/locales/it.json";
-import ar from "@/i18n/locales/ar.json";
+// import i18n from "i18next";
+// import { initReactI18next } from "react-i18next";
+// import LanguageDetector from "i18next-browser-languagedetector";
+
+// import en from "@/i18n/locales/en.json";
+// import es from "@/i18n/locales/es.json";
+// import de from "@/i18n/locales/de.json";
+// import ru from "@/i18n/locales/ru.json";
+// import pt from "@/i18n/locales/pt.json";
+// import it from "@/i18n/locales/it.json";
+// import ar from "@/i18n/locales/ar.json";
 
 // All supported locales (including preserved but disabled Arabic).
 // The Locale type includes "ar" so that Arabic translation data and type definitions
@@ -62,37 +66,41 @@ export function sanitizeLocale(locale: string): ActiveLocale {
     : DEFAULT_LOCALE;
 }
 
-const resources = {
-  en: { translation: en },
-  es: { translation: es },
-  de: { translation: de },
-  ru: { translation: ru },
-  pt: { translation: pt },
-  it: { translation: it },
-  // Arabic translations preserved in resources for future re-enablement.
-  ar: { translation: ar },
-};
-
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: DEFAULT_LOCALE,
-    // Only active languages are registered with i18next so that a saved "ar"
-    // preference triggers the built-in fallback to English.
-    supportedLngs: ACTIVE_LOCALE_CODES as unknown as string[],
-    interpolation: {
-      escapeValue: false,
-    },
-    detection: {
-      order: ["localStorage"],
-      lookupLocalStorage: "talk2abe-lang",
-      caches: ["localStorage"],
-    },
-    react: {
-      useSuspense: false,
-    },
-  });
-
-export default i18n;
+// ─── COMMENTED OUT: i18next initialization ──────────────────────────────────
+// Uncomment to re-enable multi-language support.
+//
+// const resources = {
+//   en: { translation: en },
+//   es: { translation: es },
+//   de: { translation: de },
+//   ru: { translation: ru },
+//   pt: { translation: pt },
+//   it: { translation: it },
+//   // Arabic translations preserved in resources for future re-enablement.
+//   ar: { translation: ar },
+// };
+//
+// i18n
+//   .use(LanguageDetector)
+//   .use(initReactI18next)
+//   .init({
+//     resources,
+//     fallbackLng: DEFAULT_LOCALE,
+//     // Only active languages are registered with i18next so that a saved "ar"
+//     // preference triggers the built-in fallback to English.
+//     supportedLngs: ACTIVE_LOCALE_CODES as unknown as string[],
+//     interpolation: {
+//       escapeValue: false,
+//     },
+//     detection: {
+//       order: ["localStorage"],
+//       lookupLocalStorage: "talk2abe-lang",
+//       caches: ["localStorage"],
+//     },
+//     react: {
+//       useSuspense: false,
+//     },
+//   });
+//
+// export default i18n;
+// ─────────────────────────────────────────────────────────────────────────────

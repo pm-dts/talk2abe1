@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import Alert from "@/components/common/Alert";
 
@@ -16,7 +16,7 @@ export default function NewsletterForm({
   className = "",
   stacked = false,
 }: NewsletterFormProps) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<Status>("idle");
 
@@ -40,7 +40,7 @@ export default function NewsletterForm({
       className={`box-border w-full max-w-full ${className}`}
     >
       <label htmlFor="newsletter-email" className="sr-only">
-        {t("forms.newsletter.emailLabel")}
+        Email address
       </label>
 
       <div
@@ -69,7 +69,7 @@ export default function NewsletterForm({
               setStatus("idle");
             }
           }}
-          placeholder={t("forms.newsletter.placeholder")}
+          placeholder={"Enter your email"}
           aria-invalid={status === "error"}
           aria-describedby={
             status === "error"
@@ -130,19 +130,19 @@ export default function NewsletterForm({
             }
           `}
         >
-          {t("forms.newsletter.subscribe")}
+          Subscribe
         </button>
       </div>
 
       {status === "error" && (
         <Alert variant="error" className="mt-2" id="newsletter-error">
-          {t("forms.newsletter.invalidEmail")}
+          Please enter a valid email address.
         </Alert>
       )}
 
       {status === "success" && (
         <Alert variant="success" className="mt-2" id="newsletter-success">
-          {t("forms.newsletter.success")}
+          Thanks! You are subscribed to Abe's mortgage tips.
         </Alert>
       )}
     </form>

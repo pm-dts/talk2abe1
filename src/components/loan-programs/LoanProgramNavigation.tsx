@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -24,9 +24,9 @@ export default function LoanProgramNavigation({
   continueType = "button",
   className,
 }: LoanProgramNavigationProps) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
-  const resolvedContinueLabel = continueLabel ?? t("loanPrograms.navigation.continue");
+  const resolvedContinueLabel = continueLabel ?? "Continue";
 
   return (
     <div
@@ -45,7 +45,7 @@ export default function LoanProgramNavigation({
             className="mr-1.5 inline-block h-4 w-4 transition-transform duration-200 ease-out group-hover:-translate-x-1"
             aria-hidden="true"
           />
-          {t("loanPrograms.navigation.back")}
+          {"Back"}
         </button>
       ) : (
         <span aria-hidden="true" />

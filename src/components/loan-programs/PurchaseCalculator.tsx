@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import CalculatorCard from "@/components/loan-programs/CalculatorCard";
 import CalculatorFields from "@/components/loan-programs/CalculatorFields";
@@ -19,7 +19,7 @@ type PurchaseCalculatorProps = {
 export default function PurchaseCalculator({
   config,
 }: PurchaseCalculatorProps) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [values, setValues] = useState<Record<string, string>>({});
   const [term, setTerm] = useState(config.term.defaultValue);
 
@@ -89,14 +89,14 @@ export default function PurchaseCalculator({
               <strong className="text-[15px] text-white">
                 {formatLocalizedCurrency(result.principalInterest)}
               </strong>
-              {t("loanProgramsData.calculator.perMonth")}
+              {"/mo"}
             </p>
             <p>
               {config.result.breakdownLabels[2]}:{" "}
               <strong className="text-[15px] text-white">
                 {formatLocalizedCurrency(result.taxIns)}
               </strong>
-              {t("loanProgramsData.calculator.perMonth")} <span className="opacity-70">({term}{t("loanProgramsData.calculator.yrFixed")})</span>
+              {"/mo"} <span className="opacity-70">({term}{"-yr fixed"})</span>
             </p>
           </div>
         )}

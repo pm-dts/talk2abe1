@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { Check } from "lucide-react";
 
 import Button from "@/components/common/Button";
@@ -21,7 +21,7 @@ export default function LoanProgramSuccess({
   fieldValues,
   contact,
 }: LoanProgramSuccessProps) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const lookup: Record<string, string> = {
     ...fieldValues,
     choice: choiceValue,
@@ -55,7 +55,7 @@ export default function LoanProgramSuccess({
           </div>
         ))}
         <div className="py-1">
-          <strong className="text-navy">{t("loanPrograms.leadForm.success.contact")}:</strong>{" "}
+          <strong className="text-navy">{"Contact"}:</strong>{" "}
           <span className="text-muted">
             {contact.firstName} {contact.lastName} · {contact.phone}
           </span>

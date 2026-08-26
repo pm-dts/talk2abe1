@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 import { cn } from "@/lib/utils";
 
@@ -17,21 +17,21 @@ export default function ProgressBar({
   label,
   className,
 }: ProgressBarProps) {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const percent = Math.round((currentStep / totalSteps) * 100);
 
   return (
     <div className={cn("space-y-3", className)}>
       <div className="flex items-center justify-between gap-4 text-xs font-semibold">
         <span className="text-navy">
-          {t("getStarted.progress.stepOf", { current: currentStep, total: totalSteps })}
+          {`Step ${currentStep} of ${totalSteps}`}
         </span>
-        <span className="text-brand">{t("getStarted.progress.percentComplete", { percent })}</span>
+        <span className="text-brand">{`${percent}% Complete`}</span>
       </div>
 
       <div
         role="progressbar"
-        aria-label={label ?? t("getStarted.progress.ariaLabel")}
+        aria-label={label ?? "Questionnaire progress"}
         aria-valuenow={percent}
         aria-valuemin={0}
         aria-valuemax={100}
